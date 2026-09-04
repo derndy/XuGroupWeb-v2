@@ -1,27 +1,33 @@
 {
-    "basePaths": {
-      "thumbnails": "/images/gallery/thumbnails/",
-      "images": "/images/gallery/"
-    },
-    "images": [
-      {"fileName": "1_清远漂流.jpg", "year": 2024},
-      {"fileName": "2_冬至.jpg", "year": 2024},
-      {"fileName": "3_石门1.jpg", "year": 2024},
-      {"fileName": "4_石门2.jpg", "year": 2024},
-      {"fileName": "5_石门3.jpg", "year": 2024},
-      {"fileName": "6_石门4.jpg", "year": 2024},
-      {"fileName": "7_红林花海.jpg", "year": 2024},
-      {"fileName": "8_羽毛球赛.jpg", "year": 2024},
-      {"fileName": "9_课题组合照_2024.jpg", "year": 2024},
-      {"fileName": "10_毕业典礼合照.jpg", "year": 2024},
-      {"fileName": "11_龙林毕业聚餐_2024.jpg", "year": 2024},
-      {"fileName": "12_大南山1.jpg", "year": 2024},
-      {"fileName": "13_大南山2.jpg", "year": 2024},
-      {"fileName": "14_大南山3.jpg", "year": 2024},
-      {"fileName": "15_大南山4.jpg", "year": 2024},
-      {"fileName": "16_大南山5.jpg", "year": 2024},
-      {"fileName": "17_大南山6.jpg", "year": 2024},
-      {"fileName": "18_东盛楼_2025.jpg", "year": 2025},
-      {"fileName": "19_乒乓球赛_2025.jpg", "year": 2025}
-    ]
-  }
+  "basePaths": {
+    "thumbnails": "/images/gallery/thumbnails/",
+    "images": "/images/gallery/"
+  },
+  "images": [
+    {"fileName": "1_清远漂流.jpg", "year": 2024},
+    {"fileName": "2_冬至.jpg", "year": 2024},
+    {"fileName": "3_石门1.jpg", "year": 2024},
+    {"fileName": "4_石门2.jpg", "year": 2024},
+    {"fileName": "5_石门3.jpg", "year": 2024},
+    {"fileName": "6_石门4.jpg", "year": 2024},
+    {"fileName": "7_红林花海.jpg", "year": 2024},
+    {"fileName": "8_羽毛球赛.jpg", "year": 2024},
+    {"fileName": "9_课题组合照_2024.jpg", "year": 2024},
+    {"fileName": "10_毕业典礼合照.jpg", "year": 2024},
+    {"fileName": "11_龙林毕业聚餐_2024.jpg", "year": 2024},
+    {"fileName": "12_大南山1.jpg", "year": 2024},
+    {"fileName": "13_大南山2.jpg", "year": 2024},
+    {"fileName": "14_大南山3.jpg", "year": 2024},
+    {"fileName": "15_大南山4.jpg", "year": 2024},
+    {"fileName": "16_大南山5.jpg", "year": 2024},
+    {"fileName": "17_大南山6.jpg", "year": 2024},
+    {"fileName": "18_东盛楼_2025.jpg", "year": 2025},
+    {"fileName": "19_乒乓球赛_2025.jpg", "year": 2025},
+    {"fileName": "20_badminton_2026.jpg", "year": 2026},
+    {"fileName": "21_movie_outing_2026.jpg", "year": 2026},
+    {"fileName": "22_graduation_group_2026.jpg", "year": 2026},
+    {"fileName": "23_graduation_group_2026_2.jpg", "year": 2026},
+    {"fileName": "24_graduation_performance_2026.jpg", "year": 2026},
+    {"fileName": "25_graduation_performance_2026_2.jpg", "year": 2026}
+  ]
+}
