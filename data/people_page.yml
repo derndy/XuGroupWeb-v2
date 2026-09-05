@@ -1,7 +1,7 @@
 hero:
   eyebrow: "Xu Lab · South China University of Technology"
   title: "People who connect computation, evidence, and experiment."
-  lead: "Our team works across biomedical engineering, pharmacy, chemistry, materials, and machine learning. Individual profiles document each researcher’s current role, training, and research interests."
+  # Shared lead: website_text.shared.people_introduction
   links:
     - label: "Current team"
       target: "#current-team"

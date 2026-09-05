@@ -1,12 +1,13 @@
-{{- $loop := site.Data.research_system.evidence_loop -}}
+{{ $text := site.Data.website_text.home }}
+{{- $loop := site.Data.website_text.shared.evidence_loop -}}
 {{- $id := .id -}}
 <figure class="evidence-cycle" aria-labelledby="{{ $id }}-caption">
   <figcaption id="{{ $id }}-caption" class="evidence-cycle__caption">
-    <span class="evidence-cycle__type">Conceptual framework</span>
+    <span class="evidence-cycle__type">{{ $text.evidence_loop.type_label }}</span>
     <strong>{{ $loop.introduction }}</strong>
     <span>{{ $loop.reading_note }}</span>
   </figcaption>
-  <p class="evidence-cycle__hint">Open a step for an example question and the research behind it.</p>
+  <p class="evidence-cycle__hint">{{ $text.evidence_loop.hint }}</p>
   <div class="evidence-cycle__flow">
   <ol class="evidence-cycle__steps" role="list">
     {{ range $index, $step := $loop.steps }}
@@ -21,20 +22,20 @@
         <div class="evidence-step__body">
           <p>{{ $step.explanation }}</p>
           <dl>
-            <dt>Example question</dt>
+            <dt>{{ $text.evidence_loop.question_label }}</dt>
             <dd>{{ $step.question }}</dd>
-            <dt>Typical research output</dt>
+            <dt>{{ $text.evidence_loop.output_label }}</dt>
             <dd>{{ $step.artifact }}</dd>
           </dl>
-          <p class="evidence-step__contributions">Contributing research</p>
+          <p class="evidence-step__contributions">{{ $text.evidence_loop.contributions_label }}</p>
           <ul class="evidence-step__links">
             {{ range $step.pillars }}
-              {{ $matches := where site.Data.research_system.pillars "id" . }}
+              {{ $matches := where (partialCached "research/pillars.html" "shared-pillar-copy") "id" . }}
               {{ if ne (len $matches) 1 }}
                 {{ errorf "Evidence step %q must reference one existing pillar; got %q" $step.id . }}
               {{ end }}
               {{ range $matches }}
-                <li><a href="{{ .detail_url | relURL }}">Pillar {{ .numeral }} · {{ .role }}</a></li>
+                <li><a href="{{ .detail_url | relURL }}">{{ $text.pillars.pillar_label }} {{ .numeral }} · {{ .role }}</a></li>
               {{ end }}
             {{ end }}
           </ul>
@@ -45,8 +46,8 @@
   </ol>
   <div class="evidence-cycle__return">
     <p><strong>{{ $loop.feedback_title }}</strong> {{ $loop.feedback }}</p>
-    <a class="lab-text-link" href="#{{ $id }}-observe">Return to Observe <span aria-hidden="true">↑</span></a>
+    <a class="lab-text-link" href="#{{ $id }}-observe">{{ $text.evidence_loop.return_label }} <span aria-hidden="true">↑</span></a>
   </div>
   </div>
-  <p class="evidence-cycle__legend">Solid arrows follow the reading sequence. The dashed path returns evidence to the next question.</p>
+  <p class="evidence-cycle__legend">{{ $text.evidence_loop.legend }}</p>
 </figure>

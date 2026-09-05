@@ -22,7 +22,7 @@ Read with [the design brief](website-design-and-asset-placement.md) and [current
 | --- | --- | --- |
 | H01 identity and Hero | Exact H1, subtitle and tagline present; static diagram hidden from assistive technology behind a single image description; dimensions reused pillar colours | Preserved exact copy; six native disclosure controls provide definitions and research links; neutral learner grouping distinguishes dimensions from pillars; explicit evidence feedback and proposed outcomes; shorter headline scale and a truthful Scientific testbeds CTA |
 | H02 Beyond Prediction | Already present with the main explanatory proposition | Preserved. Do not rebuild it as a missing section |
-| H03 Space–Interaction–Learning | No separate explanation | Added scientific questions, definitions, connected choices and evidence feedback; both Hero and expanded explanation use `research_system.grammar` |
+| H03 Space–Interaction–Learning | No separate explanation | Added scientific questions, definitions, connected choices and evidence feedback; both Hero and expanded explanation use `website_text.shared.grammar` |
 | H04 three contributions | Hard-coded duplicates of pillar records; no individual links or displayed core questions; Pillar II formal title shortened | Uses canonical formal titles, questions, colours and routes; retains concise public invitations and three capability labels; each card links directly to its pillar |
 | H05 evidence loop | Five static steps on navy; no explicit diagram return path; test and design combined | Completed in the evidence-loop batch: six steps, pale-teal chapter, solid forward arrows and dashed feedback path, vertical mobile layout, native disclosures with questions/outputs/canonical pillar links. Browser review remains pending |
 | H06 selected projects | Omitted; existing pillar project arrays are empty | Keep omitted until approved public project records exist; private archive project material is not automatically eligible |
@@ -64,7 +64,7 @@ Use `data/research_assets.yml` for exact hashes, original Drive links, dimension
 
 ## Maintenance of this homepage batch
 
-- `data/research_system.yml`: shared grammar definitions, questions, relationships and destinations; existing canonical pillar records plus short homepage invitations/terms.
+- `data/website_text.yml`: homepage wording, shared grammar/evidence-loop copy and pillar display wording. `data/research_system.yml` retains stable pillar records, routes and detailed research content.
 - `layouts/partials/research/learning-grammar.html`: compact Hero and expanded explanation.
 - `layouts/partials/research/learning-concept.html`: native `details`/`summary` controls. There is no JavaScript dependency or hover-only definition.
 - `layouts/landing/home.html`: section order and canonical pillar iteration; approved title/subtitle/tagline remain exact.
@@ -83,7 +83,7 @@ H08–H10, the four Contact pathways and About's Space–Interaction–Learning 
 
 The evidence-loop batch implements H05 only. The steps are Observe, Question, Design evidence, Learn, Test, and Explain or design. Each native disclosure includes a short explanation, example question, typical research output and relevant pillar links. No result, downloadable resource or completed autonomous discovery system is implied.
 
-`data/research_system.yml` contains the step content. `layouts/partials/research/evidence-loop.html` renders it and resolves contributing pillars from existing canonical IDs; a missing pillar ID fails the build. The component has a caller-supplied ID prefix so future reuse on another page can retain unique anchors. This batch uses it only on Home.
+`data/website_text.yml` → `shared.evidence_loop` contains the step content. `layouts/partials/research/evidence-loop.html` renders it and resolves contributing pillars from existing canonical IDs; a missing pillar ID fails the build. The component has a caller-supplied ID prefix so future reuse on another page can retain unique anchors. This batch uses it only on Home.
 
 The pale-teal section uses solid forward arrows and a dashed return path. On narrow screens, the steps become one vertical sequence and the feedback path runs beside it. The visible return link targets Observe. Native details work without added JavaScript; new styles add no animation. Real browser confirmation of layout, keyboard and touch behaviour is still pending.
 

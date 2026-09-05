@@ -1,16 +1,17 @@
 {{ define "main" }}
+{{ $text := site.Data.website_text.home }}
 <main class="home-redesign">
   <section class="lab-hero" aria-labelledby="home-title">
     <div class="lab-shell lab-hero__grid">
       <div class="lab-hero__copy">
-        <p class="lab-eyebrow">Scientific learning · Evidence engineering · Mathematical data science</p>
-        <h1 id="home-title">Designing Scientific Learning and Discovery Systems</h1>
-        <p class="lab-hero__lead">We design how scientific systems represent information, organize interactions, learn from evidence, and generate new knowledge and designs.</p>
-        <div class="lab-actions" aria-label="Primary actions">
-          <a class="lab-button lab-button--primary" href="{{ "/research/" | relURL }}">Explore our research</a>
-          <a class="lab-button lab-button--secondary" href="#testbeds-title">Scientific testbeds</a>
+        <p class="lab-eyebrow">{{ $text.hero.eyebrow }}</p>
+        <h1 id="home-title">{{ $text.hero.title }}</h1>
+        <p class="lab-hero__lead">{{ $text.hero.subtitle }}</p>
+        <div class="lab-actions" aria-label="{{ $text.hero.actions_label }}">
+          <a class="lab-button lab-button--primary" href="{{ "/research/" | relURL }}">{{ $text.hero.research_link }}</a>
+          <a class="lab-button lab-button--secondary" href="#testbeds-title">{{ $text.hero.testbeds_link }}</a>
         </div>
-        <p class="lab-tagline">Learn better. Create better evidence. Discover deeper. Design forward.</p>
+        <p class="lab-tagline">{{ $text.hero.tagline }}</p>
       </div>
 
       {{ partial "research/learning-grammar.html" (dict "variant" "compact") }}
@@ -20,13 +21,13 @@
   <section class="lab-section lab-section--thesis" aria-labelledby="beyond-prediction">
     <div class="lab-shell lab-thesis">
       <div>
-        <p class="lab-section-number">01 · Research thesis</p>
-        <h2 id="beyond-prediction">Beyond prediction: toward testable mechanisms</h2>
+        <p class="lab-section-number">{{ $text.thesis.eyebrow }}</p>
+        <h2 id="beyond-prediction">{{ $text.thesis.title }}</h2>
       </div>
       <div class="lab-thesis__body">
-        <p>Prediction asks what may happen. Scientific discovery asks what structure, interaction, or mechanism makes it happen—and what evidence would distinguish that explanation from alternatives.</p>
-        <p>We develop intelligent computational frameworks to discover hidden principles governing molecular and material behaviours.</p>
-        <a class="lab-text-link" href="{{ "/about/" | relURL }}">About our approach <span aria-hidden="true">→</span></a>
+        <p>{{ $text.thesis.paragraph_one }}</p>
+        <p>{{ $text.thesis.paragraph_two }}</p>
+        <a class="lab-text-link" href="{{ "/about/" | relURL }}">{{ $text.thesis.link }} <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -35,10 +36,10 @@
     <div class="lab-shell">
       <header class="lab-section-heading">
         <div>
-          <p class="lab-section-number">02 · Space · Interaction · Learning</p>
-          <h2 id="learning-grammar-title">Scientific intelligence is a designed system.</h2>
+          <p class="lab-section-number">{{ $text.grammar.eyebrow }}</p>
+          <h2 id="learning-grammar-title">{{ $text.grammar.title }}</h2>
         </div>
-        <p>Representation, interaction and learning are connected design choices within the scientific learner. We study how they shape one another, alongside evidence creation and mathematical questions.</p>
+        <p>{{ $text.grammar.introduction }}</p>
       </header>
       {{ partial "research/learning-grammar.html" (dict "variant" "expanded") }}
     </div>
@@ -48,29 +49,29 @@
     <div class="lab-shell">
       <header class="lab-section-heading">
         <div>
-          <p class="lab-section-number">03 · Research system</p>
-          <h2 id="research-system-title">Three contributions. One discovery system.</h2>
+          <p class="lab-section-number">{{ $text.pillars.eyebrow }}</p>
+          <h2 id="research-system-title">{{ $text.pillars.title }}</h2>
         </div>
-        <p>Each pillar plays a different role: designing the learner, designing the evidence it receives, and opening the mathematical frontier of what can be identified and designed.</p>
+        <p>{{ $text.pillars.introduction }}</p>
       </header>
 
       <div class="pillar-grid">
-        {{ range site.Data.research_system.pillars }}
+        {{ range (partialCached "research/pillars.html" "shared-pillar-copy") }}
         <article class="pillar-card pillar-card--{{ .class }}">
-          <div class="pillar-card__topline"><span>Pillar {{ .numeral }}</span><span>{{ .role }}</span></div>
+          <div class="pillar-card__topline"><span>{{ $text.pillars.pillar_label }} {{ .numeral }}</span><span>{{ .role }}</span></div>
           <h3>{{ .home_invitation }}</h3>
           <p class="pillar-card__formal">{{ .title }}</p>
           <p class="pillar-card__question">{{ .question }}</p>
-          <ul class="pillar-card__terms" aria-label="Pillar {{ .numeral }} capabilities">
+          <ul class="pillar-card__terms" aria-label="{{ $text.pillars.pillar_label }} {{ .numeral }} {{ $text.pillars.capabilities_label }}">
             {{ range .home_terms }}<li>{{ . }}</li>{{ end }}
           </ul>
-          <a class="lab-text-link pillar-card__link" href="{{ .detail_url | relURL }}">Explore Pillar {{ .numeral }} <span aria-hidden="true">→</span></a>
+          <a class="lab-text-link pillar-card__link" href="{{ .detail_url | relURL }}">{{ $text.pillars.explore_label }} {{ .numeral }} <span aria-hidden="true">→</span></a>
         </article>
         {{ end }}
       </div>
 
       <div class="lab-section-action">
-        <a class="lab-text-link" href="{{ "/research/" | relURL }}">Enter the research system <span aria-hidden="true">→</span></a>
+        <a class="lab-text-link" href="{{ "/research/" | relURL }}">{{ $text.pillars.link }} <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -79,10 +80,10 @@
     <div class="lab-shell">
       <header class="lab-section-heading">
         <div>
-          <p class="lab-section-number">04 · Evidence loop</p>
-          <h2 id="evidence-loop-title">Discovery advances when evidence changes the next question.</h2>
+          <p class="lab-section-number">{{ $text.evidence_loop.eyebrow }}</p>
+          <h2 id="evidence-loop-title">{{ $text.evidence_loop.title }}</h2>
         </div>
-        <p>We connect learning and experimentation by asking what evidence could change an explanation, a model or a design decision.</p>
+        <p>{{ $text.evidence_loop.introduction }}</p>
       </header>
       {{ partial "research/evidence-loop.html" (dict "id" "home-evidence-loop") }}
     </div>
@@ -92,19 +93,18 @@
     <div class="lab-shell">
       <header class="lab-section-heading">
         <div>
-          <p class="lab-section-number">05 · Scientific testbeds</p>
-          <h2 id="testbeds-title">Consequential systems for testing scientific learning</h2>
+          <p class="lab-section-number">{{ $text.testbeds.eyebrow }}</p>
+          <h2 id="testbeds-title">{{ $text.testbeds.title }}</h2>
         </div>
-        <p>Applications are not isolated silos. They are demanding testbeds in which representations, evidence strategies, and mechanisms must work together.</p>
+        <p>{{ $text.testbeds.introduction }}</p>
       </header>
       {{ with site.Data.site_visuals.home_testbeds }}
         {{ partial "research/conceptual-figure.html" (dict "asset_id" . "placement" "home-testbeds") }}
       {{ end }}
       <div class="testbed-grid">
-        <article><span>01</span><h3>Molecular interactions</h3><p>Drug discovery and mechanism-aware interaction modelling.</p></article>
-        <article><span>02</span><h3>Proteins and sequences</h3><p>Structured biological systems across multiple scales.</p></article>
-        <article><span>03</span><h3>Biomaterials and delivery</h3><p>Complex formulations, assemblies, and functional materials.</p></article>
-        <article><span>04</span><h3>Scientific data systems</h3><p>Uncertainty, causal structure, and evidence-efficient discovery.</p></article>
+        {{ range $index, $item := $text.testbeds.items }}
+        <article><span>{{ printf "%02d" (add $index 1) }}</span><h3>{{ $item.title }}</h3><p>{{ $item.description }}</p></article>
+        {{ end }}
       </div>
     </div>
   </section>
@@ -116,13 +116,13 @@
   <section class="lab-section lab-section--join" aria-labelledby="join-title">
     <div class="lab-shell lab-join">
       <div>
-        <p class="lab-section-number">09 · Work with us</p>
-        <h2 id="join-title">Bring a scientific question worth stress-testing.</h2>
-        <p>We welcome prospective researchers, scientific collaborators, and experimental partners interested in building more rigorous systems for molecular and material discovery.</p>
+        <p class="lab-section-number">{{ $text.join.eyebrow }}</p>
+        <h2 id="join-title">{{ $text.join.title }}</h2>
+        <p>{{ $text.join.introduction }}</p>
       </div>
       <div class="lab-actions">
-        <a class="lab-button lab-button--light" href="{{ "/contact/" | relURL }}">Join or collaborate</a>
-        <a class="lab-button lab-button--ghost" href="{{ "/people/" | relURL }}">Meet the team</a>
+        <a class="lab-button lab-button--light" href="{{ "/contact/" | relURL }}">{{ $text.join.contact_link }}</a>
+        <a class="lab-button lab-button--ghost" href="{{ "/people/" | relURL }}">{{ $text.join.people_link }}</a>
       </div>
     </div>
   </section>

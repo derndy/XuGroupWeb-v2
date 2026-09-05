@@ -8,8 +8,8 @@ Route: `/about/`. The Space–Interaction–Learning middle chapter was delivere
 | --- | --- |
 | Page title, search summary and introductory paragraphs | `content/about/index.md` metadata and Markdown body |
 | Displayed hero title/eyebrow, chapter framing, metaphor, long-term programme and onward links | `content/about/index.md` → `about` front matter |
-| Shared Space / Interaction / Learning names, questions and definitions | `data/research_system.yml` → `grammar.dimensions` |
-| Shared evidence definition, feedback text and evidence route | `data/research_system.yml` → `grammar.evidence` and `grammar.feedback` |
+| Shared Space / Interaction / Learning names, questions and definitions | `data/website_text.yml` → `shared.grammar.dimensions` |
+| Shared evidence definition, feedback text and evidence route | `data/website_text.yml` → `shared.grammar.evidence` and `shared.grammar.feedback` |
 | Principles and horizon chapter headings, framing and related-link introduction | `content/about/index.md` → `about.principles` and `about.horizons` |
 | Six scientific principles and three stage records, shared with Research | `data/research_system.yml` → top-level `principles` and `horizons` |
 | Detailed horizon destinations and their descriptive link labels | `data/research_system.yml` → `pillars[].detail_url` and `pillars[].public_title`; existing `#pillar-horizon-title` on each pillar page |

@@ -8,16 +8,38 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | --- | --- |
 | Repository | Public `derndy/XuGroupWeb-v2` |
 | Working checkout | `/workspace/sites/xugroup-approved-images` |
-| Current review branch | `fix/gallery-overlap` |
-| Branch point | `main` at `5c6c216d8138fcdf13798a3ae8b2dc34238c9a29` |
-| Previous PR | [PR #7](https://github.com/derndy/XuGroupWeb-v2/pull/7), now merged; PRs #1–6 are also merged |
-| Current PR | [Draft PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), open and draft |
+| Current review branch | `refactor/homepage-text-file` |
+| Branch point | Updated to `main` at `bd762efc8d96995ae7a8d3819dcab44252d6ea88` after PR #8 merged |
+| Previous merged work | PRs #1–8, including About principles/horizons and Gallery overlap repair |
+| Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
+| Current PR | Prepared locally; draft PR creation follows validation |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
-GitHub confirms PRs #1–7 merged before this continuation. No open PR was returned at the initial check. This batch starts from `5c6c216…` main, retaining the separate `9755a438edcfe100153cf253601ece3a8de4eaf8` deletion of `.github/workflows/publish.yaml`. Do not restore that workflow or overwrite newer work.
+The user accepted one main text-editing file, with individual publication, news and member records remaining separate. The authorized first step is to move homepage wording, connect it to the templates and verify unchanged output. This takes priority over the previously planned About testbed chapter.
 
-The user reported overlapping Gallery photographs and text and explicitly requested a careful visual check and repair. That defect takes priority over the previously planned About testbed chapter. The live public `/gallery/` page was opened in the browser and the overlap reproduced. This is a current Gallery-page observation, not a complete production/deployment audit. The original repository and hosting configuration remain untouched.
+This batch began at `5c6c216…` while PR #8 was open. During delivery, GitHub showed PR #8 merged into main at `bd762ef…`. The local text change was rebased onto that newer main; README/state conflicts were resolved while retaining the Gallery repair and its verification history. The final build is compared with the existing Gallery baseline. The workflow deletion remains preserved. This batch does not merge a PR or change hosting settings.
+
+## Latest batch — homepage text in one editable file
+
+- Created `data/website_text.yml`: `home` holds homepage headings, explanations, labels, four testbed cards and calls to action; `shared` holds its scientific definitions, evidence-loop steps, five pillar display fields and the shared team introduction.
+- Moved the existing shared copy out of `data/research_system.yml` / `data/people_page.yml` and connected every existing consumer. The new `research/pillars.html` helper combines editable display fields with stable IDs/routes and detailed research records. Missing required pillar copy fails the build.
+- About, Research, all three pillar pages and People continue to read the same shared wording. A real edit check confirms one change reaches the expected pages. There is no second maintained copy of these entries.
+- Preserved publication/news/member records and their selection logic, the approved photograph/illustration captions, all images, routes, metadata, CSS, JavaScript and hosting configuration.
+- Added `docs/website-text-maintenance.md` with exact field locations, the GitHub editing process, plain-text/YAML guidance and shared-page effects. Updated the relevant existing maintenance guides.
+- This completes homepage wording only. Other page copy, global navigation/footer and homepage browser-tab/search metadata retain their existing sources. Continue migrating other pages in later bounded batches.
+
+### Validation
+
+- Final production and preview-equivalent Hugo builds pass: 736 pages each.
+- **All eleven main-page HTML files, including the full homepage, are byte-identical to the pre-change production build.** No CSS or JavaScript changes.
+- All 1,069 internal links/anchors resolve. One H1/main, unique IDs, preview-only noindex and matching production/preview main text verified.
+- The existing audits pass for all 78 publication records, citation bytes, six approved scientific image placements and 24 uncropped WebP variants.
+- Shared YAML values match their original values exactly; all unmoved research data matches the original source structure.
+- Eight temporary changes in only `website_text.yml` update homepage text, a testbed card, a news link, About's shared definition, the evidence loop, pillar titles/roles and the People introduction. Quotes, ampersands, Chinese text and literal HTML are rendered correctly as plain text. The approved wording was restored and rebuilt afterward.
+- Whitespace checks pass. No browser layout or interaction test was performed for this text-source move; byte-identical HTML does not resolve earlier whole-site browser-review items.
+
+Temporary reproducible outputs: `/workspace/scratch/4a70b09acb33/build-home-text-before`, `build-home-text`, `build-home-text-preview`, and `build-home-text-edit-check`. The one-off migration/edit-check scripts are in that scratch directory and are not published.
 
 ## Design decisions to retain
 
@@ -31,7 +53,7 @@ The user reported overlapping Gallery photographs and text and explicitly reques
 8. Keep existing `/publication/`, `/post/`, `/contact/` and `/research/learning-system-design/` routes. The design's alternative route labels do not authorize breaking existing URLs.
 9. `noindex` is not access control. Public branches and previews must contain only material suitable for public access. Image approval is not authorization to merge or switch production.
 
-## Latest batch — Gallery overlap repair
+## Previous completed batch — Gallery overlap repair
 
 - Browser inspection reproduced overlapping photographs, captions and the following year's heading on the live Gallery at a 1363 × 936 CSS-pixel viewport.
 - The theme's gallery shortcode and our documentary page shared `.gallery-grid`. The theme supplied `grid-auto-rows: 150px`, dense packing and a 30px gap. A measured card was only 150px high while its photograph and caption extended more than 600px; later rows and years began before that content ended.
@@ -203,10 +225,10 @@ Build outputs: `/workspace/scratch/7457cd2d5ea9/build-evidence-loop` and `build-
 | --- | --- |
 | Home | Exact identity copy, scientific grammar, three pillars, evidence loop, testbeds with image 05, selected papers/citations, documentary team photo, three dated news entries and closing invitation |
 | Research and three pillars | Overview, interconnected research map, detailed scope/methods/testbeds/principles/horizons and images 01–03 |
-| About | Shared learning-system explanation, image 04, evidence feedback, long-term programme, six principles, three-stage directions and onward links; culture/testbed rationale/PI overview remain |
+| About | Research identity, shared Space–Interaction–Learning explanation, full-width image 04, evidence feedback, qualified long-term programme and onward links; fuller principles/culture/roadmap still pending |
 | Contact / Join / Collaborate | Four audience pathways, preparation guidance, suggested email subjects, shared contact facts/links, appointment link, authentic library photograph and image 06 |
 | People | 16 current-member profiles, 7 undergraduate records, 9 alumni records and authentic photographs |
-| Gallery | 19 documentary records, year grouping, server-rendered content and progressively enhanced dialog; overlap repair in current review branch |
+| Gallery | 19 documentary records, year grouping, server-rendered content and progressively enhanced dialog |
 | News | 18 published records; incomplete record excluded as draft |
 | Publications | 78 records, 13 years, seven types, filters/search, citations and previous verified identity corrections |
 
@@ -247,13 +269,12 @@ git diff --check
 
 ## Continue in small batches
 
-1. Check local changes, remote `main`, review branch and actual PR/check status before editing. Preserve newer user work; compare any moved branch with this record.
-2. Review About and the preceding Contact/homepage work at 320 px, tablet, desktop and 200% text/zoom in the hosted preview. Verify image clarity, keyboard focus, reading order and interactions; this source batch does not complete browser QA.
-3. Homepage H05/H08–H10, Contact's four pathways and both About chapters are merged. The current review branch repairs Gallery overlap. Do not repeat completed source work.
-4. Next bounded batch: About's explanation of why molecular/material testbeds matter, using existing public research questions and actual page destinations.
-5. Then complete appropriate public research-culture content and improve shell navigation with real destinations. Do not publish an unfinished lab operating handbook or private management rules from another conversation.
-6. Continue the publication identity/external-download review and approved project/resource connections in separate, evidence-backed batches.
-7. Merge or change Netlify only after an explicit release instruction.
+1. Recheck main and the homepage-text review branch. PR #8 is merged and included in this branch’s base; preserve any newer user changes.
+2. Review and merge only after an explicit release instruction. This batch makes no merge or hosting change.
+3. Next text-management batch: move About's remaining page-level copy into `website_text.yml`, preserving output and the already connected shared definitions. Then extend the same approach to Contact, Research and the other pages.
+4. Keep individual publication, news and member records separate. Use `docs/website-text-maintenance.md` as the current editing map.
+5. Resume the About testbed explanation, public research-culture content, navigation and publication-resource improvements in later batches. Do not publish unfinished operating-handbook or private management material.
+6. Earlier mobile/tablet, 200% text/zoom and whole-site browser-review items remain separate; the Gallery repair's own coverage is recorded on PR #8.
 
 ## Historical checkouts
 
@@ -295,15 +316,15 @@ Published to `design/about-learning-system` in commit `8fe262b3f8d250b0bfb6300f2
 
 This delivery did not merge the PR, modify either main branch or change production/hosting settings. The following continuation implements About's shared research principles and NOW/NEXT/HORIZON sequence.
 
-## Historical GitHub delivery — About principles and directions
+## GitHub delivery — About principles and directions
 
 Published to `design/about-principles-horizons` in commit `e41f614cf84f7a3b76e375f78edb075c09b91a7e`. Its tree `93c29084a2431a176e4d3e818d41d800561e78ea` exactly matches the tested local source. The original local commit is retained under `checkpoint/about-principles-local-source`; the checkout is aligned with GitHub. This subsequent project-state update changes documentation only.
 
-[PR #7](https://github.com/derndy/XuGroupWeb-v2/pull/7) was delivered as a draft targeting `main` and has since merged before this continuation. At delivery GitHub reported `netlify/xushidang-lab/deploy-preview` **success** for the product commit, with [the matching About preview](https://deploy-preview-7--xushidang-lab.netlify.app/about/). Real browser layout, keyboard/touch, zoom and image loading remain unreviewed. Documentation commits can trigger a further preview build; check the actual final PR head before release.
+[Draft PR #7](https://github.com/derndy/XuGroupWeb-v2/pull/7) targets `main`. GitHub reports `netlify/xushidang-lab/deploy-preview` **success** for the product commit, with [the matching About preview](https://deploy-preview-7--xushidang-lab.netlify.app/about/). Real browser layout, keyboard/touch, zoom and image loading remain unreviewed. Documentation commits can trigger a further preview build; check the actual final PR head before release.
 
 This delivery did not merge the PR, modify either main branch or change production/hosting settings. Next bounded source batch: why molecular/material testbeds matter, using existing public research questions and actual destinations.
 
-## GitHub delivery — Gallery overlap repair
+## Historical GitHub delivery — Gallery overlap repair
 
 Published to `fix/gallery-overlap` in commit `a5a7d360a9091c876035d25fbca3e0f54195710e`; tree `f60a55f8c8beba01c5d21d40f9edec3569124688` exactly matches the locally tested source. The original local commit is retained under `checkpoint/gallery-overlap-local-source`; the checkout is aligned with the remote review branch. This following update records verification and delivery only.
 

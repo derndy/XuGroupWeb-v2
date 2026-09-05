@@ -29,7 +29,8 @@ content/research/             Research content
 content/person/               Member profiles
 content/publication/          Publication records
 content/post/                 Canonical News records and bundled images
-data/research_system.yml      Three-Pillar research content model
+data/website_text.yml         Main text-editing file: homepage and shared wording
+data/research_system.yml      Detailed Three-Pillar research records and stable routes
 data/research_assets.yml      Scientific-visual inventory and release state
 data/people_page.yml          People-page copy, group-photo records, and routes
 data/homepage.yml             Reviewed homepage publication references
@@ -70,7 +71,7 @@ Start with [`project-state.md`](project-state.md) for the active branch, reconci
 
 The [website design and asset-placement brief](docs/website-design-and-asset-placement.md) records the intended design. The [implementation comparison](docs/design-implementation-review-2026-09-05.md) identifies what exists, what this batch changes, and what remains.
 
-This separate redesign repository is `derndy/XuGroupWeb-v2`. The original `derndy/XuGroupWeb` remains the fallback. PR #1 merged the approved-image redesign into v2 `main`. PR #2 merged the homepage grammar, PR #3 the evidence loop, PR #4 the homepage publications/people/news, PR #5 the four Contact pathways, PR #6 About's scientific-learning chapter, and PR #7 About's principles and research directions. The current review batch is `fix/gallery-overlap`; its status is recorded in `project-state.md`. The redesign establishes the visual system, accessible global shell, semantic homepage, integrated Research landing page, governed three-Pillar data model, the complete reusable Pillar detail-page set, scientific-visual release gates, evidence loop, research horizons, testbed framing, recruitment pathway, a genuine 404 recovery page, a semantic People directory, a server-rendered documentary Gallery with accessible progressive enhancement, and a source-backed News ledger. Existing member records, portraits, Gallery photographs, News titles, dates, summaries, featured images, and public URLs are preserved. Publication improvements from the source redesign are retained. Six PI-approved conceptual illustrations now have exact source records, captions, and permitted placements.
+This separate redesign repository is `derndy/XuGroupWeb-v2`. The original `derndy/XuGroupWeb` remains the fallback. PR #1 merged the approved-image redesign into v2 `main`. PR #2 merged the homepage grammar, PR #3 the evidence loop, PR #4 the homepage publications/people/news, PR #5 the four Contact pathways, and PR #6 About’s scientific-learning chapter. PR #7 merged About’s shared principles and horizons. The current text-editing batch is `refactor/homepage-text-file`; PR #8 merged the Gallery overlap repair while this batch was being prepared. Check `project-state.md` and GitHub for current status. The redesign establishes the visual system, accessible global shell, semantic homepage, integrated Research landing page, governed three-Pillar data model, the complete reusable Pillar detail-page set, scientific-visual release gates, evidence loop, research horizons, testbed framing, recruitment pathway, a genuine 404 recovery page, a semantic People directory, a server-rendered documentary Gallery with accessible progressive enhancement, and a source-backed News ledger. Existing member records, portraits, Gallery photographs, News titles, dates, summaries, featured images, and public URLs are preserved. Publication improvements from the source redesign are retained. Six PI-approved conceptual illustrations now have exact source records, captions, and permitted placements.
 
 See [`docs/redesign-foundation.md`](docs/redesign-foundation.md) for the baseline audit and implementation boundaries.
 See [`docs/people-directory-maintenance.md`](docs/people-directory-maintenance.md) before changing member records, portraits, group photographs, or People-page copy.
@@ -84,3 +85,7 @@ See [`docs/homepage-records-maintenance.md`](docs/homepage-records-maintenance.m
 See [`docs/contact-maintenance.md`](docs/contact-maintenance.md) before changing contact facts, the four audience pathways or suggested email subjects.
 
 See [`docs/about-maintenance.md`](docs/about-maintenance.md) before changing About copy, shared scientific definitions or the image 04 chapter.
+
+## Editing everyday website text
+
+Start with [`data/website_text.yml`](data/website_text.yml). The homepage and its shared definitions now read from this file; individual publication, news and member records keep their own files. See [`docs/website-text-maintenance.md`](docs/website-text-maintenance.md) for the exact fields, shared-page effects and step-by-step GitHub editing guide. Other pages and global navigation/footer will move in later batches.

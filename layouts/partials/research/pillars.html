@@ -1,0 +1,15 @@
+{{/* Combine stable research records with their single editable display-copy source. */}}
+{{- $pillars := slice -}}
+{{- range site.Data.research_system.pillars -}}
+  {{- $record := newScratch -}}
+  {{- range $key, $value := . -}}{{- $record.Set $key $value -}}{{- end -}}
+  {{- $copy := index site.Data.website_text.shared.pillars .id -}}
+  {{- if not $copy -}}{{- errorf "Missing website_text.shared.pillars.%s" .id -}}{{- end -}}
+  {{- range $key := slice "home_invitation" "home_terms" "role" "title" "question" -}}
+    {{- $value := index $copy $key -}}
+    {{- if not $value -}}{{- errorf "Missing website_text.shared.pillars.%s.%s" ($record.Get "id") $key -}}{{- end -}}
+    {{- $record.Set $key $value -}}
+  {{- end -}}
+  {{- $pillars = $pillars | append $record.Values -}}
+{{- end -}}
+{{- return $pillars -}}

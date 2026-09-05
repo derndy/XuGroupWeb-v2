@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ $pillarID := .Params.pillar_id }}
-{{ $matches := where site.Data.research_system.pillars "id" $pillarID }}
+{{ $matches := where (partialCached "research/pillars.html" "shared-pillar-copy") "id" $pillarID }}
 {{ if ne (len $matches) 1 }}
   {{ errorf "Pillar page %s must resolve exactly one data record for %s" .RelPermalink $pillarID }}
 {{ end }}
@@ -17,7 +17,7 @@
       </nav>
       <nav class="pillar-switcher" aria-label="Available Pillar detail pages">
         <span>Detailed Pillars</span>
-        {{ range $item := site.Data.research_system.pillars }}
+        {{ range $item := (partialCached "research/pillars.html" "shared-pillar-copy") }}
           {{ with $item.detail_url }}
             <a href="{{ . | relURL }}"{{ if eq $pillarID $item.id }} aria-current="page"{{ end }}>Pillar {{ $item.numeral }}</a>
           {{ end }}

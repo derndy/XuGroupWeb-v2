@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ $copy := .Params.about }}
-{{ $grammar := site.Data.research_system.grammar }}
+{{ $grammar := site.Data.website_text.shared.grammar }}
 <main class="about-redesign">
   <header class="research-hero" aria-labelledby="about-title">
     <div class="lab-shell research-hero__grid">
@@ -96,7 +96,7 @@
       <nav class="about-horizons__links" aria-labelledby="about-horizons-links-title">
         <h3 id="about-horizons-links-title">{{ $copy.horizons.related_label }}</h3>
         <ul role="list">
-          {{ range site.Data.research_system.pillars }}
+          {{ range (partialCached "research/pillars.html" "shared-pillar-copy") }}
           <li><a class="lab-text-link" href="{{ printf "%s#pillar-horizon-title" .detail_url | relURL }}">{{ .public_title }} <span aria-hidden="true">→</span></a></li>
           {{ end }}
         </ul>
