@@ -8,18 +8,18 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | --- | --- |
 | Repository | Public `derndy/XuGroupWeb-v2` |
 | Working checkout | `/workspace/sites/xugroup-approved-images` |
-| Current review branch | `design/homepage-evidence-loop` |
-| Base | `main` at `b52506d42495c1c596ec31eb715393b05973b2e0` |
-| Previous PR | [PR #2](https://github.com/derndy/XuGroupWeb-v2/pull/2), now merged; PR #1 is also merged |
-| Current PR | [PR #3](https://github.com/derndy/XuGroupWeb-v2/pull/3), open and draft |
+| Current review branch | `design/homepage-publications-people-news` |
+| Base | `main` at `13d699772ec8e76d59fe219511fa370ea8496945` |
+| Previous PR | [PR #3](https://github.com/derndy/XuGroupWeb-v2/pull/3), now merged; PRs #1 and #2 are also merged |
+| Current PR | [Draft PR #4](https://github.com/derndy/XuGroupWeb-v2/pull/4), open and draft |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
-The earlier status file described PR #1 as open and draft. GitHub now confirms it was merged; its former `design/approved-scientific-images` remote branch was deleted. The previous grammar batch began from that merge. PR #2 has now also merged; this continuation starts from the newer `b52506d…` main commit. Do not recreate the deleted branch or repeat the completed six-image integration.
+The earlier status file described PR #1 as open and draft. GitHub now confirms it was merged; its former `design/approved-scientific-images` remote branch was deleted. The grammar and evidence-loop batches have also merged as PRs #2 and #3. This continuation starts from `13d6997…` main, whose website tree matches the tested evidence-loop checkpoint. Do not recreate the deleted branch or repeat the completed six-image integration.
 
 The recorded production URL, `https://xushidang-lab.netlify.app/`, was read on 5 September: HTTP 200, older carousel HTML, three empty Hero headings, and no approved homepage H1. It is not serving the latest v2 homepage observed in source. This checks returned HTML only; Netlify linkage, branch settings and deployment history have not been inspected. Do not infer production state merely from a GitHub merge or the configured `baseURL`.
 
-At the start of this continuation, v2 `main` was `b52506d42495c1c596ec31eb715393b05973b2e0`. The original repository and production were not modified. This continuation publishes a review branch only; it does not change either main branch or hosting configuration.
+At the start of this continuation, v2 `main` was `13d699772ec8e76d59fe219511fa370ea8496945`. The original repository and production were not modified. This continuation publishes a review branch only; it does not change either main branch or hosting configuration.
 
 ## Design decisions to retain
 
@@ -45,7 +45,33 @@ At the start of this continuation, v2 `main` was `b52506d42495c1c596ec31eb715393
 
 The new grammar follows the meaning of the original Drive `space-interaction-learning-map.svg`, which was retrieved and read. It does not publish the original source sheet. The archive manifest lists 91 materials; the six existing repository images already match their approval hashes and were not regenerated or reimported.
 
-## Latest batch — homepage evidence loop
+## Latest batch — homepage publications, people and news
+
+- Added H08 with two selected existing research papers, canonical title/author/venue/year data, publisher DOI links and the two actual BibTeX downloads. Selected does not mean newest. No public dataset/code/protocol release is implied.
+- Added H09 with the existing People introduction, a short research-programme statement, the complete 2025 welcome-dinner photograph and its exact alt/caption, plus People/Gallery links. Natural 1200 × 900 aspect ratio, lazy loading and original image bytes are retained.
+- Added H10 with the three newest eligible canonical News records: 22 November, 4 June and 16 April 2025. Original titles/dates/routes remain; missing categories use the broad label Lab update.
+- Three homepage partials read existing sources. Only ordered publication references are new data. Invalid, duplicate, artwork or unpublished paper selections fail the build. News excludes draft and future event/publication dates even in permissive previews.
+- CSS uses desktop columns and single columns below 62rem, readable citations and visible focus. There is no new script, dependency, image payload or hosting change.
+- Inserted the sections after testbeds and before Join; the closing invitation is now numbered 09. All other earlier homepage content and the other ten main-page content trees are preserved.
+
+See [homepage-records-maintenance.md](docs/homepage-records-maintenance.md) for exact source paths, paper-selection evidence, photo treatment and editing rules.
+
+### Validation of the homepage-records batch
+
+- Production and preview-equivalent builds passed, 736 pages each.
+- Six approved conceptual images, captions/placements, exact original downloads and 24 uncropped WebP derivatives passed both build audits.
+- All 78 publication records, actions and citation bytes match the evidence-loop baseline in both builds.
+- All 1,053 internal links/anchors resolve across eleven main pages; unique IDs and exactly one H1/main per page.
+- Selected paper titles/authors/DOIs match the canonical publication index; both downloaded citation files match baseline bytes. Photo dimensions, bytes, alt and caption match the existing source. Three news dates/order match in both builds.
+- A separate permissive preview with temporary draft, future-event and future-publication fixtures rendered those fixture pages but excluded them all from the homepage. The three real homepage news entries were unchanged. Fixtures were removed after the check.
+- All ten other main-content trees match the baseline; all previous homepage sections match except the intended closing section number. New text colours pass at least 4.56:1 contrast on their specified backgrounds.
+- All eleven preview pages have noindex; their production equivalents do not. Whitespace checks passed.
+
+Real browser layout, keyboard/touch, text zoom and photo-loading performance remain pending. Netlify now reports a successful matching preview, linked in the delivery record below; its build success is not browser QA. The reused below-fold PNG is about 1.9 MB; responsive derivatives can be considered during that performance review.
+
+Build outputs: `/workspace/scratch/7457cd2d5ea9/build-home-records` and `build-home-records-preview`; preservation baseline: `build-evidence-loop` / `build-evidence-loop-preview`. Temporary fixture output: `build-home-records-gates`. Outputs and the one-off audit runner are reproducible scratch files outside Git.
+
+## Previous completed batch — homepage evidence loop
 
 - Implemented the six design-brief steps separately: Observe, Question, Design evidence, Learn, Test, Explain or design.
 - Replaced the navy chapter with a pale-teal section, solid reading-sequence arrows and a dashed feedback return. Narrow-screen CSS presents the six steps vertically. A visible return link targets Observe.
@@ -74,7 +100,7 @@ Build outputs: `/workspace/scratch/7457cd2d5ea9/build-evidence-loop` and `build-
 
 | Surface | Existing implementation |
 | --- | --- |
-| Home | Exact identity copy, Beyond Prediction, three pillars, evidence loop, testbeds with image 05, closing invitation |
+| Home | Exact identity copy, scientific grammar, three pillars, evidence loop, testbeds with image 05, selected papers/citations, documentary team photo, three dated news entries and closing invitation |
 | Research and three pillars | Overview, interconnected research map, detailed scope/methods/testbeds/principles/horizons and images 01–03 |
 | About | Introductory research identity, image 04 and onward links; fuller vision/culture chapters still pending |
 | Contact / Join / Collaborate | Shared layout, central facts, mailto/tel links, appointment link, authentic library photograph and image 06; four audience pathways still pending |
@@ -83,7 +109,7 @@ Build outputs: `/workspace/scratch/7457cd2d5ea9/build-evidence-loop` and `build-
 | News | 18 published records; incomplete record excluded as draft |
 | Publications | 78 records, 13 years, seven types, filters/search, citations and previous verified identity corrections |
 
-Approved image source paths, captions, hashes and destinations are in `data/research_assets.yml` and `docs/scientific-visual-approval-2026-09-05.md`. All six original PNGs and all 24 uncropped WebP derivatives are retained. The latest homepage still contains only image 05; image 06 stays on Contact.
+Approved image source paths, captions, hashes and destinations are in `data/research_assets.yml` and `docs/scientific-visual-approval-2026-09-05.md`. All six original PNGs and all 24 uncropped WebP derivatives are retained. Image 05 remains the only principal conceptual illustration on Home, alongside the authentic group photograph; image 06 stays on Contact.
 
 ## Validation of the previous grammar batch
 
@@ -122,9 +148,9 @@ git diff --check
 
 1. Check local changes, remote `main`, review branch and actual PR/check status before editing. Preserve newer user work; compare any moved branch with this record.
 2. Review the changed homepage at 320 px, tablet, desktop and 200% text/zoom when a supported browser preview is available. Open every concept by mouse/touch and keyboard; verify focus, links and reading order.
-3. H05's six-step evidence loop is implemented in the current review branch. Verify its browser presentation before release; do not repeat the source implementation.
-4. Add H08–H10 with actual public publications, a suitable authentic lab photo, and the latest real news. Do not invent eligible projects or resource releases to fill empty sections.
-5. Complete About's middle Space–Interaction–Learning chapter/culture/horizons and Contact's four audience pathways. Expand shell navigation and supporting pages with real destinations.
+3. H05 is merged, and H08–H10 are implemented in this review branch. Verify browser presentation before release; do not repeat the source implementation.
+4. Next bounded batch: Contact's four audience pathways, using existing verified contact facts and approved public positioning.
+5. Then complete About's middle Space–Interaction–Learning chapter/culture/horizons and expand shell navigation with real destinations.
 6. Continue the publication identity/external-download review and approved project/resource connections in separate, evidence-backed batches.
 7. Merge or change Netlify only after an explicit release instruction.
 
@@ -138,8 +164,16 @@ Published to `design/homepage-research-grammar` in commit `699c9ce6f6fe4641ffa7f
 
 GitHub reported zero commit statuses at the prepared head. No matching hosted Netlify preview has been confirmed. A draft PR is a source review link, not a running website preview. The former production URL still requires a separate deployment-state review before any release decision.
 
-## GitHub delivery — evidence-loop batch
+## Historical GitHub delivery — evidence-loop batch
 
 Published to `design/homepage-evidence-loop` in commit `a4b6167f6434c4bd5a392573eb55ccaefcef2e75`. The published tree `7ffba7e892ada4944ce7e5f9f505808594a7fdc4` exactly matches the locally tested source. The local source commit is retained under `checkpoint/evidence-loop-local-source`, and the working branch is aligned with GitHub. This later state update is documentation only.
 
-[Draft PR #3](https://github.com/derndy/XuGroupWeb-v2/pull/3) targets `main`. No merge or production switch was performed. GitHub reported zero commit statuses at the prepared head; no corresponding hosted preview is confirmed. Inspect actual PR/branch/deployment state before the next continuation.
+[PR #3](https://github.com/derndy/XuGroupWeb-v2/pull/3) was delivered as a draft targeting `main` and has since merged before this continuation. No merge or production switch was performed by that delivery. GitHub reported zero commit statuses at the prepared head; no corresponding hosted preview is confirmed. Inspect actual PR/branch/deployment state before the next continuation.
+
+## GitHub delivery — homepage records batch
+
+Published to `design/homepage-publications-people-news` in commit `f9044c8d40353e44b573c48fe760e1fcbfe145f3`. The published tree `c09c8b969071ab8851eeed38d74fa056759c49f5` exactly matches the locally tested source. The original local commit is retained under `checkpoint/home-records-local-source`; the checkout is aligned with the GitHub branch. This subsequent state-record update changes documentation only.
+
+[Draft PR #4](https://github.com/derndy/XuGroupWeb-v2/pull/4) targets `main`. GitHub reports `netlify/xushidang-lab/deploy-preview` **success** for the product commit, with [the matching preview](https://deploy-preview-4--xushidang-lab.netlify.app). This is the first confirmed hosted preview for this batch. It has not received real browser/interaction review. Future documentation commits may trigger another preview build; inspect the actual PR head and check status before release.
+
+The source delivery did not merge the PR, modify either main branch, or change hosting settings/production. Do not infer production state from preview success. The next bounded source batch is Contact's four audience pathways.

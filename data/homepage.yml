@@ -1,0 +1,5 @@
+# Ordered selections only. Bibliographic facts stay in content/publication/.
+# Selection rationale and publisher checks: docs/homepage-records-maintenance.md.
+publications:
+  - "publication/9-2021-xu-et-al-self-improving-photosensitizer-discovery-system-via-bayesian-search-with-first-principle-simulations"
+  - "publication/73-Chem Mater-2020-All-in-one molecular AIE theranostics fluorescence image guided and mitochondria targeted chemo-and photodynamic cancer cell ablation"
