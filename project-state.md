@@ -9,7 +9,8 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | Repository | Public `derndy/XuGroupWeb-v2` |
 | Working checkout | `/workspace/sites/xugroup-approved-images` |
 | Current review branch | `design/about-principles-horizons` |
-| Base | `main` at `424fcdb79a3d3006aa255538fe075e83b00fffb2` |
+| Branch point | `main` at `424fcdb79a3d3006aa255538fe075e83b00fffb2` |
+| Latest observed `main` | `9755a438edcfe100153cf253601ece3a8de4eaf8` — newer workflow deletion outside this batch |
 | Previous PR | [PR #6](https://github.com/derndy/XuGroupWeb-v2/pull/6), now merged; PRs #1–5 are also merged |
 | Current PR | [Draft PR #7](https://github.com/derndy/XuGroupWeb-v2/pull/7), open and draft |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
@@ -20,6 +21,8 @@ GitHub confirms PRs #1–6 merged before this continuation. This batch starts fr
 Earlier on 5 September, `https://xushidang-lab.netlify.app/` returned older carousel HTML without the approved homepage H1. That was a historical HTML observation, not a statement about current production after subsequent user merges. Production has not been rechecked in this batch. The PR #6 Netlify preview succeeded, but production branch settings and deployment history have not been inspected. Do not infer current production state from a GitHub merge or configured baseURL alone.
 
 At the start of this continuation, v2 `main` was `424fcdb79a3d3006aa255538fe075e83b00fffb2`. This batch publishes a review branch only; it does not merge either main branch or change hosting configuration. The original repository is untouched.
+
+During final delivery verification, remote `main` advanced to `9755a438edcfe100153cf253601ece3a8de4eaf8` (`Delete .github/workflows/publish.yaml`). A fetch confirmed that its only change from this branch's starting point is that workflow deletion. This separate commit was not made by the About batch. PR #7 remained open and draft at the subsequent GitHub check; the review branch still starts at `424fcdb…`. Preserve the newer main-branch work and recheck the current base before the next continuation. Production effects of that separate workflow change have not been inspected.
 
 ## Design decisions to retain
 
