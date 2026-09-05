@@ -77,20 +77,14 @@
 
   <section class="lab-section lab-section--evidence" aria-labelledby="evidence-loop-title">
     <div class="lab-shell">
-      <header class="lab-section-heading lab-section-heading--light">
+      <header class="lab-section-heading">
         <div>
           <p class="lab-section-number">04 · Evidence loop</p>
           <h2 id="evidence-loop-title">Discovery advances when evidence changes the next question.</h2>
         </div>
-        <p>Our projects connect learning and experimentation through an explicit, inspectable feedback loop.</p>
+        <p>We connect learning and experimentation by asking what evidence could change an explanation, a model or a design decision.</p>
       </header>
-      <ol class="evidence-loop" aria-label="Scientific evidence loop">
-        <li><span>01</span><strong>Observe</strong><small>Define the state of knowledge</small></li>
-        <li><span>02</span><strong>Question</strong><small>Separate competing explanations</small></li>
-        <li><span>03</span><strong>Design evidence</strong><small>Choose data, perturbation, or candidate</small></li>
-        <li><span>04</span><strong>Learn</strong><small>Update the scientific system</small></li>
-        <li><span>05</span><strong>Test &amp; design</strong><small>Return mechanisms to experiment</small></li>
-      </ol>
+      {{ partial "research/evidence-loop.html" (dict "id" "home-evidence-loop") }}
     </div>
   </section>
 

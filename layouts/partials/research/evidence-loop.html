@@ -1,0 +1,52 @@
+{{- $loop := site.Data.research_system.evidence_loop -}}
+{{- $id := .id -}}
+<figure class="evidence-cycle" aria-labelledby="{{ $id }}-caption">
+  <figcaption id="{{ $id }}-caption" class="evidence-cycle__caption">
+    <span class="evidence-cycle__type">Conceptual framework</span>
+    <strong>{{ $loop.introduction }}</strong>
+    <span>{{ $loop.reading_note }}</span>
+  </figcaption>
+  <p class="evidence-cycle__hint">Open a step for an example question and the research behind it.</p>
+  <div class="evidence-cycle__flow">
+  <ol class="evidence-cycle__steps" role="list">
+    {{ range $index, $step := $loop.steps }}
+    <li>
+      <details class="evidence-step">
+        <summary id="{{ $id }}-{{ $step.id }}">
+          <span class="evidence-step__number" aria-hidden="true">{{ printf "%02d" (add $index 1) }}</span>
+          <strong>{{ $step.title }}</strong>
+          <span class="evidence-step__summary">{{ $step.summary }}</span>
+          <span class="evidence-step__toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="evidence-step__body">
+          <p>{{ $step.explanation }}</p>
+          <dl>
+            <dt>Example question</dt>
+            <dd>{{ $step.question }}</dd>
+            <dt>Typical research output</dt>
+            <dd>{{ $step.artifact }}</dd>
+          </dl>
+          <p class="evidence-step__contributions">Contributing research</p>
+          <ul class="evidence-step__links">
+            {{ range $step.pillars }}
+              {{ $matches := where site.Data.research_system.pillars "id" . }}
+              {{ if ne (len $matches) 1 }}
+                {{ errorf "Evidence step %q must reference one existing pillar; got %q" $step.id . }}
+              {{ end }}
+              {{ range $matches }}
+                <li><a href="{{ .detail_url | relURL }}">Pillar {{ .numeral }} · {{ .role }}</a></li>
+              {{ end }}
+            {{ end }}
+          </ul>
+        </div>
+      </details>
+    </li>
+    {{ end }}
+  </ol>
+  <div class="evidence-cycle__return">
+    <p><strong>{{ $loop.feedback_title }}</strong> {{ $loop.feedback }}</p>
+    <a class="lab-text-link" href="#{{ $id }}-observe">Return to Observe <span aria-hidden="true">↑</span></a>
+  </div>
+  </div>
+  <p class="evidence-cycle__legend">Solid arrows follow the reading sequence. The dashed path returns evidence to the next question.</p>
+</figure>

@@ -8,18 +8,18 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | --- | --- |
 | Repository | Public `derndy/XuGroupWeb-v2` |
 | Working checkout | `/workspace/sites/xugroup-approved-images` |
-| Current review branch | `design/homepage-research-grammar` |
-| Base | `main` at `6f19566096c95560cd58b1a11fbcea4f259d04e7` |
-| Previous PR | [PR #1](https://github.com/derndy/XuGroupWeb-v2/pull/1), merged on 5 September 2026 at 09:36:40 UTC |
-| Current PR | [PR #2](https://github.com/derndy/XuGroupWeb-v2/pull/2), open and draft |
+| Current review branch | `design/homepage-evidence-loop` |
+| Base | `main` at `b52506d42495c1c596ec31eb715393b05973b2e0` |
+| Previous PR | [PR #2](https://github.com/derndy/XuGroupWeb-v2/pull/2), now merged; PR #1 is also merged |
+| Current PR | New evidence-loop draft PR pending GitHub creation |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
-The earlier status file described PR #1 as open and draft. GitHub now confirms it was merged; its former `design/approved-scientific-images` remote branch was deleted. This batch begins from that merge. Do not recreate the deleted branch or repeat the completed six-image integration.
+The earlier status file described PR #1 as open and draft. GitHub now confirms it was merged; its former `design/approved-scientific-images` remote branch was deleted. The previous grammar batch began from that merge. PR #2 has now also merged; this continuation starts from the newer `b52506d…` main commit. Do not recreate the deleted branch or repeat the completed six-image integration.
 
 The recorded production URL, `https://xushidang-lab.netlify.app/`, was read on 5 September: HTTP 200, older carousel HTML, three empty Hero headings, and no approved homepage H1. It is not serving the latest v2 homepage observed in source. This checks returned HTML only; Netlify linkage, branch settings and deployment history have not been inspected. Do not infer production state merely from a GitHub merge or the configured `baseURL`.
 
-Before publishing this review branch, v2 `main` remained at `6f195660…`; original `derndy/XuGroupWeb/main` remained at `b39bb3113f9601433155075204c209672f1758fb`. Neither main branch nor hosting configuration is to be changed by this batch.
+At the start of this continuation, v2 `main` was `b52506d42495c1c596ec31eb715393b05973b2e0`. The original repository and production were not modified. This continuation publishes a review branch only; it does not change either main branch or hosting configuration.
 
 ## Design decisions to retain
 
@@ -33,7 +33,7 @@ Before publishing this review branch, v2 `main` remained at `6f195660…`; origi
 8. Keep existing `/publication/`, `/post/`, `/contact/` and `/research/learning-system-design/` routes. The design's alternative route labels do not authorize breaking existing URLs.
 9. `noindex` is not access control. Public branches and previews must contain only material suitable for public access. Image approval is not authorization to merge or switch production.
 
-## Latest completed batch — homepage scientific explanation
+## Previous completed batch — homepage scientific explanation
 
 - Replaced the static, absolutely positioned Hero diagram with six native `details`/`summary` concepts: Evidence, Space, Interaction, Learning, Mechanism and Design. Definitions and real research links are usable without JavaScript. Learner dimensions use neutral styling; outcomes are explicitly proposals/aims to test.
 - Added H03: scientific questions, definitions, connected choices and an evidence-feedback explanation. Compact and expanded forms share `data/research_system.yml` and `layouts/partials/research/learning-grammar.html`.
@@ -44,6 +44,31 @@ Before publishing this review branch, v2 `main` remained at `6f195660…`; origi
 - Saved the design plan, implementation comparison, asset-location record and updated README/state instructions.
 
 The new grammar follows the meaning of the original Drive `space-interaction-learning-map.svg`, which was retrieved and read. It does not publish the original source sheet. The archive manifest lists 91 materials; the six existing repository images already match their approval hashes and were not regenerated or reimported.
+
+## Latest batch — homepage evidence loop
+
+- Implemented the six design-brief steps separately: Observe, Question, Design evidence, Learn, Test, Explain or design.
+- Replaced the navy chapter with a pale-teal section, solid reading-sequence arrows and a dashed feedback return. Narrow-screen CSS presents the six steps vertically. A visible return link targets Observe.
+- Each native disclosure provides an explanation, example question, typical research output and contributing-pillar links. Content remains available without JavaScript; no new animation or dependency was added.
+- `evidence_loop` in `data/research_system.yml` is the shared semantic source. The new partial `layouts/partials/research/evidence-loop.html` resolves real pillar IDs and fails the build for an invalid reference.
+- Labels identify the loop as a conceptual framework. The copy describes a flexible research approach and explicitly treats explanations/designs as subject to testing.
+- No other homepage section, source image, record collection or hosting configuration is edited.
+
+### Validation of the evidence-loop batch
+
+- Production and preview-equivalent Hugo builds passed: 736 pages each.
+- All six exact approved original images, captions/placements and 24 WebP variants passed the visual audit on both builds.
+- All 78 publications and citation bytes match the preceding build.
+- The six distinct native evidence-step controls each have an example question, research output and real pillar links. All 13 pillar links and the Return to Observe anchor resolve.
+- All 1,029 internal links/anchors resolve across eleven main pages, with unique IDs and one H1/main each.
+- All other homepage sections and all ten other main-content trees exactly match the preceding grammar build.
+- Text colour/background pairs in the new section pass at least 4.5:1 contrast; arrow/path colours exceed the non-text contrast threshold.
+- All eleven main preview pages have noindex; corresponding production pages do not inherit it.
+- Whitespace checks passed; no new scripts, images, dependencies or hosting changes.
+
+Real browser layout, keyboard, touch, zoom and reduced-motion checks remain pending because the existing Hugo checkout has no compatible internal preview entrypoint; no new preview attempt was made in this continuation. Static checks do not demonstrate browser interaction success.
+
+Build outputs: `/workspace/scratch/7457cd2d5ea9/build-evidence-loop` and `build-evidence-loop-preview`. The preceding `build-home-grammar` output supplies the preservation baseline. All are reproducible, temporary outputs outside Git.
 
 ## Existing work retained
 
@@ -60,7 +85,7 @@ The new grammar follows the meaning of the original Drive `space-interaction-lea
 
 Approved image source paths, captions, hashes and destinations are in `data/research_assets.yml` and `docs/scientific-visual-approval-2026-09-05.md`. All six original PNGs and all 24 uncropped WebP derivatives are retained. The latest homepage still contains only image 05; image 06 stays on Contact.
 
-## Validation of this batch
+## Validation of the previous grammar batch
 
 Completed locally on 5 September 2026:
 
@@ -97,7 +122,7 @@ git diff --check
 
 1. Check local changes, remote `main`, review branch and actual PR/check status before editing. Preserve newer user work; compare any moved branch with this record.
 2. Review the changed homepage at 320 px, tablet, desktop and 200% text/zoom when a supported browser preview is available. Open every concept by mouse/touch and keyboard; verify focus, links and reading order.
-3. Improve H05's six-step evidence loop with an explicit return path; retain scientific feedback rather than inserting internal release procedures.
+3. H05's six-step evidence loop is implemented in the current review branch. Verify its browser presentation before release; do not repeat the source implementation.
 4. Add H08–H10 with actual public publications, a suitable authentic lab photo, and the latest real news. Do not invent eligible projects or resource releases to fill empty sections.
 5. Complete About's middle Space–Interaction–Learning chapter/culture/horizons and Contact's four audience pathways. Expand shell navigation and supporting pages with real destinations.
 6. Continue the publication identity/external-download review and approved project/resource connections in separate, evidence-backed batches.
@@ -107,8 +132,8 @@ git diff --check
 
 The original `/workspace/sites/xugroup-web` and its PR #3 are historical work in `derndy/XuGroupWeb`; preserve them and their untracked candidate PNGs. `/workspace/sites/xugroup-web-v2` shares the Git database with this checkout. Old local `main` is not proof of remote `main`. The original prepared local source history remains under `checkpoint/local-source-20260905`.
 
-## GitHub delivery of this batch
+## Historical GitHub delivery — grammar batch
 
-Published to `design/homepage-research-grammar` in commit `699c9ce6f6fe4641ffa7f2e02a0d5dc929a9a9fa`; its tree `743a2a3dd3d4d1b7af68148cac57ee12c72503cf` exactly matches the tested local source. This later state-record commit changes documentation only. The connected GitHub account created [Draft PR #2](https://github.com/derndy/XuGroupWeb-v2/pull/2) targeting `main`. No merge was performed.
+Published to `design/homepage-research-grammar` in commit `699c9ce6f6fe4641ffa7f2e02a0d5dc929a9a9fa`; its tree `743a2a3dd3d4d1b7af68148cac57ee12c72503cf` exactly matches the tested local source. This later state-record commit changes documentation only. The connected GitHub account originally created [Draft PR #2](https://github.com/derndy/XuGroupWeb-v2/pull/2) targeting `main`. That delivery did not merge it; GitHub now reports that PR merged before this continuation.
 
 GitHub reported zero commit statuses at the prepared head. No matching hosted Netlify preview has been confirmed. A draft PR is a source review link, not a running website preview. The former production URL still requires a separate deployment-state review before any release decision.
