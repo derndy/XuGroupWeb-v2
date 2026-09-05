@@ -12,7 +12,7 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | Branch point | `main` at `99698f19834baf7b7aa3da2a358650c78e2535ed`, after PR #10 merged |
 | Previous merged work | PRs #1–10, including the 2025–2026 bibliography, Gallery repair and shared homepage text file |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | Prepared locally; draft PR delivery pending |
+| Current PR | [Draft PR #13](https://github.com/derndy/XuGroupWeb-v2/pull/13), open and draft |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
@@ -390,4 +390,8 @@ No PR merge, production switch, original-repository edit or hosting/workflow cha
 
 ## GitHub delivery — authorship and Accepted update
 
-Local validation is complete. Public branch and draft PR delivery are pending; do not treat this paragraph as proof of a remote push or deploy.
+Published to `fix/publication-authorship-accepted` in product commit `316ee331e26a79ae2186aeb93c5e3ed928cb63c1`. Its GitHub tree `8131aab17f4bb192d276a9c4aa6a2c2c6c7651db` exactly matches the tested local source. The isolated worktree is aligned with the public branch; its local source commit remains at `checkpoint/authorship-accepted-local-source`.
+
+[Draft PR #13](https://github.com/derndy/XuGroupWeb-v2/pull/13) targets `main` and remains unmerged. Netlify reports **success** for the product commit at [the Publications preview](https://deploy-preview-13--xushidang-lab.netlify.app/publication/). This following state-record commit changes documentation only and may trigger another preview; check the current PR head before release. No browser visual/interaction QA is claimed.
+
+The current main used by this batch is merged PR #10 at `99698f19834baf7b7aa3da2a358650c78e2535ed`. No merge, production switch, original-repository edit or hosting change was performed. Continue by reconciling the current SCUT profile and final PRCV author metadata; do not silently combine preprint authors with a final conference citation.
