@@ -8,38 +8,12 @@
         <p class="lab-hero__lead">We design how scientific systems represent information, organize interactions, learn from evidence, and generate new knowledge and designs.</p>
         <div class="lab-actions" aria-label="Primary actions">
           <a class="lab-button lab-button--primary" href="{{ "/research/" | relURL }}">Explore our research</a>
-          <a class="lab-button lab-button--secondary" href="{{ "/publication/" | relURL }}">See publications</a>
+          <a class="lab-button lab-button--secondary" href="#testbeds-title">Scientific testbeds</a>
         </div>
         <p class="lab-tagline">Learn better. Create better evidence. Discover deeper. Design forward.</p>
       </div>
 
-      <div class="system-map" role="img" aria-label="A scientific learning system connects representation space, interaction structure, learning dynamics, evidence, and testable discovery.">
-        <p class="system-map__label">One connected scientific system</p>
-        <div class="system-map__canvas" aria-hidden="true">
-          <span class="system-map__axis system-map__axis--horizontal"></span>
-          <span class="system-map__axis system-map__axis--vertical"></span>
-          <div class="system-node system-node--space">
-            <span class="system-node__index">01</span>
-            <strong>Space</strong>
-            <small>Represent what matters</small>
-          </div>
-          <div class="system-node system-node--interaction">
-            <span class="system-node__index">02</span>
-            <strong>Interaction</strong>
-            <small>Expose decisive relations</small>
-          </div>
-          <div class="system-node system-node--learning">
-            <span class="system-node__index">03</span>
-            <strong>Learning</strong>
-            <small>Update from evidence</small>
-          </div>
-          <div class="system-map__core">
-            <span>Evidence</span>
-            <strong>Discovery</strong>
-            <small>Mechanism · Design</small>
-          </div>
-        </div>
-      </div>
+      {{ partial "research/learning-grammar.html" (dict "variant" "compact") }}
     </div>
   </section>
 
@@ -57,46 +31,42 @@
     </div>
   </section>
 
+  <section class="lab-section lab-section--grammar" aria-labelledby="learning-grammar-title">
+    <div class="lab-shell">
+      <header class="lab-section-heading">
+        <div>
+          <p class="lab-section-number">02 · Space · Interaction · Learning</p>
+          <h2 id="learning-grammar-title">Scientific intelligence is a designed system.</h2>
+        </div>
+        <p>Representation, interaction and learning are connected design choices within the scientific learner. We study how they shape one another, alongside evidence creation and mathematical questions.</p>
+      </header>
+      {{ partial "research/learning-grammar.html" (dict "variant" "expanded") }}
+    </div>
+  </section>
+
   <section class="lab-section" aria-labelledby="research-system-title">
     <div class="lab-shell">
       <header class="lab-section-heading">
         <div>
-          <p class="lab-section-number">02 · Research system</p>
+          <p class="lab-section-number">03 · Research system</p>
           <h2 id="research-system-title">Three contributions. One discovery system.</h2>
         </div>
         <p>Each pillar plays a different role: designing the learner, designing the evidence it receives, and opening the mathematical frontier of what can be identified and designed.</p>
       </header>
 
       <div class="pillar-grid">
-        <article class="pillar-card pillar-card--one">
-          <div class="pillar-card__topline"><span>Pillar I</span><span>Learning system</span></div>
-          <h3>Learn the right scientific structure</h3>
-          <p class="pillar-card__formal">Foundational Scientific Learning-System Design</p>
-          <p>Design representation spaces, interaction structures, guiding signals, and learning dynamics around scientifically meaningful distinctions.</p>
-          <ul class="pillar-card__terms" aria-label="Pillar I capabilities">
-            <li>Representation</li><li>Interaction</li><li>Learning dynamics</li>
+        {{ range site.Data.research_system.pillars }}
+        <article class="pillar-card pillar-card--{{ .class }}">
+          <div class="pillar-card__topline"><span>Pillar {{ .numeral }}</span><span>{{ .role }}</span></div>
+          <h3>{{ .home_invitation }}</h3>
+          <p class="pillar-card__formal">{{ .title }}</p>
+          <p class="pillar-card__question">{{ .question }}</p>
+          <ul class="pillar-card__terms" aria-label="Pillar {{ .numeral }} capabilities">
+            {{ range .home_terms }}<li>{{ . }}</li>{{ end }}
           </ul>
+          <a class="lab-text-link pillar-card__link" href="{{ .detail_url | relURL }}">Explore Pillar {{ .numeral }} <span aria-hidden="true">→</span></a>
         </article>
-
-        <article class="pillar-card pillar-card--two">
-          <div class="pillar-card__topline"><span>Pillar II</span><span>Evidence environment</span></div>
-          <h3>Create evidence that changes what can be learned</h3>
-          <p class="pillar-card__formal">Evidence Engineering and Closed-Loop Discovery</p>
-          <p>Design datasets, perturbations, candidates, and experiments that distinguish competing explanations and improve the next learning step.</p>
-          <ul class="pillar-card__terms" aria-label="Pillar II capabilities">
-            <li>Active acquisition</li><li>Perturbation</li><li>Closed loops</li>
-          </ul>
-        </article>
-
-        <article class="pillar-card pillar-card--three">
-          <div class="pillar-card__topline"><span>Pillar III</span><span>Mathematical lens</span></div>
-          <h3>Turn patterns into principles and possibilities</h3>
-          <p class="pillar-card__formal">Mathematical Data Science and Frontier Exploration</p>
-          <p>Develop mathematical and computational tools for identifiability, uncertainty, mechanism discovery, and inverse scientific design.</p>
-          <ul class="pillar-card__terms" aria-label="Pillar III capabilities">
-            <li>Identifiability</li><li>Uncertainty</li><li>Inverse design</li>
-          </ul>
-        </article>
+        {{ end }}
       </div>
 
       <div class="lab-section-action">
@@ -109,7 +79,7 @@
     <div class="lab-shell">
       <header class="lab-section-heading lab-section-heading--light">
         <div>
-          <p class="lab-section-number">03 · Evidence loop</p>
+          <p class="lab-section-number">04 · Evidence loop</p>
           <h2 id="evidence-loop-title">Discovery advances when evidence changes the next question.</h2>
         </div>
         <p>Our projects connect learning and experimentation through an explicit, inspectable feedback loop.</p>
@@ -128,7 +98,7 @@
     <div class="lab-shell">
       <header class="lab-section-heading">
         <div>
-          <p class="lab-section-number">04 · Scientific testbeds</p>
+          <p class="lab-section-number">05 · Scientific testbeds</p>
           <h2 id="testbeds-title">Consequential systems for testing scientific learning</h2>
         </div>
         <p>Applications are not isolated silos. They are demanding testbeds in which representations, evidence strategies, and mechanisms must work together.</p>
@@ -148,7 +118,7 @@
   <section class="lab-section lab-section--join" aria-labelledby="join-title">
     <div class="lab-shell lab-join">
       <div>
-        <p class="lab-section-number">05 · Work with us</p>
+        <p class="lab-section-number">06 · Work with us</p>
         <h2 id="join-title">Bring a scientific question worth stress-testing.</h2>
         <p>We welcome prospective researchers, scientific collaborators, and experimental partners interested in building more rigorous systems for molecular and material discovery.</p>
       </div>

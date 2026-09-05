@@ -1,135 +1,108 @@
 # Xu Lab website — current project state
 
-Updated: 5 September 2026. Read this file first when continuing development. The canonical filename is `project-state.md`; `PROJECT_STATE.md` is a compatibility pointer for earlier prompts.
+Updated: 5 September 2026. Read this file first when continuing development. `PROJECT_STATE.md` is a compatibility pointer to this canonical lowercase file.
 
-## Active project
+## Current source and delivery boundary
 
 | Item | Current value |
 | --- | --- |
-| Development repository | `derndy/XuGroupWeb-v2` |
+| Repository | Public `derndy/XuGroupWeb-v2` |
 | Working checkout | `/workspace/sites/xugroup-approved-images` |
-| Working branch | `design/approved-scientific-images` |
-| Base branch | Remote `main` |
-| Remote base checkpoint at this review | `b39bb3113f9601433155075204c209672f1758fb` |
-| Last product-change commit | `b9f9c75c4e11e25751f747068c8b5d3220541239` |
-| Last product-change tree | `445a55a8b7b5e811a3f35741ed0290578c96be53` |
-| Published prepared commit | `8d1e4789863286e791e734e96c599d82b86a38a8` |
-| Published prepared tree | `353b42ab7f5d0cb7e0ded577ce393ee650d9915d` |
-| Draft pull request | [XuGroupWeb-v2 PR #1](https://github.com/derndy/XuGroupWeb-v2/pull/1) |
+| Current review branch | `design/homepage-research-grammar` |
+| Base | `main` at `6f19566096c95560cd58b1a11fbcea4f259d04e7` |
+| Previous PR | [PR #1](https://github.com/derndy/XuGroupWeb-v2/pull/1), merged on 5 September 2026 at 09:36:40 UTC |
+| Current PR | Prepared for a new draft PR; update this row after GitHub confirms creation |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
-| Release state | Draft review only; no merge or production switch |
+| Current release instruction | Review branch and draft PR only; no merge or production switch |
 
-The commit containing this state file is a later documentation checkpoint. Use `git rev-parse HEAD HEAD^{tree}` and the remote branch to identify its exact current commit and tree; do not expect this document to contain its own commit hash.
+The earlier status file described PR #1 as open and draft. GitHub now confirms it was merged; its former `design/approved-scientific-images` remote branch was deleted. This batch begins from that merge. Do not recreate the deleted branch or repeat the completed six-image integration.
 
-The product-change IDs above describe the preserved local source history. The published prepared commit includes exactly that website plus the state/approval documentation. Connected GitHub writes used the imported remote ancestry, so local source commits and publication commits have different IDs; exact tree equality was verified. The local source history is retained under `checkpoint/local-source-20260905`, and the active review branch is aligned with its remote after delivery.
+The recorded production URL, `https://xushidang-lab.netlify.app/`, was read on 5 September: HTTP 200, older carousel HTML, three empty Hero headings, and no approved homepage H1. It is not serving the latest v2 homepage observed in source. This checks returned HTML only; Netlify linkage, branch settings and deployment history have not been inspected. Do not infer production state merely from a GitHub merge or the configured `baseURL`.
 
-## Why the attached handoff differs
+Before publishing this review branch, v2 `main` remained at `6f195660…`; original `derndy/XuGroupWeb/main` remained at `b39bb3113f9601433155075204c209672f1758fb`. Neither main branch nor hosting configuration is to be changed by this batch.
 
-The attached `XuGroupWeb_Project_Handoff_2026-09-05.md` describes an earlier checkpoint in the original `derndy/XuGroupWeb` repository. Its original checkout, local image-01 commit and old Draft PR #3 are still present, but newer work exists in the separate v2 repository worktree.
+## Design decisions to retain
 
-The newer scientific approval record explicitly supersedes the one-image decision: the PI approved images 01–03 with “1-3 approve” and 04–06 with “4-6 approve”. The six-image integration and About page were already implemented before this continuation. See `docs/scientific-visual-approval-2026-09-05.md` for the exact original hashes, captions and approved placements.
+1. Read [website-design-and-asset-placement.md](docs/website-design-and-asset-placement.md) in full for the supplied design plan. The repository edition preserves the design and six-image register while omitting private Library retrieval identifiers. The original attachment's SHA-256 is recorded there.
+2. Read [design-implementation-review-2026-09-05.md](docs/design-implementation-review-2026-09-05.md) for the full existing/missing/changed comparison and next batches.
+3. Preserve the exact homepage title, subtitle and tagline. English public pages remain English; do not insert sentence-by-sentence Chinese translations.
+4. The three pillars are scientific learning-system design, evidence engineering, and mathematical/frontier exploration. Space, Interaction and Learning are co-designed dimensions of a learner, not replacements for the pillars.
+5. Materials and biomedical applications are cross-pillar testbeds. Scientific Learning Grammar remains a long-term programme, not an established theory.
+6. The Hero uses live semantic HTML. Each major page has at most one principal conceptual artwork. Original images, approved captions and conceptual attribution remain unchanged.
+7. Reuse actual public records. Do not expose internal project packages, governance diagrams, blank templates or unsupported claims from the Drive archive.
+8. Keep existing `/publication/`, `/post/`, `/contact/` and `/research/learning-system-design/` routes. The design's alternative route labels do not authorize breaking existing URLs.
+9. `noindex` is not access control. Public branches and previews must contain only material suitable for public access. Image approval is not authorization to merge or switch production.
 
-The separate review destination is recorded in `docs/approved-images-integration-review.md`. Continue on the v2 review branch. Do not copy these changes back to the old repository or assume the old Netlify preview shows this branch.
+## Latest completed batch — homepage scientific explanation
 
-| Other checkout or remote | State when inspected | Handling |
-| --- | --- | --- |
-| `/workspace/sites/xugroup-web` | Local `318ea506…`, tree `506ca0fd…`; image 01 only; two untracked candidate PNGs | Preserve; do not overwrite, add or delete its candidates |
-| Original `XuGroupWeb` Draft PR #3 | Head `688544fc…`, tree `bed4e6e9…`; 11 earlier slices | Historical review; unchanged by this continuation |
-| `/workspace/sites/xugroup-web-v2` | Local `main` at `318ea506…` | Shared Git database for this worktree; local `main` is not remote production state |
-| Remote `XuGroupWeb-v2/main` | `b39bb311…` | Imported original base; not the redesigned website |
+- Replaced the static, absolutely positioned Hero diagram with six native `details`/`summary` concepts: Evidence, Space, Interaction, Learning, Mechanism and Design. Definitions and real research links are usable without JavaScript. Learner dimensions use neutral styling; outcomes are explicitly proposals/aims to test.
+- Added H03: scientific questions, definitions, connected choices and an evidence-feedback explanation. Compact and expanded forms share `data/research_system.yml` and `layouts/partials/research/learning-grammar.html`.
+- Preserved the already-present Beyond Prediction section and all three exact homepage statements.
+- Changed the secondary Hero action to the existing Scientific testbeds section.
+- Replaced duplicate homepage pillar content with canonical formal titles, core questions and routes. Each card has a direct Explore link. Existing public invitations and three concise capability terms remain.
+- Reduced the Hero headline scale and removed fixed-height pillar cards; added responsive grammar layouts and visible focus styles. Browser confirmation remains pending.
+- Saved the design plan, implementation comparison, asset-location record and updated README/state instructions.
 
-## Completed website surfaces
+The new grammar follows the meaning of the original Drive `space-interaction-learning-map.svg`, which was retrieved and read. It does not publish the original source sheet. The archive manifest lists 91 materials; the six existing repository images already match their approval hashes and were not regenerated or reimported.
 
-- Homepage: approved title, subtitle and tagline, research-system structure, testbeds and recruitment links.
-- Research: integrated overview and three complete Pillar detail routes, preserving the research taxonomy and conceptual architecture maps.
-- About / Vision: existing research identity and links to Research, People and Contact.
-- People: 16 current-member profiles, 7 undergraduate records, 9 alumni records and existing photographs.
-- Gallery: 19 server-rendered documentary photo records, year grouping and progressively enhanced photo dialog.
-- News: 18 published records and six featured images; incomplete record explicitly excluded as a draft.
-- Publications: 78 records, 13 years and seven display types, accessible search/filter controls, citation downloads, and the four previously verified identity corrections.
-- Contact / Join / Collaborate: shared layout, central contact data, direct email and phone links, appointment link, uncropped original library photograph and approved closing image.
+## Existing work retained
 
-## Approved scientific images
+| Surface | Existing implementation |
+| --- | --- |
+| Home | Exact identity copy, Beyond Prediction, three pillars, evidence loop, testbeds with image 05, closing invitation |
+| Research and three pillars | Overview, interconnected research map, detailed scope/methods/testbeds/principles/horizons and images 01–03 |
+| About | Introductory research identity, image 04 and onward links; fuller vision/culture chapters still pending |
+| Contact / Join / Collaborate | Shared layout, central facts, mailto/tel links, appointment link, authentic library photograph and image 06; four audience pathways still pending |
+| People | 16 current-member profiles, 7 undergraduate records, 9 alumni records and authentic photographs |
+| Gallery | 19 documentary records, year grouping, server-rendered content and progressively enhanced dialog |
+| News | 18 published records; incomplete record excluded as draft |
+| Publications | 78 records, 13 years, seven types, filters/search, citations and previous verified identity corrections |
 
-| Image | Asset | Public placement |
-| --- | --- | --- |
-| 01 | `CONCEPT-RES-001` | `/research/` after the introduction |
-| 02 | `CONCEPT-RES-002` | `/research/evidence-engineering/` opening section |
-| 03 | `CONCEPT-RES-003` | `/research/mathematical-frontiers/` opening section |
-| 04 | `CONCEPT-RES-004` | `/about/` vision section |
-| 05 | `CONCEPT-RES-005` | `/` scientific-testbeds section |
-| 06 | `CONCEPT-RES-006` | `/contact/` closing section |
+Approved image source paths, captions, hashes and destinations are in `data/research_assets.yml` and `docs/scientific-visual-approval-2026-09-05.md`. All six original PNGs and all 24 uncropped WebP derivatives are retained. The latest homepage still contains only image 05; image 06 stays on Contact.
 
-All six original PNGs retain their approved bytes and dimensions. Each has four uncropped WebP variants, a visible conceptual/AI-generated label, its approved caption, descriptive alternative text and a direct original download. Pillar I keeps its precise semantic architecture map. Legacy scientific images remain blocked. Conceptual approval is not approval of experimental evidence or a production release.
-
-## Work completed in this continuation
-
-1. Reconciled the earlier handoff with all three local checkouts, both GitHub repositories, the old PR and the six-image approval record.
-2. Rebuilt the six-image checkpoint before editing.
-3. Refined Contact in commit `b9f9c75…`: removed its legacy inline stylesheet, used the shared layout and design tokens, made email/phone clickable, retained the appointment destination, supplied actual photo dimensions, and added a page-specific search description.
-4. Moved existing Contact facts and copy into `data/contact_page.yml`; documented safe editing in `docs/contact-maintenance.md`.
-5. Added this repository-controlled continuation record.
-
-No person, publication, News, Gallery or research fact was changed in the Contact slice. No image bytes, approved captions, or placement approvals were changed. The other ten redesigned main-content HTML trees match the pre-Contact baseline, including attributes and text.
-
-## Validation
+## Validation of this batch
 
 Completed locally on 5 September 2026:
 
-- Production build: 736 pages; passed.
-- Netlify-equivalent preview build with `--buildFuture` and preview environment: 736 pages; passed. The preview base URL was `https://example.invalid/` solely for offline validation; it is not a hosted website.
-- Scientific visual audit: six approved placements, six exact originals, 24 uncropped WebP variants; passed on both builds.
-- Publication audit and baseline comparison: 78 records, 13 years, seven types; titles, authors, ordering, routes, attachments and citation bytes preserved.
-- Publication JavaScript tests: 9/9 passed; DOI regression tests: 3/3 passed.
-- Eleven main surfaces: one H1 and one main landmark each; unique authored IDs; 1,002 internal links and page fragments resolve.
-- Contact facts, matching `mailto:`/`tel:` destinations, appointment URL, metadata and original photograph verified against the previous page.
-- All eleven preview surfaces emit `noindex`; corresponding production-build pages do not inherit it.
-- `git diff --check`: passed.
+- Production-equivalent Hugo build: 736 pages, passed.
+- Preview-equivalent Hugo build: 736 pages, passed. All eleven main preview surfaces have noindex; their production counterparts do not. Scientific image audit also passed on the preview build.
+- Scientific visual audit: six approved placements, six exact PNG downloads, 24 uncropped WebP variants, approved labels/captions and legacy exclusion passed.
+- Publication audit and comparison with the pre-batch build: all 78 records, author/title content, order, routes, attachment actions and citation bytes preserved.
+- Eleven main surfaces: exactly one H1 and one main landmark each; unique IDs; 1,015 internal links and page fragments resolve.
+- Exact homepage H1/subtitle/tagline; six native concept controls with definitions and links; three correct pillar destinations; one homepage conceptual figure.
+- All ten other main-content HTML trees match the preceding build, including attributes and text.
+- Design documentation is outside rendered content/static; no source-sheet or new bitmap payload added.
+- `git diff --check` passed.
 
-Not completed: real browser layout/keyboard review, live email/phone client interaction, full external archive/download checks, appointment availability, or production release. File-level validation does not imply browser or live-service success.
+Not completed: real browser layout, keyboard, touch, 200% zoom and reduced-motion verification; complete external link/download checks; live email/phone clients or appointment availability. The supervised browser preview could not start for this Hugo checkout because it requires a compatible package/dev-server entrypoint. Do not claim screenshot or browser-test success. No migration or unrelated dependency was introduced to work around it.
 
-Temporary build outputs for this continuation are under `/workspace/scratch/7457cd2d5ea9/`: `build-production` is the pre-Contact baseline, `build-contact` is the final production-equivalent output, and `build-preview` is the final preview-equivalent output. These can be regenerated and are not source files.
+Build folders under `/workspace/scratch/7457cd2d5ea9/`: `build-home-grammar` and `build-home-grammar-preview`. The preceding `build-contact` output was used only for preservation comparison. These outputs are temporary, reproducible and excluded from Git.
 
-## Reproduce checks
+## Reproduce core checks
 
-Run from the active checkout. Use an absolute output directory outside the source tree.
+Run from the checkout, with Hugo Extended 0.139.4 and Go available. Use output directories outside source.
 
 ```bash
-export PATH=/workspace/tools/go-1.23.4/go/bin:$PATH
-HUGO_ENV=production /workspace/tools/hugo-0.139.4/hugo --gc --minify -b https://xushidang-lab.netlify.app/ -d /absolute/production-build
+HUGO_ENV=production hugo --gc --minify -b https://xushidang-lab.netlify.app/ -d /absolute/production-build
 python -B scripts/audit-research-visuals.py /absolute/production-build
-python -B scripts/audit-publications.py /absolute/production-build
-node --test tests/publications.test.mjs
-python -B -m unittest tests/test_publication_links.py
-git diff --check
-HUGO_ENV=production HUGO_DEPLOY_CONTEXT=preview /workspace/tools/hugo-0.139.4/hugo --gc --minify --buildFuture -b https://example.invalid/ -d /absolute/preview-build
+python -B scripts/audit-publications.py /absolute/production-build --before /absolute/preceding-build
+HUGO_ENV=production HUGO_DEPLOY_CONTEXT=preview hugo --gc --minify --buildFuture -b https://example.invalid/ -d /absolute/preview-build
 python -B scripts/audit-research-visuals.py /absolute/preview-build
+git diff --check
 ```
 
-## Next development step
+`https://example.invalid/` is an offline validation origin, not a hosted preview. On this workspace the binaries are `/workspace/tools/hugo-0.139.4/hugo` and `/workspace/tools/go-1.23.4/go/bin/go`.
 
-1. Read `git status`, branch/upstream, local commit/tree, remote review head, PR state and hosted checks before editing. Preserve any new user work. Stop to compare if either branch moved unexpectedly.
-2. Complete desktop/mobile and keyboard review of the eleven redesigned surfaces when browser QA is requested. Focus on all six uncropped illustrations, narrow-screen Contact layout, navigation, Gallery dialog, and publication filters.
-3. Resolve concrete presentation issues in small reviewable commits. Keep factual publication-identity review in its own evidence-backed change.
-4. Continue the archive-wide publication identity, bibliography and external-download review.
-5. Release only after an explicit PI decision. A draft PR or image approval does not authorize merging `main` or switching Netlify.
+## Continue in small batches
 
-## Delivery status
+1. Check local changes, remote `main`, review branch and actual PR/check status before editing. Preserve newer user work; compare any moved branch with this record.
+2. Review the changed homepage at 320 px, tablet, desktop and 200% text/zoom when a supported browser preview is available. Open every concept by mouse/touch and keyboard; verify focus, links and reading order.
+3. Improve H05's six-step evidence loop with an explicit return path; retain scientific feedback rather than inserting internal release procedures.
+4. Add H08–H10 with actual public publications, a suitable authentic lab photo, and the latest real news. Do not invent eligible projects or resource releases to fill empty sections.
+5. Complete About's middle Space–Interaction–Learning chapter/culture/horizons and Contact's four audience pathways. Expand shell navigation and supporting pages with real destinations.
+6. Continue the publication identity/external-download review and approved project/resource connections in separate, evidence-backed batches.
+7. Merge or change Netlify only after an explicit release instruction.
 
-The earlier push was rejected by automatic approval review because the request at that time did not explicitly authorize the public destination. No alternate write route was attempted after that rejection.
+## Historical checkouts
 
-The PI has now explicitly instructed: first ensure the state file is saved in GitHub as `project-state.md`, then “publish the prepared branch to public and open a draft PR, keeping the production website unchanged.” This replies directly to the destination-specific request for public `derndy/XuGroupWeb-v2`, branch `design/approved-scientific-images`, and a draft PR targeting `main`. That publication is authorized. A merge or Netlify production switch remains excluded.
-
-Before this authorized push, GitHub was rechecked: the v2 repository is public, `main` still points to `b39bb311…`, the prepared branch is absent, the default branch contains no project-state file, and the repository has no pull requests. The original `XuGroupWeb/main` also remains at `b39bb311…`.
-
-Publication is complete:
-
-- `project-state.md` was saved first in commit `7636507777e90e037bb5a5a051eb9229331c63ed`; its GitHub content was read back and matched the local record exactly. `PROJECT_STATE.md` points to this canonical lowercase file.
-- The prepared website was then published in commit `8d1e4789863286e791e734e96c599d82b86a38a8`. The remote tree `353b42ab…` exactly matches the prepared local tree, including all six PNG blobs. Subsequent delivery-record changes are Markdown documentation only.
-- Draft PR: [https://github.com/derndy/XuGroupWeb-v2/pull/1](https://github.com/derndy/XuGroupWeb-v2/pull/1), targeting `main`, open and draft. GitHub reported it mergeable with a clean merge state at the prepared commit. This is not a release decision.
-- The prepared commit reported zero commit statuses and zero check runs. No matching hosted Netlify preview has been reported. GitHub's aggregate `pending` with zero statuses is not evidence of a running build. The checked-in GitHub Pages workflow triggers only on `main` pushes or manual dispatch, so this review branch does not trigger that production workflow.
-- Both remote `main` branches remained at `b39bb311…`. Neither repository's `main`, the original PR #3, Netlify linkage, nor the production website was changed in this delivery.
-
-The shell Git client could read the repository but had no write credentials. The authorized writes were completed through the connected GitHub account. No forced ref update was used. Future work should inspect the exact remote head and use the available authenticated write path.
-
-Next: review this draft and complete the remaining browser checks. If a hosted preview is needed, inspect the v2 repository's actual Netlify integration before changing hosting configuration. The old PR #3 preview is not evidence for this newer work. Merging this PR or switching production still requires an explicit PI release instruction.
+The original `/workspace/sites/xugroup-web` and its PR #3 are historical work in `derndy/XuGroupWeb`; preserve them and their untracked candidate PNGs. `/workspace/sites/xugroup-web-v2` shares the Git database with this checkout. Old local `main` is not proof of remote `main`. The original prepared local source history remains under `checkpoint/local-source-20260905`.
