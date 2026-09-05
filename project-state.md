@@ -11,7 +11,7 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | Current review branch | `design/contact-pathways` |
 | Base | `main` at `b9ad9189828d76da1fb0cc634169528026bdc78c` |
 | Previous PR | [PR #4](https://github.com/derndy/XuGroupWeb-v2/pull/4), now merged; PRs #1–3 are also merged |
-| Current PR | Prepared locally; draft PR publication pending |
+| Current PR | [Draft PR #5](https://github.com/derndy/XuGroupWeb-v2/pull/5), open and draft |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
@@ -203,3 +203,11 @@ Published to `design/homepage-publications-people-news` in commit `f9044c8d40353
 [PR #4](https://github.com/derndy/XuGroupWeb-v2/pull/4) was delivered as a draft targeting `main` and has since merged before this continuation. At delivery GitHub reported `netlify/xushidang-lab/deploy-preview` **success** for the product commit, with [the matching preview](https://deploy-preview-4--xushidang-lab.netlify.app). This is the first confirmed hosted preview for this batch. It has not received real browser/interaction review. Future documentation commits may trigger another preview build; inspect the actual PR head and check status before release.
 
 The source delivery did not merge the PR, modify either main branch, or change hosting settings/production. Do not infer production state from preview success. The following continuation implements Contact's four audience pathways.
+
+## GitHub delivery — Contact pathways batch
+
+Published to `design/contact-pathways` in commit `3a70b70f8d6d2ed492030bd9fb3749352a8e11f7`. Its tree `4bd9933a8571678dd0c0fd9d9a5e9fcc1b037b5b` exactly matches the tested local source. The original local source commit is retained under `checkpoint/contact-pathways-local-source`; the checkout is aligned with GitHub. This subsequent project-state update changes documentation only.
+
+[Draft PR #5](https://github.com/derndy/XuGroupWeb-v2/pull/5) targets `main`. GitHub reports `netlify/xushidang-lab/deploy-preview` **success** for the product commit, with [the matching Contact preview](https://deploy-preview-5--xushidang-lab.netlify.app/contact/). Real browser, keyboard/touch, zoom and installed mail-client behaviour remain unreviewed. Documentation commits can trigger a further preview build; check the actual final PR head before release.
+
+This delivery did not merge the PR, modify either main branch, send email, or change hosting settings/production. Next bounded source batch: About's Space–Interaction–Learning explanation with approved image 04 in the middle chapter.
