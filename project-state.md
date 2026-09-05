@@ -7,20 +7,41 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | Item | Current value |
 | --- | --- |
 | Repository | Public `derndy/XuGroupWeb-v2` |
-| Working checkout | `/workspace/sites/xugroup-publications-2025-2026` (isolated worktree) |
-| Current review branch | `content/publications-2025-2026` |
-| Branch point | `main` at `83a9fcdf11ee5a3295ba495b140177330086dd93`, after PR #9 merged |
-| Previous merged work | PRs #1–9, including Gallery repair and the shared homepage text file |
+| Working checkout | `/workspace/sites/xugroup-approved-images` |
+| Current review branch | `content/homepage-vision-refinement` |
+| Branch point | `main` at `99698f19834baf7b7aa3da2a358650c78e2535ed`, after PR #10 merged |
+| Previous merged work | PRs #1–10, including Gallery repair, the shared homepage text file and ten publication additions |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | [Draft PR #10](https://github.com/derndy/XuGroupWeb-v2/pull/10), open and draft |
+| Current PR | Prepared locally; new draft PR and matching preview will be recorded after delivery |
+| Withdrawn rewrite | [PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11), closed without merging at the PI's instruction |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
-The user now prioritizes missing 2025–2026 Publications, referencing their SCUT and Google Scholar profiles. This batch adds ten individually verified public records in a review branch and draft PR. It does not merge, modify the original repository, or change hosting or production settings.
+The PI rejected PR #11's broad public-marketing rewrite because it made the lab sound generic and displaced the original research identity. It was closed without merging. This batch starts afresh from main's original wording, makes only small refinements, and integrates the PI's new vision into the homepage. Do not resume the withdrawn rewrite or use it as an approved baseline.
 
-The bibliography was first verified against PR #8 at `bd762ef…`. During delivery, GitHub showed PR #9 merged at `83a9fcd…`. The publication commit was rebased onto this newer main; README/state conflicts were resolved by retaining the homepage text migration and its full maintenance/delivery history. Product files did not conflict. Both builds and the preservation audit passed again on the combined source. The usual approved-images checkout and its separate workflow were left untouched.
+## Latest batch — original identity with the PI's homepage vision
 
-## Latest batch — Publications for 2025 and 2026
+- Preserved the original hero title, subtitle, tagline and buttons; formal pillar titles, roles, questions and cards; and Space–Interaction–Learning framing. All publication, news and member records retain their separate sources.
+- Added `home.vision` in `data/website_text.yml`, rendered as an unnumbered chapter after Beyond Prediction. Existing chapter numbering stays unchanged. The English adaptation and original Chinese vision are documented in `docs/website-text-maintenance.md`.
+- Retained the broad goal of understanding the world, identifying emerging questions and cultivating future leaders. Scientific foresight, conditional decades/centuries horizons, evidence, revision and explicit assumptions remain visible.
+- Presented domain intelligence system architects as one training path. Includes model architecture, infrastructure, scientific and intelligent systems, objective functions, search spaces and evaluation criteria, with short explanations of the last three. Intelligence per unit of energy is an illustrative open question; the vision leaves room for future problems and methods.
+- Changed only six existing YAML values: one additive sentence connecting the original thesis to AI for Science/scientific foundation models/generative design, two testbed wording simplifications, the Learning definition, the Mechanism link label, and one evidence-loop explanation. The two learning edits reduce operational specificity; no detailed research-roadmap rewrite or whole-site confidentiality claim is made.
+- Added scoped `.home-vision` styles using the existing typography/colours and a single-column small-screen layout. No JavaScript, images, dependency or hosting changes.
+
+### Validation of the vision refinement
+
+- Production and preview-equivalent Hugo builds pass: 864 pages each.
+- Both builds pass the existing audits for all 88 publication records/citation bytes and six approved illustrations/24 variants.
+- All 1,334 internal links and anchors across the eleven full main-page documents resolve, including navigation/footer links. Each has one H1/main and unique IDs; preview-only noindex and matching production/preview main text are verified.
+- Original hero copy/actions, all three pillar cards, selected-publication/people/news sections and the closing invitation are unchanged. Nine other main-content trees match baseline; About differs only in the intended shared Learning definition.
+- All requested vision concepts, the conditional long horizon, the open energy question and the qualification of architects as one path appear in generated HTML. A structured YAML comparison confirms exactly six changed existing values; every new field is under `home.vision`.
+- Whitespace checks pass. Real browser layout/interaction review of the added chapter remains pending; build and HTML checks are not browser QA.
+
+Build outputs: `/workspace/scratch/4a70b09acb33/build-home-vision` and `build-home-vision-preview`. Baseline: `build-public-copy-current-baseline`, built from main at `99698f1`. These are reproducible scratch outputs outside Git. The rejected `build-public-copy` output is not a valid baseline for future work.
+
+## Previous completed batch — Publications for 2025 and 2026
+
+PR #10 has merged. The bibliography was first verified against PR #8 at `bd762ef…` and rebased onto merged PR #9 at `83a9fcd…` during its delivery, preserving the homepage text migration and Gallery repair. Both builds and the preservation audit passed on the combined source. The following records describe that completed addition.
 
 - Added ten canonical bundles and matching BibTeX files: eight records for 2025 and two for 2026. Six are journal articles, one is the official IJCAI conference paper, and three are explicitly labeled preprints using the existing Working paper type. The index now contains 88 records across 15 years and seven display types.
 - Full author order, titles, venues, years and DOI identifiers are checked against primary publisher/organizer/repository records and publisher-deposited Crossref metadata. The [source audit](docs/publications-update-2026-09-05.md) records every source, date conflict and duplicate/version decision.
@@ -72,6 +93,7 @@ Temporary reproducible outputs: `/workspace/scratch/4a70b09acb33/build-home-text
 7. Reuse actual public records. Do not expose internal project packages, governance diagrams, blank templates or unsupported claims from the Drive archive.
 8. Keep existing `/publication/`, `/post/`, `/contact/` and `/research/learning-system-design/` routes. The design's alternative route labels do not authorize breaking existing URLs.
 9. `noindex` is not access control. Public branches and previews must contain only material suitable for public access. Image approval is not authorization to merge or switch production.
+10. Preserve the lab's distinctive research identity. The PI's latest instruction allows restrained simplification, additive familiar terminology and a faithful homepage vision; it rejects wholesale marketing repositioning. See the current editing guide and do not restore PR #11.
 
 ## Previous completed batch — Gallery overlap repair
 
@@ -291,9 +313,9 @@ For presentation-only changes, add `--before /absolute/preceding-build` to the p
 
 ## Continue in small batches
 
-1. Recheck main and `content/publications-2025-2026`. PRs #8 and #9 are merged and included in this branch’s base; preserve any newer user changes.
+1. Recheck main and `content/homepage-vision-refinement`. PRs #1–10 are merged and included in the base; PR #11 was rejected and closed without merging. Preserve any newer user changes.
 2. Review and merge only after an explicit release instruction. This batch makes no merge or hosting change.
-3. Finish the bibliography completeness check against a readable current SCUT/Scholar list or export, and check for verified final venues for the three preprints. Next text-management batch: move About's remaining page-level copy into `website_text.yml`, preserving output and the already connected shared definitions. Then extend the same approach to Contact, Research and the other pages.
+3. Review the restrained wording and new homepage vision before another editorial batch. Next text-management batch: move About's remaining page-level copy into `website_text.yml`, preserving output and the already connected shared definitions. Bibliography completeness against a readable SCUT/Scholar list or export and final venues for the three preprints remain separate follow-ups.
 4. Keep individual publication, news and member records separate. Use `docs/website-text-maintenance.md` as the current editing map.
 5. Resume the About testbed explanation, public research-culture content, navigation and publication-resource improvements in later batches. Do not publish unfinished operating-handbook or private management material.
 6. Earlier mobile/tablet, 200% text/zoom and whole-site browser-review items remain separate; the Gallery repair's own coverage is recorded on PR #8.
@@ -366,6 +388,6 @@ No PR merge, original-repository edit, production switch or hosting/workflow cha
 
 Published to `content/publications-2025-2026` in product commit `fbe2a439f4519c4aff33f821eac997e24b7b5893`. Its GitHub tree `7c03fb51cd97bb1dc03ddffa702967d11b5947a8` exactly matches the locally verified source after rebasing onto merged PR #9. The local source commit is retained at `checkpoint/publications-2026-local-source`; the isolated worktree is aligned with the public branch. This following update changes documentation only.
 
-[Draft PR #10](https://github.com/derndy/XuGroupWeb-v2/pull/10) targets `main`. Netlify reports **success** for the product commit, with [the matching Publications preview](https://deploy-preview-10--xushidang-lab.netlify.app/publication/). An HTTP 200 read of that preview confirms 88 server-rendered records, eight in 2025, two in 2026, and preview noindex. This is an HTML check, not browser visual/interaction QA. Documentation commits can trigger another preview; check the final PR head before release.
+[PR #10](https://github.com/derndy/XuGroupWeb-v2/pull/10) was delivered as a draft and has since merged. At delivery, Netlify reported **success** for the product commit, with [the matching Publications preview](https://deploy-preview-10--xushidang-lab.netlify.app/publication/). An HTTP 200 read of that preview confirmed 88 server-rendered records, eight in 2025, two in 2026, and preview noindex. This was an HTML check, not browser visual/interaction QA.
 
 No PR merge, production switch, original-repository edit or hosting/workflow change was performed by this batch. Next bibliography step is completeness against a readable SCUT/Scholar list or export and verified final-version reconciliation for the three preprints.

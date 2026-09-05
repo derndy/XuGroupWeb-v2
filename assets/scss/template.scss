@@ -444,6 +444,47 @@ a {
   font-size: 1.05rem;
 }
 
+/* Homepage vision: an addition to the existing research identity. */
+.home-vision__perspectives,
+.home-vision__architects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 4rem);
+}
+
+.home-vision__perspectives article,
+.home-vision__architects {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--lab-line);
+}
+
+.home-vision h3 {
+  margin: 0 0 1rem;
+  color: var(--lab-navy);
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+.home-vision__perspectives p,
+.home-vision__architects p {
+  margin: 0;
+  color: var(--lab-muted);
+  line-height: 1.75;
+}
+
+.home-vision__architects {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  margin-top: 2.5rem;
+}
+
+.home-vision__architects p + p { margin-top: 1rem; }
+
+@media (max-width: 47.99rem) {
+  .home-vision__perspectives,
+  .home-vision__architects { grid-template-columns: 1fr; }
+}
+
 /* Homepage records: source publications, documentary photography and dated news. */
 .home-publications,
 .home-news { background: var(--lab-surface); }

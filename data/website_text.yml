@@ -5,6 +5,8 @@
 # shared: definitions and pillar wording also used by About/Research/People.
 # Publications/news/member records and approved image captions keep their own files.
 # Other pages and global navigation/footer have not yet been moved here.
+# Preserve the original identity; make small edits and add context, not replacement positioning.
+# 保留原有研究定位；微调难懂表达、补充语境，不整体改写。愿景在 home.vision。
 # Editing guide: docs/website-text-maintenance.md
 
 home:
@@ -33,8 +35,38 @@ home:
       makes it happen—and what evidence would distinguish that explanation from alternatives.
     paragraph_two: >-
       We develop intelligent computational frameworks to discover hidden principles governing molecular
-      and material behaviours.
+      and material behaviours. This systems perspective connects with AI for Science, scientific foundation
+      models and generative design.
     link: "About our approach"
+  vision:
+    eyebrow: "Our vision"
+    title: "Understanding the World. Pioneering the Future."
+    introduction: >-
+      We seek to deepen our understanding of the world, recognise important questions as they emerge,
+      and cultivate researchers who can lead the future of their fields.
+    perspectives:
+      - title: "Scientific foresight"
+        description: >-
+          We look for early signals of change, connect developments across fields, and examine the
+          structures and assumptions beneath familiar phenomena. Our horizon spans decades and,
+          where meaningful, centuries. What problems and constraints will become important?
+          What knowledge could open new directions?
+      - title: "Evidence and intellectual leadership"
+        description: >-
+          We follow evidence in pursuit of reality and truth, remaining ready to revise our understanding.
+          Thinking about the future means stating assumptions and turning them into questions we can
+          investigate today. Intellectual leadership grows from worthwhile questions and rigorous understanding.
+    architects:
+      title: "Cultivating domain intelligence system architects"
+      introduction: >-
+        One path is to cultivate domain intelligence system architects: researchers who connect model
+        architecture, infrastructure, and the design of scientific and intelligent systems. Starting with
+        worthwhile problems, they define objective functions (what to optimise), search spaces
+        (what possibilities to explore), and evaluation criteria (how to judge progress).
+      outlook: >-
+        For example, asking how much effective intelligence can be produced per unit of energy could open
+        a new direction in energy-efficient intelligence. Our vision leaves room for important problems
+        and research methods that have yet to emerge.
   grammar:
     eyebrow: "02 · Space · Interaction · Learning"
     title: "Scientific intelligence is a designed system."
@@ -68,9 +100,9 @@ home:
     legend: "Solid arrows follow the reading sequence. The dashed path returns evidence to the next question."
   testbeds:
     eyebrow: "05 · Scientific testbeds"
-    title: "Consequential systems for testing scientific learning"
+    title: "Real-world systems for testing scientific learning"
     introduction: >-
-      Applications are not isolated silos. They are demanding testbeds in which representations, evidence
+      Applications connect our research. They are demanding testbeds in which representations, evidence
       strategies, and mechanisms must work together.
     items:
       - title: "Molecular interactions"
@@ -147,8 +179,8 @@ shared:
         cue: "Update from evidence"
         question: "What update process turns evidence into reusable knowledge?"
         definition: >-
-          Co-design objectives, guiding signals, constraints and update rules to study how the system changes
-          as evidence arrives.
+          Design learning goals, feedback and constraints together to study how the system changes as
+          evidence arrives.
         relationship: "Learning revises representations and interactions; their structure also changes which updates are possible."
         url: "/research/learning-system-design/"
         link_text: "Explore learning dynamics"
@@ -169,7 +201,7 @@ shared:
           Seek explanations with consequences that can be tested against alternatives. A model pattern alone
           does not establish a mechanism.
         url: "/research/mathematical-frontiers/"
-        link_text: "Explore what is identifiable"
+        link_text: "Explore what evidence can establish"
       - id: "design"
         label: "Design"
         cue: "A proposal to test"
@@ -226,7 +258,7 @@ shared:
         title: "Learn"
         summary: "Update the system from the new evidence."
         explanation: >-
-          Revise representations, interactions or guiding signals while examining stability, uncertainty and
+          Revise the learning system while examining stability, uncertainty and
           the alternatives that remain unresolved.
         question: "What should change in the learner after this observation?"
         artifact: "A revised model with explicit assumptions and uncertainty."
