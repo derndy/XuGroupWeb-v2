@@ -26,6 +26,17 @@ about:
     question: "What can be carried from one scientific setting to another, and what must remain specific to the question and its evidence?"
     related_label: "Explore the research horizon"
     related_url: "/research/learning-system-design/#pillar-horizon-title"
+  principles:
+    eyebrow: "02 · Research principles"
+    title: "Make scientific ideas open to challenge."
+    lead: "These principles guide how we represent a scientific problem, choose evidence and test an explanation or design. They connect the three research Pillars through a shared approach to inquiry."
+    related_label: "Explore our shared scientific principles"
+    related_url: "/research/#principles"
+  horizons:
+    eyebrow: "03 · Research directions"
+    title: "Current work, next connections, long-term questions."
+    lead: "NOW describes work we are pursuing. NEXT 3–5 YEARS sets out the connections we aim to develop. HORIZON identifies open, long-term questions. These stages describe direction and ambition, not evidence strength or completed results."
+    related_label: "Explore the direction within each Pillar"
   routes:
     eyebrow: "Explore Xu Lab"
     title: "Follow the questions, the people, and the work."

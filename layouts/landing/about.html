@@ -53,6 +53,56 @@
       </div>
     </div>
   </section>
+  <section class="lab-section about-principles" aria-labelledby="about-principles-title">
+    <div class="lab-shell">
+      <header class="lab-section-heading">
+        <div>
+          <p class="lab-section-number">{{ $copy.principles.eyebrow }}</p>
+          <h2 id="about-principles-title">{{ $copy.principles.title }}</h2>
+        </div>
+        <p>{{ $copy.principles.lead }}</p>
+      </header>
+      <ul class="about-principles__list" role="list">
+        {{ range site.Data.research_system.principles }}
+        <li>
+          <h3>{{ .title }}</h3>
+          <p>{{ .text }}</p>
+        </li>
+        {{ end }}
+      </ul>
+      <a class="lab-text-link" href="{{ $copy.principles.related_url | relURL }}">{{ $copy.principles.related_label }} <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+  <section class="lab-section about-horizons" aria-labelledby="about-horizons-title">
+    <div class="lab-shell">
+      <header class="lab-section-heading">
+        <div>
+          <p class="lab-section-number">{{ $copy.horizons.eyebrow }}</p>
+          <h2 id="about-horizons-title">{{ $copy.horizons.title }}</h2>
+        </div>
+        <p>{{ $copy.horizons.lead }}</p>
+      </header>
+      <ol class="about-horizons__list" role="list">
+        {{ range site.Data.research_system.horizons }}
+        <li>
+          <p class="about-horizons__stage">{{ .label }}</p>
+          <div>
+            <h3>{{ .title }}</h3>
+            <p>{{ .text }}</p>
+          </div>
+        </li>
+        {{ end }}
+      </ol>
+      <nav class="about-horizons__links" aria-labelledby="about-horizons-links-title">
+        <h3 id="about-horizons-links-title">{{ $copy.horizons.related_label }}</h3>
+        <ul role="list">
+          {{ range site.Data.research_system.pillars }}
+          <li><a class="lab-text-link" href="{{ printf "%s#pillar-horizon-title" .detail_url | relURL }}">{{ .public_title }} <span aria-hidden="true">→</span></a></li>
+          {{ end }}
+        </ul>
+      </nav>
+    </div>
+  </section>
   <section class="lab-section research-routes" aria-labelledby="about-routes-title">
     <div class="lab-shell">
       <header class="research-routes__heading">
