@@ -12,7 +12,7 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | Branch point | Updated to `main` at `bd762efc8d96995ae7a8d3819dcab44252d6ea88` after PR #8 merged |
 | Previous merged work | PRs #1–8, including About principles/horizons and Gallery overlap repair |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | Prepared locally; draft PR creation follows validation |
+| Current PR | [Draft PR #9](https://github.com/derndy/XuGroupWeb-v2/pull/9), open and draft |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
@@ -39,7 +39,7 @@ This batch began at `5c6c216…` while PR #8 was open. During delivery, GitHub s
 - Eight temporary changes in only `website_text.yml` update homepage text, a testbed card, a news link, About's shared definition, the evidence loop, pillar titles/roles and the People introduction. Quotes, ampersands, Chinese text and literal HTML are rendered correctly as plain text. The approved wording was restored and rebuilt afterward.
 - Whitespace checks pass. No browser layout or interaction test was performed for this text-source move; byte-identical HTML does not resolve earlier whole-site browser-review items.
 
-Temporary reproducible outputs: `/workspace/scratch/4a70b09acb33/build-home-text-before`, `build-home-text`, `build-home-text-preview`, and `build-home-text-edit-check`. The one-off migration/edit-check scripts are in that scratch directory and are not published.
+Temporary reproducible outputs: `/workspace/scratch/4a70b09acb33/build-home-text-before`, `build-home-text`, `build-home-text-preview`, and `build-home-text-edit-check`. After PR #8 merged, both final builds were repeated and all eleven production HTML files matched `/workspace/scratch/7457cd2d5ea9/build-gallery-overlap` byte-for-byte. Gallery source, styles and maintenance notes also match the new main exactly. The one-off migration/edit-check scripts are in scratch and are not published.
 
 ## Design decisions to retain
 
@@ -331,3 +331,11 @@ Published to `fix/gallery-overlap` in commit `a5a7d360a9091c876035d25fbca3e0f541
 [Draft PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8) targets `main`. Netlify reports a successful Deploy Preview for the product commit, and the [actual Gallery preview](https://deploy-preview-8--xushidang-lab.netlify.app/gallery/) received the desktop checks listed above. Documentation updates may trigger another build; inspect the final PR head before release.
 
 No PR merge, original-repository edit, production switch or hosting/workflow change was performed by this repair. The separate workflow deletion on main is preserved. Next content batch remains About's explanation of why molecular/material testbeds matter, after reconciling the current PR/main state.
+
+## GitHub delivery — homepage text file
+
+Published to `refactor/homepage-text-file` in product commit `2ec0194313b49d0bcd854c5687fb6fb11d90591a`. GitHub tree `fd5f97342f2a49622a17d915f8d69039efc4efcd` exactly matches the checked local source. The original local commit is retained at `checkpoint/home-text-local-source`; the working checkout was aligned with the published branch. This following update records delivery only.
+
+[Draft PR #9](https://github.com/derndy/XuGroupWeb-v2/pull/9) targets main. Netlify reports **success** for the product commit: [homepage preview](https://deploy-preview-9--xushidang-lab.netlify.app/). This confirms the hosted build, not browser interaction coverage. Documentation updates may trigger another build; inspect the final PR head before release.
+
+No PR merge, original-repository edit, production switch or hosting/workflow change was performed by this batch. Next text-management batch: About's remaining page copy, with the same output-preservation check.
