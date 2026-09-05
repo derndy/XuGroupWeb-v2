@@ -11,7 +11,7 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | Current review branch | `content/public-facing-website-text` |
 | Branch point | Updated main at `99698f19834baf7b7aa3da2a358650c78e2535ed`, after PR #10 merged |
 | Previous merged work | PRs #1–10, including Gallery repair, the shared text file and 2025–2026 publications |
-| Current PR | Prepared locally; draft PR creation follows validation |
+| Current PR | [Draft PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11), open and draft |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
@@ -388,3 +388,11 @@ Published to `content/publications-2025-2026` in product commit `fbe2a439f4519c4
 [Draft PR #10](https://github.com/derndy/XuGroupWeb-v2/pull/10) targets `main`. Netlify reports **success** for the product commit, with [the matching Publications preview](https://deploy-preview-10--xushidang-lab.netlify.app/publication/). An HTTP 200 read of that preview confirms 88 server-rendered records, eight in 2025, two in 2026, and preview noindex. This is an HTML check, not browser visual/interaction QA. Documentation commits can trigger another preview; check the final PR head before release.
 
 No PR merge, production switch, original-repository edit or hosting/workflow change was performed by this batch. Next bibliography step is completeness against a readable SCUT/Scholar list or export and verified final-version reconciliation for the three preprints.
+
+## GitHub delivery — public-facing website text
+
+Published to `content/public-facing-website-text` in product commit `eb2684b5dc61a1560d931cd7a7effe7304d74a73`. GitHub tree `186e1a6d7fe1c77bd992331a07574c506ee868f1` exactly matches the checked local source. The original local commits are retained at `checkpoint/public-copy-local-source`; the working checkout was aligned with the published branch. This following update records delivery only.
+
+[Draft PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11) targets main. Netlify reports **success** for the product commit: [homepage preview](https://deploy-preview-11--xushidang-lab.netlify.app/). This is a successful hosted build, not browser layout/interaction verification. Documentation updates may trigger another build; inspect the actual PR head before release.
+
+This batch does not merge a PR or change production/hosting settings. Next public-copy pass: remaining About/Research/Contact descriptions, with particular attention to recruitment, industry relevance and the level of detail in public research roadmaps.
