@@ -8,18 +8,21 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | --- | --- |
 | Repository | Public `derndy/XuGroupWeb-v2` |
 | Working checkout | `/workspace/sites/xugroup-approved-images` |
-| Current review branch | `design/about-learning-system` |
-| Base | `main` at `98aeaba4b9bbf89a8e1e016f80886404cbcddad2` |
-| Previous PR | [PR #5](https://github.com/derndy/XuGroupWeb-v2/pull/5), now merged; PRs #1–4 are also merged |
-| Current PR | [Draft PR #6](https://github.com/derndy/XuGroupWeb-v2/pull/6), open and draft |
+| Current review branch | `design/about-principles-horizons` |
+| Branch point | `main` at `424fcdb79a3d3006aa255538fe075e83b00fffb2` |
+| Latest observed `main` | `9755a438edcfe100153cf253601ece3a8de4eaf8` — newer workflow deletion outside this batch |
+| Previous PR | [PR #6](https://github.com/derndy/XuGroupWeb-v2/pull/6), now merged; PRs #1–5 are also merged |
+| Current PR | [Draft PR #7](https://github.com/derndy/XuGroupWeb-v2/pull/7), open and draft |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
-GitHub confirms PRs #1–5 merged before this continuation. This batch starts from `98aeaba…` main, whose source tree matches the preceding Contact-pathways checkpoint. No open PR was returned at the initial check. Preserve newer work if the branch moves again; do not recreate deleted historical branches or repeat completed image/homepage integration.
+GitHub confirms PRs #1–6 merged before this continuation. This batch starts from `424fcdb…` main, whose source tree matches the preceding About-learning checkpoint. No open PR was returned at the initial check. Preserve newer work if the branch moves again; do not recreate deleted historical branches or repeat completed image/homepage integration.
 
-Earlier on 5 September, `https://xushidang-lab.netlify.app/` returned older carousel HTML without the approved homepage H1. That was a historical HTML observation, not a statement about current production after subsequent user merges. Production has not been rechecked in this batch. The PR #5 Netlify preview succeeded, but production branch settings and deployment history have not been inspected. Do not infer current production state from a GitHub merge or configured baseURL alone.
+Earlier on 5 September, `https://xushidang-lab.netlify.app/` returned older carousel HTML without the approved homepage H1. That was a historical HTML observation, not a statement about current production after subsequent user merges. Production has not been rechecked in this batch. The PR #6 Netlify preview succeeded, but production branch settings and deployment history have not been inspected. Do not infer current production state from a GitHub merge or configured baseURL alone.
 
-At the start of this continuation, v2 `main` was `98aeaba4b9bbf89a8e1e016f80886404cbcddad2`. This batch publishes a review branch only; it does not merge either main branch or change hosting configuration. The original repository is untouched.
+At the start of this continuation, v2 `main` was `424fcdb79a3d3006aa255538fe075e83b00fffb2`. This batch publishes a review branch only; it does not merge either main branch or change hosting configuration. The original repository is untouched.
+
+During final delivery verification, remote `main` advanced to `9755a438edcfe100153cf253601ece3a8de4eaf8` (`Delete .github/workflows/publish.yaml`). A fetch confirmed that its only change from this branch's starting point is that workflow deletion. This separate commit was not made by the About batch. PR #7 remained open and draft at the subsequent GitHub check; the review branch still starts at `424fcdb…`. Preserve the newer main-branch work and recheck the current base before the next continuation. Production effects of that separate workflow change have not been inspected.
 
 ## Design decisions to retain
 
@@ -33,7 +36,32 @@ At the start of this continuation, v2 `main` was `98aeaba4b9bbf89a8e1e016f808864
 8. Keep existing `/publication/`, `/post/`, `/contact/` and `/research/learning-system-design/` routes. The design's alternative route labels do not authorize breaking existing URLs.
 9. `noindex` is not access control. Public branches and previews must contain only material suitable for public access. Image approval is not authorization to merge or switch production.
 
-## Latest batch — About's scientific learning chapter
+## Latest batch — About research principles and directions
+
+- Added two chapters after the existing scientific-learning explanation and before the onward routes: six shared research principles, then NOW / NEXT 3–5 YEARS / HORIZON.
+- All six principles and all three stage labels/titles/descriptions are read verbatim from the existing top-level `research_system.principles` and `research_system.horizons` records already displayed on Research. Shared data is unchanged; no duplicate scientific copy is introduced.
+- About-specific headings and framing live in `content/about/index.md`. The stage introduction explicitly separates direction/ambition from evidence strength and completed results. Scientific Learning Grammar remains a long-term research horizon, with no invented completion date or current-capability claim.
+- Added a real Research-principles link and three links to the existing pillar horizon sections, using canonical public titles and detail URLs.
+- Principles use a two-column semantic list; the three stages form a vertical ordered list with labels beside explanations. Both reflow to one column below 48rem. Native links and visible focus require no new script, dependency or disclosure interaction.
+- Preserved the entire existing About hero, vision chapter, approved image 04, onward routes and original introduction/metadata. No hosting, asset, publication or other page-source change.
+
+See [About maintenance](docs/about-maintenance.md) for editing locations, shared-source effects, stage semantics and reading order.
+
+### Validation of the About-principles batch
+
+- Production and preview-equivalent Hugo builds passed, 736 pages each.
+- All six approved original images/placements/captions and 24 uncropped WebP variants passed both audits.
+- All 78 publication records, routes, attachment actions and citation bytes match the preceding About-learning build in both contexts.
+- All 1,069 internal links/anchors resolve across eleven main pages, with unique IDs and one H1/main per page. The four new destinations include all three real pillar horizon anchors.
+- Six canonical principles and three canonical stages match exactly; stage order, ambition/evidence qualification, chapter reading order and descriptive pillar links verified.
+- Existing About hero, complete vision chapter and onward routes are identical to baseline. Original Markdown introduction/metadata, shared research data and hosting configuration are unchanged; all ten other main-content trees match exactly.
+- Production/preview About main-content trees match; preview-only noindex verified on eleven pages. New text colour pairs meet at least 4.56:1 contrast. Whitespace checks passed.
+
+Real browser layout, keyboard/touch, text zoom and image-loading review remain pending. Build and source checks do not constitute browser QA.
+
+Build outputs: `/workspace/scratch/7457cd2d5ea9/build-about-principles` and `build-about-principles-preview`; baselines: `build-about-learning` and `build-about-learning-preview`. One-off generated-HTML audit: `/workspace/scratch/7457cd2d5ea9/verify-about-principles.py`. These are temporary reproducible outputs outside Git.
+
+## Previous completed batch — About's scientific learning chapter
 
 - Added the Space–Interaction–Learning middle chapter on `/about/`, with the three existing canonical questions/definitions read from `research_system.grammar` and a short explanation of mutual shaping.
 - Kept the three design choices within the learner distinct from the broader research pillars. Existing shared grammar data and the homepage are unchanged.
@@ -200,8 +228,8 @@ git diff --check
 
 1. Check local changes, remote `main`, review branch and actual PR/check status before editing. Preserve newer user work; compare any moved branch with this record.
 2. Review About and the preceding Contact/homepage work at 320 px, tablet, desktop and 200% text/zoom in the hosted preview. Verify image clarity, keyboard focus, reading order and interactions; this source batch does not complete browser QA.
-3. Homepage H05/H08–H10 and Contact's four pathways are merged; About's learning chapter is implemented in this review branch. Do not repeat completed source work.
-4. Next bounded batch: About's research principles and NOW/NEXT/HORIZON sequence, using the existing public pillar material.
+3. Homepage H05/H08–H10, Contact's four pathways and About's learning chapter are merged. About's principles and stage sequence are implemented in this review branch. Do not repeat completed source work.
+4. Next bounded batch: About's explanation of why molecular/material testbeds matter, using existing public research questions and actual page destinations.
 5. Then complete appropriate public research-culture content and improve shell navigation with real destinations. Do not publish an unfinished lab operating handbook or private management rules from another conversation.
 6. Continue the publication identity/external-download review and approved project/resource connections in separate, evidence-backed batches.
 7. Merge or change Netlify only after an explicit release instruction.
@@ -238,10 +266,18 @@ Published to `design/contact-pathways` in commit `3a70b70f8d6d2ed492030bd9fb3749
 
 This delivery did not merge the PR, modify either main branch, send email, or change hosting settings/production. The following continuation implements About's Space–Interaction–Learning explanation with approved image 04 in the middle chapter.
 
-## GitHub delivery — About learning chapter
+## Historical GitHub delivery — About learning chapter
 
 Published to `design/about-learning-system` in commit `8fe262b3f8d250b0bfb6300f2eab824a124a8013`. Its tree `c91434f2bbc77bfbf805a34d345a66b65f6ab801` exactly matches the tested local source. The original local commit is retained under `checkpoint/about-learning-local-source`; the checkout is aligned with GitHub. This subsequent project-state update changes documentation only.
 
-[Draft PR #6](https://github.com/derndy/XuGroupWeb-v2/pull/6) targets `main`. GitHub reports `netlify/xushidang-lab/deploy-preview` **success** for the product commit, with [the matching About preview](https://deploy-preview-6--xushidang-lab.netlify.app/about/). Real browser layout, keyboard/touch, zoom and image loading remain unreviewed. Documentation commits can trigger a further preview build; check the actual final PR head before release.
+[PR #6](https://github.com/derndy/XuGroupWeb-v2/pull/6) was delivered as a draft targeting `main` and has since merged before this continuation. At delivery GitHub reported `netlify/xushidang-lab/deploy-preview` **success** for the product commit, with [the matching About preview](https://deploy-preview-6--xushidang-lab.netlify.app/about/). Real browser layout, keyboard/touch, zoom and image loading remain unreviewed. Documentation commits can trigger a further preview build; check the actual final PR head before release.
 
-This delivery did not merge the PR, modify either main branch or change production/hosting settings. Next bounded source batch: About's research principles and NOW/NEXT/HORIZON sequence, using existing public pillar material.
+This delivery did not merge the PR, modify either main branch or change production/hosting settings. The following continuation implements About's shared research principles and NOW/NEXT/HORIZON sequence.
+
+## GitHub delivery — About principles and directions
+
+Published to `design/about-principles-horizons` in commit `e41f614cf84f7a3b76e375f78edb075c09b91a7e`. Its tree `93c29084a2431a176e4d3e818d41d800561e78ea` exactly matches the tested local source. The original local commit is retained under `checkpoint/about-principles-local-source`; the checkout is aligned with GitHub. This subsequent project-state update changes documentation only.
+
+[Draft PR #7](https://github.com/derndy/XuGroupWeb-v2/pull/7) targets `main`. GitHub reports `netlify/xushidang-lab/deploy-preview` **success** for the product commit, with [the matching About preview](https://deploy-preview-7--xushidang-lab.netlify.app/about/). Real browser layout, keyboard/touch, zoom and image loading remain unreviewed. Documentation commits can trigger a further preview build; check the actual final PR head before release.
+
+This delivery did not merge the PR, modify either main branch or change production/hosting settings. Next bounded source batch: why molecular/material testbeds matter, using existing public research questions and actual destinations.
