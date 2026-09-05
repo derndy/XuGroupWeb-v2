@@ -11,7 +11,7 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | Current review branch | `design/about-learning-system` |
 | Base | `main` at `98aeaba4b9bbf89a8e1e016f80886404cbcddad2` |
 | Previous PR | [PR #5](https://github.com/derndy/XuGroupWeb-v2/pull/5), now merged; PRs #1–4 are also merged |
-| Current PR | Prepared locally; draft PR publication pending |
+| Current PR | [Draft PR #6](https://github.com/derndy/XuGroupWeb-v2/pull/6), open and draft |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
@@ -237,3 +237,11 @@ Published to `design/contact-pathways` in commit `3a70b70f8d6d2ed492030bd9fb3749
 [PR #5](https://github.com/derndy/XuGroupWeb-v2/pull/5) was delivered as a draft targeting `main` and has since merged before this continuation. At delivery GitHub reported `netlify/xushidang-lab/deploy-preview` **success** for the product commit, with [the matching Contact preview](https://deploy-preview-5--xushidang-lab.netlify.app/contact/). Real browser, keyboard/touch, zoom and installed mail-client behaviour remain unreviewed. Documentation commits can trigger a further preview build; check the actual final PR head before release.
 
 This delivery did not merge the PR, modify either main branch, send email, or change hosting settings/production. The following continuation implements About's Space–Interaction–Learning explanation with approved image 04 in the middle chapter.
+
+## GitHub delivery — About learning chapter
+
+Published to `design/about-learning-system` in commit `8fe262b3f8d250b0bfb6300f2eab824a124a8013`. Its tree `c91434f2bbc77bfbf805a34d345a66b65f6ab801` exactly matches the tested local source. The original local commit is retained under `checkpoint/about-learning-local-source`; the checkout is aligned with GitHub. This subsequent project-state update changes documentation only.
+
+[Draft PR #6](https://github.com/derndy/XuGroupWeb-v2/pull/6) targets `main`. GitHub reports `netlify/xushidang-lab/deploy-preview` **success** for the product commit, with [the matching About preview](https://deploy-preview-6--xushidang-lab.netlify.app/about/). Real browser layout, keyboard/touch, zoom and image loading remain unreviewed. Documentation commits can trigger a further preview build; check the actual final PR head before release.
+
+This delivery did not merge the PR, modify either main branch or change production/hosting settings. Next bounded source batch: About's research principles and NOW/NEXT/HORIZON sequence, using existing public pillar material.
