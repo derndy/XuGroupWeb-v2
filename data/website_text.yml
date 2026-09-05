@@ -35,8 +35,9 @@ home:
       Prediction asks what may happen. Scientific discovery asks what structure, interaction, or mechanism
       makes it happen—and what evidence would distinguish that explanation from alternatives.
     paragraph_two: >-
-      We develop intelligent computational frameworks to discover hidden principles governing molecular
-      and material behaviours. This systems perspective connects with AI for Science, scientific foundation
+      We develop intelligent computational frameworks to discover hidden principles in complex scientific
+      systems. Molecular, biological and material systems are key testbeds for this work.
+      This systems perspective connects with AI for Science, scientific foundation
       models and generative design.
     link: "About our approach"
   grammar:
@@ -74,8 +75,8 @@ home:
     eyebrow: "05 · Scientific testbeds"
     title: "Real-world systems for testing scientific learning"
     introduction: >-
-      Applications connect our research. They are demanding testbeds in which representations, evidence
-      strategies, and mechanisms must work together.
+      Molecular, biological and material systems provide demanding tests for new methods. Work on complex
+      and multimodal data examines how these design choices extend across different settings.
     items:
       - title: "Molecular interactions"
         description: "Drug discovery and mechanism-aware interaction modelling."
@@ -83,22 +84,28 @@ home:
         description: "Structured biological systems across multiple scales."
       - title: "Biomaterials and delivery"
         description: "Complex formulations, assemblies, and functional materials."
-      - title: "Scientific data systems"
-        description: "Uncertainty, causal structure, and evidence-efficient discovery."
+      - title: "Multimodal and scientific data"
+        description: "Learning across images, signals, scales and scientific contexts."
   publications:
     eyebrow: "06 · Publications and citations"
     title: "Explore the published work."
     introduction: >-
-      Selected papers connect computational discovery and molecular design. Follow each record for the
-      research context and available supporting material.
+      Selected work connects representation learning, cross-scale analysis, multimodal generation and
+      active discovery. Published papers and accepted conference work are identified below.
     list_label: "Selected research papers"
-    kind_label: "Research article"
+    kind_label: "Journal article"
+    conference_label: "Conference paper"
+    accepted_label: "Accepted"
+    details_link: "Paper details"
+    focus:
+      e_cloudbind: "Robust representation and interaction learning"
+      pyrae2e: "Cross-scale learning for whole-slide images"
+      anyavatar: "3D avatar reconstruction with uncalibrated cameras"
+      syncanimation: "Audio-driven multimodal generation"
+      active_discovery: "Active learning and a self-improving discovery loop"
     publisher_link: "Publisher record"
     all_link: "Browse all publications"
     citations:
-      eyebrow: "For your reference library"
-      title: "Take the citation with you."
-      introduction: "Download BibTeX citations to use in your reference manager."
       download_label: "Download BibTeX"
     for_label: "for"
   people:
@@ -117,8 +124,9 @@ home:
     eyebrow: "09 · Work with us"
     title: "Bring a scientific question worth stress-testing."
     introduction: >-
-      We welcome prospective researchers, scientific collaborators, and experimental partners interested
-      in building more rigorous systems for molecular and material discovery.
+      We welcome postdoctoral researchers, PhD candidates and collaborators interested in model architectures,
+      learning algorithms, evidence acquisition and scientific intelligence. Molecular, biological and material
+      systems offer rich settings for developing and testing these methods.
     contact_link: "Join or collaborate"
     people_link: "Meet the team"
 contact:

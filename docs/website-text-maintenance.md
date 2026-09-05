@@ -1,6 +1,6 @@
 # Edit website text / 网站文字修改指南
 
-Start with **[`data/website_text.yml`](../data/website_text.yml)**. Phase 1 connects the homepage's own wording and the shared explanations it uses. The original migration preserved all wording and layout. The refinement makes six small edits to existing values. At the PI's latest instruction, the vision now lives at `contact.vision` and appears only at the end of Join / Collaborate, keeping the homepage shorter. The remaining pages will move in later batches.
+Start with **[`data/website_text.yml`](../data/website_text.yml)**. Phase 1 connects the homepage's own wording and the shared explanations it uses. The original migration preserved all wording and layout; subsequent restrained edits preserve that identity. The vision lives at `contact.vision` and appears only at the end of Join / Collaborate. The current batch clarifies methods versus testbeds, selects five papers and improves research invitations; [its review](research-copy-and-selected-work-2026-09-05.md) records the scope and meaningful choices. The remaining pages will move in later batches.
 
 ## Make a text change in GitHub
 
@@ -29,6 +29,7 @@ A branch save updates its preview after a successful build. It does not itself m
 | Six evidence-loop steps and explanations | `shared.evidence_loop` | Homepage evidence loop |
 | Four scientific testbed cards | `home.testbeds` | Homepage section 05 |
 | Publication and citation section wording | `home.publications` | Homepage section 06 |
+| Five paper-specific research focus labels | `home.publications.focus` | Under each selected paper title; keys are connected in `data/homepage.yml` |
 | People and culture section wording | `home.people` | Homepage section 07 |
 | Shared team introduction | `shared.people_introduction` | Homepage and People page |
 | News heading, fallback category and link label | `home.news` | Homepage section 08 |
@@ -54,20 +55,20 @@ home:
 | Item | Editing location |
 | --- | --- |
 | Individual publications, authors, venues, DOI links and citations | `content/publication/` |
-| Homepage paper selection | `data/homepage.yml` (ordered page references) |
+| Homepage paper selection | `data/homepage.yml` (ordered `page` references and `focus` label keys) |
 | Individual news posts and event dates | `content/post/` |
 | Individual member profiles | `content/person/` |
 | Undergraduate and alumni register | `data/US_Alumni.yml` |
 | Documentary photograph, alt text and approved caption | `data/people_page.yml` → `photos.featured` |
 | Scientific illustrations and approved captions | Existing `data/research_assets.yml` and `data/site_visuals.yml` records; follow the visual approval guide |
 
-Page-level text for About, Contact, other Research sections, People, News and Gallery has not been fully moved yet. Global navigation/footer wording and homepage browser-tab/search metadata (`content/_index.md`) retain their existing sources. This first batch does not add an in-browser editor.
+Page-level text for About, Contact, other Research sections, People, News and Gallery has not been fully moved yet. Detailed pillar copy and the shared NOW/NEXT/HORIZON statements remain in `data/research_system.yml`; the NOW wording also appears on About. The postdoctoral invitation and pathway copy remain in `data/contact_page.yml`. Some Research section labels remain in its templates. Global navigation/footer wording and homepage browser-tab/search metadata (`content/_index.md`) retain their existing sources. No in-browser editor is added.
 
 ## How the connection works
 
 Hugo templates（页面模板）read `site.Data.website_text.home` or `site.Data.website_text.shared`. The shared pillar helper, `layouts/partials/research/pillars.html`, combines the five editable display fields with the original IDs, routes and detailed research records. All pillar consumers use that helper; it fails the build if required shared pillar copy is missing. Grammar, evidence-loop and team-introduction consumers read their new shared entries directly.
 
-Publications and news still resolve actual content records at build time. Draft/future news gates, publication selection checks, URLs, image approval records, CSS（样式表）and JavaScript（交互脚本）are unchanged.
+Publications and news still resolve actual content records at build time. The five-paper update extends publication eligibility to accepted conference papers, reuses acceptance validation and moves citations to inline actions. Draft/future news gates, canonical URLs, image approval records and JavaScript（交互脚本）are unchanged.
 
 For future text moves, build a baseline first, connect each moved entry, compare generated pages, and try a temporary edit from the new source before restoring the approved wording. The original migration verified byte-identical HTML for all eleven main pages and a real one-file edit across homepage/shared consumers. Subsequent wording changes and additions need their own checks.
 
@@ -75,7 +76,7 @@ For future text moves, build a baseline first, connect each moved entry, compare
 
 The PI rejected the broad public-marketing rewrite in PR #11 as too generic. That draft was closed without merging. Start from the original text in merged PR #9, preserving the exact hero title/subtitle/tagline, formal three-pillar names, research questions and Space–Interaction–Learning framework. Add accessible context rather than replacing the lab's identity. Do not treat the withdrawn PR as approved wording.
 
-For every batch, explicitly report substantial layout/meaning changes and any uncertain editorial choices to the PI. The latest relocation changes placement only; it does not resolve or silently change the earlier wording choices.
+For every batch, explicitly report substantial layout/meaning changes and any uncertain editorial choices to the PI. The previous relocation changed placement only. The current copy batch removes public-facing management language without changing the backend image/record validation. It welcomes method-led postdoctoral proposals without promising funded vacancies, independence arrangements or resources that have not been confirmed.
 
 The preceding wording revision changed only six existing YAML values:
 

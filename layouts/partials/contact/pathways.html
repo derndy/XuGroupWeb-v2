@@ -18,6 +18,12 @@
           <p>{{ .introduction }}</p>
         </header>
         <dl class="contact-pathway__guidance">
+          {{ with .research_space }}
+          <div>
+            <dt>{{ $route.research_space_label }}</dt>
+            <dd>{{ . }}</dd>
+          </div>
+          {{ end }}
           <div>
             <dt>{{ $pathways.contribution_label }}</dt>
             <dd>{{ .contribution }}</dd>

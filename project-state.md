@@ -8,20 +8,41 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | --- | --- |
 | Repository | Public `derndy/XuGroupWeb-v2` |
 | Working checkout | `/workspace/sites/xugroup-approved-images` |
-| Current review branch | `content/homepage-vision-refinement` |
-| Branch point | `main` at `99698f19834baf7b7aa3da2a358650c78e2535ed`, after PR #10 merged |
-| Incorporated main | `ddd34615da16f6e2fe3b085c66972bc10c8fe13a`, including merged PR #13's author roles and accepted conference work |
-| Previous merged work | PRs #1–10 and #13; all are preserved in this review branch |
+| Current review branch | `content/research-invitations-selected-work` |
+| Branch point | `main` at `c9afdcf43cb59d679c1cc199f95a81814f07e615`, after PR #12 merged |
+| Incorporated main | Same as branch point; includes PR #13's author roles and accepted conference work |
+| Previous merged work | PRs #1–10, #12 and #13; all are preserved in this review branch |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | [Draft PR #12](https://github.com/derndy/XuGroupWeb-v2/pull/12), open and draft at delivery |
-| Hosted preview | [Shorter homepage](https://deploy-preview-12--xushidang-lab.netlify.app/) and [Vision at the end of Join / Collaborate](https://deploy-preview-12--xushidang-lab.netlify.app/contact/#contact-vision-title); inspect the current PR-head build status before release |
+| Current PR | Preparing the five-paper/research-invitation draft; PR #12 has merged |
+| Hosted preview | Pending the new draft PR; the PR #12 preview is historical, not this batch |
 | Withdrawn rewrite | [PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11), closed without merging at the PI's instruction |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
-The PI rejected PR #11's broad public-marketing rewrite because it made the lab sound generic and displaced the original research identity. It was closed without merging. PR #12 retains the original identity with six wording refinements. The latest instruction moves the entire Vision chapter off the homepage and to the end of Join / Collaborate to shorten the homepage. Do not restore the withdrawn rewrite or the superseded homepage placement.
+The PI rejected PR #11's broad public-marketing rewrite because it made the lab sound generic and displaced the original research identity. It was closed without merging. Merged PR #12 retains the original identity with six wording refinements and places the complete Vision at the end of Join / Collaborate. Do not restore the withdrawn rewrite or the superseded homepage placement. The latest instruction accepts bounded method/testbed and postdoctoral-invitation improvements, requests five selected papers including NC/ECCV, and asks to remove the public research pages' internal management/audit tone.
 
-## Latest batch — move Vision to the end of Join / Collaborate
+## Latest batch — five selected papers and public-facing research invitations
+
+- Selected E-CloudBind (Nature Communications 2026), PyraE2E (ECCV 2026, Accepted), AnyAvatar (ACM MM 2026, Accepted), SyncAnimation (IJCAI 2025) and the self-improving photosensitizer discovery system (JACS 2021). The fifth is deliberately older to show the active-discovery foundation; this is not a five-newest ranking. All 91 archive records remain.
+- `data/homepage.yml` contains ordered `page`/`focus` references. `website_text.home.publications.focus` supplies one short research-focus label per paper; titles, authors, roles, venues, DOI and BibTeX still come from canonical bundles. Accepted papers retain year-only dates and have no invented online date/DOI. Citation downloads move inside the individual entries instead of repeating five titles in a sidebar.
+- Home and Research clarify that model architectures, learning methods and evidence acquisition are contributions in their own right. Molecular, biological and materials systems remain important testbeds. Formal pillars and their questions are unchanged; no extra fields are added to Pillar III.
+- Join explicitly invites method/architecture-led postdoctoral proposals and discussion of how they connect with group research and needed project support. It does not promise a funded opening, particular facility or resource. Contact facts and all email subjects remain unchanged.
+- Research/pillar language such as evaluation contracts, owners, adjudication and release review is replaced by scientific explanations of comparison, evidence quality, reproducibility and experimental confirmation. Technical approval/metadata checks remain intact. The shared NOW horizon also changes on About; its other content does not.
+- The original hero, Space–Interaction–Learning definitions, pillar cards and complete final Contact Vision are preserved. [The bounded review](docs/research-copy-and-selected-work-2026-09-05.md) flags the material changes, selected-paper rationale, source limitations and representative wording comparisons.
+
+### Validation and delivery
+
+- Production and preview-equivalent builds pass, 885 pages each. All 91 publication records, author identities/roles, citation bytes and six approved originals/24 variants pass existing audits.
+- All 1,417 internal links/anchors across eleven main-page documents resolve in both builds. H1/main landmarks, unique IDs, matching production/preview content and preview-only noindex pass.
+- Five-paper HTML checks pass for order, canonical titles/authors/citations, focus labels, correct journal/conference types, Accepted states and year-only dates. Isolated invalid selections are rejected for duplicates and accepted preprints masquerading as conference papers.
+- All nine existing publication JavaScript tests and three DOI regression tests pass.
+- Original hero, homepage grammar/pillars/evidence loop/people/news are unchanged. People/Gallery/News/Publication main-content trees match baseline; Contact details/mailto subjects/final Vision match baseline. About differs only in the shared NOW horizon.
+- Reproducible scratch builds: `build-research-invitations`, `build-research-invitations-preview`, with baseline `build-vision-contact` under `/workspace/scratch/4a70b09acb33/`. Source baseline is the branch point above; generated files are not committed.
+- Browser layout/interaction review remains pending. The five-paper section is longer than the old two-paper section even after eliminating the repeated citation column. No PR merge, hosting change or production switch is performed.
+
+Next review: inspect the new homepage selection and Join invitation, confirm the intentional older JACS choice, and check narrow-screen layout before release. Keep the remaining SCUT/accepted-author source reconciliation items from the prior bibliography audit separate; no new author metadata is introduced here.
+
+## Previous completed batch — move Vision to the end of Join / Collaborate
 
 - Removed the full Vision chapter from Home and appended it after the approved closing illustration on `/contact/`, the page labeled Join / Collaborate in navigation. It is the final section before the site footer.
 - Moved the single text source from `home.vision` to `contact.vision` in `data/website_text.yml`. Every text value is preserved exactly. The earlier six wording refinements are untouched; this relocation makes no further editorial choices.

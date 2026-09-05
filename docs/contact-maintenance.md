@@ -70,3 +70,9 @@ These checks inspect generated files and link markup. Browser layout, keyboard i
 ## Vision at the end of Join / Collaborate
 
 The PI requested removing the full Vision chapter from the homepage to reduce its length and moving it to the end of this page. Render `site.Data.website_text.contact.vision` after the approved illustration section, immediately before the end of the main content. Its anchor is `/contact/#contact-vision-title`. All wording and the existing responsive arrangement are preserved; only placement, the data path and scoped class names change. The homepage has no duplicate version. Vision styles are in `_contact.scss` alongside this page's existing styles. The four pathways, contact information, photograph and approved illustration retain their content and order.
+
+## Method-led postdoctoral invitation — 5 September 2026
+
+The hero now explicitly welcomes postdoctoral researchers, PhD candidates, academic collaborators and industry partners. The joining route invites proposals whose main contribution is a new method or model architecture, connected to a scientific question. Its optional `research_space_label` and `research_space` fields render one extra definition-list entry only on that route. Other cards keep their existing structure.
+
+The next conversation may explore a proposed direction, potential group collaborators, and the data/experimental/computational support it would need. This is an invitation to discuss fit, not a promise that a particular facility, dataset, funded position or independent group already exists. The existing instruction to ask about openings, funding and timing remains. Contact facts, email subjects, links, documentary photograph, approved image and complete closing Vision are unchanged. See [the bounded copy review](research-copy-and-selected-work-2026-09-05.md).

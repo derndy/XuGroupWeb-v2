@@ -2,7 +2,7 @@
 # Verify any factual change with the PI before editing this record.
 hero:
   eyebrow: "Join / Collaborate"
-  lead: "We welcome prospective researchers, scientific collaborators, and experimental partners interested in molecular and material discovery."
+  lead: "We welcome postdoctoral researchers, PhD candidates, academic collaborators and industry partners interested in scientific learning and intelligent systems."
 
 pathways:
   eyebrow: "Start a conversation"
@@ -18,7 +18,7 @@ pathways:
     - id: "scientific-collaboration"
       navigation_label: "Scientific collaboration"
       title: "Connect a question with a method."
-      introduction: "For researchers exploring scientific learning, representations, information interactions or the mathematical questions behind discovery."
+      introduction: "For academic and industry teams exploring representation learning, model architectures, scientific data or the mathematical questions behind discovery."
       contribution: "Bring a well-defined question, your domain perspective and an idea of how progress could be assessed."
       materials:
         - "The scientific question and where current methods fall short."
@@ -48,7 +48,9 @@ pathways:
     - id: "join-the-lab"
       navigation_label: "Join the lab"
       title: "Bring curiosity and a question to pursue."
-      introduction: "For prospective students and researchers interested in connecting computation, mathematics and experiments in scientific discovery."
+      introduction: "For postdoctoral researchers, PhD candidates and other prospective students interested in model architectures, learning algorithms, evidence acquisition, or the design of scientific and intelligent systems."
+      research_space_label: "A direction you can help shape"
+      research_space: "We welcome proposals whose central contribution is a new method or model architecture, developed through a scientific question. Tell us which direction you would like to shape and how it connects with our work."
       contribution: "Show how you approach a difficult question, learn unfamiliar methods and make your own contribution clear."
       materials:
         - "A brief introduction and CV, including the role or programme you are considering and your intended start date."
@@ -56,7 +58,7 @@ pathways:
         - "One work sample you can share, such as a report, paper, code example or project summary, with your contribution explained."
       availability_label: "Ask about current opportunities"
       availability: "Please ask about openings, funding and application timing for your intended role or programme."
-      next_step: "If there is a suitable opportunity, a discussion can explore research fit, your preparation and the relevant application route."
+      next_step: "If there is a suitable opportunity, a discussion can explore the direction you want to develop, potential collaborators in the group, and the data, experimental or computational support a project would need."
       email_subject: "Xu Lab | Prospective researcher"
       email_label: "Enquire about joining the lab"
       related_label: "Meet the team"
