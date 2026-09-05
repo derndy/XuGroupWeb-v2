@@ -1,48 +1,49 @@
 {{ define "main" }}
 {{ $page := site.Data.contact_page }}
-{{ $vision := site.Data.website_text.contact.vision }}
+{{ $text := site.Data.website_text.contact }}
+{{ $vision := $text.vision }}
 <main class="contact-redesign">
   <header class="research-hero" aria-labelledby="contact-title">
     <div class="lab-shell research-hero__grid">
       <div>
-        <p class="lab-eyebrow">{{ $page.hero.eyebrow }}</p>
+        <p class="lab-eyebrow">{{ $text.hero.eyebrow }}</p>
         <h1 id="contact-title">{{ .Title }}</h1>
       </div>
       <div class="research-hero__statement">
-        <p>{{ $page.hero.lead }}</p>
+        <p>{{ $text.hero.lead }}</p>
       </div>
     </div>
-    <nav class="lab-shell contact-jump" aria-label="{{ $page.pathways.navigation_label }}">
-      {{ range $page.pathways.routes }}
+    <nav class="lab-shell contact-jump" aria-label="{{ $text.pathways.navigation_label }}">
+      {{ range $text.pathways.routes }}
         <a href="#{{ .id }}">{{ .navigation_label }}</a>
       {{ end }}
-      <a href="#contact-information-title">{{ $page.pathways.contact_details_label }}</a>
+      <a href="#contact-information-title">{{ $text.pathways.contact_details_label }}</a>
     </nav>
   </header>
 
-  {{ partial "contact/pathways.html" $page }}
+  {{ partial "contact/pathways.html" (dict "pathways" $text.pathways "contact" $page.contact) }}
 
   <section class="lab-section contact-information" aria-labelledby="contact-information-title">
     <div class="lab-shell contact-information__grid">
       <div>
-        <p class="lab-section-number">Primary contact</p>
+        <p class="lab-section-number">{{ $text.information.eyebrow }}</p>
         <h2 id="contact-information-title">{{ $page.contact.name }}</h2>
         <dl class="contact-information__details">
           <div>
-            <dt>Email</dt>
+            <dt>{{ $text.information.email_label }}</dt>
             <dd><a href="mailto:{{ $page.contact.email }}">{{ $page.contact.email }}</a></dd>
           </div>
           <div>
-            <dt>Phone</dt>
+            <dt>{{ $text.information.phone_label }}</dt>
             <dd><a href="tel:{{ $page.contact.phone }}">{{ $page.contact.phone }}</a></dd>
           </div>
           <div>
-            <dt>Address</dt>
+            <dt>{{ $text.information.address_label }}</dt>
             <dd>{{ $page.contact.address }}</dd>
           </div>
         </dl>
         <div class="lab-actions">
-          <a class="lab-button lab-button--primary" href="{{ $page.contact.appointment_url }}">{{ $page.contact.appointment_label }}</a>
+          <a class="lab-button lab-button--primary" href="{{ $page.contact.appointment_url }}">{{ $text.information.appointment_label }}</a>
         </div>
         {{ with .Content }}
           <div class="contact-information__content">{{ . }}</div>
@@ -62,8 +63,8 @@
     <div class="lab-shell">
       <header class="lab-section-heading">
         <div>
-          <p class="lab-section-number">{{ $page.closing.eyebrow }}</p>
-          <h2 id="contact-closing-title">{{ $page.closing.title }}</h2>
+          <p class="lab-section-number">{{ $text.closing.eyebrow }}</p>
+          <h2 id="contact-closing-title">{{ $text.closing.title }}</h2>
         </div>
       </header>
       {{ with site.Data.site_visuals.join_collaborate }}

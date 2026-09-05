@@ -29,12 +29,12 @@ content/research/             Research content
 content/person/               Member profiles
 content/publication/          Publication records
 content/post/                 Canonical News records and bundled images
-data/website_text.yml         Main text-editing file: homepage and shared wording
+data/website_text.yml         Main text-editing file: homepage, Contact and shared wording
 data/research_system.yml      Detailed Three-Pillar research records and stable routes
 data/research_assets.yml      Scientific-visual inventory and release state
 data/people_page.yml          People-page copy, group-photo records, and routes
 data/homepage.yml             Reviewed homepage publication references
-data/contact_page.yml         Contact facts and four audience pathways
+data/contact_page.yml         Contact facts and documentary photograph
 layouts/                      Custom page templates and reusable partials
 static/images/                Public photographs and fixed web assets
 static/data/gallery-data.json Canonical Gallery records and page copy
@@ -88,4 +88,4 @@ See [`docs/about-maintenance.md`](docs/about-maintenance.md) before changing Abo
 
 ## Editing everyday website text
 
-Start with [`data/website_text.yml`](data/website_text.yml). The homepage and its shared definitions now read from this file; individual publication, news and member records keep their own files. See [`docs/website-text-maintenance.md`](docs/website-text-maintenance.md) for the exact fields, shared-page effects and step-by-step GitHub editing guide. Other pages and global navigation/footer will move in later batches.
+Start with [`data/website_text.yml`](data/website_text.yml). The homepage, shared definitions and Join / Collaborate copy now read from this file; contact facts/photo and individual publication, news and member records keep their own files. See [`docs/website-text-maintenance.md`](docs/website-text-maintenance.md) for the exact fields, shared-page effects and step-by-step GitHub editing guide. Other pages and global navigation/footer will move in later batches.

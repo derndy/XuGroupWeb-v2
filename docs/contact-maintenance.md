@@ -8,8 +8,9 @@ Route: `/contact/`. The navigation label is **Join / Collaborate**; the existing
 | --- | --- |
 | Name, email, phone, address, appointment destination | `data/contact_page.yml` → `contact` |
 | Vision at the end of the page | `data/website_text.yml` → `contact.vision` |
-| Opening and closing copy | `data/contact_page.yml` → `hero` and `closing` |
-| Four audience routes, preparation guidance, suggested email subjects and labels | `data/contact_page.yml` → `pathways` |
+| Opening and closing copy | `data/website_text.yml` → `contact.hero` and `contact.closing` |
+| Four audience routes, preparation guidance, suggested email subjects and labels | `data/website_text.yml` → `contact.pathways` |
+| Contact-detail labels and appointment-button wording | `data/website_text.yml` → `contact.information` |
 | Library photograph and its factual description | `data/contact_page.yml` → `photo` |
 | Page title, search summary, optional Markdown body | `content/contact/index.md` |
 | Semantic structure and contact links | `layouts/landing/contact.html` |
@@ -28,7 +29,7 @@ The closing illustration retains its approved placement, caption, alternative te
 
 ## Four contact pathways
 
-The current batch begins at v2 `main` commit `b9ad9189828d76da1fb0cc634169528026bdc78c`, after PR #4 merged. Review branch: `design/contact-pathways`. These are sections on the existing `/contact/` route, with stable anchors; they are not new page bundles.
+The original pathway batch began at v2 `main` commit `b9ad9189828d76da1fb0cc634169528026bdc78c`, after PR #4 merged. These are sections on the existing `/contact/` route, with stable anchors; they are not new page bundles.
 
 | Audience | Stable destination | Suggested email subject |
 | --- | --- | --- |
@@ -39,7 +40,7 @@ The current batch begins at v2 `main` commit `b9ad9189828d76da1fb0cc634169528026
 
 Each card explains the suitable question, what the visitor can contribute, three useful items for a first email, a possible next step, and a related existing page. The introduction offers direct links to all four cards and the primary contact details. Cards appear in two columns on desktop and one column below 62rem. Content remains visible without JavaScript; native anchors, focusable fragment targets and email links require no form or service.
 
-The four pathways' visible wording and labels live in `data/contact_page.yml`. The later vision chapter lives in `data/website_text.yml` → `contact.vision`. Keep IDs stable when changing wording, because other pages can link directly to them. Keep the related URLs pointed at actual public pages. Changing a card's label or subject does not require editing its template.
+The four pathways' visible wording and labels live in `data/website_text.yml` → `contact.pathways`, alongside the vision at `contact.vision`. Keep IDs stable when changing wording, because other pages can link directly to them. Keep the related URLs pointed at actual public pages. Changing a card's label or subject does not require editing its template. The template combines this copy with the separate contact facts; email recipients still come only from `data/contact_page.yml` → `contact.email`.
 
 The email recipient is derived from the same `contact.email` field as the displayed primary address. Only the subject is prefilled; it is URL-encoded with percent-encoded spaces. No message is sent by the page, and no body, attachment or visitor data is transmitted to the lab until the visitor chooses to send an email through their own client. Email subjects are newly suggested conventions for this draft, not a claim of an existing mandatory application policy or verified inbox automation.
 
@@ -76,3 +77,9 @@ The PI requested removing the full Vision chapter from the homepage to reduce it
 The hero now explicitly welcomes postdoctoral researchers, PhD candidates, academic collaborators and industry partners. The joining route invites proposals whose main contribution is a new method or model architecture, connected to a scientific question. Its optional `research_space_label` and `research_space` fields render one extra definition-list entry only on that route. Other cards keep their existing structure.
 
 The next conversation may explore a proposed direction, potential group collaborators, and the data/experimental/computational support it would need. This is an invitation to discuss fit, not a promise that a particular facility, dataset, funded position or independent group already exists. The existing instruction to ask about openings, funding and timing remains. Contact facts, email subjects, links, documentary photograph, approved image and complete closing Vision are unchanged. See [the bounded copy review](research-copy-and-selected-work-2026-09-05.md).
+
+## Text-source migration — follow-up in PR #15
+
+Moved the exact hero, four pathways and closing copy from `data/contact_page.yml` into `data/website_text.yml` under `contact`. Added `contact.information` for the existing contact-detail labels and appointment-button label. No public wording, IDs, links, subjects or layout changed. The complete Vision remains at the end, under its existing `contact.vision` key. Contact facts and the documentary photograph retain their original file; page title/search summary retain their content bundle.
+
+Both Hugo contexts pass (885 pages). All eleven main-page HTML files are byte-identical to the preceding PR #15 build in each context. Exact YAML comparisons preserve every moved value, contact fact, photo record, Vision and other website-text entry. A temporary one-file change to the joining route's research-space label appeared on Contact only and was then restored. The existing publication and approved-image audits pass. Browser testing is not part of this source-only migration.

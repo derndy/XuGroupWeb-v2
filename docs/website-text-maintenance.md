@@ -21,6 +21,9 @@ A branch save updates its preview after a successful build. It does not itself m
 | Hero diagram headings and instructions | `home.map` | Homepage diagram |
 | Beyond Prediction | `home.thesis` | Homepage section 01 |
 | Lab vision, scientific foresight and domain intelligence system architects | `contact.vision` | Last chapter on Join / Collaborate (`/contact/#contact-vision-title`) |
+| Join / Collaborate opening and closing text | `contact.hero`, `contact.closing` | Contact page |
+| Four contact routes, postdoctoral invitation and suggested email subjects | `contact.pathways` | Contact page; preserve each route's `id` and `related_url` during wording edits |
+| Contact labels and appointment-button wording | `contact.information` | Contact details section; the actual email/phone/address remain in `data/contact_page.yml` |
 | Space–Interaction–Learning framing | `home.grammar` | Homepage section 02 |
 | Space, Interaction, Learning, Evidence, Mechanism and Design definitions | `shared.grammar` | Homepage; the shared dimensions/evidence/feedback also feed About |
 | Three-pillar section heading and button labels | `home.pillars` | Homepage section 03 |
@@ -62,9 +65,11 @@ home:
 | Documentary photograph, alt text and approved caption | `data/people_page.yml` → `photos.featured` |
 | Scientific illustrations and approved captions | Existing `data/research_assets.yml` and `data/site_visuals.yml` records; follow the visual approval guide |
 
-Page-level text for About, Contact, other Research sections, People, News and Gallery has not been fully moved yet. Detailed pillar copy and the shared NOW/NEXT/HORIZON statements remain in `data/research_system.yml`; the NOW wording also appears on About. The postdoctoral invitation and pathway copy remain in `data/contact_page.yml`. Some Research section labels remain in its templates. Global navigation/footer wording and homepage browser-tab/search metadata (`content/_index.md`) retain their existing sources. No in-browser editor is added.
+Join / Collaborate's opening, four pathways, postdoctoral invitation, detail labels, closing and Vision now share `website_text.contact`. Its factual contact information and documentary photo remain in `data/contact_page.yml`; page title/search summary remain in `content/contact/index.md`. Page-level text for About, other Research sections, People, News and Gallery has not been fully moved yet. Detailed pillar copy and the shared NOW/NEXT/HORIZON statements remain in `data/research_system.yml`; the NOW wording also appears on About. Some Research section labels remain in its templates. Global navigation/footer wording and homepage browser-tab/search metadata (`content/_index.md`) retain their existing sources. No in-browser editor is added.
 
 ## How the connection works
+
+The Contact template reads `site.Data.website_text.contact` for page copy and `site.Data.contact_page` for facts/photo. It passes the four pathway records and canonical email facts together to the existing pathway partial. The migration preserves every existing value and produces byte-identical HTML for all eleven main pages in production and preview builds. A temporary change to `contact.pathways.routes` → the `join-the-lab` route's `research_space_label` was verified on Contact only and restored.
 
 Hugo templates（页面模板）read `site.Data.website_text.home` or `site.Data.website_text.shared`. The shared pillar helper, `layouts/partials/research/pillars.html`, combines the five editable display fields with the original IDs, routes and detailed research records. All pillar consumers use that helper; it fails the build if required shared pillar copy is missing. Grammar, evidence-loop and team-introduction consumers read their new shared entries directly.
 

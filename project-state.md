@@ -21,7 +21,20 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 
 The PI rejected PR #11's broad public-marketing rewrite because it made the lab sound generic and displaced the original research identity. It was closed without merging. Merged PR #12 retains the original identity with six wording refinements and places the complete Vision at the end of Join / Collaborate. Do not restore the withdrawn rewrite or the superseded homepage placement. The latest instruction accepts bounded method/testbed and postdoctoral-invitation improvements, requests five selected papers including NC/ECCV, and asks to remove the public research pages' internal management/audit tone.
 
-## Latest batch — five selected papers and public-facing research invitations
+## Latest follow-up — Join / Collaborate text in one editing file
+
+PR #15 remains open and draft; this source-only follow-up continues its existing branch from `4754daf11392323de49f24067c13a812ff1ba162`. No new copy, visual design or research claims are introduced.
+
+- Moved exact Contact hero, four pathways and closing text to `data/website_text.yml` → `contact.hero`, `contact.pathways` and `contact.closing`. Existing contact-detail labels and appointment-button text live at `contact.information`. The full `contact.vision` remains unchanged at page end.
+- `data/contact_page.yml` retains contact facts and the original documentary photo record. Page title/search summary retain `content/contact/index.md`. Templates combine the central copy with canonical email facts; all subjects, URLs, IDs and factual values are preserved.
+- Production and preview-equivalent builds pass, 885 pages each. All eleven main-page HTML files are byte-identical to the preceding PR #15 outputs in both contexts. Exact YAML comparisons verify every moved value and unchanged facts/photo/Vision/other website copy. A temporary one-file label edit reaches Contact only and was restored. Publication and approved-image audits pass.
+- Build outputs are `build-contact-text` and `build-contact-text-preview` under `/workspace/scratch/4a70b09acb33/`; preceding `build-research-invitations` outputs are the baseline. These are reproducible temporary outputs, not source files.
+- Separate follow-up discovered during broader comparison: legacy starred and unstarred author taxonomy names can generate the same archive URL. Some author archive titles and paper lists vary between builds, e.g. `Ben Zhong Tang` / `Ben Zhong Tang*` at `/author/ben-zhong-tang/`. No author data or taxonomy template changes belong to this text migration. Do not claim archive-wide byte identity; investigate and fix the collision in a separate bounded batch while preserving role markers and canonical publication records.
+- No browser testing, PR merge or production-setting change is performed. The editing guides and README now show the new Contact text paths. The existing PR #15 preview URL is retained; verify the new head's status after saving.
+
+Next bounded development candidate: diagnose the legacy author-archive collision, then repair its routing/list assembly without altering corresponding/co-first roles. Do not change research wording or replace the selected papers as incidental cleanup.
+
+## Previous batch in the same draft — five selected papers and public-facing research invitations
 
 - Selected E-CloudBind (Nature Communications 2026), PyraE2E (ECCV 2026, Accepted), AnyAvatar (ACM MM 2026, Accepted), SyncAnimation (IJCAI 2025) and the self-improving photosensitizer discovery system (JACS 2021). The fifth is deliberately older to show the active-discovery foundation; this is not a five-newest ranking. All 91 archive records remain.
 - `data/homepage.yml` contains ordered `page`/`focus` references. `website_text.home.publications.focus` supplies one short research-focus label per paper; titles, authors, roles, venues, DOI and BibTeX still come from canonical bundles. Accepted papers retain year-only dates and have no invented online date/DOI. Citation downloads move inside the individual entries instead of repeating five titles in a sidebar.
