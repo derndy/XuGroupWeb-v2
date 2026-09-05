@@ -11,7 +11,7 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | Current review branch | `fix/gallery-overlap` |
 | Branch point | `main` at `5c6c216d8138fcdf13798a3ae8b2dc34238c9a29` |
 | Previous PR | [PR #7](https://github.com/derndy/XuGroupWeb-v2/pull/7), now merged; PRs #1–6 are also merged |
-| Current PR | Prepared locally; draft PR creation follows source validation |
+| Current PR | [Draft PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), open and draft |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
@@ -47,7 +47,13 @@ The user reported overlapping Gallery photographs and text and explicitly reques
 - Gallery HTML differs only in the isolated grid class names. All 19 records and original-image links are present without JavaScript. Production/preview Gallery content matches; all ten other main-content trees are identical to baseline.
 - Viewer JavaScript syntax and whitespace checks pass. Canonical data, image files, viewer script and hosting configuration are unchanged.
 
-Hosted visual verification of the repaired branch follows draft PR publication; do not treat source validation as proof that overlap is fixed in a browser. Results will be recorded below after reviewing its actual Deploy Preview.
+### Browser verification of the Gallery repair
+
+The matching [Gallery preview](https://deploy-preview-8--xushidang-lab.netlify.app/gallery/) was inspected at **1363 × 936 CSS pixels**. All 19 thumbnails loaded successfully. Geometry checks found no card/card intersection, caption overflow, overlapping caption blocks, content extending past its year section, or page horizontal overflow. All three grids use `auto` rows and normal row flow. The representative first 2024 card is now about 611px high, accommodating its 285px photograph and 326px caption instead of the former 150px row.
+
+Screenshots confirmed separation between the 2024 heading and photographs, between the first and second photo rows, and at the 2023 section. The native viewer was checked with 2024 and 2023 records: original photos load, the photograph and caption occupy separate regions, and no horizontal overflow occurs. Mouse opening, Enter opening, Next, ArrowLeft, last-to-first wrapping, Escape/close and focus restoration to the opening card were verified. Viewer JavaScript was not modified.
+
+**Remaining browser coverage:** mobile/tablet widths, touch and 200% text/zoom have not been tested. The available browser controls did not provide effective resizing/zoom; a narrow-viewport fixture was blocked by browser URL policy. The existing responsive breakpoints now target the isolated grid and the content-sized row repair applies at every breakpoint, but source inspection is not a claim of mobile browser success. Earlier whole-site browser-review items remain separate.
 
 Build outputs: `/workspace/scratch/7457cd2d5ea9/build-gallery-overlap` and `build-gallery-overlap-preview`; baseline: `build-about-principles`. The one-off preservation audit is `/workspace/scratch/7457cd2d5ea9/verify-gallery-overlap.py`. These temporary reproducible outputs remain outside Git.
 
@@ -296,3 +302,11 @@ Published to `design/about-principles-horizons` in commit `e41f614cf84f7a3b76e37
 [PR #7](https://github.com/derndy/XuGroupWeb-v2/pull/7) was delivered as a draft targeting `main` and has since merged before this continuation. At delivery GitHub reported `netlify/xushidang-lab/deploy-preview` **success** for the product commit, with [the matching About preview](https://deploy-preview-7--xushidang-lab.netlify.app/about/). Real browser layout, keyboard/touch, zoom and image loading remain unreviewed. Documentation commits can trigger a further preview build; check the actual final PR head before release.
 
 This delivery did not merge the PR, modify either main branch or change production/hosting settings. Next bounded source batch: why molecular/material testbeds matter, using existing public research questions and actual destinations.
+
+## GitHub delivery — Gallery overlap repair
+
+Published to `fix/gallery-overlap` in commit `a5a7d360a9091c876035d25fbca3e0f54195710e`; tree `f60a55f8c8beba01c5d21d40f9edec3569124688` exactly matches the locally tested source. The original local commit is retained under `checkpoint/gallery-overlap-local-source`; the checkout is aligned with the remote review branch. This following update records verification and delivery only.
+
+[Draft PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8) targets `main`. Netlify reports a successful Deploy Preview for the product commit, and the [actual Gallery preview](https://deploy-preview-8--xushidang-lab.netlify.app/gallery/) received the desktop checks listed above. Documentation updates may trigger another build; inspect the final PR head before release.
+
+No PR merge, original-repository edit, production switch or hosting/workflow change was performed by this repair. The separate workflow deletion on main is preserved. Next content batch remains About's explanation of why molecular/material testbeds matter, after reconciling the current PR/main state.
