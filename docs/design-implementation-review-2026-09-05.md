@@ -6,7 +6,8 @@ Read with [the design brief](website-design-and-asset-placement.md) and [current
 
 - Repository: public `derndy/XuGroupWeb-v2`.
 - Baseline: `main` at `6f19566096c95560cd58b1a11fbcea4f259d04e7`, the merge of PR #1. Its website tree matches the previous prepared checkpoint.
-- Current batch: `design/homepage-research-grammar`, based on that merge, for draft review only.
+- First batch: `design/homepage-research-grammar`, reviewed in PR #2 and since merged.
+- Current evidence-loop batch: `design/homepage-evidence-loop`, based on v2 `main` at `b52506d42495c1c596ec31eb715393b05973b2e0`, for draft review only.
 - On this date the recorded production URL, `https://xushidang-lab.netlify.app/`, returned HTTP 200 with the older carousel markup, three empty Hero headings, and no approved homepage title. This is an HTML observation, not a browser screenshot or proof of its Netlify repository settings.
 - The new homepage work is evaluated against the latest v2 source, not that older hosted page. Neither `main` nor hosting configuration is changed by this batch.
 
@@ -18,7 +19,7 @@ Read with [the design brief](website-design-and-asset-placement.md) and [current
 | H02 Beyond Prediction | Already present with the main explanatory proposition | Preserved. Do not rebuild it as a missing section |
 | H03 Space–Interaction–Learning | No separate explanation | Added scientific questions, definitions, connected choices and evidence feedback; both Hero and expanded explanation use `research_system.grammar` |
 | H04 three contributions | Hard-coded duplicates of pillar records; no individual links or displayed core questions; Pillar II formal title shortened | Uses canonical formal titles, questions, colours and routes; retains concise public invitations and three capability labels; each card links directly to its pillar |
-| H05 evidence loop | Five static steps on navy; no explicit diagram return path; test and design combined | Still needs the six-step structure, visible return path, pale-teal treatment and deeper explanations from the brief |
+| H05 evidence loop | Five static steps on navy; no explicit diagram return path; test and design combined | Completed in the evidence-loop batch: six steps, pale-teal chapter, solid forward arrows and dashed feedback path, vertical mobile layout, native disclosures with questions/outputs/canonical pillar links. Browser review remains pending |
 | H06 selected projects | Omitted; existing pillar project arrays are empty | Keep omitted until approved public project records exist; private archive project material is not automatically eligible |
 | H07 scientific testbeds | Image 05 appears once, uncropped with caption, in the light testbeds section; four cards | Preserved. Cards still need useful evidence-backed deeper links |
 | H08 publications/resources | No homepage featured-output section; complete publication index exists | Add a small verified selection. Add resource actions only where a real, approved resource exists |
@@ -70,4 +71,15 @@ Keep map labels neutral within the learner; pillar category colours belong to pi
 
 Validation results for the final source are recorded in `project-state.md`. The internal browser preview could not start because this Hugo project has no compatible preview server/package entrypoint. No framework migration or preview-only dependency was added. Real browser layout, keyboard and touch verification are still pending; static HTML checks do not substitute for those checks.
 
-Next bounded design batch: H05's explicit evidence return loop, then H08–H10 using existing public publication, photo and news records. After that, finish About and the four Contact pathways. Keep project/resource records dependent on approved public source material.
+Next bounded design batch: H08–H10 using existing public publication, photo and news records. After that, finish About and the four Contact pathways. Keep project/resource records dependent on approved public source material.
+
+
+## Second batch — explicit evidence feedback
+
+The evidence-loop batch implements H05 only. The steps are Observe, Question, Design evidence, Learn, Test, and Explain or design. Each native disclosure includes a short explanation, example question, typical research output and relevant pillar links. No result, downloadable resource or completed autonomous discovery system is implied.
+
+`data/research_system.yml` contains the step content. `layouts/partials/research/evidence-loop.html` renders it and resolves contributing pillars from existing canonical IDs; a missing pillar ID fails the build. The component has a caller-supplied ID prefix so future reuse on another page can retain unique anchors. This batch uses it only on Home.
+
+The pale-teal section uses solid forward arrows and a dashed return path. On narrow screens, the steps become one vertical sequence and the feedback path runs beside it. The visible return link targets Observe. Native details work without added JavaScript; new styles add no animation. Real browser confirmation of layout, keyboard and touch behaviour is still pending.
+
+Source scope: the homepage evidence section, its reusable partial, shared research data, scoped styles and these maintenance notes. Every other homepage section and the other ten main-page content trees are checked against the previous build. Approved artwork, publication/member/news/gallery records and hosting files are preserved.

@@ -50,6 +50,56 @@ grammar:
       link_text: Explore discovery and design
   feedback: Tests of proposed mechanisms and designs return new evidence, revised questions and constraints to the learner.
 
+# A conceptual reading sequence, not a required protocol or an achieved autonomous loop.
+evidence_loop:
+  introduction: A shared way to reason about discovery.
+  reading_note: Projects may revisit or combine steps; new evidence can change any earlier choice.
+  feedback_title: New evidence changes the next question.
+  feedback: Observations, failed tests and revised constraints return to the learner. Revisit the question, evidence choice or model when an explanation no longer holds.
+  steps:
+    - id: observe
+      title: Observe
+      summary: Establish what is known and uncertain.
+      explanation: Bring measurements into context, including how they were obtained, what they cover and where they may be unreliable.
+      question: Which observations are comparable, and what is still missing?
+      artifact: Context-aware observations with uncertainty and source information.
+      pillars: [pillar-ii, pillar-iii]
+    - id: question
+      title: Question
+      summary: Make competing explanations explicit.
+      explanation: Identify a scientific distinction that matters, then ask which alternative structures or mechanisms could explain the same observations.
+      question: Could a different interaction or mechanism produce the same pattern?
+      artifact: Competing explanations and their distinguishable consequences.
+      pillars: [pillar-i, pillar-iii]
+    - id: design-evidence
+      title: Design evidence
+      summary: Choose what could distinguish the alternatives.
+      explanation: Select a measurement, perturbation or candidate for what it can reveal, within the available scientific and practical constraints.
+      question: Which next experiment would best separate these explanations?
+      artifact: An evidence-acquisition or experiment-design proposal.
+      pillars: [pillar-ii, pillar-iii]
+    - id: learn
+      title: Learn
+      summary: Update the system from the new evidence.
+      explanation: Revise representations, interactions or guiding signals while examining stability, uncertainty and the alternatives that remain unresolved.
+      question: What should change in the learner after this observation?
+      artifact: A revised model with explicit assumptions and uncertainty.
+      pillars: [pillar-i, pillar-ii]
+    - id: test
+      title: Test
+      summary: Challenge predictions and explanations.
+      explanation: Use controls, new conditions and independent evidence where available to probe whether an explanation survives plausible alternatives.
+      question: Does the explanation survive matched controls and changed conditions?
+      artifact: A comparison showing supported claims, failures and limits.
+      pillars: [pillar-ii, pillar-iii]
+    - id: explain-design
+      title: Explain or design
+      summary: State what is supported and what to test next.
+      explanation: Form a testable explanation or a constrained design proposal. Keep the conditions and limits visible; a prediction alone does not establish a mechanism or a successful design.
+      question: What consequence or design choice could be tested next?
+      artifact: A testable explanation or design proposal with stated limits.
+      pillars: [pillar-i, pillar-ii, pillar-iii]
+
 pillars:
   - id: pillar-i
     class: one
