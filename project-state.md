@@ -13,8 +13,8 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | Incorporated main | Same as branch point; includes PR #13's author roles and accepted conference work |
 | Previous merged work | PRs #1–10, #12 and #13; all are preserved in this review branch |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | Preparing the five-paper/research-invitation draft; PR #12 has merged |
-| Hosted preview | Pending the new draft PR; the PR #12 preview is historical, not this batch |
+| Current PR | [Draft PR #15](https://github.com/derndy/XuGroupWeb-v2/pull/15), open and draft; PR #12 has merged |
+| Hosted preview | [Homepage](https://deploy-preview-15--xushidang-lab.netlify.app/), [Research](https://deploy-preview-15--xushidang-lab.netlify.app/research/) and [Join / Collaborate](https://deploy-preview-15--xushidang-lab.netlify.app/contact/#join-the-lab); product commit preview passed, inspect the final PR-head status before release |
 | Withdrawn rewrite | [PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11), closed without merging at the PI's instruction |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
@@ -39,6 +39,7 @@ The PI rejected PR #11's broad public-marketing rewrite because it made the lab 
 - Original hero, homepage grammar/pillars/evidence loop/people/news are unchanged. People/Gallery/News/Publication main-content trees match baseline; Contact details/mailto subjects/final Vision match baseline. About differs only in the shared NOW horizon.
 - Reproducible scratch builds: `build-research-invitations`, `build-research-invitations-preview`, with baseline `build-vision-contact` under `/workspace/scratch/4a70b09acb33/`. Source baseline is the branch point above; generated files are not committed.
 - Browser layout/interaction review remains pending. The five-paper section is longer than the old two-paper section even after eliminating the repeated citation column. No PR merge, hosting change or production switch is performed.
+- Published as draft PR #15 in product commit `dd576a74a89d7b36f9439a378e5da321dee25125`. Its tree `e931e8a448a7f04d223aa31f3217771fe02896d2` exactly matches the checked local source. Netlify reports success for that product commit. This delivery-note update does not change page content; any new commit triggers its own preview check.
 
 Next review: inspect the new homepage selection and Join invitation, confirm the intentional older JACS choice, and check narrow-screen layout before release. Keep the remaining SCUT/accepted-author source reconciliation items from the prior bibliography audit separate; no new author metadata is introduced here.
 
