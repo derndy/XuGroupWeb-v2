@@ -13,10 +13,15 @@ Updated: 5 September 2026. Read this file first when continuing development. The
 | Remote base checkpoint at this review | `b39bb3113f9601433155075204c209672f1758fb` |
 | Last product-change commit | `b9f9c75c4e11e25751f747068c8b5d3220541239` |
 | Last product-change tree | `445a55a8b7b5e811a3f35741ed0290578c96be53` |
+| Published prepared commit | `8d1e4789863286e791e734e96c599d82b86a38a8` |
+| Published prepared tree | `353b42ab7f5d0cb7e0ded577ce393ee650d9915d` |
+| Draft pull request | [XuGroupWeb-v2 PR #1](https://github.com/derndy/XuGroupWeb-v2/pull/1) |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Release state | Draft review only; no merge or production switch |
 
 The commit containing this state file is a later documentation checkpoint. Use `git rev-parse HEAD HEAD^{tree}` and the remote branch to identify its exact current commit and tree; do not expect this document to contain its own commit hash.
+
+The product-change IDs above describe the preserved local source history. The published prepared commit includes exactly that website plus the state/approval documentation. Connected GitHub writes used the imported remote ancestry, so local source commits and publication commits have different IDs; exact tree equality was verified. The local source history is retained under `checkpoint/local-source-20260905`, and the active review branch is aligned with its remote after delivery.
 
 ## Why the attached handoff differs
 
@@ -117,4 +122,14 @@ The PI has now explicitly instructed: first ensure the state file is saved in Gi
 
 Before this authorized push, GitHub was rechecked: the v2 repository is public, `main` still points to `b39bb311…`, the prepared branch is absent, the default branch contains no project-state file, and the repository has no pull requests. The original `XuGroupWeb/main` also remains at `b39bb311…`.
 
-Publication is in progress. Confirm the remote branch and exact state-file bytes, open one draft PR and inspect its actual checks. Record the confirmed PR URL and hosted-check outcome here before the next handoff. The old PR #3 preview is not evidence for this newer work.
+Publication is complete:
+
+- `project-state.md` was saved first in commit `7636507777e90e037bb5a5a051eb9229331c63ed`; its GitHub content was read back and matched the local record exactly. `PROJECT_STATE.md` points to this canonical lowercase file.
+- The prepared website was then published in commit `8d1e4789863286e791e734e96c599d82b86a38a8`. The remote tree `353b42ab…` exactly matches the prepared local tree, including all six PNG blobs. Subsequent delivery-record changes are Markdown documentation only.
+- Draft PR: [https://github.com/derndy/XuGroupWeb-v2/pull/1](https://github.com/derndy/XuGroupWeb-v2/pull/1), targeting `main`, open and draft. GitHub reported it mergeable with a clean merge state at the prepared commit. This is not a release decision.
+- The prepared commit reported zero commit statuses and zero check runs. No matching hosted Netlify preview has been reported. GitHub's aggregate `pending` with zero statuses is not evidence of a running build. The checked-in GitHub Pages workflow triggers only on `main` pushes or manual dispatch, so this review branch does not trigger that production workflow.
+- Both remote `main` branches remained at `b39bb311…`. Neither repository's `main`, the original PR #3, Netlify linkage, nor the production website was changed in this delivery.
+
+The shell Git client could read the repository but had no write credentials. The authorized writes were completed through the connected GitHub account. No forced ref update was used. Future work should inspect the exact remote head and use the available authenticated write path.
+
+Next: review this draft and complete the remaining browser checks. If a hosted preview is needed, inspect the v2 repository's actual Netlify integration before changing hosting configuration. The old PR #3 preview is not evidence for this newer work. Merging this PR or switching production still requires an explicit PI release instruction.
