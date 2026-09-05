@@ -1,6 +1,6 @@
 # Edit website text / 网站文字修改指南
 
-Start with **[`data/website_text.yml`](../data/website_text.yml)**. Phase 1 connects the homepage's own wording and the shared explanations it uses. The original migration preserved all wording and layout. The current refinement adds the PI's vision at `home.vision` and makes six small edits to existing values. The remaining pages will move in later batches.
+Start with **[`data/website_text.yml`](../data/website_text.yml)**. Phase 1 connects the homepage's own wording and the shared explanations it uses. The original migration preserved all wording and layout. The refinement makes six small edits to existing values. At the PI's latest instruction, the vision now lives at `contact.vision` and appears only at the end of Join / Collaborate, keeping the homepage shorter. The remaining pages will move in later batches.
 
 ## Make a text change in GitHub
 
@@ -20,7 +20,7 @@ A branch save updates its preview after a successful build. It does not itself m
 | Main title, subtitle and tagline | `home.hero.title`, `home.hero.subtitle`, `home.hero.tagline` | Homepage hero |
 | Hero diagram headings and instructions | `home.map` | Homepage diagram |
 | Beyond Prediction | `home.thesis` | Homepage section 01 |
-| Lab vision, scientific foresight and domain intelligence system architects | `home.vision` | New unnumbered chapter after Beyond Prediction; the original chapter numbers stay intact |
+| Lab vision, scientific foresight and domain intelligence system architects | `contact.vision` | Last chapter on Join / Collaborate (`/contact/#contact-vision-title`) |
 | Space–Interaction–Learning framing | `home.grammar` | Homepage section 02 |
 | Space, Interaction, Learning, Evidence, Mechanism and Design definitions | `shared.grammar` | Homepage; the shared dimensions/evidence/feedback also feed About |
 | Three-pillar section heading and button labels | `home.pillars` | Homepage section 03 |
@@ -75,7 +75,9 @@ For future text moves, build a baseline first, connect each moved entry, compare
 
 The PI rejected the broad public-marketing rewrite in PR #11 as too generic. That draft was closed without merging. Start from the original text in merged PR #9, preserving the exact hero title/subtitle/tagline, formal three-pillar names, research questions and Space–Interaction–Learning framework. Add accessible context rather than replacing the lab's identity. Do not treat the withdrawn PR as approved wording.
 
-This revision changes only six existing YAML values:
+For every batch, explicitly report substantial layout/meaning changes and any uncertain editorial choices to the PI. The latest relocation changes placement only; it does not resolve or silently change the earlier wording choices.
+
+The preceding wording revision changed only six existing YAML values:
 
 | Field | Scope of the edit |
 | --- | --- |
@@ -88,7 +90,7 @@ This revision changes only six existing YAML values:
 
 The established research terminology remains elsewhere, including Identifiability and the formal pillar titles. The two learning edits reduce operational specificity; this is not a whole-site confidentiality audit. Do not add unpublished targets, architectures, protocols or project timelines during future copy edits.
 
-All added vision text is under `home.vision`. The English adaptation retains scientific foresight, conditional decades/centuries horizons, evidence and revision, explicit assumptions, and intellectual leadership. Domain intelligence system architects are **one training path**, spanning model architecture, infrastructure, scientific and intelligent systems, objective functions, search spaces and evaluation criteria. Energy-efficient intelligence is an illustrative open question, not a declared project or achieved result. The horizon remains open to problems and methods that have not yet emerged.
+All added vision text is under `contact.vision`. It was moved from the homepage to the end of `/contact/` without changing any wording. Keep this as the single editable source; do not add a second homepage copy. The English adaptation retains scientific foresight, conditional decades/centuries horizons, evidence and revision, explicit assumptions, and intellectual leadership. Domain intelligence system architects are **one training path**, spanning model architecture, infrastructure, scientific and intelligent systems, objective functions, search spaces and evaluation criteria. Energy-efficient intelligence is an illustrative open question, not a declared project or achieved result. The horizon remains open to problems and methods that have not yet emerged.
 
 The limited contemporary vocabulary is context, not a claim that the lab has released a foundation model or generative-design platform. Recent terminology was checked against primary research, including [AlloyGPT](https://www.nature.com/articles/s41524-025-01768-2) and [MetaFO](https://www.nature.com/articles/s41524-025-01925-7); these are external examples, not lab publications or endorsements.
 

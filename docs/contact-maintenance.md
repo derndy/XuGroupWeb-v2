@@ -7,6 +7,7 @@ Route: `/contact/`. The navigation label is **Join / Collaborate**; the existing
 | Change | Source |
 | --- | --- |
 | Name, email, phone, address, appointment destination | `data/contact_page.yml` → `contact` |
+| Vision at the end of the page | `data/website_text.yml` → `contact.vision` |
 | Opening and closing copy | `data/contact_page.yml` → `hero` and `closing` |
 | Four audience routes, preparation guidance, suggested email subjects and labels | `data/contact_page.yml` → `pathways` |
 | Library photograph and its factual description | `data/contact_page.yml` → `photo` |
@@ -38,7 +39,7 @@ The current batch begins at v2 `main` commit `b9ad9189828d76da1fb0cc634169528026
 
 Each card explains the suitable question, what the visitor can contribute, three useful items for a first email, a possible next step, and a related existing page. The introduction offers direct links to all four cards and the primary contact details. Cards appear in two columns on desktop and one column below 62rem. Content remains visible without JavaScript; native anchors, focusable fragment targets and email links require no form or service.
 
-All new visible wording and labels live in `data/contact_page.yml`. Keep IDs stable when changing wording, because other pages can link directly to them. Keep the related URLs pointed at actual public pages. Changing a card's label or subject does not require editing its template.
+The four pathways' visible wording and labels live in `data/contact_page.yml`. The later vision chapter lives in `data/website_text.yml` → `contact.vision`. Keep IDs stable when changing wording, because other pages can link directly to them. Keep the related URLs pointed at actual public pages. Changing a card's label or subject does not require editing its template.
 
 The email recipient is derived from the same `contact.email` field as the displayed primary address. Only the subject is prefilled; it is URL-encoded with percent-encoded spaces. No message is sent by the page, and no body, attachment or visitor data is transmitted to the lab until the visitor chooses to send an email through their own client. Email subjects are newly suggested conventions for this draft, not a claim of an existing mandatory application policy or verified inbox automation.
 
@@ -65,3 +66,7 @@ Real browser layout, keyboard/touch, zoom and email-client behaviour need separa
 - Preview-only `noindex` is present on all eleven checked preview surfaces and absent on the corresponding production-build pages.
 
 These checks inspect generated files and link markup. Browser layout, keyboard interaction, phone/email client launch and live external appointment availability still require review.
+
+## Vision at the end of Join / Collaborate
+
+The PI requested removing the full Vision chapter from the homepage to reduce its length and moving it to the end of this page. Render `site.Data.website_text.contact.vision` after the approved illustration section, immediately before the end of the main content. Its anchor is `/contact/#contact-vision-title`. All wording and the existing responsive arrangement are preserved; only placement, the data path and scoped class names change. The homepage has no duplicate version. Vision styles are in `_contact.scss` alongside this page's existing styles. The four pathways, contact information, photograph and approved illustration retain their content and order.

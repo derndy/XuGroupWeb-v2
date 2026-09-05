@@ -10,17 +10,37 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | Working checkout | `/workspace/sites/xugroup-approved-images` |
 | Current review branch | `content/homepage-vision-refinement` |
 | Branch point | `main` at `99698f19834baf7b7aa3da2a358650c78e2535ed`, after PR #10 merged |
-| Previous merged work | PRs #1–10, including Gallery repair, the shared homepage text file and ten publication additions |
+| Incorporated main | `ddd34615da16f6e2fe3b085c66972bc10c8fe13a`, including merged PR #13's author roles and accepted conference work |
+| Previous merged work | PRs #1–10 and #13; all are preserved in this review branch |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
 | Current PR | [Draft PR #12](https://github.com/derndy/XuGroupWeb-v2/pull/12), open and draft at delivery |
-| Hosted preview | [Homepage vision](https://deploy-preview-12--xushidang-lab.netlify.app/#home-vision-title); Netlify reported success for the initial product commit |
+| Hosted preview | [Shorter homepage](https://deploy-preview-12--xushidang-lab.netlify.app/) and [Vision at the end of Join / Collaborate](https://deploy-preview-12--xushidang-lab.netlify.app/contact/#contact-vision-title); inspect the current PR-head build status before release |
 | Withdrawn rewrite | [PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11), closed without merging at the PI's instruction |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
-The PI rejected PR #11's broad public-marketing rewrite because it made the lab sound generic and displaced the original research identity. It was closed without merging. This batch starts afresh from main's original wording, makes only small refinements, and integrates the PI's new vision into the homepage. Do not resume the withdrawn rewrite or use it as an approved baseline.
+The PI rejected PR #11's broad public-marketing rewrite because it made the lab sound generic and displaced the original research identity. It was closed without merging. PR #12 retains the original identity with six wording refinements. The latest instruction moves the entire Vision chapter off the homepage and to the end of Join / Collaborate to shorten the homepage. Do not restore the withdrawn rewrite or the superseded homepage placement.
 
-## Latest batch — original identity with the PI's homepage vision
+## Latest batch — move Vision to the end of Join / Collaborate
+
+- Removed the full Vision chapter from Home and appended it after the approved closing illustration on `/contact/`, the page labeled Join / Collaborate in navigation. It is the final section before the site footer.
+- Moved the single text source from `home.vision` to `contact.vision` in `data/website_text.yml`. Every text value is preserved exactly. The earlier six wording refinements are untouched; this relocation makes no further editorial choices.
+- Moved the same scoped styles into `_contact.scss`, renamed the chapter's classes/anchor for Contact, and retained the existing small-screen layout. The new direct destination is `/contact/#contact-vision-title`.
+- Preserved all existing Contact pathways, contact details, photograph, illustration and their order. The rest of the homepage, including its closing Join / Collaborate button, is unchanged.
+- Incorporated main's newly merged PR #13 in the review branch. README/state conflicts were resolved by retaining both histories; all new publication content and author-role implementation match main exactly.
+- The PI requests prominent reporting of major changes and uncertain choices. This batch's only substantive page change is the requested relocation; future batches must flag semantic/positioning uncertainty rather than grouping it under minor edits.
+
+### Validation and delivery of the relocation
+
+- Production and preview-equivalent Hugo builds pass: 885 pages each. Both pass the 91-record publication/citation audit and the six-approved-image/24-variant audit.
+- YAML comparison confirms that only the vision's data path changed. Rendered vision text matches the preceding homepage chapter exactly, appears once on Contact, is its final main-content section, and is absent from Home.
+- All eleven main-content trees match the combined PR #12 + latest-main baseline after accounting for the relocated chapter. All 1,377 internal links/anchors resolve; H1/main landmarks, unique IDs and preview-only noindex pass.
+- Build outputs: `/workspace/scratch/4a70b09acb33/build-vision-contact` and `build-vision-contact-preview`; combined-source baseline: `build-vision-move-before`. All are reproducible scratch outputs outside Git.
+- Delivery updates the existing draft PR #12, preserving the earlier review history and merged PR #13. No PR merge, production switch or hosting change is performed. Real browser layout/interaction review remains pending.
+
+## Previous iteration — original identity with the PI's homepage vision
+
+The following records describe the earlier placement. The latest instruction above supersedes that placement; the wording remains intact.
 
 - Preserved the original hero title, subtitle, tagline and buttons; formal pillar titles, roles, questions and cards; and Space–Interaction–Learning framing. All publication, news and member records retain their separate sources.
 - Added `home.vision` in `data/website_text.yml`, rendered as an unnumbered chapter after Beyond Prediction. Existing chapter numbering stays unchanged. The English adaptation and original Chinese vision are documented in `docs/website-text-maintenance.md`.
@@ -45,6 +65,28 @@ Build outputs: `/workspace/scratch/4a70b09acb33/build-home-vision` and `build-ho
 Published to `content/homepage-vision-refinement` in initial product commit `4737805d0d67471e86625081c5222442f2b01dac`. Its tree `aa95abf41a52d30405d3a95c56b1f42987bb1b92` exactly matches the checked local source. The original local commit remains at `checkpoint/home-vision-local-source`. [Draft PR #12](https://github.com/derndy/XuGroupWeb-v2/pull/12) targets main; Netlify reports **success** for that product commit and the preview linked above.
 
 The following delivery update records the PR and makes two small fidelity adjustments within the new vision: questions of growing importance, and questioning assumptions that limit our thinking. It does not add further edits to the six original-text values. Production and preview builds pass again. Subsequent commits trigger another preview build; inspect the final PR head and its status before release. No merge, production switch or hosting/workflow change was performed.
+
+## Previous completed batch — author roles and accepted conference work
+
+PR #13 has merged into main at `ddd34615da16f6e2fe3b085c66972bc10c8fe13a` and is included in this review branch.
+
+- Unified publication author display: `*` means corresponding; `#` means co-first/equal contribution. Existing author taxonomy identities and links are retained, including legacy marked names. A visible legend appears on the index and details; superscripts have accessible labels.
+- Added verified author-role metadata to ten recent records. The 75 legacy correspondence assignments and 14 legacy co-first assignments are preserved. This is not a complete new audit of all historical contributions.
+- Added three 2026 accepted conference bundles with citations: AnyAvatar (ACM MM), MPFusion-MIL (ACM MM), and PyraE2E (ECCV). No unassigned DOI, page range, online date or acceptance day is invented. The Hugo sorting anchor is displayed only as a year and is omitted from accepted-work publication metadata.
+- Added a distinct accepted-work overview linking all five 2026 conference works. CDSR and MoGaFace now disclose PRCV 2026 acceptance while retaining clearly identified 2025 preprint citations. Their final conference author metadata needs the current profile or final manuscript; the older preprint author lists are not presented as final conference citations.
+- Canonical inventory: 91 records across 15 years and seven types. The accepted overview is five links to these records, not five additional records. Year/type filters retain canonical publication/preprint dates.
+- Source evidence, role assignments, discrepancies and version limits are in [the authorship/Accepted audit](docs/publication-authorship-accepted-2026-09-05.md); schema/update instructions are in [Publications maintenance](docs/publications-maintenance.md).
+
+### Validation
+
+- Production and preview-equivalent builds pass, 885 pages each. Both pass the 91-record publication audit and six-approved-image / 24-variant audit.
+- Nine existing Node tests and three DOI tests pass. Three isolated invalid-content builds correctly reject an unknown role, a role naming a missing author, and an accepted record without acceptance metadata.
+- All 13 new/updated role mappings match the generated index and detail authors. All 88 previous author identities, order, record URLs and attachment actions are preserved. Original 78 source bundles and assets remain byte-identical; 86 previous citations are unchanged, and the other two change only their PRCV acceptance/version notes.
+- Three new accepted records show year-only dates, correct conference types, explicit Accepted citations, and no invented DOI/pages/dates in their HTML, BibTeX or JSON-LD. Both PRCV preprints retain their original date, authors and DOI.
+- All 1,245 internal links/anchors across eleven main pages resolve. Nine other main-content trees are identical; homepage text and author links are preserved with only shared symbol markup changing. Production/preview main content matches and preview noindex is retained.
+- No browser visual or interaction QA was performed for this bibliography batch. Current SCUT reconciliation and the noted final-author discrepancies remain content follow-ups.
+
+Temporary outputs: `/workspace/scratch/7457cd2d5ea9/build-authorship-accepted` and `build-authorship-accepted-preview`. The one-off preservation verifier is `/workspace/scratch/7457cd2d5ea9/verify-authorship-accepted.py`. The public source audit is the durable evidence record; private source documents are not committed.
 
 ## Previous completed batch — Publications for 2025 and 2026
 
@@ -100,7 +142,7 @@ Temporary reproducible outputs: `/workspace/scratch/4a70b09acb33/build-home-text
 7. Reuse actual public records. Do not expose internal project packages, governance diagrams, blank templates or unsupported claims from the Drive archive.
 8. Keep existing `/publication/`, `/post/`, `/contact/` and `/research/learning-system-design/` routes. The design's alternative route labels do not authorize breaking existing URLs.
 9. `noindex` is not access control. Public branches and previews must contain only material suitable for public access. Image approval is not authorization to merge or switch production.
-10. Preserve the lab's distinctive research identity. The PI's latest instruction allows restrained simplification, additive familiar terminology and a faithful homepage vision; it rejects wholesale marketing repositioning. See the current editing guide and do not restore PR #11.
+10. Preserve the lab's distinctive research identity. The PI allows restrained simplification, additive familiar terminology and a faithful vision at the end of Join / Collaborate; wholesale marketing repositioning and the earlier homepage vision placement were rejected. Explicitly report substantial changes and uncertain editorial choices. See the current editing guide and do not restore PR #11.
 
 ## Previous completed batch — Gallery overlap repair
 
@@ -320,9 +362,9 @@ For presentation-only changes, add `--before /absolute/preceding-build` to the p
 
 ## Continue in small batches
 
-1. Recheck main and `content/homepage-vision-refinement`. PRs #1–10 are merged and included in the base; PR #11 was rejected and closed without merging. Preserve any newer user changes.
+1. Recheck main and `content/homepage-vision-refinement`. PRs #1–10 and #13 are merged and included; PR #11 was rejected and closed without merging. PR #12 is the current review draft. Preserve any newer user changes.
 2. Review and merge only after an explicit release instruction. This batch makes no merge or hosting change.
-3. Review the restrained wording and new homepage vision before another editorial batch. Next text-management batch: move About's remaining page-level copy into `website_text.yml`, preserving output and the already connected shared definitions. Bibliography completeness against a readable SCUT/Scholar list or export and final venues for the three preprints remain separate follow-ups.
+3. Review the restrained wording and Vision at the end of Join / Collaborate before another editorial batch. Next text-management batch: move About's remaining page-level copy into `website_text.yml`, preserving output and the already connected shared definitions. Current SCUT reconciliation, bibliography completeness and final PRCV author metadata remain separate follow-ups; retain PR #13's acceptance/version distinctions.
 4. Keep individual publication, news and member records separate. Use `docs/website-text-maintenance.md` as the current editing map.
 5. Resume the About testbed explanation, public research-culture content, navigation and publication-resource improvements in later batches. Do not publish unfinished operating-handbook or private management material.
 6. Earlier mobile/tablet, 200% text/zoom and whole-site browser-review items remain separate; the Gallery repair's own coverage is recorded on PR #8.
@@ -391,10 +433,18 @@ Published to `refactor/homepage-text-file` in product commit `2ec0194313b49d0bcd
 
 No PR merge, original-repository edit, production switch or hosting/workflow change was performed by this batch. Next text-management batch: About's remaining page copy, with the same output-preservation check.
 
-## GitHub delivery — Publications update
+## Historical GitHub delivery — Publications update
 
 Published to `content/publications-2025-2026` in product commit `fbe2a439f4519c4aff33f821eac997e24b7b5893`. Its GitHub tree `7c03fb51cd97bb1dc03ddffa702967d11b5947a8` exactly matches the locally verified source after rebasing onto merged PR #9. The local source commit is retained at `checkpoint/publications-2026-local-source`; the isolated worktree is aligned with the public branch. This following update changes documentation only.
 
 [PR #10](https://github.com/derndy/XuGroupWeb-v2/pull/10) was delivered as a draft and has since merged. At delivery, Netlify reported **success** for the product commit, with [the matching Publications preview](https://deploy-preview-10--xushidang-lab.netlify.app/publication/). An HTTP 200 read of that preview confirmed 88 server-rendered records, eight in 2025, two in 2026, and preview noindex. This was an HTML check, not browser visual/interaction QA.
 
 No PR merge, production switch, original-repository edit or hosting/workflow change was performed by this batch. Next bibliography step is completeness against a readable SCUT/Scholar list or export and verified final-version reconciliation for the three preprints.
+
+## GitHub delivery — authorship and Accepted update
+
+Published to `fix/publication-authorship-accepted` in product commit `316ee331e26a79ae2186aeb93c5e3ed928cb63c1`. Its GitHub tree `8131aab17f4bb192d276a9c4aa6a2c2c6c7651db` exactly matches the tested local source. The isolated worktree is aligned with the public branch; its local source commit remains at `checkpoint/authorship-accepted-local-source`.
+
+[PR #13](https://github.com/derndy/XuGroupWeb-v2/pull/13) was delivered as a draft and has since merged. Netlify reports **success** for the product commit at [the Publications preview](https://deploy-preview-13--xushidang-lab.netlify.app/publication/). This following state-record commit changes documentation only and may trigger another preview; check the current PR head before release. No browser visual/interaction QA is claimed.
+
+The current main used by this batch is merged PR #10 at `99698f19834baf7b7aa3da2a358650c78e2535ed`. No merge, production switch, original-repository edit or hosting change was performed. Continue by reconciling the current SCUT profile and final PRCV author metadata; do not silently combine preprint authors with a final conference citation.

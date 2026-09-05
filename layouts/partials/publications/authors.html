@@ -1,0 +1,29 @@
+{{- /* Keep taxonomy identities/links stable; contribution symbols are presentation. */ -}}
+{{- $page := . -}}
+{{- $roles := .Params.author_roles | default dict -}}
+{{- $names := slice -}}
+{{- range .GetTerms "authors" -}}
+  {{- $names = $names | append (replaceRE "[ *#]+$" "" .LinkTitle) -}}
+{{- end -}}
+{{- range $role, $members := $roles -}}
+  {{- if not (in (slice "corresponding" "equal_first") $role) -}}
+    {{- errorf "Unknown author role %q in %s" $role $page.File.Path -}}
+  {{- end -}}
+  {{- range $members -}}
+    {{- if not (in $names .) -}}{{- errorf "Author role names missing author %q in %s" . $page.File.Path -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- range $index, $term := .GetTerms "authors" -}}
+  {{- $name := replaceRE "[ *#]+$" "" .LinkTitle -}}
+  {{- $corresponding := or (in .LinkTitle "*") (in ($roles.corresponding | default slice) $name) -}}
+  {{- $equal := or (in .LinkTitle "#") (in ($roles.equal_first | default slice) $name) -}}
+  {{- if $index }}, {{ end -}}
+  <span class="publication-author{{ if .Page.Params.highlight_name }} author-highlighted{{ end }}">
+    {{- if .RelPermalink -}}<a href="{{ .RelPermalink }}">{{ $name }}</a>{{- else -}}{{ $name }}{{- end -}}
+    {{- if $corresponding -}}<sup class="publication-author__mark" title="Corresponding author" aria-label="Corresponding author">*</sup>{{- end -}}
+    {{- if $equal -}}<sup class="publication-author__mark" title="Co-first author (equal contribution)" aria-label="Co-first author (equal contribution)">#</sup>{{- end -}}
+  </span>
+  {{- if isset $page.Params "author_notes" -}}
+    {{- with index $page.Params.author_notes $index -}}<i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="{{ . }}"></i>{{- end -}}
+  {{- end -}}
+{{- end -}}

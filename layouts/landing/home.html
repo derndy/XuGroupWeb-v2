@@ -32,33 +32,6 @@
     </div>
   </section>
 
-  <section class="lab-section home-vision" aria-labelledby="home-vision-title">
-    <div class="lab-shell">
-      <header class="lab-section-heading">
-        <div>
-          <p class="lab-section-number">{{ $text.vision.eyebrow }}</p>
-          <h2 id="home-vision-title">{{ $text.vision.title }}</h2>
-        </div>
-        <p>{{ $text.vision.introduction }}</p>
-      </header>
-      <div class="home-vision__perspectives">
-        {{ range $text.vision.perspectives }}
-        <article>
-          <h3>{{ .title }}</h3>
-          <p>{{ .description }}</p>
-        </article>
-        {{ end }}
-      </div>
-      <article class="home-vision__architects">
-        <h3>{{ $text.vision.architects.title }}</h3>
-        <div>
-          <p>{{ $text.vision.architects.introduction }}</p>
-          <p>{{ $text.vision.architects.outlook }}</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
   <section class="lab-section lab-section--grammar" aria-labelledby="learning-grammar-title">
     <div class="lab-shell">
       <header class="lab-section-heading">
