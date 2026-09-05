@@ -12,7 +12,8 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | Branch point | `main` at `99698f19834baf7b7aa3da2a358650c78e2535ed`, after PR #10 merged |
 | Previous merged work | PRs #1–10, including Gallery repair, the shared homepage text file and ten publication additions |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | Prepared locally; new draft PR and matching preview will be recorded after delivery |
+| Current PR | [Draft PR #12](https://github.com/derndy/XuGroupWeb-v2/pull/12), open and draft at delivery |
+| Hosted preview | [Homepage vision](https://deploy-preview-12--xushidang-lab.netlify.app/#home-vision-title); Netlify reported success for the initial product commit |
 | Withdrawn rewrite | [PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11), closed without merging at the PI's instruction |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
@@ -38,6 +39,12 @@ The PI rejected PR #11's broad public-marketing rewrite because it made the lab 
 - Whitespace checks pass. Real browser layout/interaction review of the added chapter remains pending; build and HTML checks are not browser QA.
 
 Build outputs: `/workspace/scratch/4a70b09acb33/build-home-vision` and `build-home-vision-preview`. Baseline: `build-public-copy-current-baseline`, built from main at `99698f1`. These are reproducible scratch outputs outside Git. The rejected `build-public-copy` output is not a valid baseline for future work.
+
+### GitHub delivery
+
+Published to `content/homepage-vision-refinement` in initial product commit `4737805d0d67471e86625081c5222442f2b01dac`. Its tree `aa95abf41a52d30405d3a95c56b1f42987bb1b92` exactly matches the checked local source. The original local commit remains at `checkpoint/home-vision-local-source`. [Draft PR #12](https://github.com/derndy/XuGroupWeb-v2/pull/12) targets main; Netlify reports **success** for that product commit and the preview linked above.
+
+The following delivery update records the PR and makes two small fidelity adjustments within the new vision: questions of growing importance, and questioning assumptions that limit our thinking. It does not add further edits to the six original-text values. Production and preview builds pass again. Subsequent commits trigger another preview build; inspect the final PR head and its status before release. No merge, production switch or hosting/workflow change was performed.
 
 ## Previous completed batch — Publications for 2025 and 2026
 
