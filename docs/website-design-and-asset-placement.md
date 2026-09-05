@@ -1,3 +1,5 @@
+> **Current public-copy instruction (5 September 2026):** The PI has requested broader, outward-facing wording for postdoctoral/PhD recruitment, industry collaboration and research visibility. This supersedes the frozen headline/subtitle/tagline and detailed promotional wording below. Use `data/website_text.yml` and [the current editing guide](website-text-maintenance.md) for the homepage and connected shared text. The original design/asset brief remains below for reference; approved images, their captions and placement rules are unchanged.
+
 > Repository edition: preserves the supplied design brief and approved image register. Private Library retrieval identifiers in Appendix B and individual image records are omitted. The unchanged attachment remains the source reference. Historical branch/PR notes below describe earlier work; read [project-state.md](../project-state.md) for live implementation status. This file is development guidance, not a public website page.
 
 # Xu Lab — Website Design & Asset Placement Brief

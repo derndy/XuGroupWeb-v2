@@ -1,291 +1,294 @@
-# WEBSITE TEXT — phase 1: homepage / 网站文字：第一阶段，首页
-# Edit wording here; keep keys, indentation, ids and URLs. Use plain text, not HTML.
-# 修改文字即可；保留字段名、缩进、id 和链接。不要加入 HTML。
-# home: homepage headings, explanations, buttons and labels.
-# shared: definitions and pillar wording also used by About/Research/People.
-# Publications/news/member records and approved image captions keep their own files.
-# Other pages and global navigation/footer have not yet been moved here.
+# WEBSITE TEXT — public homepage and shared wording / 对外网站文字
+# Audience: postdoctoral/PhD researchers, industry partners and research peers.
+# Lead with recognisable fields, meaningful opportunities and scientific ambition.
+# Keep research descriptions broad; avoid unpublished project designs or detailed roadmaps.
+# Do not imply confirmed vacancies, funded positions, commercial results or released platforms.
+# Edit wording here; preserve keys, indentation and stable concept/pillar ids.
+# 修改文字即可；保留字段名、缩进与 id。首页按钮文字和目标链接也在此文件中。
+# Shared entries also update connected About, Research and People sections.
+# Individual records, approved image captions and other page copy keep their existing sources.
 # Editing guide: docs/website-text-maintenance.md
 
 home:
   hero:
-    eyebrow: "Scientific learning · Evidence engineering · Mathematical data science"
-    title: "Designing Scientific Learning and Discovery Systems"
+    eyebrow: "Xu Lab · AI for Science · AI for Biomedicine"
+    title: "AI for Science. Discovery Beyond Prediction."
     subtitle: >-
-      We design how scientific systems represent information, organize interactions, learn from evidence,
-      and generate new knowledge and designs.
-    actions_label: "Primary actions"
-    research_link: "Explore our research"
-    testbeds_link: "Scientific testbeds"
-    tagline: "Learn better. Create better evidence. Discover deeper. Design forward."
+      We bring together artificial intelligence, molecular science and experimental insight to advance
+      drug discovery, biotechnology and advanced materials.
+    actions_label: "Research opportunities and industry collaboration"
+    primary_link: "Postdocs & PhD research"
+    primary_url: "/contact/#join-the-lab"
+    secondary_link: "Industry collaboration"
+    secondary_url: "/contact/#scientific-collaboration"
+    tagline: "Ask bigger questions. Explore new possibilities. Build what comes next."
   map:
-    title: "One connected scientific system"
-    hint: "Open a concept to explore its role."
-    evidence_relation: "Evidence informs the learner; the learner helps choose new evidence."
-    learner_label: "Design the learner together"
-    co_design: "Each choice changes what the others can express, combine and learn."
-    aims_label: "Research aims to test against evidence"
+    title: "From scientific data to new possibilities"
+    hint: "Explore the ideas behind our research."
+    evidence_relation: "Connect AI with scientific data and experimental insight."
+    learner_label: "AI that connects the science"
+    co_design: "Learn across molecules, relationships and scales."
+    aims_label: "Toward deeper understanding and new designs"
   thesis:
-    eyebrow: "01 · Research thesis"
-    title: "Beyond prediction: toward testable mechanisms"
+    eyebrow: "01 · Our ambition"
+    title: "New questions. New molecules. New possibilities."
     paragraph_one: >-
-      Prediction asks what may happen. Scientific discovery asks what structure, interaction, or mechanism
-      makes it happen—and what evidence would distinguish that explanation from alternatives.
+      Scientific R&D often begins with limited data, complex systems and too many possibilities to test.
+      We develop AI methods to help turn those challenges into opportunities for discovery.
     paragraph_two: >-
-      We develop intelligent computational frameworks to discover hidden principles governing molecular
-      and material behaviours.
-    link: "About our approach"
+      Our ambition reaches beyond better predictions: AI that helps reveal how systems work, propose new
+      designs and guide the next experiment.
+    link: "Discover our perspective"
   grammar:
-    eyebrow: "02 · Space · Interaction · Learning"
-    title: "Scientific intelligence is a designed system."
+    eyebrow: "02 · Scientific AI"
+    title: "Learning across molecules, data and scales."
     introduction: >-
-      Representation, interaction and learning are connected design choices within the scientific learner.
-      We study how they shape one another, alongside evidence creation and mathematical questions.
-    connected_choice_label: "Connected choice:"
-    feedback_title: "Evidence keeps the system open to revision."
+      Our interests span scientific foundation models, multimodal learning and AI for molecular systems,
+      with a focus on connecting data to scientific understanding.
+    connected_choice_label: "Why it matters:"
+    feedback_title: "Discovery grows through AI and experiment."
   pillars:
-    eyebrow: "03 · Research system"
-    title: "Three contributions. One discovery system."
+    eyebrow: "03 · Research frontiers"
+    title: "Three frontiers. A shared ambition."
     introduction: >-
-      Each pillar plays a different role: designing the learner, designing the evidence it receives, and
-      opening the mathematical frontier of what can be identified and designed.
-    link: "Enter the research system"
+      Scientific AI, AI-guided discovery and mathematical insight come together in a research programme
+      connecting fundamental ideas with challenges that matter beyond the lab.
+    link: "Explore our research"
     pillar_label: "Pillar"
-    capabilities_label: "capabilities"
+    capabilities_label: "research themes"
     explore_label: "Explore Pillar"
   evidence_loop:
-    eyebrow: "04 · Evidence loop"
-    title: "Discovery advances when evidence changes the next question."
+    eyebrow: "04 · AI meets experiment"
+    title: "Connect AI with the next experiment."
     introduction: >-
-      We connect learning and experimentation by asking what evidence could change an explanation, a model
-      or a design decision.
-    type_label: "Conceptual framework"
-    hint: "Open a step for an example question and the research behind it."
-    question_label: "Example question"
-    output_label: "Typical research output"
-    contributions_label: "Contributing research"
-    return_label: "Return to Observe"
-    legend: "Solid arrows follow the reading sequence. The dashed path returns evidence to the next question."
+      For research and industry partners, we explore how AI can support candidate selection, experimental
+      planning and learning from new results.
+    type_label: "Research approach"
+    hint: "Explore how a research conversation can lead to new ideas."
+    question_label: "A question to explore"
+    output_label: "Possible research outcome"
+    contributions_label: "Related expertise"
+    return_label: "Return to the challenge"
+    legend: "Follow the steps from a research challenge to new possibilities. Each result can open the next question."
   testbeds:
-    eyebrow: "05 · Scientific testbeds"
-    title: "Consequential systems for testing scientific learning"
+    eyebrow: "05 · Areas of opportunity"
+    title: "From molecular discovery to next-generation R&D."
     introduction: >-
-      Applications are not isolated silos. They are demanding testbeds in which representations, evidence
-      strategies, and mechanisms must work together.
+      We welcome conversations with biotechnology, pharmaceutical and materials teams facing complex data,
+      challenging design choices or a need for new computational approaches.
     items:
-      - title: "Molecular interactions"
-        description: "Drug discovery and mechanism-aware interaction modelling."
-      - title: "Proteins and sequences"
-        description: "Structured biological systems across multiple scales."
-      - title: "Biomaterials and delivery"
-        description: "Complex formulations, assemblies, and functional materials."
-      - title: "Scientific data systems"
-        description: "Uncertainty, causal structure, and evidence-efficient discovery."
+      - title: "AI for Drug Discovery"
+        description: "Molecular properties, biomolecular interactions and the search for promising therapeutic candidates."
+      - title: "Biological & Sequence AI"
+        description: "Learning from proteins, peptides and biological sequences to explore function and design."
+      - title: "Biomaterials & Drug Delivery"
+        description: "Data-driven discovery of functional materials, molecular assemblies and delivery systems."
+      - title: "AI for Scientific R&D"
+        description: "Scientific data analysis, experiment planning and more informed research decisions."
   publications:
-    eyebrow: "06 · Publications and citations"
-    title: "Explore the published work."
+    eyebrow: "06 · Selected publications"
+    title: "Ideas in action."
     introduction: >-
-      Selected papers connect computational discovery and molecular design. Follow each record for the
-      research context and available supporting material.
+      Explore selected work connecting computation, molecular design and biomedical applications. Visit
+      the full publication list for the wider research programme.
     list_label: "Selected research papers"
     kind_label: "Research article"
     publisher_link: "Publisher record"
     all_link: "Browse all publications"
     citations:
-      eyebrow: "For your reference library"
-      title: "Take the citation with you."
-      introduction: "Download BibTeX citations to use in your reference manager."
+      eyebrow: "Build on the research"
+      title: "Take the ideas further."
+      introduction: "Download BibTeX citations for your research and reference library."
       download_label: "Download BibTeX"
     for_label: "for"
   people:
-    eyebrow: "07 · People and culture"
-    title: "Different training. Shared scientific questions."
-    introduction: "Our research programme connects scientific learning, evidence creation and mathematical questions."
-    people_link: "Meet the people"
-    gallery_link: "Explore group moments"
-  news:
-    eyebrow: "08 · Latest news"
-    title: "From the lab."
-    introduction: "Recent entries from our group record, with their original event dates."
-    category_fallback: "Lab update"
-    all_link: "All news"
-  join:
-    eyebrow: "09 · Work with us"
-    title: "Bring a scientific question worth stress-testing."
+    eyebrow: "07 · People and possibilities"
+    title: "Build your next chapter in AI for Science."
     introduction: >-
-      We welcome prospective researchers, scientific collaborators, and experimental partners interested
-      in building more rigorous systems for molecular and material discovery.
-    contact_link: "Join or collaborate"
-    people_link: "Meet the team"
+      We welcome postdoctoral and PhD researchers who want to develop original ideas, connect disciplines
+      and take on ambitious scientific questions.
+    people_link: "Meet the researchers"
+    gallery_link: "Life in the group"
+  news:
+    eyebrow: "08 · Lab news"
+    title: "Discoveries, milestones and moments."
+    introduction: "Research updates and shared moments from the Xu Lab community."
+    category_fallback: "Lab update"
+    all_link: "More from the lab"
+  join:
+    eyebrow: "09 · Join us / Partner with us"
+    title: "Shape what comes next. Work with Xu Lab."
+    introduction: >-
+      Postdoctoral and PhD researchers: bring the questions you want to make your own. Industry partners:
+      bring an R&D challenge where AI could open a new route forward. Let's explore what we could build
+      together.
+    primary_link: "Discuss postdoctoral or PhD research"
+    primary_url: "/contact/#join-the-lab"
+    secondary_link: "Explore industry collaboration"
+    secondary_url: "/contact/#scientific-collaboration"
 shared:
   grammar:
     dimensions:
       - id: "space"
         label: "Space"
-        cue: "Represent what matters"
-        question: "What distinctions should the representation preserve?"
+        cue: "Molecular and multimodal representations"
+        question: "How can AI learn the language of molecules and biology?"
         definition: >-
-          Organise scientific states, coordinates and scales so that relevant structure, symmetries and
-          uncertainty can be represented.
-        relationship: >-
-          The chosen space shapes which interactions can be expressed; learning can reveal distinctions that
-          require a different space.
+          Bring molecular structures, biological sequences and other scientific data into AI models that can
+          connect information across formats and scales.
+        relationship: "Richer representations help AI connect patterns in the data with the scientific relationships behind them."
         url: "/research/learning-system-design/"
-        link_text: "Explore representation design"
+        link_text: "Explore scientific AI"
       - id: "interaction"
         label: "Interaction"
-        cue: "Expose meaningful relations"
-        question: "Which relationships should the system expose?"
+        cue: "Connections across molecules and scales"
+        question: "What connects molecular structure to biological function?"
         definition: >-
-          Design how information is exchanged, transformed and combined, from local relationships to
-          collective and cross-scale effects.
-        relationship: "Interactions depend on the representation and determine what information the learning process can combine."
+          Explore the relationships that shape molecular behaviour, biological function and material
+          performance, from local interactions to larger-scale effects.
+        relationship: >-
+          Understanding these connections can inform predictions and suggest new directions for molecular and
+          material design.
         url: "/research/learning-system-design/"
-        link_text: "Explore interaction design"
+        link_text: "Explore molecular learning"
       - id: "learning"
         label: "Learning"
-        cue: "Update from evidence"
-        question: "What update process turns evidence into reusable knowledge?"
+        cue: "Learning beyond familiar data"
+        question: "How can AI remain useful when data are limited and conditions change?"
         definition: >-
-          Co-design objectives, guiding signals, constraints and update rules to study how the system changes
-          as evidence arrives.
-        relationship: "Learning revises representations and interactions; their structure also changes which updates are possible."
+          Develop learning methods that can make better use of scientific data and support prediction,
+          exploration and design in new settings.
+        relationship: >-
+          We connect machine learning with scientific knowledge to study what transfers across systems and
+          where new evidence is needed.
         url: "/research/learning-system-design/"
-        link_text: "Explore learning dynamics"
+        link_text: "Explore scientific learning"
     evidence:
       id: "evidence"
       label: "Evidence"
-      cue: "Create and acquire what matters"
+      cue: "Data, experiments and new insight"
       definition: >-
-        Choose observations, perturbations and experiments that can distinguish competing explanations and
-        change the next learning step.
+        Connect AI with experimental insight to explore promising candidates, learn from new results and
+        guide research decisions.
       url: "/research/evidence-engineering/"
-      link_text: "Explore evidence engineering"
+      link_text: "Explore AI-guided discovery"
     aims:
       - id: "mechanism"
         label: "Mechanism"
-        cue: "An explanation to challenge"
+        cue: "Understand the science behind the pattern"
         definition: >-
-          Seek explanations with consequences that can be tested against alternatives. A model pattern alone
-          does not establish a mechanism.
+          Use AI alongside scientific reasoning and experimental evidence to investigate why molecules,
+          materials and biological systems behave as they do.
         url: "/research/mathematical-frontiers/"
-        link_text: "Explore what is identifiable"
+        link_text: "Explore mathematical discovery"
       - id: "design"
         label: "Design"
-        cue: "A proposal to test"
+        cue: "Generative AI for molecules and materials"
         definition: >-
-          Propose candidates or interventions under scientific constraints, then use new evidence to test
-          whether they achieve the intended effect.
+          Explore new molecular and material designs with desired properties, connecting generative AI and
+          scientific knowledge with experimental evaluation.
         url: "/research/evidence-engineering/"
-        link_text: "Explore discovery and design"
-    feedback: >-
-      Tests of proposed mechanisms and designs return new evidence, revised questions and constraints to
-      the learner.
+        link_text: "Explore generative design"
+    feedback: "New results inspire better models, fresh questions and new possibilities for discovery."
   evidence_loop:
-    introduction: "A shared way to reason about discovery."
-    reading_note: "Projects may revisit or combine steps; new evidence can change any earlier choice."
-    feedback_title: "New evidence changes the next question."
-    feedback: >-
-      Observations, failed tests and revised constraints return to the learner. Revisit the question,
-      evidence choice or model when an explanation no longer holds.
+    introduction: "A conversation between AI and experiment."
+    reading_note: "Every partnership starts with a scientific or R&D challenge."
+    feedback_title: "Every result can open a new question."
+    feedback: "Each result can sharpen a model, reveal a new question or suggest a more promising design."
     steps:
       - id: "observe"
-        title: "Observe"
-        summary: "Establish what is known and uncertain."
+        title: "Understand"
+        summary: "Start with the scientific or R&D challenge."
         explanation: >-
-          Bring measurements into context, including how they were obtained, what they cover and where they
-          may be unreliable.
-        question: "Which observations are comparable, and what is still missing?"
-        artifact: "Context-aware observations with uncertainty and source information."
+          Discuss the system, available data and the outcome that would make a difference for the research
+          team or partner.
+        question: "What would a better prediction, candidate or decision make possible?"
+        artifact: "A shared question and a focused research starting point."
         pillars:
           - "pillar-ii"
           - "pillar-iii"
       - id: "question"
-        title: "Question"
-        summary: "Make competing explanations explicit."
+        title: "Explore"
+        summary: "Look for the opportunity in the data."
         explanation: >-
-          Identify a scientific distinction that matters, then ask which alternative structures or mechanisms
-          could explain the same observations.
-        question: "Could a different interaction or mechanism produce the same pattern?"
-        artifact: "Competing explanations and their distinguishable consequences."
+          Connect domain knowledge with data analysis to identify useful patterns, open questions and
+          opportunities for AI.
+        question: "Where could AI reveal something we cannot yet see?"
+        artifact: "Ideas for models, analyses or candidate designs."
         pillars:
           - "pillar-i"
           - "pillar-iii"
       - id: "design-evidence"
-        title: "Design evidence"
-        summary: "Choose what could distinguish the alternatives."
+        title: "Plan"
+        summary: "Identify promising candidates and experiments."
         explanation: >-
-          Select a measurement, perturbation or candidate for what it can reveal, within the available
-          scientific and practical constraints.
-        question: "Which next experiment would best separate these explanations?"
-        artifact: "An evidence-acquisition or experiment-design proposal."
+          Explore how AI can help prioritise what to design, measure or test next, in conversation with
+          experimental expertise.
+        question: "Which candidate or experiment could move the project forward?"
+        artifact: "A proposal for candidate selection or experimental study."
         pillars:
           - "pillar-ii"
           - "pillar-iii"
       - id: "learn"
         title: "Learn"
-        summary: "Update the system from the new evidence."
-        explanation: >-
-          Revise representations, interactions or guiding signals while examining stability, uncertainty and
-          the alternatives that remain unresolved.
-        question: "What should change in the learner after this observation?"
-        artifact: "A revised model with explicit assumptions and uncertainty."
+        summary: "Build insight from scientific data."
+        explanation: "Develop and study AI methods that connect existing knowledge with new observations."
+        question: "What can we learn about the properties or behaviour that matter?"
+        artifact: "A model or analysis suited to the scientific question."
         pillars:
           - "pillar-i"
           - "pillar-ii"
       - id: "test"
-        title: "Test"
-        summary: "Challenge predictions and explanations."
+        title: "Evaluate"
+        summary: "Connect model performance with scientific value."
         explanation: >-
-          Use controls, new conditions and independent evidence where available to probe whether an
-          explanation survives plausible alternatives.
-        question: "Does the explanation survive matched controls and changed conditions?"
-        artifact: "A comparison showing supported claims, failures and limits."
+          Examine whether predictions and proposed designs remain useful under relevant conditions, with
+          experimental evaluation where available.
+        question: "Does the result help answer the question we set out to solve?"
+        artifact: "An assessment of performance, scientific meaning and practical relevance."
         pillars:
           - "pillar-ii"
           - "pillar-iii"
       - id: "explain-design"
-        title: "Explain or design"
-        summary: "State what is supported and what to test next."
+        title: "Discover"
+        summary: "Open a new direction for research."
         explanation: >-
-          Form a testable explanation or a constrained design proposal. Keep the conditions and limits
-          visible; a prediction alone does not establish a mechanism or a successful design.
-        question: "What consequence or design choice could be tested next?"
-        artifact: "A testable explanation or design proposal with stated limits."
+          Use the findings to shape new hypotheses, candidate designs or follow-on studies. The next advance
+          may begin with a question the project was not asking before.
+        question: "What new possibility does this result open?"
+        artifact: "A research insight, candidate design or next-stage study."
         pillars:
           - "pillar-i"
           - "pillar-ii"
           - "pillar-iii"
   pillars:
     pillar-i:
-      home_invitation: "Learn the right scientific structure"
+      home_invitation: "Build AI that understands scientific systems."
       home_terms:
-        - "Representation"
-        - "Interaction"
-        - "Learning dynamics"
-      role: "The scientific learner"
-      title: "Foundational Scientific Learning-System Design"
-      question: "How should a scientific system learn?"
+        - "Scientific foundation models"
+        - "Multimodal learning"
+        - "Molecular AI"
+      role: "Models for scientific discovery"
+      title: "Scientific AI & Multimodal Learning"
+      question: "How can AI learn from complex scientific data and carry that knowledge into new settings?"
     pillar-ii:
-      home_invitation: "Create evidence that changes what can be learned"
+      home_invitation: "Turn new ideas into better candidates."
       home_terms:
-        - "Active acquisition"
-        - "Perturbation"
-        - "Closed loops"
-      role: "The evidence environment"
-      title: "Evidence Engineering and Closed-Loop Discovery & Design"
-      question: "What evidence should the system create next?"
+        - "Generative design"
+        - "Active learning"
+        - "AI for experimental design"
+      role: "AI-guided R&D"
+      title: "Generative Design & AI-Guided Discovery"
+      question: "How can AI help us explore promising molecules, materials and experiments?"
     pillar-iii:
-      home_invitation: "Turn patterns into principles and possibilities"
+      home_invitation: "Make scientific AI more reliable and revealing."
       home_terms:
-        - "Identifiability"
-        - "Uncertainty"
-        - "Inverse design"
-      role: "The mathematical lens"
-      title: "Mathematical Data Science and Frontier Exploration"
-      question: >-
-        What mathematical and data-science methods can reveal important structure and open new scientific
-        possibilities?
+        - "Causal inference"
+        - "Uncertainty quantification"
+        - "Mathematical data science"
+      role: "Principles for reliable AI"
+      title: "Trustworthy AI & Mathematical Discovery"
+      question: "How can we make AI more informative, reliable and useful for scientific decisions?"
   people_introduction: >-
-    Our team works across biomedical engineering, pharmacy, chemistry, materials, and machine learning.
-    Individual profiles document each researcher’s current role, training, and research interests.
+    Our research brings together machine learning, mathematics, molecular science and biomedical
+    engineering. Different perspectives help us see new questions and new ways to answer them.

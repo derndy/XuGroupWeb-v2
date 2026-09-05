@@ -7,20 +7,40 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | Item | Current value |
 | --- | --- |
 | Repository | Public `derndy/XuGroupWeb-v2` |
-| Working checkout | `/workspace/sites/xugroup-publications-2025-2026` (isolated worktree) |
-| Current review branch | `content/publications-2025-2026` |
-| Branch point | `main` at `83a9fcdf11ee5a3295ba495b140177330086dd93`, after PR #9 merged |
-| Previous merged work | PRs #1–9, including Gallery repair and the shared homepage text file |
-| Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | [Draft PR #10](https://github.com/derndy/XuGroupWeb-v2/pull/10), open and draft |
+| Working checkout | `/workspace/sites/xugroup-approved-images` |
+| Current review branch | `content/public-facing-website-text` |
+| Branch point | Updated main at `99698f19834baf7b7aa3da2a358650c78e2535ed`, after PR #10 merged |
+| Previous merged work | PRs #1–10, including Gallery repair, the shared text file and 2025–2026 publications |
+| Current PR | Prepared locally; draft PR creation follows validation |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
-The user now prioritizes missing 2025–2026 Publications, referencing their SCUT and Google Scholar profiles. This batch adds ten individually verified public records in a review branch and draft PR. It does not merge, modify the original repository, or change hosting or production settings.
+The PI explicitly requested a public-facing rewrite of `website_text.yml`: recruit postdoctoral and PhD researchers, help companies recognise relevant R&D interests, and communicate a distinctive scientific ambition to peers. Recognisable research themes and collaboration opportunities should lead; promotional copy should avoid detailed future project designs. This instruction supersedes the earlier frozen homepage headline/subtitle/tagline requirement.
 
-The bibliography was first verified against PR #8 at `bd762ef…`. During delivery, GitHub showed PR #9 merged at `83a9fcd…`. The publication commit was rebased onto this newer main; README/state conflicts were resolved by retaining the homepage text migration and its full maintenance/delivery history. Product files did not conflict. Both builds and the preservation audit passed again on the combined source. The usual approved-images checkout and its separate workflow were left untouched.
+This batch began after PR #9 merged at `83a9fcd…`. During editing, PR #10 merged at `99698f1…`; the two-file product change rebased cleanly onto the newer main. All 88 publication records and the Gallery repair are retained. The publication-update worktree remains separate. No PR merge or hosting change is made by this batch.
 
-## Latest batch — Publications for 2025 and 2026
+## Latest batch — public-facing homepage and shared copy
+
+- Rewrote all narrative sections in `data/website_text.yml` for prospective researchers, industry partners and scientific peers. Main headline: **AI for Science. Discovery Beyond Prediction.** The subtitle names drug discovery, biotechnology and advanced materials; the tagline invites bigger questions and new possibilities.
+- Replaced internal planning language with broad scientific questions, familiar research terms and potential R&D relevance. Scientific foundation models, multimodal learning, generative design, active learning, causal inference and uncertainty quantification are framed as research interests, not released platforms or proven commercial services.
+- The three public pillar titles are **Scientific AI & Multimodal Learning**, **Generative Design & AI-Guided Discovery**, and **Trustworthy AI & Mathematical Discovery**. Their existing IDs, routes and scientific responsibilities remain. Shared wording updates its connected uses on About, Research, the pillar pages and People.
+- Made postdoctoral and PhD research explicit in the hero, people section and closing invitation. Industry-facing text identifies candidate selection, scientific data, experiment planning and materials/biomedical R&D as conversation points. No confirmed opening, funding package, industry result or partner relationship is invented.
+- Four existing homepage buttons now take both their labels and URLs from the text file. The hero/closing recruitment buttons link to `/contact/#join-the-lab`; the two industry buttons link to `/contact/#scientific-collaboration`. This is the only template change. No new page, form, email send, script or stylesheet.
+- Updated the editing guide, README and design-brief priority note so future edits follow this outward-facing voice instead of restoring the old headline or internal research language.
+- Scope is the homepage and its shared wording. Independent About/Research/Contact paragraphs, detailed research roadmaps, metadata and repository history remain outside this file; do not claim all public research detail has been removed.
+
+### Validation of the public-copy batch
+
+- Production and preview-equivalent Hugo builds pass: **864 pages each** on the main that includes PR #10.
+- All **1,202 internal links/anchors** resolve across eleven main pages, including the four audience-specific actions. Unique IDs, one H1/main, matching production/preview main text and preview-only noindex pass.
+- Main-page element structure and non-text presentation attributes remain unchanged. Contact, Gallery, News and Publications HTML files are byte-identical to a fresh build of `99698f1…`.
+- All **88 publication records**, order, routes, author text, actions and citation bytes pass the existing preservation audit. Six approved scientific image placements, original downloads, exact captions and 24 uncropped variants pass the visual-asset audit.
+- Shared pillar titles and the People introduction reach their connected pages; concept IDs, destinations and the six evidence-step IDs/pillar references are preserved.
+- Whitespace checks pass. The existing styles wrap buttons and terms, but browser layout/interaction testing was not performed for this wording change. Earlier browser-review limitations remain separate.
+
+Temporary reproducible builds: `/workspace/scratch/4a70b09acb33/build-public-copy`, `build-public-copy-preview`, and `build-public-copy-current-baseline`. The baseline was freshly built from `99698f1…` in `/workspace/sites/xugroup-public-copy-baseline`; the earlier pre-publication baseline is `build-public-copy-before`. No scratch scripts or generated builds are published.
+
+## Previous completed batch — Publications for 2025 and 2026
 
 - Added ten canonical bundles and matching BibTeX files: eight records for 2025 and two for 2026. Six are journal articles, one is the official IJCAI conference paper, and three are explicitly labeled preprints using the existing Working paper type. The index now contains 88 records across 15 years and seven display types.
 - Full author order, titles, venues, years and DOI identifiers are checked against primary publisher/organizer/repository records and publisher-deposited Crossref metadata. The [source audit](docs/publications-update-2026-09-05.md) records every source, date conflict and duplicate/version decision.
@@ -65,7 +85,7 @@ Temporary reproducible outputs: `/workspace/scratch/4a70b09acb33/build-home-text
 
 1. Read [website-design-and-asset-placement.md](docs/website-design-and-asset-placement.md) in full for the supplied design plan. The repository edition preserves the design and six-image register while omitting private Library retrieval identifiers. The original attachment's SHA-256 is recorded there.
 2. Read [design-implementation-review-2026-09-05.md](docs/design-implementation-review-2026-09-05.md) for the full existing/missing/changed comparison and next batches.
-3. Preserve the exact homepage title, subtitle and tagline. English public pages remain English; do not insert sentence-by-sentence Chinese translations.
+3. Follow the PI’s latest outward-facing copy direction and the current `website_text.yml` headline/subtitle/tagline. The old exact-wording requirement was superseded by the explicit public-copy rewrite request. English public pages remain English.
 4. The three pillars are scientific learning-system design, evidence engineering, and mathematical/frontier exploration. Space, Interaction and Learning are co-designed dimensions of a learner, not replacements for the pillars.
 5. Materials and biomedical applications are cross-pillar testbeds. Scientific Learning Grammar remains a long-term programme, not an established theory.
 6. The Hero uses live semantic HTML. Each major page has at most one principal conceptual artwork. Original images, approved captions and conceptual attribution remain unchanged.
@@ -291,12 +311,11 @@ For presentation-only changes, add `--before /absolute/preceding-build` to the p
 
 ## Continue in small batches
 
-1. Recheck main and `content/publications-2025-2026`. PRs #8 and #9 are merged and included in this branch’s base; preserve any newer user changes.
-2. Review and merge only after an explicit release instruction. This batch makes no merge or hosting change.
-3. Finish the bibliography completeness check against a readable current SCUT/Scholar list or export, and check for verified final venues for the three preprints. Next text-management batch: move About's remaining page-level copy into `website_text.yml`, preserving output and the already connected shared definitions. Then extend the same approach to Contact, Research and the other pages.
-4. Keep individual publication, news and member records separate. Use `docs/website-text-maintenance.md` as the current editing map.
-5. Resume the About testbed explanation, public research-culture content, navigation and publication-resource improvements in later batches. Do not publish unfinished operating-handbook or private management material.
-6. Earlier mobile/tablet, 200% text/zoom and whole-site browser-review items remain separate; the Gallery repair's own coverage is recorded on PR #8.
+1. Recheck main, the public-copy branch and actual PR status. PRs #9 and #10 are merged and included in this branch’s base. Preserve newer user work.
+2. Review the new public wording and its hosted preview. Merge only after an explicit release instruction.
+3. Apply the same outward-facing voice to remaining About, Research and Contact text while moving it into `website_text.yml` in bounded batches. Review detailed public roadmaps and avoid publishing future project designs in promotional copy. Keep source-file coverage explicit.
+4. Preserve individual publication, news and member records. The bibliography completeness check against a readable SCUT/Scholar export and the final-venue check for three preprints remain separate tasks.
+5. Keep the approved images/captions and Gallery repair. Resume remaining browser checks at mobile/tablet sizes and 200% text/zoom as separately requested work.
 
 ## Historical checkouts
 

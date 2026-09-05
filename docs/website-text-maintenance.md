@@ -1,6 +1,6 @@
 # Edit website text / 网站文字修改指南
 
-Start with **[`data/website_text.yml`](../data/website_text.yml)**. Phase 1 connects the homepage's own wording and the shared explanations it uses. Existing wording and page layout are preserved. The remaining pages will move in later batches.
+Start with **[`data/website_text.yml`](../data/website_text.yml)**. The homepage and its shared explanations read from this file. The latest copy is written for postdoctoral/PhD researchers, industry partners and research peers. The remaining pages will move in later batches.
 
 ## Make a text change in GitHub
 
@@ -18,15 +18,16 @@ A branch save updates its preview after a successful build. It does not itself m
 | Text to change | Location in `website_text.yml` | Where it appears |
 | --- | --- | --- |
 | Main title, subtitle and tagline | `home.hero.title`, `home.hero.subtitle`, `home.hero.tagline` | Homepage hero |
+| Hero recruitment/industry buttons | `home.hero.primary_link` / `primary_url` and `secondary_link` / `secondary_url` | Postdocs/PhD enquiry and scientific collaboration sections on Contact |
 | Hero diagram headings and instructions | `home.map` | Homepage diagram |
-| Beyond Prediction | `home.thesis` | Homepage section 01 |
+| Research ambition | `home.thesis` | Homepage section 01 |
 | Space–Interaction–Learning framing | `home.grammar` | Homepage section 02 |
 | Space, Interaction, Learning, Evidence, Mechanism and Design definitions | `shared.grammar` | Homepage; the shared dimensions/evidence/feedback also feed About |
 | Three-pillar section heading and button labels | `home.pillars` | Homepage section 03 |
 | Each pillar's formal title, role, question, homepage invitation and terms | `shared.pillars.pillar-i`, `pillar-ii`, `pillar-iii` | Homepage; formal titles/roles/questions are also read by Research and pillar pages wherever used |
 | Evidence-loop headings and labels | `home.evidence_loop` | Homepage section 04 |
 | Six evidence-loop steps and explanations | `shared.evidence_loop` | Homepage evidence loop |
-| Four scientific testbed cards | `home.testbeds` | Homepage section 05 |
+| Four application/opportunity cards | `home.testbeds` | Homepage section 05 |
 | Publication and citation section wording | `home.publications` | Homepage section 06 |
 | People and culture section wording | `home.people` | Homepage section 07 |
 | Shared team introduction | `shared.people_introduction` | Homepage and People page |
@@ -40,10 +41,10 @@ Changing a `shared` entry changes every connected use of that entry. This avoids
 ```yaml
 home:
   hero:
-    title: "Designing Scientific Learning and Discovery Systems"
+    title: "AI for Science. Discovery Beyond Prediction."
     subtitle: >-
-      We design how scientific systems represent information, organize interactions, learn from evidence,
-      and generate new knowledge and designs.
+      We bring together artificial intelligence, molecular science and experimental insight to advance drug
+      discovery, biotechnology and advanced materials.
 ```
 
 `>-` joins the indented lines into one paragraph. To use a double quotation mark inside a quoted value, write `\"`; alternatively use a `>-` paragraph. Text is rendered as plain text: HTML tags such as `<em>` will appear literally. Keep `id`, `url` and `pillars` reference fields unchanged during wording edits because they connect definitions to sections and research pages.
@@ -66,6 +67,18 @@ Page-level text for About, Contact, other Research sections, People, News and Ga
 
 Hugo templates（页面模板）read `site.Data.website_text.home` or `site.Data.website_text.shared`. The shared pillar helper, `layouts/partials/research/pillars.html`, combines the five editable display fields with the original IDs, routes and detailed research records. All pillar consumers use that helper; it fails the build if required shared pillar copy is missing. Grammar, evidence-loop and team-introduction consumers read their new shared entries directly.
 
-Publications and news still resolve actual content records at build time. Draft/future news gates, publication selection checks, URLs, image approval records, CSS（样式表）and JavaScript（交互脚本）are unchanged.
+Publications and news still resolve actual content records at build time. Draft/future news gates, publication selection checks, image approval records, CSS（样式表）and JavaScript（交互脚本）are unchanged. Hero and closing buttons now read their labels and destinations from this file. Both recruitment buttons reach `/contact/#join-the-lab`; both industry buttons reach `/contact/#scientific-collaboration`. Other research links remain available in the following sections.
 
-For future text moves, build a baseline first, connect each moved entry, compare generated pages, and try a temporary edit from the new source before restoring the approved wording. This batch verifies byte-identical HTML for all eleven main pages and a real one-file edit across homepage/shared consumers. Longer future wording still needs its own layout review.
+For future text moves, build a baseline first, connect each moved entry, compare generated pages, and try a temporary edit from the new source before restoring the approved wording. The original text-source migration verified byte-identical HTML for all eleven main pages and a real one-file edit across homepage/shared consumers. Editorial changes intentionally change rendered wording and need a check of text, links and any affected shared pages. Longer wording still needs its own layout review.
+
+## Public writing direction — 5 September 2026
+
+The PI now positions the website as an external window for recruitment, industry collaboration and research visibility. This instruction supersedes the earlier requirement to freeze the original homepage headline, subtitle and tagline.
+
+- Lead with recognisable fields: AI for Science, AI for Biomedicine, scientific foundation models, multimodal learning, generative design and trustworthy AI. Present these as research interests and questions; do not imply a released platform or a proven commercial service.
+- Make relevance visible to biotechnology, pharmaceutical and materials R&D teams: complex data, candidate design, experiment planning and scientific decisions.
+- Speak directly to postdoctoral and PhD researchers about original ideas, crossing disciplines and shaping a research direction. Enquiries do not imply a confirmed funded vacancy.
+- Retain scientific substance through broad questions about learning, molecular relationships, generalisation, evidence and reliable decisions. Avoid detailed unpublished project designs, implementation choices or research timetables in promotional copy.
+- Keep public pages in English. Shared entries affect About, Research, pillar pages and People, but independent paragraphs, detailed roadmaps, metadata and repository history are outside this file's coverage.
+
+The three public pillar titles are now **Scientific AI & Multimodal Learning**, **Generative Design & AI-Guided Discovery**, and **Trustworthy AI & Mathematical Discovery**. Their stable IDs, routes and existing scientific responsibilities remain. This is a public-language update, not a change to the underlying research programme.

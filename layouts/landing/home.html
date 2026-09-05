@@ -8,8 +8,8 @@
         <h1 id="home-title">{{ $text.hero.title }}</h1>
         <p class="lab-hero__lead">{{ $text.hero.subtitle }}</p>
         <div class="lab-actions" aria-label="{{ $text.hero.actions_label }}">
-          <a class="lab-button lab-button--primary" href="{{ "/research/" | relURL }}">{{ $text.hero.research_link }}</a>
-          <a class="lab-button lab-button--secondary" href="#testbeds-title">{{ $text.hero.testbeds_link }}</a>
+          <a class="lab-button lab-button--primary" href="{{ $text.hero.primary_url | relURL }}">{{ $text.hero.primary_link }}</a>
+          <a class="lab-button lab-button--secondary" href="{{ $text.hero.secondary_url | relURL }}">{{ $text.hero.secondary_link }}</a>
         </div>
         <p class="lab-tagline">{{ $text.hero.tagline }}</p>
       </div>
@@ -121,8 +121,8 @@
         <p>{{ $text.join.introduction }}</p>
       </div>
       <div class="lab-actions">
-        <a class="lab-button lab-button--light" href="{{ "/contact/" | relURL }}">{{ $text.join.contact_link }}</a>
-        <a class="lab-button lab-button--ghost" href="{{ "/people/" | relURL }}">{{ $text.join.people_link }}</a>
+        <a class="lab-button lab-button--light" href="{{ $text.join.primary_url | relURL }}">{{ $text.join.primary_link }}</a>
+        <a class="lab-button lab-button--ghost" href="{{ $text.join.secondary_url | relURL }}">{{ $text.join.secondary_link }}</a>
       </div>
     </div>
   </section>
