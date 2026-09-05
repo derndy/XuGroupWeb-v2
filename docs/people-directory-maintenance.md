@@ -56,6 +56,12 @@ The People page uses one current group photograph beside the introduction and ke
 
 ## Release checks
 
+### Member detail pages
+
+`layouts/landing/person.html` renders the same canonical member facts as the directory. Keep all detail-page styles inside `.person-profile` in `assets/scss/_person-profile.scss`, imported by the shared stylesheet. Never restore global inline `h2`, `ul`, `li` or `.card` rules: they also affect the shared navigation and footer.
+
+The visible Back to People link points to `#current-team` or `#graduate-alumni` based on the member category. It works for direct visits and without JavaScript; do not substitute browser-history navigation. Retain one main/H1, meaningful portrait alt text and intrinsic dimensions, a visible keyboard focus indicator, wrapping contact links and a single-column education/experience layout on narrow screens. Keep names, biographies, dates, contacts and source images unchanged when repairing presentation.
+
 Before requesting review, confirm all of the following:
 
 - The production-equivalent Hugo build succeeds with Extended `0.139.4`.

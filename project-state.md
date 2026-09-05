@@ -20,7 +20,14 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 
 The PI rejected PR #11's broad public-marketing rewrite because it made the lab sound generic and displaced the original research identity. It was closed without merging. PR #12 retains the original identity with six wording refinements. The latest instruction moves the entire Vision chapter off the homepage and to the end of Join / Collaborate to shorten the homepage. Do not restore the withdrawn rewrite or the superseded homepage placement.
 
-## Latest batch — migrate v1 News, Gallery and People
+## Latest continuation — member-detail repair and visual priority
+
+- On the existing draft PR #14, repaired the 18 member detail pages without editing member facts or images. Added a visible category-aware Back to People link, a semantic main/H1 and portrait dimensions. Replaced inline global CSS and history-only navigation with scoped styles and ordinary links; long contact strings wrap and education/experience rows stack on narrow screens.
+- Production/preview builds pass (895 pages). Profile content/links, the eleven main-page content trees, all 91 publications and six approved scientific illustrations are preserved. Browser layout testing remains pending.
+- The PI then requested more images and diagrams. The next priority is explained in [the visual expansion plan](docs/visual-expansion-plan-2026-09-05.md): first a Pillar I candidate, then source-backed selected-paper visuals, then targeted research scenarios. One conceptual candidate is shown in conversation for approval; no new research image has been published or marked approved.
+- PR #15 is a separate open proposal for five selected papers and research wording. Do not mix, overwrite or merge it automatically. The original v1 PR remains untouched. Continue using draft reviews only; no production or hosting changes.
+
+## Previous batch — migrate v1 News, Gallery and People
 
 - Migrated six News entries and four Gallery photographs from v1 PR #2 into the current v2 design. Added the two new profiles/portraits and graduate alumni section, updated member roles, and reconciled the two undergraduate graduates named in the source news.
 - **PI correction: Yuting Qin and Shidao Wang joined in 2026.** Their News record displays only that year; no month/day is invented. Their profiles also say 2026.
