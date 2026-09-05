@@ -66,6 +66,26 @@
     </div>
   </section>
 
+  {{ $graduateAlumni := where (where .Site.Pages "Section" "person") ".Params.category" "graduate_alumni" }}
+  {{ with $graduateAlumni }}
+  <section id="graduate-alumni" class="lab-section" aria-labelledby="graduate-alumni-title">
+    <div class="lab-shell">
+      <header class="people-section-heading">
+        <div>
+          <p class="lab-section-number">{{ $peoplePage.sections.graduate_alumni.eyebrow }}</p>
+          <h2 id="graduate-alumni-title">{{ $peoplePage.sections.graduate_alumni.title }}</h2>
+        </div>
+        <p>{{ $peoplePage.sections.graduate_alumni.text }}</p>
+      </header>
+      <div class="people-directory__grid">
+        {{ range .ByTitle }}
+          {{ partial "people/member-card.html" (dict "person" . "alumni" true) }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
   <section id="alumni" class="lab-section people-register people-register--alumni" aria-labelledby="alumni-title">
     <div class="lab-shell">
       <header class="people-section-heading people-section-heading--light">
@@ -86,11 +106,11 @@
             </tr>
           </thead>
           <tbody>
-            {{ range .Site.Data.US_Alumni.alumni }}
+            {{ range .Site.Data.US_Alumni.undergraduate_alumni }}
               <tr>
                 <th scope="row">{{ .name }}</th>
                 <td>{{ .role }}</td>
-                <td>{{ .current }}</td>
+                <td>{{ .current | default "—" }}</td>
               </tr>
             {{ end }}
           </tbody>

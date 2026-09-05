@@ -12,7 +12,11 @@
     >
   </a>
   <div class="people-card__body">
-    <h4><a href="{{ $person.RelPermalink }}">{{ $person.Title }}</a></h4>
+    {{ if .alumni }}
+    <h3 class="people-card__name"><a href="{{ $person.RelPermalink }}">{{ $person.Title }}</a></h3>
+    {{ else }}
+    <h4 class="people-card__name"><a href="{{ $person.RelPermalink }}">{{ $person.Title }}</a></h4>
+    {{ end }}
     <p class="people-card__role">{{ $person.Params.role }}</p>
     {{ if and $principal $person.Params.bio }}
       <p class="people-card__bio">{{ $person.Params.bio }}</p>

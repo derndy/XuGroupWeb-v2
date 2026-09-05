@@ -4,11 +4,7 @@
 
 <article class="news-record{{ if $image }} news-record--with-media{{ end }}">
   <div class="news-record__date">
-    <time datetime="{{ $page.Date.Format "2006-01-02" }}">
-      <span>{{ $page.Date.Format "02" }}</span>
-      {{ $page.Date.Format "Jan" }}
-      <small>{{ $page.Date.Format "2006" }}</small>
-    </time>
+    {{ partial "news-date.html" (dict "page" $page "archive" true) }}
   </div>
   <div class="news-record__body">
     <p class="news-record__type">News record</p>

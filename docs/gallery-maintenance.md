@@ -71,3 +71,8 @@ The documentary page uses `.lab-gallery-grid` (including its two-photo variant a
 Keep implicit rows content-sized (`auto`), row flow in document order, and the card grid gap explicit. Cards/figures use flex columns with natural content height; photographs must not shrink to fit captions. Do not restore percentage figure heights or a fixed card/row height. Captions reset theme margins, align left and wrap long text; the viewer's caption applies the same local reset. Avoid changing the upstream theme shortcode to fix this page.
 
 The 5 September repair preserves all 19 image records and image bytes; only the documentary grid classes and scoped layout rules change. Verify that every photograph, caption and action fits inside its card, that rows and following year headings do not overlap, and that the complete photo viewer remains usable at narrow widths. Build/record checks alone cannot detect CSS grid overflow: run browser geometry and visual checks when this layout changes. The actual preview results and release boundary are recorded in `project-state.md`.
+
+
+## 2026 additions from v1 PR #2
+
+Four source-backed records (`GAL-2026-001`–`004`) add badminton, an interdisciplinary cinema outing and graduation. The collection now has 23 photographs across 2023–2026. The previous 19 records and overlap-repair layout are unchanged. See `docs/v1-content-migration-2026-09-05.md` for source paths, dimensions, byte preservation and validation.

@@ -17,6 +17,12 @@
   },
   "years": [
     {
+      "year": 2026,
+      "title": "New milestones together",
+      "titleZh": "共同迎接新的里程碑",
+      "description": "A badminton championship, an interdisciplinary gathering, and celebrations for our graduates."
+    },
+    {
       "year": 2025,
       "title": "The group in motion",
       "titleZh": "团队持续前行",
@@ -366,6 +372,74 @@
       "thumbnailWidth": 600,
       "thumbnailHeight": 450,
       "ratio": "4-3"
+    },
+    {
+      "id": "GAL-2026-001",
+      "fileName": "20_badminton_2026.jpg",
+      "thumbnailName": "20_badminton_2026_t.jpg",
+      "year": 2026,
+      "category": "sport",
+      "categoryLabel": "Sport",
+      "title": "BME badminton championship",
+      "titleZh": "生医师生羽毛球赛夺冠",
+      "caption": "The group team celebrates its championship at the BME Faculty-Student Badminton Tournament, 12 April 2026.",
+      "alt": "Five team members with a certificate and shuttlecocks on an indoor badminton court.",
+      "width": 2400,
+      "height": 1799,
+      "thumbnailWidth": 600,
+      "thumbnailHeight": 450,
+      "ratio": "4-3"
+    },
+    {
+      "id": "GAL-2026-002",
+      "fileName": "21_movie_outing_2026.jpg",
+      "thumbnailName": "21_movie_outing_2026_t.jpg",
+      "year": 2026,
+      "category": "team-building",
+      "categoryLabel": "Team building",
+      "title": "Interdisciplinary movie outing",
+      "titleZh": "跨学科交流与观影",
+      "caption": "A cinema gathering with the Wang and Lin research groups after an interdisciplinary lunch, 29 May 2026.",
+      "alt": "Members of the participating research groups seated together in a cinema.",
+      "width": 1702,
+      "height": 1276,
+      "thumbnailWidth": 600,
+      "thumbnailHeight": 450,
+      "ratio": "4-3"
+    },
+    {
+      "id": "GAL-2026-003",
+      "fileName": "22_graduation_group_2026.jpg",
+      "thumbnailName": "22_graduation_group_2026_t.jpg",
+      "year": 2026,
+      "category": "milestone",
+      "categoryLabel": "Milestone",
+      "title": "Graduation 2026 — group portrait",
+      "titleZh": "2026 年毕业合影",
+      "caption": "Celebrating the group’s master’s and bachelor’s graduates at the graduation ceremony, 10 June 2026.",
+      "alt": "Lab members and graduates holding bouquets in front of the BMSE sign.",
+      "width": 2400,
+      "height": 1600,
+      "thumbnailWidth": 600,
+      "thumbnailHeight": 400,
+      "ratio": "3-2"
+    },
+    {
+      "id": "GAL-2026-004",
+      "fileName": "23_graduation_group_2026_2.jpg",
+      "thumbnailName": "23_graduation_group_2026_2_t.jpg",
+      "year": 2026,
+      "category": "milestone",
+      "categoryLabel": "Milestone",
+      "title": "Graduation 2026 — with lab members",
+      "titleZh": "2026 年毕业留念",
+      "caption": "A graduation portrait with lab members outside the school, 10 June 2026.",
+      "alt": "A graduate in cap and gown holding a bouquet with lab members in front of the BMSE sign.",
+      "width": 1920,
+      "height": 1280,
+      "thumbnailWidth": 600,
+      "thumbnailHeight": 400,
+      "ratio": "3-2"
     }
   ]
 }

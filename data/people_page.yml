@@ -7,7 +7,9 @@ hero:
       target: "#current-team"
     - label: "Undergraduate students"
       target: "#undergraduate-students"
-    - label: "Alumni"
+    - label: "Graduate alumni"
+      target: "#graduate-alumni"
+    - label: "Undergraduate alumni"
       target: "#alumni"
     - label: "Group moments"
       target: "#group-moments"
@@ -21,10 +23,14 @@ sections:
     eyebrow: "Research training"
     title: "Undergraduate students"
     text: "Students currently connected to the group’s undergraduate research and training activities."
+  graduate_alumni:
+    eyebrow: "Graduate alumni"
+    title: "Graduate alumni"
+    text: "Graduates of the group’s master’s and doctoral programmes. Open a profile to see their education and research."
   alumni:
     eyebrow: "Continuing trajectories"
-    title: "Alumni"
-    text: "Former group members and the next positions recorded in the existing alumni register."
+    title: "Undergraduate alumni"
+    text: "Former undergraduate researchers and the next positions recorded in the alumni register."
   group_moments:
     eyebrow: "Group record"
     title: "The work also has a social history."

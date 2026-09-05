@@ -3,7 +3,7 @@ title: "Qiyun Zhou 周琦云"
 type: landing
 layout: person
 avatar: "/person/qy/avatar.jpg"
-role: "25 Master’s student in Pharmacy"
+role: "25 Master's student in Pharmacy"
 category: "graduate_student"
 organizations:
   - name: "South China University of Technology"
