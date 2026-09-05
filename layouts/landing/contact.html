@@ -11,7 +11,15 @@
         <p>{{ $page.hero.lead }}</p>
       </div>
     </div>
+    <nav class="lab-shell contact-jump" aria-label="{{ $page.pathways.navigation_label }}">
+      {{ range $page.pathways.routes }}
+        <a href="#{{ .id }}">{{ .navigation_label }}</a>
+      {{ end }}
+      <a href="#contact-information-title">{{ $page.pathways.contact_details_label }}</a>
+    </nav>
   </header>
+
+  {{ partial "contact/pathways.html" $page }}
 
   <section class="lab-section contact-information" aria-labelledby="contact-information-title">
     <div class="lab-shell contact-information__grid">

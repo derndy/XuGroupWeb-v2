@@ -1,7 +1,112 @@
 // Contact follows the shared research typography and spacing.
-.contact-information {
-  padding-top: 0;
+.contact-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid var(--lab-line);
+    border-radius: 0.35rem;
+    color: var(--lab-navy);
+    background: var(--lab-white);
+    font-size: 0.875rem;
+    font-weight: 650;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
 }
+
+.contact-jump a:focus-visible,
+.contact-pathway:focus-visible,
+.contact-pathway a:focus-visible {
+  outline: 3px solid var(--lab-blue);
+  outline-offset: 4px;
+}
+
+.contact-pathways { background: var(--lab-surface); }
+.contact-pathways__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.contact-pathway {
+  min-width: 0;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  border: 1px solid var(--lab-line);
+  border-top: 3px solid var(--lab-navy);
+  background: var(--lab-white);
+  scroll-margin-top: 7rem;
+  overflow-wrap: anywhere;
+
+  &:target { border-top-color: var(--lab-blue); }
+
+  h3 {
+    margin: 0 0 1rem;
+    color: var(--lab-navy);
+    font-size: clamp(1.45rem, 2.2vw, 2rem);
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+  }
+
+  p { margin: 0; }
+  header > p:last-child { color: #455b70; }
+}
+
+.contact-pathway .contact-pathway__eyebrow {
+  margin: 0 0 1rem;
+  color: #455b70;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.contact-pathway__guidance {
+  margin: 1.75rem 0 0;
+
+  > div + div { margin-top: 1.5rem; }
+  dt { margin-bottom: 0.5rem; color: var(--lab-navy); font-weight: 700; }
+  dd { margin: 0; color: #455b70; }
+  ul { margin: 0; padding-left: 1.25rem; }
+  li + li { margin-top: 0.65rem; }
+}
+
+.contact-pathway__availability {
+  padding: 1rem;
+  border-left: 3px solid var(--lab-blue);
+  background: var(--lab-surface);
+}
+
+.contact-pathway__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--lab-line);
+
+  .lab-button {
+    max-width: 100%;
+    white-space: normal;
+    text-align: left;
+  }
+}
+
+.contact-pathway__subject {
+  color: #455b70;
+  font-size: 0.875rem;
+
+  strong,
+  span { display: block; }
+}
+
+#contact-information-title { scroll-margin-top: 7rem; }
 
 .contact-information__grid {
   display: grid;
@@ -82,6 +187,7 @@
 }
 
 @media (max-width: 61.99rem) {
+  .contact-pathways__grid,
   .contact-information__grid {
     grid-template-columns: minmax(0, 1fr);
   }
