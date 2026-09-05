@@ -19,6 +19,19 @@
     </div>
   </header>
 
+  {{ with site.Data.research_system.overview_visual }}
+  <section class="lab-section research-concept-section" aria-label="Three connected research contributions">
+    <div class="lab-shell">
+      {{ partial "research/conceptual-figure.html" (dict "asset_id" . "placement" "research-overview") }}
+      <dl class="research-concept-guide">
+        <div><dt>Scientific learner</dt><dd>Design representations, interactions, and guiding signals.</dd></div>
+        <div><dt>Evidence environment</dt><dd>Design what to measure, test, and learn from next.</dd></div>
+        <div><dt>Mathematical lens</dt><dd>Reveal structure, uncertainty, and new scientific questions.</dd></div>
+      </dl>
+    </div>
+  </section>
+  {{ end }}
+
   <section id="research-map" class="lab-section research-map-section" aria-label="Integrated research system">
     <div class="lab-shell">
       {{ partial "research/system-map.html" . }}
@@ -86,6 +99,7 @@
         <p class="lab-section-number">Continue through the evidence</p>
         <h2 id="research-routes-title">Follow the programme through outputs, people, and collaboration.</h2>
       </header>
+      <p><a class="lab-text-link" href="{{ "/about/" | relURL }}">Read about our approach</a></p>
       <div class="research-route-grid">
         <a href="{{ "/publication/" | relURL }}"><span>Outputs</span><strong>Inspect publications</strong><small>See the lab’s existing scientific record.</small></a>
         <a href="{{ "/people/" | relURL }}"><span>People</span><strong>Meet the researchers</strong><small>Find the people developing each part of the programme.</small></a>

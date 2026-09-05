@@ -114,12 +114,12 @@ Pillar III completes the detailed three-Pillar research set:
 2. People and Gallery use extensive inline styles. Their existing data and behaviour should be preserved while presentation is moved into the shared design system.
 3. The Gallery implementation should receive a later accessibility pass for dialog semantics, focus management, button labels, and touch behaviour.
 4. GitHub Pages and Netlify both contain deployment workflows. Hugo versions are aligned in this branch, but the long-term single production authority still needs confirmation.
-5. Approved scientific images and source SVG maps have not yet been imported. The current maps are responsive semantic web components; legacy PNG files remain blocked pending provenance and rights review.
+5. Slice 12 imports the first PI-approved conceptual illustration for the Research overview. Images 02 and 03 remain pending separate decisions. See `docs/scientific-visual-approval-2026-09-05.md`. The semantic maps remain in place; source SVG imports and legacy PNG review are still pending.
 6. No unapproved Project records, evidence figures, performance claims, or downloads have been exposed.
 
 ## Recommended next slices
 
-1. Audit and import the first approved scientific visual with responsive derivatives, caption, alt text, provenance, and rights metadata.
+1. The first approved conceptual image is implemented in Slice 12. Review its preview presentation; add further scientific visuals only after each receives its own approval.
 2. Refactor the People page presentation while preserving profile content.
 3. Refactor News and Gallery presentation, including accessible lightbox behaviour.
 4. Build Publications and Resources architecture.

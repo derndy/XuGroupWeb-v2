@@ -1,0 +1,33 @@
+{{ define "main" }}
+<main class="about-redesign">
+  <header class="research-hero" aria-labelledby="about-title">
+    <div class="lab-shell research-hero__grid">
+      <div>
+        <p class="lab-eyebrow">Xu Lab · Scientific Learning &amp; Discovery Systems</p>
+        <h1 id="about-title">Learning, evidence, and discovery belong together.</h1>
+      </div>
+      <div class="research-hero__statement">{{ .Content }}</div>
+    </div>
+  </header>
+  <section class="lab-section about-vision" aria-label="Space, interaction, and learning">
+    <div class="lab-shell">
+      {{ with site.Data.site_visuals.about_vision }}
+        {{ partial "research/conceptual-figure.html" (dict "asset_id" . "placement" "about-vision") }}
+      {{ end }}
+    </div>
+  </section>
+  <section class="lab-section research-routes" aria-labelledby="about-routes-title">
+    <div class="lab-shell">
+      <header class="research-routes__heading">
+        <p class="lab-section-number">Explore Xu Lab</p>
+        <h2 id="about-routes-title">Follow the questions, the people, and the work.</h2>
+      </header>
+      <div class="research-route-grid">
+        <a href="{{ "/research/" | relURL }}"><span>Research</span><strong>Explore the three Pillars</strong><small>See how our scientific questions connect.</small></a>
+        <a href="{{ "/people/" | relURL }}"><span>People</span><strong>Meet the researchers</strong><small>Get to know the people behind the work.</small></a>
+        <a href="{{ "/contact/" | relURL }}"><span>Collaborate</span><strong>Start a conversation</strong><small>Bring a scientific question to the group.</small></a>
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }}

@@ -1,0 +1,22 @@
+# Contact facts retained from the original Contact page.
+# Verify any factual change with the PI before editing this record.
+hero:
+  eyebrow: "Join / Collaborate"
+  lead: "We welcome prospective researchers, scientific collaborators, and experimental partners interested in molecular and material discovery."
+
+contact:
+  name: "Shidang Xu"
+  email: "xusd@scut.edu.cn"
+  phone: "13717051839"
+  address: "No. 777, Xingye Avenue, Guangzhou, 510006"
+  appointment_url: "https://calendly.com/xushidang"
+  appointment_label: "Book an appointment"
+
+photo:
+  src: "/images/contact/图书馆鸟瞰(420).png"
+  alt: "Bird’s-eye view of the library."
+  caption: "Library · aerial view"
+
+closing:
+  eyebrow: "Join / Collaborate"
+  title: "Bring a scientific question worth stress-testing."

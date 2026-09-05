@@ -52,6 +52,7 @@
       <div class="lab-thesis__body">
         <p>Prediction asks what may happen. Scientific discovery asks what structure, interaction, or mechanism makes it happen—and what evidence would distinguish that explanation from alternatives.</p>
         <p>We develop intelligent computational frameworks to discover hidden principles governing molecular and material behaviours.</p>
+        <a class="lab-text-link" href="{{ "/about/" | relURL }}">About our approach <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -132,6 +133,9 @@
         </div>
         <p>Applications are not isolated silos. They are demanding testbeds in which representations, evidence strategies, and mechanisms must work together.</p>
       </header>
+      {{ with site.Data.site_visuals.home_testbeds }}
+        {{ partial "research/conceptual-figure.html" (dict "asset_id" . "placement" "home-testbeds") }}
+      {{ end }}
       <div class="testbed-grid">
         <article><span>01</span><h3>Molecular interactions</h3><p>Drug discovery and mechanism-aware interaction modelling.</p></article>
         <article><span>02</span><h3>Proteins and sequences</h3><p>Structured biological systems across multiple scales.</p></article>

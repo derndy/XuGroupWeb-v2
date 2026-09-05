@@ -65,7 +65,7 @@ features:
   privacy_pack:
     enable: false
   repository:
-    url: 'https://github.com/derndy/XuGroupWeb'
+    url: 'https://github.com/derndy/XuGroupWeb-v2'
     content_dir: content
     branch: main
   avatar:

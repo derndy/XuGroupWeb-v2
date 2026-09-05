@@ -41,6 +41,14 @@
     </div>
   </header>
 
+  {{ with $detail.intro_visual }}
+  <section class="lab-section pillar-concept-section" aria-label="Conceptual illustration of this research direction">
+    <div class="lab-shell">
+      {{ partial "research/conceptual-figure.html" (dict "asset_id" . "placement" (printf "%s-intro" $pillarID)) }}
+    </div>
+  </section>
+  {{ end }}
+
   <section class="lab-section pillar-architecture-section">
     <div class="lab-shell">
       {{ partial "research/pillar-detail-map.html" (dict "architecture" $detail.architecture) }}

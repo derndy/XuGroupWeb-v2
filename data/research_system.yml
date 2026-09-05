@@ -1,3 +1,5 @@
+overview_visual: CONCEPT-RES-001
+
 pillars:
   - id: pillar-i
     class: one
@@ -115,6 +117,7 @@ pillars:
       - De novo, inverse, and closed-loop design
     outcome: An evidence process that is purposeful, inspectable, and connected to the next scientific decision.
     detail:
+      intro_visual: CONCEPT-RES-002
       sections:
         scope_title: Evidence becomes a designed part of the system.
         scope_text: Evidence is evaluated by whether it is trustworthy, reusable, and capable of distinguishing explanations—not simply by how much of it is available.
@@ -214,6 +217,7 @@ pillars:
       - Frontier stress tests and inverse design
     outcome: Principles and tools that reveal when patterns can become testable explanations or useful designs.
     detail:
+      intro_visual: CONCEPT-RES-003
       sections:
         scope_title: Mathematical structure becomes a scientific instrument.
         scope_text: This Pillar begins where a new abstraction, method, computational bottleneck, or consequential transfer question can change what a scientific system is able to resolve.

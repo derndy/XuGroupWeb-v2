@@ -1,0 +1,52 @@
+{{/* Resolve the exact approved conceptual source and its permitted placement. */}}
+{{- $assetID := .asset_id -}}
+{{- $placement := .placement -}}
+{{- $matches := where site.Data.research_assets.assets "asset_id" $assetID -}}
+{{- $record := dict -}}
+{{- $image := false -}}
+{{- if ne (len $matches) 1 -}}
+  {{- errorf "Conceptual visual %s must resolve exactly one asset record" $assetID -}}
+{{- else -}}
+  {{- $record = index $matches 0 -}}
+  {{- $required := site.Data.research_assets.publication_policy.required_fields | append "title" "source_sha256" "width" "height" "approval" -}}
+  {{- range $required -}}
+    {{- if not (index $record .) -}}
+      {{- errorf "Conceptual visual %s is missing required field %s" $assetID . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if or (ne $record.publication_state "APPROVED") (ne $record.rights_status "APPROVED") -}}
+    {{- errorf "Conceptual visual %s requires publication and rights approval" $assetID -}}
+  {{- end -}}
+  {{- if or (ne $record.scientific_role "conceptual-illustration") (ne $record.evidence_status "CONCEPT_REVIEWED") -}}
+    {{- errorf "Conceptual visual %s requires the conceptual-illustration role and CONCEPT_REVIEWED status" $assetID -}}
+  {{- end -}}
+  {{- if not (in ($record.approval.placements | default slice) $placement) -}}
+    {{- errorf "Conceptual visual %s is not approved for placement %s" $assetID $placement -}}
+  {{- end -}}
+  {{- range slice "by" "date" "user_message" "review_number" "record" -}}
+    {{- if not (index $record.approval .) -}}
+      {{- errorf "Conceptual visual %s is missing approval field %s" $assetID . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not (hasPrefix $record.source_path "assets/") -}}
+    {{- errorf "Conceptual visual %s must use a repository image resource under assets/" $assetID -}}
+  {{- else -}}
+    {{- $image = resources.Get (strings.TrimPrefix "assets/" $record.source_path) -}}
+    {{- if not $image -}}
+      {{- errorf "Conceptual visual %s source is missing" $assetID -}}
+    {{- else if ne $image.ResourceType "image" -}}
+      {{- errorf "Conceptual visual %s source must be an image" $assetID -}}
+    {{- else -}}
+      {{- if ne (crypto.SHA256 $image.Content) $record.source_sha256 -}}
+        {{- errorf "Conceptual visual %s source differs from the approved original" $assetID -}}
+      {{- end -}}
+      {{- if or (ne $image.Width (int $record.width)) (ne $image.Height (int $record.height)) -}}
+        {{- errorf "Conceptual visual %s dimensions differ from the approved original" $assetID -}}
+      {{- end -}}
+      {{- if ne $image.RelPermalink ($record.public_url | relURL) -}}
+        {{- errorf "Conceptual visual %s public_url must match its original image resource" $assetID -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return (dict "record" $record "image" $image) -}}

@@ -1,0 +1,125 @@
+// Approved conceptual artwork; all scientific diagrams retain their own layout.
+.conceptual-figure {
+  min-width: 0;
+  margin: 0;
+  border: 1px solid var(--lab-line);
+  border-radius: var(--lab-radius);
+  overflow: hidden;
+  background: #020b24;
+
+  picture,
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+  }
+}
+
+.conceptual-figure__caption {
+  display: flex;
+  padding: 1.1rem 1.4rem;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  color: var(--lab-ink);
+  background: var(--lab-white);
+  text-align: left;
+
+  > div {
+    max-width: 58rem;
+  }
+
+  p {
+    margin: 0.4rem 0 0;
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  a {
+    display: inline-flex;
+    min-height: 2.75rem;
+    flex-shrink: 0;
+    align-items: center;
+    color: var(--lab-blue);
+    font-size: 0.875rem;
+    font-weight: 750;
+    text-decoration: underline;
+  }
+
+  a:focus-visible {
+    outline: 3px solid var(--lab-blue);
+    outline-offset: 4px;
+  }
+}
+
+.conceptual-figure__label {
+  color: var(--lab-muted);
+  font-size: 0.875rem;
+  font-weight: 750;
+  letter-spacing: 0.03em;
+}
+
+.research-concept-section {
+  padding-block: clamp(2rem, 5vw, 4rem);
+  background: var(--lab-white);
+}
+
+.pillar-concept-section,
+.about-vision {
+  padding-top: 0;
+}
+
+.home-redesign .conceptual-figure {
+  margin-bottom: 2rem;
+}
+
+.contact-closing {
+  margin-top: 2rem;
+  border-top: 1px solid var(--lab-line);
+}
+
+.research-concept-guide {
+  display: grid;
+  margin: 1.5rem 0 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+
+  > div {
+    padding-left: 1rem;
+    border-left: 2px solid var(--lab-line);
+  }
+
+  dt {
+    color: var(--lab-navy);
+    font-size: 0.9rem;
+  }
+
+  dd {
+    margin: 0.4rem 0 0;
+    color: var(--lab-muted);
+    font-size: 0.87rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 61.99rem) {
+  .conceptual-figure__caption {
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .research-concept-guide {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 39.99rem) {
+  .conceptual-figure__caption {
+    padding: 1rem;
+  }
+}

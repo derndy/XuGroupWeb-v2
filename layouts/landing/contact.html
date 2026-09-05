@@ -1,89 +1,66 @@
 {{ define "main" }}
-<style>
-    .contact-wrapper {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    .contact-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-    .contact-details {
-        width: 100%;
-        max-width: 100%;
-    }
-    .contact-image {
-        width: 100%;
-        text-align: center;
-    }
-    .contact-image img {
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-    }
-    @media (min-width: 768px) {
-        .contact-container {
-            flex-direction: row;
-            justify-content: center; /* 居中对齐 */
-            align-items: stretch; /* 高度一致，上下端对齐 */
-            gap: 20px; /* 保持间距 */
-        }
-        .contact-details {
-            max-width: 45%; /* 文字区域宽度 */
-            display: flex; /* 使用 Flexbox 控制内容 */
-            flex-direction: column;
-            justify-content: center; /* 文字垂直居中 */
-        }
-        .contact-image {
-            max-width: 50%; /* 图片区域宽度 */
-            display: flex; /* 使用 Flexbox 控制图片 */
-            align-items: center; /* 图片垂直居中 */
-            justify-content: center; /* 图片水平居中 */
-        }
-        .contact-image img {
-            max-height: 300px; /* 限制图片最大高度 */
-            width: 100%; /* 填充容器宽度 */
-            height: auto; /* 保持比例 */
-            object-fit: cover; /* 确保图片填充区域 */
-        }
-    }
-    .page-title {
-        text-align: center;
-        font-size: 1.875rem;
-        font-weight: 700;
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-    .additional-content {
-        margin-top: 1rem; /* 与上方内容间隔 */
-    }
-</style>
-
-<div class="contact-wrapper">
-    <h1 class="page-title">{{ .Title }}</h1>
-
-    <div class="contact-container">
-        <div class="contact-details">
-            <p><strong>Primary contact:</strong> Shidang Xu</p>
-            <p><strong>Email:</strong> xusd@scut.edu.cn</p>
-            <p><strong>Phone:</strong> 13717051839</p>
-            <p><strong>Address:</strong> No. 777, Xingye Avenue, Guangzhou, 510006</p>
-            <p><strong><a href="https://calendly.com/xushidang" target="_blank">Book an appointment</a></strong></p>
-            {{ if .Content }}
-            <div class="additional-content">
-                {{ .Content }}
-            </div>
-            {{ end }}
-        </div>
-        <div class="contact-image">
-            <img src="/images/contact/图书馆鸟瞰(420).png?fm=webp" alt="图书馆鸟瞰">
-        </div>
+{{ $page := site.Data.contact_page }}
+<main class="contact-redesign">
+  <header class="research-hero" aria-labelledby="contact-title">
+    <div class="lab-shell research-hero__grid">
+      <div>
+        <p class="lab-eyebrow">{{ $page.hero.eyebrow }}</p>
+        <h1 id="contact-title">{{ .Title }}</h1>
+      </div>
+      <div class="research-hero__statement">
+        <p>{{ $page.hero.lead }}</p>
+      </div>
     </div>
-</div>
+  </header>
+
+  <section class="lab-section contact-information" aria-labelledby="contact-information-title">
+    <div class="lab-shell contact-information__grid">
+      <div>
+        <p class="lab-section-number">Primary contact</p>
+        <h2 id="contact-information-title">{{ $page.contact.name }}</h2>
+        <dl class="contact-information__details">
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:{{ $page.contact.email }}">{{ $page.contact.email }}</a></dd>
+          </div>
+          <div>
+            <dt>Phone</dt>
+            <dd><a href="tel:{{ $page.contact.phone }}">{{ $page.contact.phone }}</a></dd>
+          </div>
+          <div>
+            <dt>Address</dt>
+            <dd>{{ $page.contact.address }}</dd>
+          </div>
+        </dl>
+        <div class="lab-actions">
+          <a class="lab-button lab-button--primary" href="{{ $page.contact.appointment_url }}">{{ $page.contact.appointment_label }}</a>
+        </div>
+        {{ with .Content }}
+          <div class="contact-information__content">{{ . }}</div>
+        {{ end }}
+      </div>
+      {{ with $page.photo }}
+        {{ $dimensions := imageConfig (printf "static%s" .src) }}
+        <figure class="contact-information__photo">
+          <img src="{{ .src | relURL }}" width="{{ $dimensions.Width }}" height="{{ $dimensions.Height }}" alt="{{ .alt }}" loading="lazy" decoding="async">
+          <figcaption>{{ .caption }}</figcaption>
+        </figure>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="lab-section contact-closing" aria-labelledby="contact-closing-title">
+    <div class="lab-shell">
+      <header class="lab-section-heading">
+        <div>
+          <p class="lab-section-number">{{ $page.closing.eyebrow }}</p>
+          <h2 id="contact-closing-title">{{ $page.closing.title }}</h2>
+        </div>
+      </header>
+      {{ with site.Data.site_visuals.join_collaborate }}
+        {{ partial "research/conceptual-figure.html" (dict "asset_id" . "placement" "join-collaborate") }}
+      {{ end }}
+    </div>
+  </section>
+</main>
 {{ end }}

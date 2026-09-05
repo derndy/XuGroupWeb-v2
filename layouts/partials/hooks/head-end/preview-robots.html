@@ -1,0 +1,4 @@
+{{/* Netlify preview environments explicitly opt out of search indexing. */}}
+{{- if eq (os.Getenv "HUGO_DEPLOY_CONTEXT") "preview" -}}
+<meta name="robots" content="noindex,nofollow">
+{{- end -}}
