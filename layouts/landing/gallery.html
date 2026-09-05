@@ -41,7 +41,7 @@
           </div>
         </header>
 
-        <div class="gallery-grid gallery-grid--{{ len $yearImages }}">
+        <div class="lab-gallery-grid lab-gallery-grid--{{ len $yearImages }}">
           {{- range $imageIndex, $image := $yearImages }}
           {{- $thumbnailSrc := printf "%s%s" $thumbnailBase $image.thumbnailName -}}
           {{- $imageSrc := printf "%s%s" $imageBase $image.fileName -}}

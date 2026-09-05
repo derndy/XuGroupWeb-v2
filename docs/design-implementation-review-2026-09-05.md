@@ -11,7 +11,8 @@ Read with [the design brief](website-design-and-asset-placement.md) and [current
 - Third batch: `design/homepage-publications-people-news`, merged as PR #4.
 - Fourth batch: `design/contact-pathways`, merged as PR #5.
 - Fifth batch: `design/about-learning-system`, merged as PR #6.
-- Current batch: `design/about-principles-horizons`, based on v2 `main` at `424fcdb79a3d3006aa255538fe075e83b00fffb2`, for draft review only.
+- Sixth batch: `design/about-principles-horizons`, merged as PR #7.
+- Current repair: `fix/gallery-overlap`, based on v2 `main` at `5c6c216d8138fcdf13798a3ae8b2dc34238c9a29`, addressing the user-reported Gallery overlap before further page expansion.
 - On this date the recorded production URL, `https://xushidang-lab.netlify.app/`, returned HTTP 200 with the older carousel markup, three empty Hero headings, and no approved homepage title. This is an HTML observation, not a browser screenshot or proof of its Netlify repository settings.
 - The new homepage work is evaluated against the latest v2 source, not that older hosted page. Neither `main` nor hosting configuration is changed by this batch.
 
@@ -127,3 +128,10 @@ About now follows its scientific-learning chapter with six research principles a
 The stage introduction explicitly distinguishes direction and ambition from evidence strength or completed results. No fixed deadline or achieved general system is asserted. One link leads to Research's shared principles and three descriptive links reach the actual pillar horizon sections. The principles use a two-column semantic list, while the three stages form a vertical sequence. Both reflow to one column below 48rem without changing reading order or requiring JavaScript.
 
 Both builds passed; six approved image placements, 24 WebP variants, all 78 publications/citation bytes and 1,069 internal links/anchors are verified. The complete preceding About hero, vision chapter and onward routes, plus the other ten main-content trees, match baseline. Shared scientific data, original images and hosting settings are unchanged. Browser layout, keyboard/touch, zoom and image loading remain unreviewed. See [About maintenance](about-maintenance.md) for shared-source contracts and the next chapter boundaries.
+
+
+## Gallery repair — user-reported overlap
+
+Live browser inspection reproduced photographs/captions overlapping subsequent rows and year headings. The documentary grid accidentally inherited the theme shortcode's 150px implicit rows, dense packing and 30px gap. The repair isolates its grid class, explicitly sizes rows from content and uses natural flex-column figures. Caption margins/alignment and wrapping are local to the Gallery cards and viewer.
+
+All 19 photo records, original/thumbnail image bytes, captions and viewer behaviour remain in place. Both Hugo contexts and preservation checks pass. Actual hosted visual and interaction results are recorded in `project-state.md` after reviewing the matching draft preview. About's testbed rationale remains the next planned content batch after this defect is resolved.

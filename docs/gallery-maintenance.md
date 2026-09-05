@@ -62,3 +62,12 @@ Before a Gallery change is approved, verify:
 ## Existing collection status
 
 The 19 photographs present when this page was refactored are retained as a legacy-public collection with their public filenames and URLs unchanged. A future binary-maintenance pass may review embedded metadata and media compression. That pass must preserve URL stability or include an explicit redirect and reference audit; it is intentionally separate from page-layout changes.
+
+
+## Layout isolation and overlap regression
+
+The documentary page uses `.lab-gallery-grid` (including its two-photo variant and responsive selectors). Do not reuse the theme's `.gallery-grid`: the Hugo Blox shortcode sets 150px implicit rows and dense packing, which allow full photograph/caption cards to paint over later rows and year headings.
+
+Keep implicit rows content-sized (`auto`), row flow in document order, and the card grid gap explicit. Cards/figures use flex columns with natural content height; photographs must not shrink to fit captions. Do not restore percentage figure heights or a fixed card/row height. Captions reset theme margins, align left and wrap long text; the viewer's caption applies the same local reset. Avoid changing the upstream theme shortcode to fix this page.
+
+The 5 September repair preserves all 19 image records and image bytes; only the documentary grid classes and scoped layout rules change. Verify that every photograph, caption and action fits inside its card, that rows and following year headings do not overlap, and that the complete photo viewer remains usable at narrow widths. Build/record checks alone cannot detect CSS grid overflow: run browser geometry and visual checks when this layout changes. The actual preview results and release boundary are recorded in `project-state.md`.
