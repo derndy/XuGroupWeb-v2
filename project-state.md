@@ -12,8 +12,8 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | Branch point | `main` at `c9afdcf43cb59d679c1cc199f95a81814f07e615`, including merged PRs #12 and #13 |
 | Previous merged work | PRs #1–10, #12 and #13; all preserved |
 | Source content PR | [v1 PR #2](https://github.com/derndy/XuGroupWeb/pull/2), head `36135be707ce1d68218d4bdf01d790780fa5d851` |
-| Current PR | Prepared for publication as a v2 draft PR; delivery link is recorded after creation |
-| Hosted preview | Local production/preview builds verified; hosted status pending draft PR creation |
+| Current PR | [Draft PR #14](https://github.com/derndy/XuGroupWeb-v2/pull/14), open and draft at delivery |
+| Hosted preview | [News](https://deploy-preview-14--xushidang-lab.netlify.app/post/), [Gallery](https://deploy-preview-14--xushidang-lab.netlify.app/gallery/), [People](https://deploy-preview-14--xushidang-lab.netlify.app/people/); Netlify success on the product commit |
 | Withdrawn rewrite | v2 PR #11 closed without merging at the PI's instruction |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
@@ -30,6 +30,12 @@ The PI rejected PR #11's broad public-marketing rewrite because it made the lab 
 - Working outputs: `/workspace/scratch/7457cd2d5ea9/build-v1-migration` and `build-v1-migration-preview`. The one-off verifier is `verify-v1-migration.py` in the same scratch directory.
 - Remaining factual details: exact incoming-member joining day, Meitang Peng's MSc completion/transfer history, and the two new undergraduate alumni's next positions. No unresolved fact is invented.
 - Publish this branch and a draft PR only. Do not merge or change production. Do not modify, merge or close the source v1 PR.
+
+### Migration delivery
+
+Published product commit `3f21125ebad68c6218a66ff0eeb44ae2aee1d846` has tree `c356549b3fd7e4ecbcd27e830055ddb8fe524217`, exactly matching the verified local source. All 13 unique new image blobs were copied to v2 with matching source Git hashes. Netlify reports success for the product commit at the preview links above. The local source checkpoint is retained at `checkpoint/v1-migration-local-source`.
+
+This following documentation-only commit records the delivery. Inspect the final PR-head Netlify check before release. No v1 modification, PR merge, production switch or hosting/workflow change was performed. The new joining-year correction is 2026; exact day, the noted MSc history and undergraduate alumni destinations remain the only factual follow-ups from this migration.
 
 ## Previous completed batch — move Vision to the end of Join / Collaborate
 
