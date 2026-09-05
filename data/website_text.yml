@@ -1,0 +1,291 @@
+# WEBSITE TEXT — phase 1: homepage / 网站文字：第一阶段，首页
+# Edit wording here; keep keys, indentation, ids and URLs. Use plain text, not HTML.
+# 修改文字即可；保留字段名、缩进、id 和链接。不要加入 HTML。
+# home: homepage headings, explanations, buttons and labels.
+# shared: definitions and pillar wording also used by About/Research/People.
+# Publications/news/member records and approved image captions keep their own files.
+# Other pages and global navigation/footer have not yet been moved here.
+# Editing guide: docs/website-text-maintenance.md
+
+home:
+  hero:
+    eyebrow: "Scientific learning · Evidence engineering · Mathematical data science"
+    title: "Designing Scientific Learning and Discovery Systems"
+    subtitle: >-
+      We design how scientific systems represent information, organize interactions, learn from evidence,
+      and generate new knowledge and designs.
+    actions_label: "Primary actions"
+    research_link: "Explore our research"
+    testbeds_link: "Scientific testbeds"
+    tagline: "Learn better. Create better evidence. Discover deeper. Design forward."
+  map:
+    title: "One connected scientific system"
+    hint: "Open a concept to explore its role."
+    evidence_relation: "Evidence informs the learner; the learner helps choose new evidence."
+    learner_label: "Design the learner together"
+    co_design: "Each choice changes what the others can express, combine and learn."
+    aims_label: "Research aims to test against evidence"
+  thesis:
+    eyebrow: "01 · Research thesis"
+    title: "Beyond prediction: toward testable mechanisms"
+    paragraph_one: >-
+      Prediction asks what may happen. Scientific discovery asks what structure, interaction, or mechanism
+      makes it happen—and what evidence would distinguish that explanation from alternatives.
+    paragraph_two: >-
+      We develop intelligent computational frameworks to discover hidden principles governing molecular
+      and material behaviours.
+    link: "About our approach"
+  grammar:
+    eyebrow: "02 · Space · Interaction · Learning"
+    title: "Scientific intelligence is a designed system."
+    introduction: >-
+      Representation, interaction and learning are connected design choices within the scientific learner.
+      We study how they shape one another, alongside evidence creation and mathematical questions.
+    connected_choice_label: "Connected choice:"
+    feedback_title: "Evidence keeps the system open to revision."
+  pillars:
+    eyebrow: "03 · Research system"
+    title: "Three contributions. One discovery system."
+    introduction: >-
+      Each pillar plays a different role: designing the learner, designing the evidence it receives, and
+      opening the mathematical frontier of what can be identified and designed.
+    link: "Enter the research system"
+    pillar_label: "Pillar"
+    capabilities_label: "capabilities"
+    explore_label: "Explore Pillar"
+  evidence_loop:
+    eyebrow: "04 · Evidence loop"
+    title: "Discovery advances when evidence changes the next question."
+    introduction: >-
+      We connect learning and experimentation by asking what evidence could change an explanation, a model
+      or a design decision.
+    type_label: "Conceptual framework"
+    hint: "Open a step for an example question and the research behind it."
+    question_label: "Example question"
+    output_label: "Typical research output"
+    contributions_label: "Contributing research"
+    return_label: "Return to Observe"
+    legend: "Solid arrows follow the reading sequence. The dashed path returns evidence to the next question."
+  testbeds:
+    eyebrow: "05 · Scientific testbeds"
+    title: "Consequential systems for testing scientific learning"
+    introduction: >-
+      Applications are not isolated silos. They are demanding testbeds in which representations, evidence
+      strategies, and mechanisms must work together.
+    items:
+      - title: "Molecular interactions"
+        description: "Drug discovery and mechanism-aware interaction modelling."
+      - title: "Proteins and sequences"
+        description: "Structured biological systems across multiple scales."
+      - title: "Biomaterials and delivery"
+        description: "Complex formulations, assemblies, and functional materials."
+      - title: "Scientific data systems"
+        description: "Uncertainty, causal structure, and evidence-efficient discovery."
+  publications:
+    eyebrow: "06 · Publications and citations"
+    title: "Explore the published work."
+    introduction: >-
+      Selected papers connect computational discovery and molecular design. Follow each record for the
+      research context and available supporting material.
+    list_label: "Selected research papers"
+    kind_label: "Research article"
+    publisher_link: "Publisher record"
+    all_link: "Browse all publications"
+    citations:
+      eyebrow: "For your reference library"
+      title: "Take the citation with you."
+      introduction: "Download BibTeX citations to use in your reference manager."
+      download_label: "Download BibTeX"
+    for_label: "for"
+  people:
+    eyebrow: "07 · People and culture"
+    title: "Different training. Shared scientific questions."
+    introduction: "Our research programme connects scientific learning, evidence creation and mathematical questions."
+    people_link: "Meet the people"
+    gallery_link: "Explore group moments"
+  news:
+    eyebrow: "08 · Latest news"
+    title: "From the lab."
+    introduction: "Recent entries from our group record, with their original event dates."
+    category_fallback: "Lab update"
+    all_link: "All news"
+  join:
+    eyebrow: "09 · Work with us"
+    title: "Bring a scientific question worth stress-testing."
+    introduction: >-
+      We welcome prospective researchers, scientific collaborators, and experimental partners interested
+      in building more rigorous systems for molecular and material discovery.
+    contact_link: "Join or collaborate"
+    people_link: "Meet the team"
+shared:
+  grammar:
+    dimensions:
+      - id: "space"
+        label: "Space"
+        cue: "Represent what matters"
+        question: "What distinctions should the representation preserve?"
+        definition: >-
+          Organise scientific states, coordinates and scales so that relevant structure, symmetries and
+          uncertainty can be represented.
+        relationship: >-
+          The chosen space shapes which interactions can be expressed; learning can reveal distinctions that
+          require a different space.
+        url: "/research/learning-system-design/"
+        link_text: "Explore representation design"
+      - id: "interaction"
+        label: "Interaction"
+        cue: "Expose meaningful relations"
+        question: "Which relationships should the system expose?"
+        definition: >-
+          Design how information is exchanged, transformed and combined, from local relationships to
+          collective and cross-scale effects.
+        relationship: "Interactions depend on the representation and determine what information the learning process can combine."
+        url: "/research/learning-system-design/"
+        link_text: "Explore interaction design"
+      - id: "learning"
+        label: "Learning"
+        cue: "Update from evidence"
+        question: "What update process turns evidence into reusable knowledge?"
+        definition: >-
+          Co-design objectives, guiding signals, constraints and update rules to study how the system changes
+          as evidence arrives.
+        relationship: "Learning revises representations and interactions; their structure also changes which updates are possible."
+        url: "/research/learning-system-design/"
+        link_text: "Explore learning dynamics"
+    evidence:
+      id: "evidence"
+      label: "Evidence"
+      cue: "Create and acquire what matters"
+      definition: >-
+        Choose observations, perturbations and experiments that can distinguish competing explanations and
+        change the next learning step.
+      url: "/research/evidence-engineering/"
+      link_text: "Explore evidence engineering"
+    aims:
+      - id: "mechanism"
+        label: "Mechanism"
+        cue: "An explanation to challenge"
+        definition: >-
+          Seek explanations with consequences that can be tested against alternatives. A model pattern alone
+          does not establish a mechanism.
+        url: "/research/mathematical-frontiers/"
+        link_text: "Explore what is identifiable"
+      - id: "design"
+        label: "Design"
+        cue: "A proposal to test"
+        definition: >-
+          Propose candidates or interventions under scientific constraints, then use new evidence to test
+          whether they achieve the intended effect.
+        url: "/research/evidence-engineering/"
+        link_text: "Explore discovery and design"
+    feedback: >-
+      Tests of proposed mechanisms and designs return new evidence, revised questions and constraints to
+      the learner.
+  evidence_loop:
+    introduction: "A shared way to reason about discovery."
+    reading_note: "Projects may revisit or combine steps; new evidence can change any earlier choice."
+    feedback_title: "New evidence changes the next question."
+    feedback: >-
+      Observations, failed tests and revised constraints return to the learner. Revisit the question,
+      evidence choice or model when an explanation no longer holds.
+    steps:
+      - id: "observe"
+        title: "Observe"
+        summary: "Establish what is known and uncertain."
+        explanation: >-
+          Bring measurements into context, including how they were obtained, what they cover and where they
+          may be unreliable.
+        question: "Which observations are comparable, and what is still missing?"
+        artifact: "Context-aware observations with uncertainty and source information."
+        pillars:
+          - "pillar-ii"
+          - "pillar-iii"
+      - id: "question"
+        title: "Question"
+        summary: "Make competing explanations explicit."
+        explanation: >-
+          Identify a scientific distinction that matters, then ask which alternative structures or mechanisms
+          could explain the same observations.
+        question: "Could a different interaction or mechanism produce the same pattern?"
+        artifact: "Competing explanations and their distinguishable consequences."
+        pillars:
+          - "pillar-i"
+          - "pillar-iii"
+      - id: "design-evidence"
+        title: "Design evidence"
+        summary: "Choose what could distinguish the alternatives."
+        explanation: >-
+          Select a measurement, perturbation or candidate for what it can reveal, within the available
+          scientific and practical constraints.
+        question: "Which next experiment would best separate these explanations?"
+        artifact: "An evidence-acquisition or experiment-design proposal."
+        pillars:
+          - "pillar-ii"
+          - "pillar-iii"
+      - id: "learn"
+        title: "Learn"
+        summary: "Update the system from the new evidence."
+        explanation: >-
+          Revise representations, interactions or guiding signals while examining stability, uncertainty and
+          the alternatives that remain unresolved.
+        question: "What should change in the learner after this observation?"
+        artifact: "A revised model with explicit assumptions and uncertainty."
+        pillars:
+          - "pillar-i"
+          - "pillar-ii"
+      - id: "test"
+        title: "Test"
+        summary: "Challenge predictions and explanations."
+        explanation: >-
+          Use controls, new conditions and independent evidence where available to probe whether an
+          explanation survives plausible alternatives.
+        question: "Does the explanation survive matched controls and changed conditions?"
+        artifact: "A comparison showing supported claims, failures and limits."
+        pillars:
+          - "pillar-ii"
+          - "pillar-iii"
+      - id: "explain-design"
+        title: "Explain or design"
+        summary: "State what is supported and what to test next."
+        explanation: >-
+          Form a testable explanation or a constrained design proposal. Keep the conditions and limits
+          visible; a prediction alone does not establish a mechanism or a successful design.
+        question: "What consequence or design choice could be tested next?"
+        artifact: "A testable explanation or design proposal with stated limits."
+        pillars:
+          - "pillar-i"
+          - "pillar-ii"
+          - "pillar-iii"
+  pillars:
+    pillar-i:
+      home_invitation: "Learn the right scientific structure"
+      home_terms:
+        - "Representation"
+        - "Interaction"
+        - "Learning dynamics"
+      role: "The scientific learner"
+      title: "Foundational Scientific Learning-System Design"
+      question: "How should a scientific system learn?"
+    pillar-ii:
+      home_invitation: "Create evidence that changes what can be learned"
+      home_terms:
+        - "Active acquisition"
+        - "Perturbation"
+        - "Closed loops"
+      role: "The evidence environment"
+      title: "Evidence Engineering and Closed-Loop Discovery & Design"
+      question: "What evidence should the system create next?"
+    pillar-iii:
+      home_invitation: "Turn patterns into principles and possibilities"
+      home_terms:
+        - "Identifiability"
+        - "Uncertainty"
+        - "Inverse design"
+      role: "The mathematical lens"
+      title: "Mathematical Data Science and Frontier Exploration"
+      question: >-
+        What mathematical and data-science methods can reveal important structure and open new scientific
+        possibilities?
+  people_introduction: >-
+    Our team works across biomedical engineering, pharmacy, chemistry, materials, and machine learning.
+    Individual profiles document each researcher’s current role, training, and research interests.

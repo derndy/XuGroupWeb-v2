@@ -1,20 +1,21 @@
-{{- $grammar := site.Data.research_system.grammar -}}
+{{ $text := site.Data.website_text.home }}
+{{- $grammar := site.Data.website_text.shared.grammar -}}
 {{- if eq .variant "compact" -}}
 <figure class="learning-map" aria-labelledby="home-map-title" aria-describedby="home-map-caption">
-  <figcaption id="home-map-title" class="learning-map__title">One connected scientific system</figcaption>
-  <p class="learning-map__hint">Open a concept to explore its role.</p>
+  <figcaption id="home-map-title" class="learning-map__title">{{ $text.map.title }}</figcaption>
+  <p class="learning-map__hint">{{ $text.map.hint }}</p>
   {{ with $grammar.evidence }}
     {{ partial "research/learning-concept.html" (dict "concept" . "class" "learning-map__evidence") }}
   {{ end }}
-  <p class="learning-map__relation">Evidence informs the learner; the learner helps choose new evidence.</p>
+  <p class="learning-map__relation">{{ $text.map.evidence_relation }}</p>
   <div class="learning-map__learner">
-    <p class="learning-map__group-label">Design the learner together</p>
+    <p class="learning-map__group-label">{{ $text.map.learner_label }}</p>
     {{ range $grammar.dimensions }}
       {{ partial "research/learning-concept.html" (dict "concept" . "class" "") }}
     {{ end }}
-    <p class="learning-map__co-design">Each choice changes what the others can express, combine and learn.</p>
+    <p class="learning-map__co-design">{{ $text.map.co_design }}</p>
   </div>
-  <p class="learning-map__relation">Research aims to test against evidence</p>
+  <p class="learning-map__relation">{{ $text.map.aims_label }}</p>
   <div class="learning-map__aims">
     {{ range $grammar.aims }}
       {{ partial "research/learning-concept.html" (dict "concept" . "class" "") }}
@@ -30,13 +31,13 @@
         <h3>{{ .label }}</h3>
         <p class="learning-grammar__question">{{ .question }}</p>
         <p>{{ .definition }}</p>
-        <p class="learning-grammar__relation"><strong>Connected choice:</strong> {{ .relationship }}</p>
+        <p class="learning-grammar__relation"><strong>{{ $text.grammar.connected_choice_label }}</strong> {{ .relationship }}</p>
         <a class="lab-text-link" href="{{ .url | relURL }}">{{ .link_text }} <span aria-hidden="true">→</span></a>
       </article>
     {{ end }}
   </div>
   <div class="learning-grammar__feedback">
-    <h3>Evidence keeps the system open to revision.</h3>
+    <h3>{{ $text.grammar.feedback_title }}</h3>
     <p>{{ $grammar.feedback }} {{ $grammar.evidence.definition }}</p>
     <a class="lab-text-link" href="{{ $grammar.evidence.url | relURL }}">{{ $grammar.evidence.link_text }} <span aria-hidden="true">→</span></a>
   </div>

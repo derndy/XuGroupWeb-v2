@@ -6,7 +6,7 @@
       <div class="people-hero__copy">
         <p class="lab-eyebrow">{{ $peoplePage.hero.eyebrow }}</p>
         <h1 id="people-title">{{ $peoplePage.hero.title }}</h1>
-        <p class="people-hero__lead">{{ $peoplePage.hero.lead }}</p>
+        <p class="people-hero__lead">{{ site.Data.website_text.shared.people_introduction }}</p>
         <nav class="people-jump" aria-label="People page sections">
           {{ range $peoplePage.hero.links }}
             <a href="{{ .target }}">{{ .label }}</a>

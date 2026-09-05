@@ -1,3 +1,4 @@
+{{ $text := site.Data.website_text.home }}
 {{/* Date gates also apply to preview builds that enable buildFuture/buildDrafts. */}}
 {{ $news := where site.RegularPages "Section" "post" }}
 {{ $news = where $news "Draft" false }}
@@ -9,22 +10,22 @@
   <div class="lab-shell">
     <header class="lab-section-heading">
       <div>
-        <p class="lab-section-number">08 · Latest news</p>
-        <h2 id="home-news-title">From the lab.</h2>
+        <p class="lab-section-number">{{ $text.news.eyebrow }}</p>
+        <h2 id="home-news-title">{{ $text.news.title }}</h2>
       </div>
-      <p>Recent entries from our group record, with their original event dates.</p>
+      <p>{{ $text.news.introduction }}</p>
     </header>
     <ol class="home-news__list">
       {{ range . }}
       <li>
         <article aria-labelledby="home-news-{{ .File.UniqueID }}">
-          <p class="home-record-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time> · {{ with .Params.categories }}{{ delimit . " · " }}{{ else }}Lab update{{ end }}</p>
+          <p class="home-record-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time> · {{ with .Params.categories }}{{ delimit . " · " }}{{ else }}{{ $text.news.category_fallback }}{{ end }}</p>
           <h3 id="home-news-{{ .File.UniqueID }}"><a href="{{ .RelPermalink }}">{{ .Title }} <span aria-hidden="true">→</span></a></h3>
         </article>
       </li>
       {{ end }}
     </ol>
-    <div class="lab-section-action"><a class="lab-text-link" href="{{ "/post/" | relURL }}">All news <span aria-hidden="true">→</span></a></div>
+    <div class="lab-section-action"><a class="lab-text-link" href="{{ "/post/" | relURL }}">{{ $text.news.all_link }} <span aria-hidden="true">→</span></a></div>
   </div>
 </section>
 {{ end }}

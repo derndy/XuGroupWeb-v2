@@ -1,13 +1,14 @@
+{{ $text := site.Data.website_text.home }}
 <section class="lab-section home-people" aria-labelledby="home-people-title">
   <div class="lab-shell home-people__grid">
     <div class="home-people__copy">
-      <p class="lab-section-number">07 · People and culture</p>
-      <h2 id="home-people-title">Different training. Shared scientific questions.</h2>
-      <p>Our research programme connects scientific learning, evidence creation and mathematical questions.</p>
-      <p>{{ site.Data.people_page.hero.lead }}</p>
+      <p class="lab-section-number">{{ $text.people.eyebrow }}</p>
+      <h2 id="home-people-title">{{ $text.people.title }}</h2>
+      <p>{{ $text.people.introduction }}</p>
+      <p>{{ site.Data.website_text.shared.people_introduction }}</p>
       <div class="lab-actions">
-        <a class="lab-text-link" href="{{ "/people/" | relURL }}">Meet the people <span aria-hidden="true">→</span></a>
-        <a class="lab-text-link" href="{{ "/gallery/" | relURL }}">Explore group moments <span aria-hidden="true">→</span></a>
+        <a class="lab-text-link" href="{{ "/people/" | relURL }}">{{ $text.people.people_link }} <span aria-hidden="true">→</span></a>
+        <a class="lab-text-link" href="{{ "/gallery/" | relURL }}">{{ $text.people.gallery_link }} <span aria-hidden="true">→</span></a>
       </div>
     </div>
     {{ with site.Data.people_page.photos.featured }}

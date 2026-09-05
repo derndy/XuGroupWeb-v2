@@ -9,7 +9,8 @@ The People page separates verified member facts from page presentation. Keep tha
 | Current member name, role, biography, education, links, and avatar path | `content/person/<slug>/_index.md` | One record per public profile. Do not duplicate these facts in a layout or data file. |
 | Current member portrait | `content/person/<slug>/avatar.jpg` | The path is declared in the member record and used by both the directory and profile page. |
 | Undergraduate and alumni rows | `data/US_Alumni.yml` | Preserve the existing order unless the lab approves a different ordering rule. |
-| Page introduction, section copy, group-photo captions, and onward routes | `data/people_page.yml` | Presentation copy only; it must not become a second member register. |
+| Shared team introduction | `data/website_text.yml` → `shared.people_introduction` | Used by People and Home; edit once. |
+| Other section copy, group-photo captions, and onward routes | `data/people_page.yml` | Presentation copy only; it must not become a second member register. |
 | Group photographs | `static/images/people/` | Every published photograph needs confirmed rights/consent, factual alt text, and a dated caption. |
 | Page structure | `layouts/landing/people.html` | Semantic sections, registers, group moments, and onward routes. |
 | Current-member grouping | `layouts/partials/people-custom.html` | Reads the `category` field and sorts published profiles by title. |

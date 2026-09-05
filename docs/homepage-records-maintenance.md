@@ -8,7 +8,7 @@ This batch implements H08–H10 of the design brief. Start from v2 `main` at `13
 | --- | --- | --- |
 | Selected papers | Ordered page references in `data/homepage.yml`; bibliographic facts in the referenced `content/publication/` bundles | `layouts/partials/home/publications.html` |
 | Citation downloads | The selected bundles' existing `cite.bib` resources | The same partial; links appear only for files that exist, and the citation column is omitted when none exist |
-| Research programme and group photo | Existing research framing; `data/people_page.yml` introduction and featured-photo record | `layouts/partials/home/people.html` |
+| Research programme and group photo | `data/website_text.yml` → `home.people` and `shared.people_introduction`; `data/people_page.yml` → featured-photo record | `layouts/partials/home/people.html` |
 | Latest news | `content/post/` titles, dates, categories and publication state | `layouts/partials/home/news.html`; newest three eligible records at build time |
 | Order and styling | `layouts/landing/home.html`, `assets/scss/template.scss` | After testbeds, before the closing invitation; single columns below 62rem |
 
@@ -56,3 +56,7 @@ See [News maintenance](news-maintenance.md) for editing the actual records and [
 Verify both Hugo build contexts, the six-image audit, exact publication/citation preservation, all main-page internal links, unique IDs and heading landmarks. Compare the other ten main-content trees against the evidence-loop build. Home's earlier sections should match exactly except for the closing invitation's section number, now 09.
 
 Before release, inspect desktop/tablet/320px layouts, focus, text zoom and photo loading in a supported real browser. The current internal preview cannot start this Hugo checkout, so source checks do not establish browser QA success. Keep the delivery as a draft PR; merging and hosting changes require a separate release instruction.
+
+## Current text-editing location
+
+Homepage section headings, descriptions and labels now live in `data/website_text.yml` under `home.publications`, `home.people` and `home.news`. Record selection and eligibility rules above are unchanged. See [the editing guide](website-text-maintenance.md).

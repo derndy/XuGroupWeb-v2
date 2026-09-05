@@ -45,7 +45,7 @@
         <h2 id="pillars-title">Different scientific responsibilities. Shared discovery logic.</h2>
         <p>The Pillars separate responsibilities without separating the research programme. Each one changes what the others can accomplish.</p>
       </header>
-      {{ range site.Data.research_system.pillars }}
+      {{ range (partialCached "research/pillars.html" "shared-pillar-copy") }}
         {{ partial "research/pillar-module.html" (dict "pillar" .) }}
       {{ end }}
     </div>
