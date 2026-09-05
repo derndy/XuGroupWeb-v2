@@ -11,7 +11,7 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | Current review branch | `design/homepage-research-grammar` |
 | Base | `main` at `6f19566096c95560cd58b1a11fbcea4f259d04e7` |
 | Previous PR | [PR #1](https://github.com/derndy/XuGroupWeb-v2/pull/1), merged on 5 September 2026 at 09:36:40 UTC |
-| Current PR | Prepared for a new draft PR; update this row after GitHub confirms creation |
+| Current PR | [PR #2](https://github.com/derndy/XuGroupWeb-v2/pull/2), open and draft |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
@@ -106,3 +106,9 @@ git diff --check
 ## Historical checkouts
 
 The original `/workspace/sites/xugroup-web` and its PR #3 are historical work in `derndy/XuGroupWeb`; preserve them and their untracked candidate PNGs. `/workspace/sites/xugroup-web-v2` shares the Git database with this checkout. Old local `main` is not proof of remote `main`. The original prepared local source history remains under `checkpoint/local-source-20260905`.
+
+## GitHub delivery of this batch
+
+Published to `design/homepage-research-grammar` in commit `699c9ce6f6fe4641ffa7f2e02a0d5dc929a9a9fa`; its tree `743a2a3dd3d4d1b7af68148cac57ee12c72503cf` exactly matches the tested local source. This later state-record commit changes documentation only. The connected GitHub account created [Draft PR #2](https://github.com/derndy/XuGroupWeb-v2/pull/2) targeting `main`. No merge was performed.
+
+GitHub reported zero commit statuses at the prepared head. No matching hosted Netlify preview has been confirmed. A draft PR is a source review link, not a running website preview. The former production URL still requires a separate deployment-state review before any release decision.
