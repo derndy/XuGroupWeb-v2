@@ -1,5 +1,6 @@
 {{ define "main" }}
 {{ $page := site.Data.contact_page }}
+{{ $vision := site.Data.website_text.contact.vision }}
 <main class="contact-redesign">
   <header class="research-hero" aria-labelledby="contact-title">
     <div class="lab-shell research-hero__grid">
@@ -68,6 +69,32 @@
       {{ with site.Data.site_visuals.join_collaborate }}
         {{ partial "research/conceptual-figure.html" (dict "asset_id" . "placement" "join-collaborate") }}
       {{ end }}
+    </div>
+  </section>
+  <section class="lab-section contact-vision" aria-labelledby="contact-vision-title">
+    <div class="lab-shell">
+      <header class="lab-section-heading">
+        <div>
+          <p class="lab-section-number">{{ $vision.eyebrow }}</p>
+          <h2 id="contact-vision-title">{{ $vision.title }}</h2>
+        </div>
+        <p>{{ $vision.introduction }}</p>
+      </header>
+      <div class="contact-vision__perspectives">
+        {{ range $vision.perspectives }}
+        <article>
+          <h3>{{ .title }}</h3>
+          <p>{{ .description }}</p>
+        </article>
+        {{ end }}
+      </div>
+      <article class="contact-vision__architects">
+        <h3>{{ $vision.architects.title }}</h3>
+        <div>
+          <p>{{ $vision.architects.introduction }}</p>
+          <p>{{ $vision.architects.outlook }}</p>
+        </div>
+      </article>
     </div>
   </section>
 </main>

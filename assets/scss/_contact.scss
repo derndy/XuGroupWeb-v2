@@ -203,3 +203,46 @@
     gap: 0.25rem;
   }
 }
+
+/* Vision at the end of Join / Collaborate. */
+.contact-vision__perspectives,
+.contact-vision__architects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 4rem);
+}
+
+.contact-vision__perspectives article,
+.contact-vision__architects {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--lab-line);
+}
+
+.contact-vision h3 {
+  margin: 0 0 1rem;
+  color: var(--lab-navy);
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+.contact-vision__perspectives p,
+.contact-vision__architects p {
+  margin: 0;
+  color: var(--lab-muted);
+  line-height: 1.75;
+}
+
+.contact-vision__architects {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  margin-top: 2.5rem;
+}
+
+.contact-vision__architects p + p { margin-top: 1rem; }
+
+@media (max-width: 47.99rem) {
+  .contact-vision__perspectives,
+  .contact-vision__architects { grid-template-columns: 1fr; }
+}
+
+#contact-vision-title { scroll-margin-top: 7rem; }

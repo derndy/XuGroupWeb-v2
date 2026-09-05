@@ -1,6 +1,6 @@
 # Edit website text / 网站文字修改指南
 
-Start with **[`data/website_text.yml`](../data/website_text.yml)**. Phase 1 connects the homepage's own wording and the shared explanations it uses. Existing wording and page layout are preserved. The remaining pages will move in later batches.
+Start with **[`data/website_text.yml`](../data/website_text.yml)**. Phase 1 connects the homepage's own wording and the shared explanations it uses. The original migration preserved all wording and layout. The refinement makes six small edits to existing values. At the PI's latest instruction, the vision now lives at `contact.vision` and appears only at the end of Join / Collaborate, keeping the homepage shorter. The remaining pages will move in later batches.
 
 ## Make a text change in GitHub
 
@@ -20,6 +20,7 @@ A branch save updates its preview after a successful build. It does not itself m
 | Main title, subtitle and tagline | `home.hero.title`, `home.hero.subtitle`, `home.hero.tagline` | Homepage hero |
 | Hero diagram headings and instructions | `home.map` | Homepage diagram |
 | Beyond Prediction | `home.thesis` | Homepage section 01 |
+| Lab vision, scientific foresight and domain intelligence system architects | `contact.vision` | Last chapter on Join / Collaborate (`/contact/#contact-vision-title`) |
 | Space–Interaction–Learning framing | `home.grammar` | Homepage section 02 |
 | Space, Interaction, Learning, Evidence, Mechanism and Design definitions | `shared.grammar` | Homepage; the shared dimensions/evidence/feedback also feed About |
 | Three-pillar section heading and button labels | `home.pillars` | Homepage section 03 |
@@ -68,4 +69,39 @@ Hugo templates（页面模板）read `site.Data.website_text.home` or `site.Data
 
 Publications and news still resolve actual content records at build time. Draft/future news gates, publication selection checks, URLs, image approval records, CSS（样式表）and JavaScript（交互脚本）are unchanged.
 
-For future text moves, build a baseline first, connect each moved entry, compare generated pages, and try a temporary edit from the new source before restoring the approved wording. This batch verifies byte-identical HTML for all eleven main pages and a real one-file edit across homepage/shared consumers. Longer future wording still needs its own layout review.
+For future text moves, build a baseline first, connect each moved entry, compare generated pages, and try a temporary edit from the new source before restoring the approved wording. The original migration verified byte-identical HTML for all eleven main pages and a real one-file edit across homepage/shared consumers. Subsequent wording changes and additions need their own checks.
+
+## Current editorial direction — restrained refinement
+
+The PI rejected the broad public-marketing rewrite in PR #11 as too generic. That draft was closed without merging. Start from the original text in merged PR #9, preserving the exact hero title/subtitle/tagline, formal three-pillar names, research questions and Space–Interaction–Learning framework. Add accessible context rather than replacing the lab's identity. Do not treat the withdrawn PR as approved wording.
+
+For every batch, explicitly report substantial layout/meaning changes and any uncertain editorial choices to the PI. The latest relocation changes placement only; it does not resolve or silently change the earlier wording choices.
+
+The preceding wording revision changed only six existing YAML values:
+
+| Field | Scope of the edit |
+| --- | --- |
+| `home.thesis.paragraph_two` | Retain the original sentence; append one connection to AI for Science, scientific foundation models and generative design |
+| `home.testbeds.title` | Replace “Consequential” with “Real-world” |
+| `home.testbeds.introduction` | Simplify the opening sentence about applications connecting the research |
+| `shared.grammar.dimensions` → `learning.definition` | Use learning goals, feedback and constraints; omit the detailed list of guiding signals/update rules |
+| `shared.grammar.aims` → `mechanism.link_text` | Explain the link in terms of what evidence can establish |
+| `shared.evidence_loop.steps` → `learn.explanation` | Use “Revise the learning system” instead of enumerating internal choices |
+
+The established research terminology remains elsewhere, including Identifiability and the formal pillar titles. The two learning edits reduce operational specificity; this is not a whole-site confidentiality audit. Do not add unpublished targets, architectures, protocols or project timelines during future copy edits.
+
+All added vision text is under `contact.vision`. It was moved from the homepage to the end of `/contact/` without changing any wording. Keep this as the single editable source; do not add a second homepage copy. The English adaptation retains scientific foresight, conditional decades/centuries horizons, evidence and revision, explicit assumptions, and intellectual leadership. Domain intelligence system architects are **one training path**, spanning model architecture, infrastructure, scientific and intelligent systems, objective functions, search spaces and evaluation criteria. Energy-efficient intelligence is an illustrative open question, not a declared project or achieved result. The horizon remains open to problems and methods that have not yet emerged.
+
+The limited contemporary vocabulary is context, not a claim that the lab has released a foundation model or generative-design platform. Recent terminology was checked against primary research, including [AlloyGPT](https://www.nature.com/articles/s41524-025-01768-2) and [MetaFO](https://www.nature.com/articles/s41524-025-01925-7); these are external examples, not lab publications or endorsements.
+
+### PI-supplied vision — source for the English adaptation
+
+**理解世界，开拓未来**
+
+我们的目标是加深对世界的理解，发现那些重要性正在显现的问题，并培养能够引领所在领域未来发展的研究者。
+
+我们重视科学远见：识别变化的早期信号，联系不同领域的发展，看清现象背后的结构，并审视那些限制我们思考的假设。我们的视野涵盖未来数十年的变化，也在有意义的情况下延伸至数百年的尺度。我们追问：未来哪些问题与约束将变得重要？什么样的知识能够开辟新的方向？
+
+我们以证据为基础，不断接近真实与真理，并始终愿意修正自己的认识。关于未来的判断应当讲清其假设，并落到当下可以研究的问题上。思想引领力来自有价值的问题和扎实的理解。
+
+其中一条培养路径，是培养领域智能系统架构师，涵盖模型架构、基础设施，以及科学系统与智能系统的设计。他们围绕值得研究的问题，定义目标函数、搜索空间与评价标准。例如，追问单位能耗能够产生多少有效智能，即如何提升智能能耗比，就可能打开一个新的研究方向。我们的愿景也为尚未出现的重要问题和研究方法保留空间。
