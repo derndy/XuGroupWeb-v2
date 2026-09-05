@@ -11,7 +11,7 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | Current review branch | `design/homepage-evidence-loop` |
 | Base | `main` at `b52506d42495c1c596ec31eb715393b05973b2e0` |
 | Previous PR | [PR #2](https://github.com/derndy/XuGroupWeb-v2/pull/2), now merged; PR #1 is also merged |
-| Current PR | New evidence-loop draft PR pending GitHub creation |
+| Current PR | [PR #3](https://github.com/derndy/XuGroupWeb-v2/pull/3), open and draft |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
@@ -137,3 +137,9 @@ The original `/workspace/sites/xugroup-web` and its PR #3 are historical work in
 Published to `design/homepage-research-grammar` in commit `699c9ce6f6fe4641ffa7f2e02a0d5dc929a9a9fa`; its tree `743a2a3dd3d4d1b7af68148cac57ee12c72503cf` exactly matches the tested local source. This later state-record commit changes documentation only. The connected GitHub account originally created [Draft PR #2](https://github.com/derndy/XuGroupWeb-v2/pull/2) targeting `main`. That delivery did not merge it; GitHub now reports that PR merged before this continuation.
 
 GitHub reported zero commit statuses at the prepared head. No matching hosted Netlify preview has been confirmed. A draft PR is a source review link, not a running website preview. The former production URL still requires a separate deployment-state review before any release decision.
+
+## GitHub delivery — evidence-loop batch
+
+Published to `design/homepage-evidence-loop` in commit `a4b6167f6434c4bd5a392573eb55ccaefcef2e75`. The published tree `7ffba7e892ada4944ce7e5f9f505808594a7fdc4` exactly matches the locally tested source. The local source commit is retained under `checkpoint/evidence-loop-local-source`, and the working branch is aligned with GitHub. This later state update is documentation only.
+
+[Draft PR #3](https://github.com/derndy/XuGroupWeb-v2/pull/3) targets `main`. No merge or production switch was performed. GitHub reported zero commit statuses at the prepared head; no corresponding hosted preview is confirmed. Inspect actual PR/branch/deployment state before the next continuation.
