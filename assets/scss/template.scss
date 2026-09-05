@@ -2310,19 +2310,24 @@ a {
   letter-spacing: 0.04em;
 }
 
-.gallery-grid {
+// Keep documentary cards separate from the theme's fixed-height gallery shortcode.
+.lab-gallery-grid {
   display: grid;
   border-top: 1px solid var(--lab-line);
   border-left: 1px solid var(--lab-line);
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: auto;
+  grid-auto-flow: row;
+  gap: 0;
 }
 
-.gallery-grid--2 {
+.lab-gallery-grid--2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .gallery-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   border-right: 1px solid var(--lab-line);
   border-bottom: 1px solid var(--lab-line);
@@ -2349,12 +2354,16 @@ a {
 }
 
 .gallery-card figure {
-  height: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
   margin: 0;
 }
 
 .gallery-card__media {
   position: relative;
+  flex: none;
   overflow: hidden;
   background: #dce6ee;
 }
@@ -2397,9 +2406,14 @@ a {
 
 .gallery-card figcaption {
   display: flex;
+  flex: 1;
+  min-width: 0;
   min-height: 15.5rem;
+  margin: 0;
   padding: 1.35rem;
   flex-direction: column;
+  text-align: left;
+  overflow-wrap: anywhere;
 }
 
 .gallery-card__category {
@@ -2544,9 +2558,13 @@ a {
 
 .gallery-dialog figcaption {
   display: flex;
+  min-width: 0;
+  margin: 0;
   padding: clamp(1.5rem, 3vw, 2.5rem);
   flex-direction: column;
   justify-content: center;
+  text-align: left;
+  overflow-wrap: anywhere;
 }
 
 .gallery-dialog h2 {
@@ -2608,7 +2626,7 @@ a {
     font-size: clamp(3.5rem, 12vw, 6rem);
   }
 
-  .gallery-grid {
+  .lab-gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -2654,7 +2672,7 @@ a {
     min-width: 0;
   }
 
-  .gallery-grid {
+  .lab-gallery-grid {
     grid-template-columns: 1fr;
   }
 
