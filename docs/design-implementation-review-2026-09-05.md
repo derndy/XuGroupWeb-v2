@@ -7,7 +7,8 @@ Read with [the design brief](website-design-and-asset-placement.md) and [current
 - Repository: public `derndy/XuGroupWeb-v2`.
 - Baseline: `main` at `6f19566096c95560cd58b1a11fbcea4f259d04e7`, the merge of PR #1. Its website tree matches the previous prepared checkpoint.
 - First batch: `design/homepage-research-grammar`, reviewed in PR #2 and since merged.
-- Current evidence-loop batch: `design/homepage-evidence-loop`, based on v2 `main` at `b52506d42495c1c596ec31eb715393b05973b2e0`, for draft review only.
+- Second batch: `design/homepage-evidence-loop`, merged as PR #3.
+- Current batch: `design/homepage-publications-people-news`, based on v2 `main` at `13d699772ec8e76d59fe219511fa370ea8496945`, for draft review only.
 - On this date the recorded production URL, `https://xushidang-lab.netlify.app/`, returned HTTP 200 with the older carousel markup, three empty Hero headings, and no approved homepage title. This is an HTML observation, not a browser screenshot or proof of its Netlify repository settings.
 - The new homepage work is evaluated against the latest v2 source, not that older hosted page. Neither `main` nor hosting configuration is changed by this batch.
 
@@ -22,9 +23,9 @@ Read with [the design brief](website-design-and-asset-placement.md) and [current
 | H05 evidence loop | Five static steps on navy; no explicit diagram return path; test and design combined | Completed in the evidence-loop batch: six steps, pale-teal chapter, solid forward arrows and dashed feedback path, vertical mobile layout, native disclosures with questions/outputs/canonical pillar links. Browser review remains pending |
 | H06 selected projects | Omitted; existing pillar project arrays are empty | Keep omitted until approved public project records exist; private archive project material is not automatically eligible |
 | H07 scientific testbeds | Image 05 appears once, uncropped with caption, in the light testbeds section; four cards | Preserved. Cards still need useful evidence-backed deeper links |
-| H08 publications/resources | No homepage featured-output section; complete publication index exists | Add a small verified selection. Add resource actions only where a real, approved resource exists |
-| H09 people/culture | No homepage photograph/culture section; People and Gallery retain authentic records | Select a suitable existing public photo with date/event context, then add the homepage section |
-| H10 latest news | No homepage news section; 18 published records are available on News | Add up to three actual records in reverse date order; no invented recent activity |
+| H08 publications/resources | No homepage featured-output section; complete publication index exists | Implemented: two selected existing papers, DOI records and real BibTeX downloads. Dataset/code/protocol/benchmark releases remain dependent on approved public records |
+| H09 people/culture | No homepage photograph/culture section; People and Gallery retain authentic records | Implemented: existing 2025 welcome-dinner photo/alt/caption, short programme introduction, People/Gallery links; natural aspect ratio and lazy loading |
+| H10 latest news | No homepage news section; 18 published records are available on News | Implemented: latest three eligible records, original dates/titles/routes, broad category fallback; draft/future gates apply even to permissive previews |
 | H11 closing invitation | Navy invitation with Contact and People links; no second conceptual image | Preserve the single-artwork rule; four audience routes can follow the dedicated Contact improvement |
 | Research / pillars | Three distinct pillars, overview map, conceptual figures, scope/methods/testbeds/horizons and review principles exist | Expand responsive named relationships and reuse the grammar on Pillar I when improving that page; do not change the current route to match an aspirational URL |
 | Six approved artwork placements | All six exact source files integrated with approved captions, originals and 24 WebP derivatives | No artwork or approval change in this batch; all six pass the existing source/placement audit |
@@ -71,7 +72,7 @@ Keep map labels neutral within the learner; pillar category colours belong to pi
 
 Validation results for the final source are recorded in `project-state.md`. The internal browser preview could not start because this Hugo project has no compatible preview server/package entrypoint. No framework migration or preview-only dependency was added. Real browser layout, keyboard and touch verification are still pending; static HTML checks do not substitute for those checks.
 
-Next bounded design batch: H08–H10 using existing public publication, photo and news records. After that, finish About and the four Contact pathways. Keep project/resource records dependent on approved public source material.
+H08–H10 are implemented in the current batch. Next bounded batch: the four Contact pathways; then the remaining About chapters. Keep project/resource records dependent on approved public source material.
 
 
 ## Second batch — explicit evidence feedback
@@ -83,3 +84,14 @@ The evidence-loop batch implements H05 only. The steps are Observe, Question, De
 The pale-teal section uses solid forward arrows and a dashed return path. On narrow screens, the steps become one vertical sequence and the feedback path runs beside it. The visible return link targets Observe. Native details work without added JavaScript; new styles add no animation. Real browser confirmation of layout, keyboard and touch behaviour is still pending.
 
 Source scope: the homepage evidence section, its reusable partial, shared research data, scoped styles and these maintenance notes. Every other homepage section and the other ten main-page content trees are checked against the previous build. Approved artwork, publication/member/news/gallery records and hosting files are preserved.
+
+
+## Third batch — published work and lab records
+
+H08 presents two selected canonical research papers with full title/author/venue/year information, publisher DOI links and their real citation files. The citations column is conditional on existing files. This does not create a resource catalogue or imply available code, datasets or protocols. Selection evidence and source contracts are in [homepage-records-maintenance.md](homepage-records-maintenance.md).
+
+H09 reuses the existing People photo record at full aspect ratio, including its 2025 event caption and alt. The original 1200 × 900 PNG is unchanged and loads lazily below the research sections. A short programme introduction and real People/Gallery routes connect the research to the team.
+
+H10 uses the latest three published News bundles. Dates are visible and unchanged; the latest is 22 November 2025. Drafts and future event/publication dates are excluded even when previews enable them. No extra news facts, summary copies, photo payloads, scripts or dependencies are introduced.
+
+The new sections follow testbeds and precede the closing invitation, now numbered 09. Validation passes both builds, the six-image audit, preservation of all 78 publications/citation files, 1,053 internal links/anchors, unchanged ten other main-content trees and previous homepage sections except numbering. Temporary permissive-preview fixtures confirm that draft and future news stay off the homepage. Browser layout, keyboard/touch, zoom and image-loading checks remain pending.

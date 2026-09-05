@@ -1,0 +1,69 @@
+{{/* A reviewed selection, with all bibliographic facts resolved from page bundles. */}}
+{{ $papers := slice }}
+{{ $citations := slice }}
+{{ $seen := slice }}
+{{ range site.Data.homepage.publications }}
+  {{ $ref := . }}
+  {{ with site.GetPage $ref }}
+    {{ $classification := partial "publications/classification.html" . }}
+    {{ if or (ne .Section "publication") (not (in $classification.keys "article-journal")) $classification.kind (in $seen .RelPermalink) }}
+      {{ errorf "Homepage publication %q must be a unique research article" $ref }}
+    {{ else if or .Draft (gt .Date now) (gt .PublishDate now) }}
+      {{ errorf "Homepage publication %q must already be published" $ref }}
+    {{ else }}
+      {{ $papers = $papers | append . }}
+      {{ $seen = $seen | append .RelPermalink }}
+      {{ $paper := . }}
+      {{ with .Resources.GetMatch "cite.bib" }}{{ $citations = $citations | append $paper }}{{ end }}
+    {{ end }}
+  {{ else }}
+    {{ errorf "Homepage publication %q does not resolve to a page" $ref }}
+  {{ end }}
+{{ end }}
+{{ with $papers }}
+<section class="lab-section home-publications" aria-labelledby="home-publications-title">
+  <div class="lab-shell">
+    <header class="lab-section-heading">
+      <div>
+        <p class="lab-section-number">06 · Publications and citations</p>
+        <h2 id="home-publications-title">Explore the published work.</h2>
+      </div>
+      <p>Selected papers connect computational discovery and molecular design. Follow each record for the research context and available supporting material.</p>
+    </header>
+    <div class="home-publications__grid{{ if $citations }} home-publications__grid--with-citations{{ end }}">
+      <div>
+        <ul class="home-papers" aria-label="Selected research papers">
+          {{ range . }}
+          {{ $paper := . }}
+          <li>
+            <article aria-labelledby="home-paper-{{ .File.UniqueID }}">
+              <p class="home-record-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006" }}</time> · Research article</p>
+              <h3 id="home-paper-{{ .File.UniqueID }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+              <div class="home-paper__authors">{{ partial "page_metadata_authors" . }}</div>
+              {{ with .Params.publication }}<p class="home-paper__venue">{{ . | markdownify }}</p>{{ end }}
+              {{ with .Params.doi }}<a class="lab-text-link" href="https://doi.org/{{ . }}">Publisher record <span class="sr-only">for {{ $paper.Title }}</span><span aria-hidden="true"> ↗</span></a>{{ end }}
+            </article>
+          </li>
+          {{ end }}
+        </ul>
+        <div class="lab-section-action"><a class="lab-text-link" href="{{ "/publication/" | relURL }}">Browse all publications <span aria-hidden="true">→</span></a></div>
+      </div>
+      {{ with $citations }}
+      <aside class="home-citations" aria-labelledby="home-citations-title">
+        <p class="lab-eyebrow">For your reference library</p>
+        <h3 id="home-citations-title">Take the citation with you.</h3>
+        <p>Download BibTeX citations to use in your reference manager.</p>
+        <ul>
+          {{ range . }}
+            {{ $paper := . }}
+            {{ with .Resources.GetMatch "cite.bib" }}
+            <li><a href="{{ .RelPermalink }}" download><span>{{ $paper.Title }}</span><strong>Download BibTeX <span aria-hidden="true">↓</span></strong></a></li>
+            {{ end }}
+          {{ end }}
+        </ul>
+      </aside>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
