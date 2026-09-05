@@ -1,7 +1,8 @@
 name: Deploy website to GitHub Pages
 
 env:
-  WC_HUGO_VERSION: '0.135.0'
+  # Keep the GitHub Pages validation build aligned with Netlify.
+  WC_HUGO_VERSION: '0.139.4'
 
 on:
   # Trigger the workflow every time you push to the `main` branch

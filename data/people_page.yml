@@ -1,0 +1,58 @@
+hero:
+  eyebrow: "Xu Lab · South China University of Technology"
+  title: "People who connect computation, evidence, and experiment."
+  lead: "Our team works across biomedical engineering, pharmacy, chemistry, materials, and machine learning. Individual profiles document each researcher’s current role, training, and research interests."
+  links:
+    - label: "Current team"
+      target: "#current-team"
+    - label: "Undergraduate students"
+      target: "#undergraduate-students"
+    - label: "Alumni"
+      target: "#alumni"
+    - label: "Group moments"
+      target: "#group-moments"
+
+sections:
+  current_team:
+    eyebrow: "Current team"
+    title: "Different training. One shared scientific system."
+    text: "Open a profile to see the researcher’s current role, education, interests, and contact routes."
+  undergraduate_students:
+    eyebrow: "Research training"
+    title: "Undergraduate students"
+    text: "Students currently connected to the group’s undergraduate research and training activities."
+  alumni:
+    eyebrow: "Continuing trajectories"
+    title: "Alumni"
+    text: "Former group members and the next positions recorded in the existing alumni register."
+  group_moments:
+    eyebrow: "Group record"
+    title: "The work also has a social history."
+    text: "Selected group photographs provide context for the people behind the research programme."
+
+photos:
+  featured:
+    src: "/images/people/东盛楼_20250910.png"
+    alt: "Xu Lab members at the 2025 welcome dinner for the incoming class."
+    caption: "Welcome dinner for the incoming class · 2025"
+  archive:
+    - src: "/images/people/红林花海_2024.9.18.jpg"
+      alt: "Xu Lab members at the 2024 session-start lunch."
+      caption: "Session-start lunch · 2024"
+    - src: "/images/people/课题组合照_2024(1200).jpg"
+      alt: "Xu Lab members and graduating undergraduate students in 2024."
+      caption: "Undergraduate graduation · 2024"
+
+routes:
+  - label: "Research"
+    title: "See the scientific system"
+    text: "Follow the three connected research Pillars."
+    url: "/research/"
+  - label: "Gallery"
+    title: "Explore the visual record"
+    text: "See more moments from research and group life."
+    url: "/gallery/"
+  - label: "Join / Collaborate"
+    title: "Start a conversation"
+    text: "Find routes for students and scientific collaborators."
+    url: "/contact/"

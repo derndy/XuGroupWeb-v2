@@ -1,0 +1,199 @@
+schema_version: 2
+updated: 2026-09-05
+publication_policy:
+  allowed_state: APPROVED
+  required_fields:
+  - asset_id
+  - source_path
+  - public_url
+  - scientific_role
+  - caption
+  - alt
+  - provenance
+  - rights_status
+  - evidence_status
+  - publication_state
+  - owner
+  - last_reviewed
+  rule: Public use requires publication and rights approval. Conceptual illustrations require CONCEPT_REVIEWED; result figures require
+    APPROVED evidence. Approval applies to the recorded source version and placements.
+assets:
+- asset_id: CONCEPT-RES-001
+  title: Three pillars, one discovery core
+  source_path: assets/media/research/three-pillars-discovery-core.png
+  source_sha256: 735a2c053ef15d2d265a301d5de684dc783cb7474e36e0cbf33d428e6da4ae6a
+  public_url: /media/research/three-pillars-discovery-core.png
+  width: 1672
+  height: 941
+  scientific_role: conceptual-illustration
+  caption: 'A conceptual view of three connected research pillars: learning-system design, evidence engineering, and mathematical exploration.'
+  alt: Blue networks, an amber spiral, and violet mathematical surfaces connect around a shared luminous centre.
+  provenance: ChatGPT-generated conceptual artwork, created 2026-08-06; original reviewed and approved as shown by the PI on 2026-09-05.
+  source_archive: https://drive.google.com/file/d/1Vfy8ZFdOS-JrTwrRROOj7nKX0EEWxj6X/view?usp=drivesdk
+  rights_status: APPROVED
+  evidence_status: CONCEPT_REVIEWED
+  publication_state: APPROVED
+  owner: Shidang Xu (PI)
+  last_reviewed: '2026-09-05'
+  approval:
+    by: Shidang Xu (PI)
+    date: '2026-09-05'
+    user_message: 1-3 approve
+    review_number: '01'
+    placements:
+    - research-overview
+    record: docs/scientific-visual-approval-2026-09-05.md
+- asset_id: CONCEPT-RES-002
+  title: Evidence Spiral of Discovery
+  source_path: assets/media/research/evidence-spiral.png
+  source_sha256: c55e7fd1dac7e954746f5556a9286fdb5be4d7ff6e36bccd462a80c851ff8ff9
+  public_url: /media/research/evidence-spiral.png
+  width: 1672
+  height: 941
+  scientific_role: conceptual-illustration
+  caption: A conceptual illustration of repeated cycles linking candidate design, evidence generation, evaluation, and model revision.
+  alt: A transparent spiral connects molecular forms, imagined experiments, and flowing signals across successive levels.
+  provenance: ChatGPT-generated conceptual artwork, created 2026-08-06; original reviewed and approved as shown by the PI on 2026-09-05.
+  source_archive: https://drive.google.com/file/d/18QqgwpHMlntsqxgWz_Eet05mrDxD9IWi/view?usp=drivesdk
+  rights_status: APPROVED
+  evidence_status: CONCEPT_REVIEWED
+  publication_state: APPROVED
+  owner: Shidang Xu (PI)
+  last_reviewed: '2026-09-05'
+  approval:
+    by: Shidang Xu (PI)
+    date: '2026-09-05'
+    user_message: 1-3 approve
+    review_number: '02'
+    placements:
+    - pillar-ii-intro
+    record: docs/scientific-visual-approval-2026-09-05.md
+- asset_id: CONCEPT-RES-003
+  title: Mathematics to Frontiers, and Back
+  source_path: assets/media/research/mathematics-frontiers.png
+  source_sha256: 4870b89430de42b07079645d3189f1e37f5d059034f6a03e6b4ec8e4b6875092
+  public_url: /media/research/mathematics-frontiers.png
+  width: 1672
+  height: 941
+  scientific_role: conceptual-illustration
+  caption: A conceptual view of the exchange between mathematical structures and scientific questions, with each informing the other.
+  alt: Mathematical surfaces and networks flow toward molecular, biological, and material forms, with a curved path returning toward
+    the mathematical structures.
+  provenance: ChatGPT-generated conceptual artwork, created 2026-08-06; original reviewed and approved as shown by the PI on 2026-09-05.
+  source_archive: https://drive.google.com/file/d/1f-CrVk6oL8w1AlQlEne91-7nnJmX_1mU/view?usp=drivesdk
+  rights_status: APPROVED
+  evidence_status: CONCEPT_REVIEWED
+  publication_state: APPROVED
+  owner: Shidang Xu (PI)
+  last_reviewed: '2026-09-05'
+  approval:
+    by: Shidang Xu (PI)
+    date: '2026-09-05'
+    user_message: 1-3 approve
+    review_number: '03'
+    placements:
+    - pillar-iii-intro
+    record: docs/scientific-visual-approval-2026-09-05.md
+- asset_id: CONCEPT-RES-004
+  title: Möbius cycle of space–interaction–learning
+  source_path: assets/media/research/mobius-cycle.png
+  source_sha256: 1d72f9a2acede990f979fedce445d18ef62212503a25f217ebea24658c777b9c
+  public_url: /media/research/mobius-cycle.png
+  width: 1672
+  height: 941
+  scientific_role: conceptual-illustration
+  caption: A conceptual illustration of how scientific representations, interactions, and learning continually shape one another.
+  alt: A luminous twisted loop of networks and flowing signals surrounds a bright centre, with abstract molecular forms nearby.
+  provenance: ChatGPT-generated conceptual artwork, created 2026-08-06; original reviewed and approved as shown by the PI on 2026-09-05.
+  source_archive: https://drive.google.com/file/d/1zyaKpWkmmKO-XRbpfVV6jKLickEciXIL/view?usp=drivesdk
+  rights_status: APPROVED
+  evidence_status: CONCEPT_REVIEWED
+  publication_state: APPROVED
+  owner: Shidang Xu (PI)
+  last_reviewed: '2026-09-05'
+  approval:
+    by: Shidang Xu (PI)
+    date: '2026-09-05'
+    user_message: 4-6 approve
+    review_number: '04'
+    placements:
+    - about-vision
+    record: docs/scientific-visual-approval-2026-09-05.md
+- asset_id: CONCEPT-RES-005
+  title: From Testbeds to Discovery Horizons
+  source_path: assets/media/research/testbeds-horizons.png
+  source_sha256: 3b48ea0f1403fd38c3981574534e40b6c4bc75c9fd14772edb6640af9fe95a8e
+  public_url: /media/research/testbeds-horizons.png
+  width: 1672
+  height: 941
+  scientific_role: conceptual-illustration
+  caption: A conceptual illustration of scientific testbeds connecting materials and biomedical questions with future discovery directions.
+  alt: Molecular and material forms, data-like patterns, and experimental motifs connect through flowing paths toward a bright horizon.
+  provenance: ChatGPT-generated conceptual artwork, created 2026-08-06; original reviewed and approved as shown by the PI on 2026-09-05.
+  source_archive: https://drive.google.com/file/d/1msYeId_zaA8SD0Yp8Hw4PCe8HLyrxmeX/view?usp=drivesdk
+  rights_status: APPROVED
+  evidence_status: CONCEPT_REVIEWED
+  publication_state: APPROVED
+  owner: Shidang Xu (PI)
+  last_reviewed: '2026-09-05'
+  approval:
+    by: Shidang Xu (PI)
+    date: '2026-09-05'
+    user_message: 4-6 approve
+    review_number: '05'
+    placements:
+    - home-testbeds
+    record: docs/scientific-visual-approval-2026-09-05.md
+- asset_id: CONCEPT-RES-006
+  title: Signals into scientific discovery
+  source_path: assets/media/research/signals-discovery.png
+  source_sha256: 82e5f04b9d83b4812487bb9308a84bf9e47811133d260fe34f8edc692d798e7a
+  public_url: /media/research/signals-discovery.png
+  width: 1672
+  height: 941
+  scientific_role: conceptual-illustration
+  caption: A conceptual illustration of diverse scientific inputs coming together to open new directions for discovery and design.
+  alt: Streams of light pass through a central structure and branch toward abstract molecular, material, and geometric forms.
+  provenance: ChatGPT-generated conceptual artwork, created 2026-08-06; original reviewed and approved as shown by the PI on 2026-09-05.
+  source_archive: https://drive.google.com/file/d/1uYILO-1orxIcupSqH-h8xpq6zOBUJyTJ/view?usp=drivesdk
+  rights_status: APPROVED
+  evidence_status: CONCEPT_REVIEWED
+  publication_state: APPROVED
+  owner: Shidang Xu (PI)
+  last_reviewed: '2026-09-05'
+  approval:
+    by: Shidang Xu (PI)
+    date: '2026-09-05'
+    user_message: 4-6 approve
+    review_number: '06'
+    placements:
+    - join-collaborate
+    record: docs/scientific-visual-approval-2026-09-05.md
+- asset_id: LEGACY-RES-001
+  source_path: audit/legacy-research-assets/2.png
+  public_url: ''
+  original_dimensions: 1261x436
+  scientific_role: conceptual-summary candidate
+  caption: ''
+  alt: ''
+  provenance: Initial repository import; original component sources not recorded.
+  rights_status: REVIEW_REQUIRED
+  evidence_status: NOT_ASSESSED
+  publication_state: BLOCKED
+  owner: UNASSIGNED
+  last_reviewed: 2026-09-04
+  note: Do not render until the scientific role, component provenance, rights, caption, alternative text, and PI approval are recorded.
+- asset_id: LEGACY-RES-002
+  source_path: audit/legacy-research-assets/4.png
+  public_url: ''
+  original_dimensions: 1261x668
+  scientific_role: conceptual-summary candidate
+  caption: ''
+  alt: ''
+  provenance: Initial repository import; original component sources not recorded.
+  rights_status: REVIEW_REQUIRED
+  evidence_status: NOT_ASSESSED
+  publication_state: BLOCKED
+  owner: UNASSIGNED
+  last_reviewed: 2026-09-04
+  note: Do not render until the scientific role, component provenance, rights, caption, alternative text, and PI approval are recorded.

@@ -1,0 +1,19 @@
+{{- $architecture := .architecture -}}
+<figure class="pillar-architecture" aria-labelledby="pillar-architecture-title" aria-describedby="pillar-architecture-caption">
+  <header class="pillar-architecture__header">
+    <p class="lab-section-number">{{ $architecture.label }}</p>
+    <h2 id="pillar-architecture-title">{{ $architecture.title }}</h2>
+  </header>
+  <ol class="pillar-architecture__flow">
+    {{ range $index, $node := $architecture.nodes }}
+      <li>
+        <span>{{ printf "%02d" (add $index 1) }}</span>
+        <div>
+          <h3>{{ $node.label }}</h3>
+          <p>{{ $node.text }}</p>
+        </div>
+      </li>
+    {{ end }}
+  </ol>
+  <figcaption id="pillar-architecture-caption">{{ $architecture.caption }}</figcaption>
+</figure>

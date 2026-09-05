@@ -1,0 +1,29 @@
+{{- $asset := partial "research/conceptual-asset.html" (dict "asset_id" .asset_id "placement" .placement) -}}
+{{- $record := $asset.record -}}
+{{- $original := $asset.image -}}
+{{- $captionID := printf "caption-%s" ($record.asset_id | urlize) -}}
+{{- $sources := slice -}}
+{{- if $original -}}
+  {{- $widths := slice -}}
+  {{- range slice 640 960 1440 -}}
+    {{- if lt . $original.Width }}{{ $widths = $widths | append . }}{{ end -}}
+  {{- end -}}
+  {{- $widths = $widths | append $original.Width -}}
+  {{- range $widths -}}
+    {{- $variant := $original.Resize (printf "%dx webp q86" .) -}}
+    {{- $sources = $sources | append (printf "%s %dw" $variant.RelPermalink $variant.Width) -}}
+  {{- end -}}
+<figure class="conceptual-figure{{ if .hero }} conceptual-hero__figure{{ end }}" data-scientific-visual="{{ $record.asset_id }}" data-visual-placement="{{ .placement }}" data-approved-sha256="{{ $record.source_sha256 }}" aria-describedby="{{ $captionID }}">
+  <picture>
+    <source type="image/webp" srcset="{{ delimit $sources ", " }}" sizes="(max-width: 39.99rem) calc(100vw - 2rem), (max-width: 83rem) calc(100vw - 3rem), 80rem">
+    <img src="{{ $original.RelPermalink }}" width="{{ $original.Width }}" height="{{ $original.Height }}" alt="{{ $record.alt }}" loading="{{ if .hero }}eager{{ else }}lazy{{ end }}"{{ if .hero }} fetchpriority="high"{{ end }} decoding="async">
+  </picture>
+  <figcaption class="conceptual-figure__caption" id="{{ $captionID }}">
+    <div>
+      <span class="conceptual-figure__label">Conceptual illustration · AI-generated</span>
+      <p>{{ $record.caption }}</p>
+    </div>
+    <a href="{{ $original.RelPermalink }}" download data-original-image>Download original PNG<span class="sr-only"> — {{ $record.title }}</span></a>
+  </figcaption>
+</figure>
+{{- end -}}

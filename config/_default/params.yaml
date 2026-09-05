@@ -17,9 +17,9 @@ marketing:
   seo:
     site_type: Organization
     local_business_type: ''
-    org_name: ''
-    description: 'A highly-customizable Hugo research group theme powered by Wowchemy website builder.'
-    twitter: 'GetResearchDev'
+    org_name: 'Xu Lab'
+    description: 'Xu Lab designs scientific learning and discovery systems that connect meaningful representations, decisive evidence, and testable molecular and material mechanisms.'
+    twitter: ''
   analytics:
     google_analytics: ''
     baidu_tongji: ''
@@ -36,14 +36,14 @@ header:
     align: r
     show_logo: true
     show_language: false
-    show_day_night: true
-    show_search: true
-    highlight_active_link: false
+    show_day_night: false
+    show_search: false
+    highlight_active_link: true
 
 # Site footer
 footer:
   copyright:
-    notice: '© {year} Xu Research Group, SCUT. Contact: xusd@scut.edu.cn'
+    notice: '© {year} Xu Lab, SCUT. Contact: xusd@scut.edu.cn'
     license:
       enable: false  # 关闭许可证显示
 
@@ -65,7 +65,7 @@ features:
   privacy_pack:
     enable: false
   repository:
-    url: 'https://github.com/<username>/<repository>'
+    url: 'https://github.com/derndy/XuGroupWeb-v2'
     content_dir: content
     branch: main
   avatar:

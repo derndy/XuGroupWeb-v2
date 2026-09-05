@@ -1,0 +1,332 @@
+overview_visual: CONCEPT-RES-001
+
+pillars:
+  - id: pillar-i
+    class: one
+    numeral: I
+    role: The scientific learner
+    title: Foundational Scientific Learning-System Design
+    public_title: Design how scientific systems learn
+    detail_url: /research/learning-system-design/
+    question: How should a scientific system learn?
+    thesis: We design representation spaces, interaction structures, guiding signals, and learning dynamics around the distinctions that matter scientifically.
+    focus:
+      - Representation spaces that preserve relevant structure
+      - Interaction structures that expose meaningful relations
+      - Guiding signals aligned with scientific questions
+      - Learning dynamics for stable and reusable knowledge
+      - Primitives, operators, and mechanism dictionaries
+    outcome: A learner whose internal organisation can support scientific interpretation, testing, and design.
+    detail:
+      sections:
+        scope_title: Four design decisions form one learner.
+        scope_text: Each decision is evaluated in relation to the others. A representation is useful only when its interactions, signals, and learning behaviour remain scientifically meaningful.
+        contribution_title: Methods are connected to inspectable outputs.
+        contribution_text: These are the forms of work and intended artifacts for this Pillar—not claims that a particular result has already passed review.
+        testbeds_title: The learner must survive more than one scientific setting.
+        testbeds_text: Testbeds are used to challenge transfer, identifiability, and evidence requirements. They do not redefine the Pillar as an applications category.
+        horizon_title: Separate present work from future synthesis.
+        review_title: A learning system is credible only when it can be challenged.
+        routes_title: Connect the learning architecture to its evidence and people.
+      introduction:
+        - Many scientific models inherit their learning problem from convenient data structures or benchmark conventions. We begin instead with the scientific distinctions a system must preserve, the interactions it must expose, and the evidence that could challenge what it has learned.
+        - This Pillar studies the architecture of the learner itself. Representation space, interaction structure, guiding signal, and learning dynamics are designed together so that prediction can support interpretation, testing, and eventually scientific design.
+      responsibility: Design the internal organisation of the scientific learner.
+      contribution: Learning components whose structure can be inspected, challenged, and reused across scientific testbeds.
+      architecture:
+        label: Conceptual framework
+        title: From a scientific question to a testable mechanism
+        caption: This diagram describes the design logic of Pillar I. It is a conceptual framework, not an experimental result.
+        nodes:
+          - label: Scientific question
+            text: Define the distinction, mechanism, or decision the learner must support.
+          - label: Representation space
+            text: Encode states so scientifically relevant structure can be preserved.
+          - label: Interaction structure
+            text: Make the relations that may drive behaviour explicit and inspectable.
+          - label: Learning dynamics
+            text: Update structure from evidence while tracking stability and uncertainty.
+          - label: Testable mechanism
+            text: Return an explanation, control, or design implication to evidence.
+      scope:
+        - title: Representation space
+          text: Organise molecular, sequence, material, or multimodal states around distinctions that matter to the scientific question.
+        - title: Interaction structure
+          text: Represent pairwise, collective, geometric, or cross-scale relations without collapsing them into undifferentiated features.
+        - title: Guiding signal
+          text: Use labels, constraints, perturbations, and weak or structured supervision that reflect the intended scientific inference.
+        - title: Learning dynamics
+          text: Study how representations and interactions stabilise, transfer, fail, and change as new evidence arrives.
+      methods:
+        - Structured and geometric representation learning
+        - Interaction-aware and pair-specific modelling
+        - Contrastive, weakly guided, and multi-view learning
+        - Stability, sensitivity, and uncertainty analysis
+        - Perturbation-centred interpretation and controls
+        - Reusable primitives, operators, and mechanism dictionaries
+      outputs:
+        - title: Representation specification
+          text: A versioned account of states, invariances, exclusions, and scientific meaning.
+        - title: Interaction map
+          text: An inspectable description of which relations are represented and how alternatives are tested.
+        - title: Evaluation contract
+          text: Frozen splits, controls, uncertainty checks, and stop conditions tied to the scientific question.
+        - title: Reusable learning component
+          text: A documented primitive, operator, or module that can be challenged in more than one testbed.
+      testbeds:
+        - Molecular interactions and drug discovery
+        - Proteins, peptides, and sequences
+        - Biomaterials and delivery systems
+        - Complex scientific data and mechanisms
+      horizons:
+        - label: NOW
+          title: Make learning components inspectable
+          text: Build and audit representations, interaction structures, guiding signals, and strict evaluation contracts in current testbeds.
+        - label: NEXT 3–5 YEARS
+          title: Connect reusable primitives and operators
+          text: Test which learning components remain meaningful across systems, scales, and evidence regimes.
+        - label: HORIZON
+          title: Contribute building blocks to a Scientific Learning Grammar
+          text: Explore whether reusable spaces, interactions, signals, and operators can form a broader language for scientific learning. This is a research horizon, not a completed theory.
+      review_principles:
+        - title: Separate structure from shortcuts
+          text: Use strict splits, matched controls, and null tests that challenge easier alternative explanations.
+        - title: Report stability and failure
+          text: Treat sensitivity, uncertainty, negative evidence, and boundary conditions as part of the scientific result.
+        - title: Require a testable consequence
+          text: Interpretation should imply a perturbation, control, observation, or design decision that could be wrong.
+        - title: Preserve traceability
+          text: Public statements must resolve to a reviewed record, evidence object, figure, and responsible owner.
+      visuals: []
+      projects: []
+
+  - id: pillar-ii
+    class: two
+    numeral: II
+    role: The evidence environment
+    title: Evidence Engineering and Closed-Loop Discovery & Design
+    public_title: Design what evidence systems acquire
+    detail_url: /research/evidence-engineering/
+    question: What evidence should the system create next?
+    thesis: We design datasets, perturbations, candidates, and experiments that distinguish competing explanations and change what can be learned next.
+    focus:
+      - Data quality, provenance, and decision cohorts
+      - Data factories and evidence-producing workflows
+      - Perturbation and experimental design
+      - Active acquisition and information gain
+      - De novo, inverse, and closed-loop design
+    outcome: An evidence process that is purposeful, inspectable, and connected to the next scientific decision.
+    detail:
+      intro_visual: CONCEPT-RES-002
+      sections:
+        scope_title: Evidence becomes a designed part of the system.
+        scope_text: Evidence is evaluated by whether it is trustworthy, reusable, and capable of distinguishing explanations—not simply by how much of it is available.
+        contribution_title: Each acquisition changes a recorded decision.
+        contribution_text: These are the evidence operations and intended artifacts for this Pillar—not claims that a particular experiment, candidate, or closed loop has already passed review.
+        testbeds_title: Evidence strategy must respect scientific context.
+        testbeds_text: Measurements, feasible perturbations, constraints, and failure modes differ across testbeds. The shared contribution is the logic for deciding what evidence is valuable next.
+        horizon_title: Build present evidence systems without overstating autonomy.
+        review_title: A closed loop is credible only when every update is auditable.
+        routes_title: Connect the evidence environment to its learner and scientific record.
+      introduction:
+        - Scientific progress can be constrained by evidence that is abundant but poorly specified, biased toward convenient measurements, or unable to distinguish competing explanations. More data does not automatically create a better scientific decision.
+        - This Pillar treats evidence as a designed component of the discovery system. We audit what is known, make alternative hypotheses explicit, and select the next dataset, perturbation, candidate, or experiment for the uncertainty it can resolve.
+      responsibility: Design the evidence environment surrounding the scientific learner.
+      contribution: Traceable audits, evidence structures, acquisition policies, and closed-loop records that connect learning to the next scientific decision.
+      architecture:
+        label: Closed-loop conceptual framework
+        title: From an evidence gap to a verified update
+        caption: This diagram describes the decision logic of Pillar II. It is a conceptual framework, not a completed autonomous loop or an experimental result.
+        nodes:
+          - label: Decision context
+            text: Define the scientific question, endpoint, boundary, and practical constraints.
+          - label: Evidence audit
+            text: Inspect provenance, measurements, coverage, bias, and unresolved gaps.
+          - label: Competing hypotheses
+            text: State alternatives and the observations that would distinguish them.
+          - label: Acquire or create
+            text: Select a dataset, perturbation, candidate, or experiment for its expected information value.
+          - label: Measure and update
+            text: Adjudicate positive, negative, null, and failed evidence before choosing the next action.
+      scope:
+        - title: Evidence audit
+          text: Evaluate measurement context, provenance, missingness, bias, comparability, and the decision boundary before model development.
+        - title: Structured evidence
+          text: Build endpoint-aware datasets, schemas, and mechanism or knowledge dictionaries that retain context and uncertainty.
+        - title: Active acquisition
+          text: Rank samples, perturbations, candidates, or experiments by the ambiguity they can resolve under real constraints.
+        - title: Closed-loop update
+          text: Connect generation, measurement, adjudication, model update, and next-choice selection in a versioned decision record.
+      methods:
+        - Data-quality, measurement, and provenance auditing
+        - Endpoint- and context-aware dataset construction
+        - Mechanism-discriminating perturbation design
+        - Active learning, information gain, disagreement, and out-of-distribution analysis
+        - Constraint-aware de novo and inverse design
+        - Prospective verification and closed-loop evidence integration
+      outputs:
+        - title: Evidence specification
+          text: A versioned definition of measurements, contexts, exclusions, uncertainty, and intended decisions.
+        - title: Structured evidence memory
+          text: A dataset or dictionary that preserves positive, negative, null, contradictory, and failed evidence with provenance.
+        - title: Acquisition policy
+          text: An inspectable rule for selecting samples, perturbations, candidates, or experiments under scientific and practical constraints.
+        - title: Closed-loop decision record
+          text: A traceable account of what was proposed, measured, adjudicated, updated, and selected next.
+      testbeds:
+        - Molecular interactions and drug discovery
+        - Proteins, peptides, and sequences
+        - Biomaterials and delivery systems
+        - Complex scientific data and mechanisms
+      horizons:
+        - label: NOW
+          title: Audit evidence and build decision-changing acquisitions
+          text: Develop provenance-aware datasets, competing-hypothesis records, perturbation logic, and active acquisition workflows in current testbeds.
+        - label: NEXT 3–5 YEARS
+          title: Connect reusable dictionaries, policies, and validated loops
+          text: Test evidence structures and acquisition policies across contexts, then connect prospective measurement and adjudication to versioned system updates.
+        - label: HORIZON
+          title: Build discovery systems that identify their next evidence gap
+          text: Explore systems that can expose ambiguity, choose decisive evidence, distinguish mechanisms, and expand valid design spaces under explicit human and experimental governance.
+      review_principles:
+        - title: Trace every measurement
+          text: Record provenance, endpoint, context, exclusions, transformations, and uncertainty before evidence enters a learning or design loop.
+        - title: Preserve negative and failure evidence
+          text: Null, contradictory, failed-QC, and both-hypotheses-fail outcomes remain first-class records rather than disappearing from the dataset.
+        - title: Compare acquisition logic
+          text: A proposed next experiment or candidate should be judged against transparent alternative selection strategies and practical constraints.
+        - title: Separate proposal from verification
+          text: Generated candidates and model predictions remain proposals until measurement, adjudication, and release review are complete.
+      visuals: []
+      projects: []
+
+  - id: pillar-iii
+    class: three
+    numeral: III
+    role: The mathematical lens
+    title: Mathematical Data Science and Frontier Exploration
+    public_title: Open what becomes identifiable and designable
+    detail_url: /research/mathematical-frontiers/
+    question: What mathematical and data-science methods can reveal important structure and open new scientific possibilities?
+    thesis: We develop mathematical and computational tools that clarify identifiability, uncertainty, mechanism, and the limits of scientific inference and design.
+    focus:
+      - Identifiability and alternative explanations
+      - Uncertainty and out-of-distribution behaviour
+      - Causal and mechanistic reasoning
+      - Statistical and computational inference
+      - Frontier stress tests and inverse design
+    outcome: Principles and tools that reveal when patterns can become testable explanations or useful designs.
+    detail:
+      intro_visual: CONCEPT-RES-003
+      sections:
+        scope_title: Mathematical structure becomes a scientific instrument.
+        scope_text: This Pillar begins where a new abstraction, method, computational bottleneck, or consequential transfer question can change what a scientific system is able to resolve.
+        contribution_title: Methods are judged by what they make identifiable.
+        contribution_text: These are mathematical and computational directions under study, with intended artifacts—not claims that cross-domain transfer or a frontier theory has already been validated.
+        testbeds_title: Frontier settings expose mathematical bottlenecks.
+        testbeds_text: Consequential domains are used to stress assumptions, computation, uncertainty, and transfer. They are testbeds for method development, not an applications bucket.
+        horizon_title: Explore broadly while keeping present capability explicit.
+        review_title: A frontier method is credible when its assumptions and limits are visible.
+        routes_title: Connect the mathematical lens to learning, evidence, and the scientific record.
+      introduction:
+        - Some scientific questions cannot be resolved by scaling an existing model or collecting more of the same data. They require a different abstraction, a clearer identifiability argument, a new computational method, or a more revealing way to organise complex observations.
+        - This Pillar develops mathematical and data-science tools, then stress-tests them in consequential scientific settings. The aim is to expose structure, uncertainty, and limits—and to return new constraints, questions, and evidence needs to Pillars I and II.
+      responsibility: Develop the mathematical lens that interrogates and extends the scientific learning system.
+      contribution: Abstractions, statistical and computational tools, and testable stress-test frameworks that reveal structure, limits, and new scientific possibilities.
+      architecture:
+        label: Mathematical-lens conceptual framework
+        title: From a scientific bottleneck to a testable method
+        caption: This diagram describes the exploratory logic of Pillar III. It is a conceptual framework, not evidence of completed cross-domain transfer or a validated frontier theory.
+        nodes:
+          - label: Scientific bottleneck
+            text: Identify a question that existing abstractions, data structures, or computations cannot resolve adequately.
+          - label: Abstraction and assumptions
+            text: Define the mathematical objects, invariances, constraints, and conditions under which an answer is possible.
+          - label: Method or algorithm
+            text: Develop a statistical, computational, geometric, dynamical, or information-theoretic tool.
+          - label: Stress test and uncertainty
+            text: Challenge identifiability, sensitivity, computation, failure modes, and alternative explanations.
+          - label: New constraint or possibility
+            text: Return a verified limit, method, question, or capability target to the wider research system.
+      scope:
+        - title: Mathematical foundations
+          text: Develop useful abstractions through probability, statistics, optimisation, geometry, topology, graphs, dynamical systems, and information theory.
+        - title: Structure discovery
+          text: Study clustering, dimensionality reduction, anomaly discovery, representation diagnostics, and visual analytics for complex scientific observations.
+        - title: Complex data systems
+          text: Organise multimodal, multiscale, spatiotemporal, and network data while preserving context, uncertainty, and meaningful relations.
+        - title: Scientific computing and translation
+          text: Address simulation, surrogate modelling, numerical methods, computational bottlenecks, and carefully evidenced transfer across domains.
+      methods:
+        - Applied and foundational mathematical modelling
+        - Probability, statistics, optimisation, and information theory
+        - Geometry, topology, graph methods, and dynamical systems
+        - Data mining, clustering, dimensionality reduction, anomaly discovery, and visual analytics
+        - Multimodal, multiscale, spatiotemporal, and network analysis
+        - Simulation, surrogate modelling, numerical methods, uncertainty, and causal analysis
+      outputs:
+        - title: Mathematical specification
+          text: A precise statement of objects, assumptions, invariances, identifiability conditions, and limits.
+        - title: Method or computational tool
+          text: A documented algorithm, analysis, or implementation connected to a defined scientific bottleneck.
+        - title: Stress-test benchmark
+          text: A versioned evaluation system containing alternatives, controls, uncertainty checks, and failure cases.
+        - title: Translation record
+          text: Evidence showing where a method transfers, where it fails, and which new constraint or question returns to the research system.
+      testbeds:
+        - Molecular and biomedical systems
+        - Drug delivery, biomaterials, and future materials
+        - Aging, longevity, and neurotechnology
+        - Quantum and complex physical systems
+      horizons:
+        - label: NOW
+          title: Develop methods, datasets, benchmarks, and controls
+          text: Build mathematical and data-science tools around clearly defined bottlenecks in current scientific testbeds, with assumptions and failure modes recorded.
+        - label: NEXT 3–5 YEARS
+          title: Connect tools to reusable dictionaries and evaluation systems
+          text: Test primitives, operators, signals, data factories, and mathematical methods across settings without assuming transfer in advance.
+        - label: HORIZON
+          title: Explore mathematical foundations for scientific learning grammars
+          text: Investigate frameworks in which mechanisms and invariants become more discoverable and discovery systems can improve their questions and evidence strategies. This is a long-term programme, not a current capability.
+      review_principles:
+        - title: State assumptions before interpretation
+          text: Define the mathematical objects, boundary conditions, data regime, and computational approximations before assigning scientific meaning.
+        - title: Test identifiability and alternatives
+          text: Mechanistic, invariant, causal, or interpretable language requires evidence that challenges plausible competing explanations.
+        - title: Expose uncertainty and failure
+          text: Report sensitivity, approximation error, computational limits, negative transfer, and out-of-distribution behaviour as part of the method.
+        - title: Demonstrate transfer
+          text: A method is not cross-domain merely because it can be executed elsewhere; its assumptions, baselines, and scientific value must be re-tested.
+      visuals: []
+      projects: []
+
+principles:
+  - title: Mechanism-aligned
+    text: Representations and objectives should preserve distinctions that matter to the scientific mechanism.
+  - title: Evidence-efficient
+    text: The next dataset or experiment should reduce uncertainty that matters to a decision.
+  - title: Uncertainty-aware
+    text: A scientific system should expose what it does not know and where its conclusions may fail.
+  - title: Compositional
+    text: Reusable primitives, interactions, and operators should support analysis across systems and scales.
+  - title: Testable
+    text: Explanations should imply controls, perturbations, or observations that could challenge them.
+  - title: Design-oriented
+    text: Learned structure should return to experiment through candidate, molecule, material, or system design.
+
+horizons:
+  - label: NOW
+    title: Build inspectable learning and evidence components
+    text: Develop and validate representations, interaction models, controls, and evidence workflows in current molecular and material testbeds.
+  - label: NEXT 3–5 YEARS
+    title: Connect components into reusable mechanism systems
+    text: Link learning structures, evidence-acquisition strategies, and mathematical tests into transferable dictionaries and operator libraries.
+  - label: HORIZON
+    title: Scientific Learning Grammar
+    text: Explore a long-term grammar for expressing how scientific systems represent, interact, learn, test, and design. This is a research horizon, not a completed theory.
+
+testbeds:
+  - Molecular interactions and drug discovery
+  - Proteins, peptides, and sequences
+  - Biomaterials and delivery systems
+  - Complex scientific data and mechanisms

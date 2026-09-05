@@ -1,0 +1,34 @@
+{{/* One display classification for the index, filters, and detail pages. */}}
+{{- $page := . -}}
+{{- $keys := slice -}}
+{{- $labels := slice -}}
+{{- range $page.GetTerms "publication_types" -}}
+  {{- $key := .Data.Term | urlize -}}
+  {{- $keys = $keys | append $key -}}
+  {{- $labels = $labels | append (i18n (printf "pub_%s" (replace $key "-" "_")) | default (title .Data.Term)) -}}
+{{- end -}}
+{{- $kind := $page.Params.publication_kind | default "" -}}
+{{- $definition := dict -}}
+{{- $related := dict -}}
+{{- with $kind -}}
+  {{- $definition = index site.Data.publication_kinds . | default dict -}}
+  {{- if not $definition -}}
+    {{- errorf "Unknown publication_kind %q in %s; use a reviewed definition from data/publication_kinds.yaml" . $page.File.Path -}}
+  {{- else -}}
+    {{- if or (ne (len $keys) 1) (not (in $keys $definition.csl_type)) -}}
+      {{- errorf "publication_kind %q requires the sole CSL type %q in %s" . $definition.csl_type $page.File.Path -}}
+    {{- end -}}
+    {{- $links := where ($page.Params.links | default slice) "name" $definition.related_link_name -}}
+    {{- if ne (len $links) 1 -}}
+      {{- errorf "publication_kind %q requires exactly one %q link in %s" . $definition.related_link_name $page.File.Path -}}
+    {{- else -}}
+      {{- $related = index $links 0 -}}
+      {{- if not (hasPrefix ($related.url | default "") "https://") -}}
+        {{- errorf "The related research link for %s must be an explicit HTTPS source" $page.File.Path -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $keys = slice $kind -}}
+    {{- $labels = slice $definition.label -}}
+  {{- end -}}
+{{- end -}}
+{{- return (dict "keys" $keys "labels" $labels "kind" $kind "definition" $definition "related" $related) -}}

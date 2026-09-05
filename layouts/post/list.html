@@ -1,0 +1,116 @@
+{{ define "main" }}
+{{- $published := where .RegularPages.ByDate.Reverse "Title" "ne" "" -}}
+{{- $latest := index $published 0 -}}
+{{- $archive := after 1 $published -}}
+{{- $years := slice -}}
+{{- range $published -}}
+  {{- $year := .Date.Year -}}
+  {{- if not (in $years $year) -}}
+    {{- $years = $years | append $year -}}
+  {{- end -}}
+{{- end -}}
+
+<main class="news-redesign">
+  <header class="news-hero">
+    <div class="lab-shell news-hero__grid">
+      <div>
+        <p class="lab-eyebrow">{{ .Params.eyebrow }}</p>
+        <h1>{{ .Title }}</h1>
+        <p class="news-hero__lead">{{ .Params.lead }}</p>
+      </div>
+      <dl class="news-hero__register" aria-label="News archive summary">
+        <div>
+          <dt>Published entries</dt>
+          <dd>{{ len $published }}</dd>
+        </div>
+        <div>
+          <dt>Archive years</dt>
+          <dd>{{ len $years }}</dd>
+        </div>
+        <div>
+          <dt>Source</dt>
+          <dd>Canonical news records</dd>
+        </div>
+      </dl>
+    </div>
+    <nav class="lab-shell news-jump" aria-label="News archive years">
+      <span>Browse chronology</span>
+      <ul>
+        {{- range $years }}
+        <li><a href="#news-{{ . }}">{{ . }}</a></li>
+        {{- end }}
+      </ul>
+    </nav>
+  </header>
+
+  {{- with $latest }}
+  {{- $latestImage := .Resources.GetMatch "featured.*" -}}
+  {{- $latestImageAlt := .Params.featured_alt | default .Title -}}
+  <section class="news-latest lab-section" aria-labelledby="news-latest-title">
+    <div class="lab-shell">
+      <div class="news-section-heading">
+        <p class="lab-section-number">Current entry</p>
+        <p>The most recent published record in the lab chronology.</p>
+      </div>
+      <article class="news-latest__card{{ if not $latestImage }} news-latest__card--no-media{{ end }}">
+        {{- with $latestImage }}
+        <figure class="news-latest__media">
+          <img
+            src="{{ .RelPermalink }}"
+            width="{{ .Width }}"
+            height="{{ .Height }}"
+            alt="{{ $latestImageAlt }}"
+            fetchpriority="high"
+            decoding="async"
+          >
+        </figure>
+        {{- end }}
+        <div class="news-latest__body">
+          <div class="news-latest__meta">
+            <span>News record</span>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 January 2006" }}</time>
+          </div>
+          <h2 id="news-latest-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          {{- with .Summary }}
+          <div class="news-latest__summary">{{ . }}</div>
+          {{- end }}
+          <a class="lab-button lab-button--primary" href="{{ .RelPermalink }}">Read latest record <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </div>
+  </section>
+  {{- end }}
+
+  <section class="news-archive lab-section" aria-labelledby="news-archive-title">
+    <div class="lab-shell">
+      <div class="news-archive__heading">
+        <p class="lab-section-number">Archive</p>
+        <div>
+          <h2 id="news-archive-title">Earlier records</h2>
+          <p>Titles, dates, summaries, images, and destinations are rendered directly from the existing news sources.</p>
+        </div>
+      </div>
+
+      <div class="news-years">
+        {{- range $years }}
+        {{- $year := . -}}
+        {{- $yearPages := where $archive "Date.Year" $year -}}
+        {{- if gt (len $yearPages) 0 }}
+        <section class="news-year" id="news-{{ $year }}" aria-labelledby="news-year-title-{{ $year }}">
+          <header class="news-year__heading">
+            <h2 id="news-year-title-{{ $year }}">{{ $year }}</h2>
+            <p>{{ len $yearPages }} {{ if eq (len $yearPages) 1 }}record{{ else }}records{{ end }}</p>
+          </header>
+          <div class="news-year__records">
+            {{- range $yearPages }}
+              {{- partial "news-record.html" (dict "page" .) -}}
+            {{- end }}
+          </div>
+        </section>
+        {{- end }}
+        {{- end }}
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }}

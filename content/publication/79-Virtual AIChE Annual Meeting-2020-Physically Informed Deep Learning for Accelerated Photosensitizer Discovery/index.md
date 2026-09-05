@@ -20,7 +20,7 @@ authors:
 #   - ''
 
 date: '2020-11-17T00:00:00Z'
-doi: 'https://aiche.confex.com/aiche/2020/meetingapp.cgi/Paper/605068'
+doi: ''
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2020-11-17T00:00:00Z'
@@ -49,12 +49,12 @@ tags:
 # Display this page in the Featured widget?
 featured: true
 
-# Custom links (uncomment lines below)
-# links:
-# - name: Custom Link
-#   url: http://example.org
+# The organizer provides an HTML abstract, not a DOI or PDF attachment.
+links:
+  - name: Conference abstract
+    url: https://aiche.confex.com/aiche/2020/webprogram/Paper605068.html
 
-url_pdf: 'https://aiche.confex.com/aiche/2020/meetingapp.cgi/Paper/605068'
+url_pdf: ''
 url_code: ''
 url_dataset: ''
 url_poster: ''

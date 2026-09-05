@@ -1,0 +1,25 @@
+{{- $visual := .visual -}}
+{{- $pillarID := .pillar_id -}}
+{{- $required := slice "asset_id" "source_path" "public_url" "scientific_role" "alt" "caption" "provenance" "rights_status" "evidence_status" "publication_state" "owner" "last_reviewed" -}}
+{{- range $field := $required -}}
+  {{- if not (index $visual $field) -}}
+    {{- errorf "Research visual for %s is missing required field %s" $pillarID $field -}}
+  {{- end -}}
+{{- end -}}
+{{- if ne $visual.publication_state "APPROVED" -}}
+  {{- errorf "Research visual %s cannot render: publication_state must be APPROVED" $visual.asset_id -}}
+{{- end -}}
+{{- if ne $visual.rights_status "APPROVED" -}}
+  {{- errorf "Research visual %s cannot render: rights_status must be APPROVED" $visual.asset_id -}}
+{{- end -}}
+{{- if ne $visual.evidence_status "APPROVED" -}}
+  {{- errorf "Research visual %s cannot render: evidence_status must be APPROVED" $visual.asset_id -}}
+{{- end -}}
+<figure class="governed-figure">
+  <img src="{{ $visual.public_url | relURL }}" alt="{{ $visual.alt }}" loading="lazy" decoding="async">
+  <figcaption>
+    <span>{{ $visual.asset_id }} · {{ $visual.scientific_role }}</span>
+    <p>{{ $visual.caption }}</p>
+    <small>Source: {{ $visual.provenance }} · Reviewed {{ $visual.last_reviewed }} · Owner: {{ $visual.owner }}</small>
+  </figcaption>
+</figure>

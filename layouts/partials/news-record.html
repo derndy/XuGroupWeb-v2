@@ -1,0 +1,35 @@
+{{- $page := .page -}}
+{{- $image := $page.Resources.GetMatch "featured.*" -}}
+{{- $imageAlt := $page.Params.featured_alt | default $page.Title -}}
+
+<article class="news-record{{ if $image }} news-record--with-media{{ end }}">
+  <div class="news-record__date">
+    <time datetime="{{ $page.Date.Format "2006-01-02" }}">
+      <span>{{ $page.Date.Format "02" }}</span>
+      {{ $page.Date.Format "Jan" }}
+      <small>{{ $page.Date.Format "2006" }}</small>
+    </time>
+  </div>
+  <div class="news-record__body">
+    <p class="news-record__type">News record</p>
+    <h3><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
+    {{- with $page.Summary }}
+    <div class="news-record__summary">{{ . }}</div>
+    {{- end }}
+    <a class="news-record__link" href="{{ $page.RelPermalink }}">
+      Read record <span aria-hidden="true">→</span>
+    </a>
+  </div>
+  {{- with $image }}
+  <figure class="news-record__media">
+    <img
+      src="{{ .RelPermalink }}"
+      width="{{ .Width }}"
+      height="{{ .Height }}"
+      alt="{{ $imageAlt }}"
+      loading="lazy"
+      decoding="async"
+    >
+  </figure>
+  {{- end }}
+</article>

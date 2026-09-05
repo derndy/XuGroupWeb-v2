@@ -1,4 +1,5 @@
 # Netlify redirects
 # Documentation: https://docs.netlify.com/routing/redirects/
 
-/*    /index.html   200
+# Hugo generates each route directly. Do not use an SPA fallback: unknown paths
+# must retain a real 404 response and render the custom recovery page.

@@ -1,11 +1,7 @@
 ---
 title: Latest News
-
-# Listing view
-view: compact
-
-# Optional banner image (relative to `assets/media/` folder).
-banner:
-  caption: ''
-  image: ''
+description: "Updates from the Xu Research Group: new members, group activities, and shared milestones."
+summary: "Updates from the Xu Research Group: new members, group activities, and shared milestones."
+eyebrow: "News / Lab record"
+lead: "Updates from the Xu Research Group: new members, group activities, and shared milestones."
 ---

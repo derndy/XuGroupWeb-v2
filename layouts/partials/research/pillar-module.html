@@ -1,0 +1,35 @@
+{{- $pillar := .pillar -}}
+<article id="{{ $pillar.id }}" class="research-pillar research-pillar--{{ $pillar.class }}">
+  <header class="research-pillar__header">
+    <div class="research-pillar__identity">
+      <span class="research-pillar__number">Pillar {{ $pillar.numeral }}</span>
+      <span class="research-pillar__role">{{ $pillar.role }}</span>
+    </div>
+    <div>
+      <p class="research-pillar__question">{{ $pillar.question }}</p>
+      <h2>{{ $pillar.public_title }}</h2>
+      <p class="research-pillar__formal">{{ $pillar.title }}</p>
+    </div>
+  </header>
+
+  <div class="research-pillar__body">
+    <div class="research-pillar__thesis">
+      <p>{{ $pillar.thesis }}</p>
+      <div class="research-pillar__outcome">
+        <span>Intended contribution</span>
+        <p>{{ $pillar.outcome }}</p>
+      </div>
+    </div>
+    <div class="research-pillar__focus">
+      <p class="research-pillar__label">Research focus</p>
+      <ul>
+        {{ range $pillar.focus }}
+          <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+      {{ with $pillar.detail_url }}
+        <a class="research-pillar__link" href="{{ . | relURL }}">Explore Pillar {{ $pillar.numeral }} <span aria-hidden="true">→</span></a>
+      {{ end }}
+    </div>
+  </div>
+</article>

@@ -1,372 +1,118 @@
 {{ define "main" }}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-</head>
-<body>
-<main class="px-4 mx-auto max-w-screen-xl">
-    <style>
-        /* 统一标题样式 */
-        .page-title {
-            text-align: center;
-            font-size: 1.875rem;
-            font-weight: 700;
-            margin-top: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        main, .container, .content, .post, .single {
-            max-width: none !important;
-            width: 100% !important;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            overscroll-behavior: none;
-        }
-        h2 {
-            text-align: center;
-            margin: 20px 0 10px;
-            color: #333;
-        }
-        .gallery-thumbnails {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));  /* 保持gap和列宽 */
-            gap: 30px;
-            padding: 30px;
-        }
-        .thumbnail-container {
-            position: relative;
-            cursor: pointer;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background: #e0e0e0;  /* 保留，但动态后少用 */
-            /* 移除 aspect-ratio: 3 / 2; */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;  /* 新增：容器满列宽 */
-            height: auto;  /* 新增：高自适应 */
-        }
-        .thumbnail-container:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .thumbnail-container img {
-            width: 100%;  /* 充满容器宽 */
-            height: 100%;  /* 充满容器高 */
-            object-fit: cover;  /* 改成cover：充满，可能轻微裁剪（优先无空白）；如果想全显，用contain但需JS去背景 */
-            border-radius: 8px;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-        .thumbnail-container img.loaded {
-            opacity: 1;
-        }
-        .thumbnail-container .loading-text {
-            position: absolute;
-            font-size: 14px;
-            color: #666;
-        }
-        .modal, .landscape-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        .modal-content, .landscape-modal-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90%;
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        .modal-content img, .landscape-modal-content img {
-            max-width: 100%;
-            max-height: 80vh;
-            display: block;
-            margin: 0 auto;
-            transform-origin: center;
-            transition: transform 0.3s ease-out;
-            cursor: grab;
-            user-select: none;
-            z-index: 2;
-        }
-        .modal-nav {
-            background-color: #1E90FF;
-            color: white;
-            border: none;
-            font-size: 1.5em;
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-            z-index: 3;
-        }
-        .modal-nav:hover {
-            background-color: #1873CC;
-            transform: scale(1.1);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .modal-nav:active, .modal-nav:focus {
-            z-index: 3;
-            outline: none;
-        }
-        .rotate-button {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #1E90FF;
-            color: white;
-            border: none;
-            font-size: 1.5em;
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-            z-index: 3;
-        }
-        .rotate-button:hover {
-            background-color: #1873CC;
-            transform: scale(1.1);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .rotate-button:active, .rotate-button:focus {
-            z-index: 3;
-            outline: none;
-        }
-        .close-button {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background-color: #FF4444;
-            color: white;
-            border: none;
-            font-size: 1.5em;
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-            z-index: 3;
-        }
-        .close-button:hover {
-            background-color: #CC3333;
-            transform: scale(1.1);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .close-button:active, .close-button:focus {
-            z-index: 3;
-            outline: none;
-        }
-        .modal-loading {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 4;
-        }
-        .modal-loading .spinner {
-            border: 4px solid rgba(0, 0, 0, 0.1);
-            border-top: 4px solid #2196F3;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        @media (max-width: 768px) {
-            .modal-content, .landscape-modal-content {
-                max-width: 98%;
-                max-height: 98%;
-            }
-            .modal-content img, .landscape-modal-content img {
-                max-height: 70vh;
-                width: 100%;
-                object-fit: contain;
-                z-index: 2;
-            }
-            .modal-nav-container {
-                position: fixed;
-                bottom: 20px;
-                left: 50%;
-                transform: translateX(-50%);
-                display: flex;
-                justify-content: center;
-                gap: 20px;
-                z-index: 3;
-                background-color: rgba(0, 0, 0, 0.5);
-                padding: 10px;
-                border-radius: 8px;
-            }
-            .modal-nav {
-                position: static;
-                transform: none;
-                z-index: 3;
-            }
-            .modal-nav:hover {
-                transform: scale(1.1);
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            }
-            .modal-nav:active, .modal-nav:focus {
-                z-index: 3;
-                outline: none;
-            }
-            .rotate-button {
-                display: block;
-            }
-            .modal .close-button, .landscape-modal .close-button {
-                display: block;
-            }
-        }
-        @media (min-width: 769px) {
-            .modal-nav-container {
-                position: absolute;
-                top: 50%;
-                left: 0;
-                right: 0;
-                display: flex;
-                justify-content: space-between;
-                z-index: 3;
-            }
-            .modal-nav {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                z-index: 3;
-            }
-            .modal-nav:hover {
-                transform: translateY(-50%) scale(1.1);
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            }
-            .modal-nav:active, .modal-nav:focus {
-                z-index: 3;
-                outline: none;
-            }
-            .modal-nav.left { left: 20px; }
-            .modal-nav.right { right: 20px; }
-            .modal .close-button, .landscape-modal .close-button {
-                display: block;
-            }
-            .rotate-button {
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-            }
-        }
-        /* 横屏模态框样式 */
-        .landscape-modal-content {
-            max-width: 100%;
-            max-height: 100%;
-            width: 100%;
-            height: 100%;
-            border-radius: 0;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .landscape-modal-content img {
-            max-height: 100vh;
-            max-width: 100vw;
-            width: auto;
-            height: 100%;
-            object-fit: contain;
-            transform-origin: center;
-        }
-        .landscape-modal-content .modal-nav-container {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: auto;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            z-index: 3;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 10px;
-            border-radius: 8px;
-        }
-        .landscape-modal-content .rotate-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-        }
-    </style>
+{{- $galleryData := readFile "static/data/gallery-data.json" | transform.Unmarshal -}}
+{{- $thumbnailBase := $galleryData.basePaths.thumbnails -}}
+{{- $imageBase := $galleryData.basePaths.images -}}
 
-    <h1 class="page-title">{{ .Title }}</h1>
-    <div id="gallery-container"></div>
-
-    <!-- 竖屏模态框 -->
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <img src="" alt="Main Image" id="modalImage">
-            <div class="modal-nav-container">
-                <button class="modal-nav left" onclick="showPreviousImage()">❮</button>
-                <button class="modal-nav right" onclick="showNextImage()">❯</button>
-            </div>
-            <button class="rotate-button" onclick="toggleRotate()">+</button>
-            <button class="close-button" onclick="closeModal()">✕</button>
-            <div class="modal-loading" id="modalLoading">
-                <div class="spinner"></div>
-            </div>
-        </div>
+<main class="gallery-redesign" data-gallery-root>
+  <header class="gallery-hero">
+    <div class="lab-shell gallery-hero__grid">
+      <div class="gallery-hero__copy">
+        <p class="lab-eyebrow">{{ $galleryData.page.eyebrow }}</p>
+        <h1>{{ $galleryData.page.title }}</h1>
+        <p class="gallery-hero__lead">{{ $galleryData.page.lead }}</p>
+      </div>
+      <aside class="gallery-hero__note" aria-label="Collection scope">
+        <span>Collection scope</span>
+        <p>{{ $galleryData.page.collectionNote }}</p>
+      </aside>
     </div>
+    <nav class="lab-shell gallery-jump" aria-label="Gallery years">
+      <span>Browse by year</span>
+      <ul>
+        {{- range $galleryData.years }}
+        <li><a href="#gallery-{{ .year }}">{{ .year }}</a></li>
+        {{- end }}
+      </ul>
+    </nav>
+  </header>
 
-    <!-- 横屏模态框 -->
-    <div class="landscape-modal" id="landscapeModal">
-        <div class="landscape-modal-content">
-            <img src="" alt="Main Image" id="landscapeModalImage">
-            <div class="modal-nav-container">
-                <button class="modal-nav left" onclick="showPreviousImage()">❮</button>
-                <button class="modal-nav right" onclick="showNextImage()">❯</button>
-            </div>
-            <button class="rotate-button" onclick="toggleRotate()">|</button>
-            <button class="close-button" onclick="closeModal()">✕</button>
-            <div class="modal-loading" id="landscapeModalLoading">
-                <div class="spinner"></div>
-            </div>
+  <div class="gallery-years">
+    {{- range $yearIndex, $yearGroup := $galleryData.years }}
+    {{- $yearImages := where $galleryData.images "year" $yearGroup.year -}}
+    <section class="gallery-year" id="gallery-{{ $yearGroup.year }}" aria-labelledby="gallery-year-title-{{ $yearGroup.year }}">
+      <div class="lab-shell">
+        <header class="gallery-year__heading">
+          <p class="gallery-year__marker" aria-hidden="true">{{ $yearGroup.year }}</p>
+          <div>
+            <p class="lab-eyebrow">{{ len $yearImages }} photographs</p>
+            <h2 id="gallery-year-title-{{ $yearGroup.year }}">{{ $yearGroup.title }}</h2>
+            <p class="gallery-year__title-zh" lang="zh-Hans">{{ $yearGroup.titleZh }}</p>
+            <p>{{ $yearGroup.description }}</p>
+          </div>
+        </header>
+
+        <div class="gallery-grid gallery-grid--{{ len $yearImages }}">
+          {{- range $imageIndex, $image := $yearImages }}
+          {{- $thumbnailSrc := printf "%s%s" $thumbnailBase $image.thumbnailName -}}
+          {{- $imageSrc := printf "%s%s" $imageBase $image.fileName -}}
+          {{- $isFirst := and (eq $yearIndex 0) (eq $imageIndex 0) -}}
+          <a
+            class="gallery-card"
+            href="{{ $imageSrc }}"
+            data-gallery-item
+            data-asset-id="{{ $image.id }}"
+            data-full-src="{{ $imageSrc }}"
+            data-full-width="{{ $image.width }}"
+            data-full-height="{{ $image.height }}"
+            data-alt="{{ $image.alt }}"
+            data-title="{{ $image.title }} · {{ $image.titleZh }}"
+            data-caption="{{ $image.caption }}"
+            aria-label="Open photograph: {{ $image.title }}"
+          >
+            <figure>
+              <div class="gallery-card__media gallery-card__media--{{ $image.ratio }}">
+                <img
+                  src="{{ $thumbnailSrc }}"
+                  width="{{ $image.thumbnailWidth }}"
+                  height="{{ $image.thumbnailHeight }}"
+                  alt="{{ $image.alt }}"
+                  {{ if $isFirst }}fetchpriority="high"{{ else }}loading="lazy"{{ end }}
+                  decoding="async"
+                >
+                <span class="gallery-card__open" aria-hidden="true">View</span>
+              </div>
+              <figcaption>
+                <span class="gallery-card__category">{{ $image.categoryLabel }} · {{ $image.year }}</span>
+                <h3>{{ $image.title }}</h3>
+                <p class="gallery-card__title-zh" lang="zh-Hans">{{ $image.titleZh }}</p>
+                <p>{{ $image.caption }}</p>
+                <span class="gallery-card__action" aria-hidden="true">Open photograph <span>↗</span></span>
+              </figcaption>
+            </figure>
+          </a>
+          {{- end }}
         </div>
-    </div>
+      </div>
+    </section>
+    {{- end }}
+  </div>
 
-    <script>
-        window.GALLERY_CONFIG = {
-            dataUrl: '/data/gallery-data.json'
-        };
-    </script>
-    <script src="/js/gallery.js"></script>
+  <dialog class="gallery-dialog" id="gallery-dialog" aria-labelledby="gallery-dialog-title" aria-describedby="gallery-dialog-caption">
+    <div class="gallery-dialog__panel">
+      <div class="gallery-dialog__topbar">
+        <p class="gallery-dialog__counter" data-gallery-counter aria-live="polite"></p>
+        <button class="gallery-dialog__close" type="button" data-gallery-close aria-label="Close photograph viewer">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <figure>
+        <div class="gallery-dialog__media">
+          <img data-gallery-image alt="">
+        </div>
+        <figcaption>
+          <h2 id="gallery-dialog-title" data-gallery-title></h2>
+          <p id="gallery-dialog-caption" data-gallery-caption></p>
+          <a data-gallery-original>Open original image <span aria-hidden="true">↗</span></a>
+        </figcaption>
+      </figure>
+      <div class="gallery-dialog__controls">
+        <button type="button" data-gallery-previous><span aria-hidden="true">←</span> Previous</button>
+        <p>Use the arrow keys to move between photographs.</p>
+        <button type="button" data-gallery-next>Next <span aria-hidden="true">→</span></button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="/js/gallery.js" defer></script>
 </main>
-</body>
-</html>
 {{ end }}

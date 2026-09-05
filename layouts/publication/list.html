@@ -1,0 +1,91 @@
+{{ define "main" }}
+{{- $records := .RegularPages.ByDate.Reverse -}}
+{{- $years := slice -}}
+{{- $types := dict -}}
+{{- range $records -}}
+  {{- $year := .Date.Format "2006" -}}
+  {{- if not (in $years $year) -}}
+    {{- $years = $years | append $year -}}
+  {{- end -}}
+  {{- $classification := partial "publications/classification.html" . -}}
+  {{- range $index, $key := $classification.keys -}}
+    {{- $types = merge $types (dict $key (index $classification.labels $index)) -}}
+  {{- end -}}
+{{- end -}}
+
+<main class="publications-redesign" data-publication-browser>
+  <header class="publications-header lab-shell">
+    <p class="lab-eyebrow">Research outputs</p>
+    <div class="publications-header__row">
+      <div>
+        <h1>{{ .Title }}</h1>
+        <p class="publications-header__lead">Explore the work behind our research. Open a record for its abstract, citation, and available files.</p>
+      </div>
+      <a class="publications-research-link" href="{{ "/research/" | relURL }}">Explore our research <span aria-hidden="true">↗</span></a>
+    </div>
+    {{- with .Content }}<div class="article-style">{{ . }}</div>{{ end }}
+  </header>
+
+  <section class="publications-library lab-shell" aria-labelledby="publications-library-title">
+    <div class="publications-library__heading">
+      <h2 id="publications-library-title">Publication index</h2>
+      <p>{{ len $records }} records{{ if $years }} · {{ index (last 1 $years) 0 }}–{{ index $years 0 }}{{ end }} · Newest first</p>
+    </div>
+
+    {{/* Only expose working controls after their event handlers are installed. */}}
+    <form class="publications-filters" aria-label="Filter publications" data-publication-filters hidden>
+      <div class="publications-filters__search">
+        <label for="publication-query">Search publications</label>
+        <input id="publication-query" name="q" type="search" placeholder="Title, author, venue, or DOI" aria-describedby="publication-search-help" autocomplete="off" spellcheck="false">
+      </div>
+      <div>
+        <label for="publication-type">Record type</label>
+        <select id="publication-type" name="type">
+          <option value="">All types</option>
+          {{- range $key, $label := $types }}
+          <option value="{{ $key }}">{{ $label }}</option>
+          {{- end }}
+        </select>
+      </div>
+      <div>
+        <label for="publication-year">Year</label>
+        <select id="publication-year" name="year">
+          <option value="">All years</option>
+          {{- range $years }}<option value="{{ . }}">{{ . }}</option>{{ end }}
+        </select>
+      </div>
+      <button class="publications-reset" type="reset">Clear filters</button>
+      <p id="publication-search-help">Combine search, type, and year. Search words may appear anywhere in the record’s title, authors, venue, or DOI.</p>
+    </form>
+
+    <div class="publications-browse">
+      <p role="status" aria-live="polite" aria-atomic="true" data-publication-count>Showing {{ len $records }} of {{ len $records }} records</p>
+      <nav aria-label="Publication years">
+        <span>Jump to year</span>
+        <ul>
+          {{- range $years }}<li data-publication-year-link="{{ . }}"><a href="#publication-year-{{ . }}">{{ . }}</a></li>{{ end }}
+        </ul>
+      </nav>
+    </div>
+
+    <div class="publications-empty" data-publication-empty hidden>
+      <h3>No matching records</h3>
+      <p>Try fewer search words, choose another type or year, or clear the filters above.</p>
+    </div>
+
+    {{- range $records.GroupByDate "2006" }}
+    <section class="publications-year" id="publication-year-{{ .Key }}" aria-labelledby="publication-year-title-{{ .Key }}" data-publication-year="{{ .Key }}">
+      <h2 id="publication-year-title-{{ .Key }}">{{ .Key }}</h2>
+      <ol class="publication-records">
+        {{- range .Pages.ByDate.Reverse }}
+          {{- partial "publications/record.html" . -}}
+        {{- end }}
+      </ol>
+    </section>
+    {{- end }}
+  </section>
+
+  {{- $script := resources.Get "js/publications.mjs" | js.Build (dict "targetPath" "js/publications.js" "format" "iife" "minify" true) | fingerprint "sha256" -}}
+  <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>
+</main>
+{{ end }}

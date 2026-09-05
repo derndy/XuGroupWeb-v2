@@ -1,259 +1,29 @@
-<!-- layouts/partials/people-custom.html -->
-<style>
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: flex-start;
-    margin: 0 auto;
-    max-width: 1200px;
-  }
-  .person {
-    flex: 1 1 calc(20% - 10px);
-    max-width: calc(20% - 10px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 20px;
-    min-width: 180px;
-    position: relative;
-    padding-bottom: 30px; /* 留出底部空间 */
-    min-height: 220px; /* 统一高度 */
-  }
-  .person img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 5px;
-  }
-  .person p {
-    margin: 0;
-  }
-  .person .name {
-    font-size: 14px;
-    font-weight: bold;
-  }
-  .person .role {
-    font-size: 12px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .person .social {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-  .person .social i {
-    margin: 0 5px;
-    font-size: 14px;
-  }
-  .person .social a {
-    text-decoration: none;
-    color: inherit;
-    position: relative;
-    flex-shrink: 0;
-  }
-  .person .social a:hover {
-    text-decoration: underline;
-  }
-  .person .social a:hover::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
-    padding: 2px 6px;
-    font-size: 12px;
-    border-radius: 3px;
-    white-space: nowrap;
-    z-index: 10;
-  }
-  .table-container {
-    margin: 0 auto;
-    max-width: 1200px;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    border: none;
-  }
-  table td {
-    padding: 10px;
-    text-align: left;
-    font-size: 14px;
-  }
-  table td:nth-child(1) {
-    width: 20%;
-    font-weight: bold;
-  }
-  table td:nth-child(2) {
-    width: 40%;
-  }
-  table td:nth-child(3) {
-    width: 40%;
-  }
-  h2 {
-    text-align: left;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-bottom: 15px;
-    font-size: 1.5em;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  hr.section-divider {
-    border: none;
-    border-top: 2px solid #333;
-    margin: 30px auto;
-    max-width: 1200px;
-  }
-  @media (max-width: 1200px) {
-    .person {
-      flex: 1 1 calc(25% - 10px);
-      max-width: calc(25% - 10px);
-    }
-  }
-  @media (max-width: 992px) {
-    .person {
-      flex: 1 1 calc(33.33% - 10px);
-      max-width: calc(33.33% - 10px);
-    }
-  }
-  @media (max-width: 768px) {
-    .person {
-      flex: 1 1 calc(50% - 10px);
-      max-width: calc(50% - 10px);
-    }
-  }
-  @media (max-width: 576px) {
-    .person {
-      flex: 1 1 100%;
-      max-width: 100%;
-    }
-  }
-</style>
+{{- $people := where .Site.Pages "Section" "person" -}}
+{{- $principalInvestigators := where $people ".Params.category" "principle_investigator" -}}
+{{- $graduateStudents := where $people ".Params.category" "graduate_student" -}}
 
-<!-- Principle Investigator -->
-<h2>Principle Investigator</h2>
-<div class="container">
-  {{ $people := where .Site.Pages "Section" "person" }}
-  {{ range $people }}
-    {{ if eq .Params.category "principle_investigator" }}
-      <div class="person">
-        <a href="{{ .RelPermalink }}">
-          <img src="{{ .Params.avatar | absURL }}" alt="{{ .Title }}">
-        </a>
-        <p class="name">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </p>
-        <p class="role">{{ .Params.role }}</p>
-        <p class="social">
-          {{ range .Params.social }}
-            {{ if eq .type "email" }}
-              <a href="#" class="email-icon" data-email="{{ .link }}" onclick="copyEmail(event, '{{ .link }}')" data-tooltip="Email">
-                <i class="{{ .icon_pack }} fa-{{ .icon }}"></i>
-              </a>
-            {{ end }}
-            {{ if eq .type "scholar" }}
-              <a href="{{ .link }}" data-tooltip="Google Scholar">
-                <i class="{{ .icon_pack }} fa-{{ .icon }}"></i>
-              </a>
-            {{ end }}
-            {{ if eq .type "researchgate" }}
-              <a href="{{ .link }}" data-tooltip="ResearchGate">
-                <i class="{{ .icon_pack }} fa-{{ .icon }}"></i>
-              </a>
-            {{ end }}
-          {{ end }}
-        </p>
-      </div>
-    {{ end }}
-  {{ end }}
-</div>
-
-<!-- Graduate Students -->
-<h2>Graduate Students</h2>
-<div class="container">
-  {{ $people := where .Site.Pages "Section" "person" }}
-  {{ range $people }}
-    {{ if eq .Params.category "graduate_student" }}
-      <div class="person">
-        <a href="{{ .RelPermalink }}">
-          <img src="{{ .Params.avatar | absURL }}" alt="{{ .Title }}">
-        </a>
-        <p class="name">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </p>
-        <p class="role">{{ .Params.role }}</p>
-        <p class="social">
-          {{ range .Params.social }}
-            {{ if eq .type "email" }}
-              <a href="#" class="email-icon" data-email="{{ .link }}" onclick="copyEmail(event, '{{ .link }}')" data-tooltip="Email">
-                <i class="{{ .icon_pack }} fa-{{ .icon }}"></i>
-              </a>
-            {{ end }}
-            {{ if eq .type "scholar" }}
-              <a href="{{ .link }}" data-tooltip="Google Scholar">
-                <i class="{{ .icon_pack }} fa-{{ .icon }}"></i>
-              </a>
-            {{ end }}
-            {{ if eq .type "researchgate" }}
-              <a href="{{ .link }}" data-tooltip="ResearchGate">
-                <i class="{{ .icon_pack }} fa-{{ .icon }}"></i>
-              </a>
-            {{ end }}
-          {{ end }}
-        </p>
-      </div>
-    {{ end }}
-  {{ end }}
-</div>
-
-<hr class="section-divider">
-
-<!-- Undergraduate Students -->
-<h2>Undergraduate Students</h2>
-<div class="table-container">
-  <table>
-    {{ with .Site.Data.US_Alumni.undergraduate_students }}
-      {{ range . }}
-        <tr>
-          <td>{{ .name }}</td>
-          <td>{{ .role }}</td>
-          <td></td>
-        </tr>
+<div class="people-directory">
+  <section class="people-directory__group" aria-labelledby="principal-investigator-title">
+    <header class="people-directory__group-heading">
+      <p>Leadership</p>
+      <h3 id="principal-investigator-title">Principal Investigator</h3>
+    </header>
+    <div class="people-directory__grid people-directory__grid--principal">
+      {{ range $principalInvestigators.ByTitle }}
+        {{ partial "people/member-card.html" (dict "person" . "principal" true) }}
       {{ end }}
-    {{ end }}
-  </table>
-</div>
+    </div>
+  </section>
 
-<hr class="section-divider">
-
-<!-- Alumni -->
-<h2>Alumni</h2>
-<div class="table-container">
-  <table>
-    {{ with .Site.Data.US_Alumni.alumni }}
-      {{ range . }}
-        <tr>
-          <td>{{ .name }}</td>
-          <td>{{ .role }}</td>
-          <td>{{ .current }}</td>
-        </tr>
+  <section class="people-directory__group" aria-labelledby="graduate-researchers-title">
+    <header class="people-directory__group-heading">
+      <p>Graduate team</p>
+      <h3 id="graduate-researchers-title">Graduate researchers</h3>
+    </header>
+    <div class="people-directory__grid">
+      {{ range $graduateStudents.ByTitle }}
+        {{ partial "people/member-card.html" (dict "person" .) }}
       {{ end }}
-    {{ end }}
-  </table>
+    </div>
+  </section>
 </div>
-
-<!-- JavaScript for copying email -->
-<script src="/js/people.min.js"></script>

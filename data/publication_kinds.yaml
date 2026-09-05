@@ -1,0 +1,12 @@
+# Display refinements of CSL publication_types, not new taxonomy assignments.
+# Record-level evidence: docs/publication-link-audit-2026-09-05.md.
+frontispiece:
+  label: Frontispiece
+  csl_type: article-journal
+  related_link_name: Research article
+  explanation: This record describes a journal frontispiece. Its DOI and citation identify the frontispiece; the underlying research paper is linked separately.
+cover-picture:
+  label: Cover picture
+  csl_type: article-journal
+  related_link_name: Research article PDF
+  explanation: This record describes a journal cover picture. Its DOI and citation identify the cover picture; the underlying research paper is linked separately.

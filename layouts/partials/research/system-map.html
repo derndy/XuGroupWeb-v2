@@ -1,0 +1,55 @@
+<figure class="research-map" aria-labelledby="research-map-title" aria-describedby="research-map-caption">
+  <div class="research-map__heading">
+    <p class="lab-section-number">Integrated research map</p>
+    <h2 id="research-map-title">The Pillars are contributions to one system—not silos or stages.</h2>
+  </div>
+
+  <div class="research-map__canvas">
+    <div class="research-map__lens">
+      <span class="research-map__number">Pillar III</span>
+      <div>
+        <strong>Mathematical lens</strong>
+        <small>Identifiability · uncertainty · inference · frontier tests</small>
+      </div>
+    </div>
+
+    <div class="research-map__environment">
+      <div class="research-map__environment-label">
+        <span class="research-map__number">Pillar II</span>
+        <strong>Evidence environment</strong>
+        <small>Datasets · perturbations · experiments · candidates</small>
+      </div>
+
+      <div class="research-map__flow" aria-hidden="true">
+        <span>create evidence</span>
+        <i></i>
+        <span>test &amp; design</span>
+      </div>
+
+      <div class="research-map__learner">
+        <span class="research-map__number">Pillar I</span>
+        <strong>Scientific learner</strong>
+        <small>Space · interaction · signals · learning dynamics</small>
+      </div>
+
+      <div class="research-map__discovery">
+        <span>Inspectable outcome</span>
+        <strong>Mechanism &amp; design</strong>
+        <small>Explanation · control · artifact · next question</small>
+      </div>
+
+      <div class="research-map__return" aria-hidden="true">
+        <span>experimental feedback changes the next question</span>
+      </div>
+    </div>
+
+    <div class="research-map__testbeds">
+      <span>Scientific testbeds</span>
+      {{ range site.Data.research_system.testbeds }}
+        <small>{{ . }}</small>
+      {{ end }}
+    </div>
+  </div>
+
+  <figcaption id="research-map-caption">Pillar I structures the learner. Pillar II designs the evidence surrounding it. Pillar III provides mathematical tests and extensions across the entire system. Testbeds challenge all three contributions together.</figcaption>
+</figure>

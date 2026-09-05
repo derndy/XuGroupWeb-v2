@@ -1,0 +1,164 @@
+{{ define "main" }}
+{{ $pillarID := .Params.pillar_id }}
+{{ $matches := where site.Data.research_system.pillars "id" $pillarID }}
+{{ if ne (len $matches) 1 }}
+  {{ errorf "Pillar page %s must resolve exactly one data record for %s" .RelPermalink $pillarID }}
+{{ end }}
+{{ $pillar := index $matches 0 }}
+{{ $detail := $pillar.detail }}
+
+<main class="pillar-detail pillar-detail--{{ $pillar.class }}">
+  <header class="pillar-detail-hero" aria-labelledby="pillar-detail-title">
+    <div class="lab-shell">
+      <nav class="pillar-breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ "/research/" | relURL }}">Research</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Pillar {{ $pillar.numeral }}</span>
+      </nav>
+      <nav class="pillar-switcher" aria-label="Available Pillar detail pages">
+        <span>Detailed Pillars</span>
+        {{ range $item := site.Data.research_system.pillars }}
+          {{ with $item.detail_url }}
+            <a href="{{ . | relURL }}"{{ if eq $pillarID $item.id }} aria-current="page"{{ end }}>Pillar {{ $item.numeral }}</a>
+          {{ end }}
+        {{ end }}
+      </nav>
+      <div class="pillar-detail-hero__grid">
+        <div>
+          <p class="lab-eyebrow">Pillar {{ $pillar.numeral }} · {{ $pillar.role }}</p>
+          <h1 id="pillar-detail-title">{{ $pillar.public_title }}</h1>
+          <p class="pillar-detail-hero__formal">{{ $pillar.title }}</p>
+        </div>
+        <div class="pillar-detail-hero__intro">
+          {{ range $detail.introduction }}<p>{{ . }}</p>{{ end }}
+        </div>
+      </div>
+      <dl class="pillar-detail-brief">
+        <div><dt>Core question</dt><dd>{{ $pillar.question }}</dd></div>
+        <div><dt>Responsibility</dt><dd>{{ $detail.responsibility }}</dd></div>
+        <div><dt>Intended contribution</dt><dd>{{ $detail.contribution }}</dd></div>
+      </dl>
+    </div>
+  </header>
+
+  {{ with $detail.intro_visual }}
+  <section class="lab-section pillar-concept-section" aria-label="Conceptual illustration of this research direction">
+    <div class="lab-shell">
+      {{ partial "research/conceptual-figure.html" (dict "asset_id" . "placement" (printf "%s-intro" $pillarID)) }}
+    </div>
+  </section>
+  {{ end }}
+
+  <section class="lab-section pillar-architecture-section">
+    <div class="lab-shell">
+      {{ partial "research/pillar-detail-map.html" (dict "architecture" $detail.architecture) }}
+    </div>
+  </section>
+
+  <section class="lab-section pillar-scope" aria-labelledby="pillar-scope-title">
+    <div class="lab-shell">
+      <header class="lab-section-heading">
+        <div>
+          <p class="lab-section-number">Scope</p>
+          <h2 id="pillar-scope-title">{{ $detail.sections.scope_title }}</h2>
+        </div>
+        <p>{{ $detail.sections.scope_text }}</p>
+      </header>
+      <div class="pillar-scope-grid">
+        {{ range $index, $item := $detail.scope }}
+          <article><span>{{ printf "%02d" (add $index 1) }}</span><h3>{{ $item.title }}</h3><p>{{ $item.text }}</p></article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section class="lab-section pillar-contribution" aria-labelledby="pillar-contribution-title">
+    <div class="lab-shell pillar-contribution__grid">
+      <header>
+        <p class="lab-section-number">Contribution contract</p>
+        <h2 id="pillar-contribution-title">{{ $detail.sections.contribution_title }}</h2>
+        <p>{{ $detail.sections.contribution_text }}</p>
+      </header>
+      <div class="pillar-methods">
+        <h3>Method families under study</h3>
+        <ul>{{ range $detail.methods }}<li>{{ . }}</li>{{ end }}</ul>
+      </div>
+      <div class="pillar-outputs">
+        <h3>Intended artifacts</h3>
+        <dl>
+          {{ range $detail.outputs }}
+            <div><dt>{{ .title }}</dt><dd>{{ .text }}</dd></div>
+          {{ end }}
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="lab-section pillar-testbeds" aria-labelledby="pillar-testbeds-title">
+    <div class="lab-shell">
+      <header class="lab-section-heading">
+        <div>
+          <p class="lab-section-number">Representative testbeds</p>
+          <h2 id="pillar-testbeds-title">{{ $detail.sections.testbeds_title }}</h2>
+        </div>
+        <p>{{ $detail.sections.testbeds_text }}</p>
+      </header>
+      <ul class="pillar-testbed-list">
+        {{ range $index, $testbed := $detail.testbeds }}<li><span>{{ printf "%02d" (add $index 1) }}</span>{{ $testbed }}</li>{{ end }}
+      </ul>
+    </div>
+  </section>
+
+  <section class="lab-section pillar-horizon" aria-labelledby="pillar-horizon-title">
+    <div class="lab-shell">
+      <header class="pillar-horizon__heading">
+        <p class="lab-section-number">Research horizon</p>
+        <h2 id="pillar-horizon-title">{{ $detail.sections.horizon_title }}</h2>
+      </header>
+      <ol class="pillar-horizon__rail">
+        {{ range $detail.horizons }}
+          <li><span>{{ .label }}</span><h3>{{ .title }}</h3><p>{{ .text }}</p></li>
+        {{ end }}
+      </ol>
+    </div>
+  </section>
+
+  <section class="lab-section pillar-review" aria-labelledby="pillar-review-title">
+    <div class="lab-shell pillar-review__grid">
+      <header>
+        <p class="lab-section-number">Evidence discipline</p>
+        <h2 id="pillar-review-title">{{ $detail.sections.review_title }}</h2>
+      </header>
+      <div class="pillar-review__principles">
+        {{ range $detail.review_principles }}
+          <article><h3>{{ .title }}</h3><p>{{ .text }}</p></article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  {{ with $detail.visuals }}
+    <section class="lab-section pillar-visuals" aria-labelledby="pillar-visuals-title">
+      <div class="lab-shell">
+        <header class="lab-section-heading"><div><p class="lab-section-number">Reviewed visual evidence</p><h2 id="pillar-visuals-title">Figures connected to approved evidence.</h2></div></header>
+        {{ range $assetID := . }}
+          {{ $assetMatches := where site.Data.research_assets.assets "asset_id" $assetID }}
+          {{ if ne (len $assetMatches) 1 }}{{ errorf "Pillar %s visual %s must resolve exactly one asset record" $pillarID $assetID }}{{ end }}
+          {{ partial "research/governed-figure.html" (dict "visual" (index $assetMatches 0) "pillar_id" $pillarID) }}
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+  <section class="lab-section pillar-detail-routes" aria-labelledby="pillar-detail-routes-title">
+    <div class="lab-shell">
+      <header><p class="lab-section-number">Continue through the system</p><h2 id="pillar-detail-routes-title">{{ $detail.sections.routes_title }}</h2></header>
+      <div class="research-route-grid">
+        <a href="{{ "/research/" | relURL }}"><span>Research</span><strong>Return to the system map</strong><small>See how all three Pillars work together.</small></a>
+        <a href="{{ "/publication/" | relURL }}"><span>Outputs</span><strong>Inspect publications</strong><small>Follow the existing scientific record.</small></a>
+        <a href="{{ "/contact/" | relURL }}"><span>Collaborate</span><strong>Bring a testable question</strong><small>Start a scientific or experimental conversation.</small></a>
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }}

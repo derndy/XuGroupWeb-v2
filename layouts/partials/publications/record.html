@@ -1,0 +1,29 @@
+{{- $classification := partial "publications/classification.html" . -}}
+{{- $types := $classification.keys -}}
+{{- $labels := $classification.labels -}}
+{{- $authors := slice -}}
+{{- range .GetTerms "authors" -}}
+  {{- $authors = $authors | append .LinkTitle -}}
+{{- end -}}
+{{- $search := printf "%s %s %s %s %s" .Title (delimit $authors " ") (.Params.publication | default "" | markdownify | plainify) (.Params.publication_short | default "" | markdownify | plainify) (.Params.doi | default "") -}}
+<li class="publication-record" data-publication-record data-year="{{ .Date.Format "2006" }}" data-types="{{ delimit $types " " }}"{{ with $classification.kind }} data-publication-kind="{{ . }}"{{ end }} data-search="{{ $search }}">
+  <article aria-labelledby="publication-{{ .File.UniqueID }}">
+    <div class="publication-record__meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>
+      {{- with $labels }}<span class="publication-record__type{{ if $classification.kind }} publication-record__type--artwork{{ end }}" data-publication-type-label>{{ delimit . " · " }}</span>{{ end }}
+    </div>
+    <h3 id="publication-{{ .File.UniqueID }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <div class="publication-record__authors">{{ partial "page_metadata_authors" . }}</div>
+    {{- if .Params.publication_short }}
+    <p class="publication-record__venue">{{ .Params.publication_short | markdownify }}</p>
+    {{- else if .Params.publication }}
+    <p class="publication-record__venue">{{ .Params.publication | markdownify }}</p>
+    {{- end }}
+    <div class="publication-record__links">
+      {{- partial "page_links" (dict "page" . "is_list" 1) -}}
+      {{- with .Resources.GetMatch "cite.bib" }}
+      <a class="publication-bib" href="{{ .RelPermalink }}" download>BibTeX <span class="sr-only">file</span></a>
+      {{- end }}
+    </div>
+  </article>
+</li>

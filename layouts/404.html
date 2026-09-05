@@ -1,0 +1,13 @@
+{{ define "main" }}
+<main class="not-found" aria-labelledby="not-found-title">
+  <div class="lab-shell not-found__inner">
+    <p class="lab-section-number">404 · Page not found</p>
+    <h1 id="not-found-title">This path does not lead to a published record.</h1>
+    <p>The page may have moved, or the requested research record may not be public. Continue from one of the verified sections below.</p>
+    <div class="lab-actions">
+      <a class="lab-button lab-button--primary" href="{{ "/" | relURL }}">Return home</a>
+      <a class="lab-button lab-button--secondary" href="{{ "/research/" | relURL }}">Explore research</a>
+    </div>
+  </div>
+</main>
+{{ end }}

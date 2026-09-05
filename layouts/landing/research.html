@@ -1,0 +1,111 @@
+{{ define "main" }}
+<main class="research-redesign">
+  <header class="research-hero" aria-labelledby="research-title">
+    <div class="lab-shell research-hero__grid">
+      <div>
+        <p class="lab-eyebrow">One scientific system · Three distinct contributions</p>
+        <h1 id="research-title">Build scientific systems that learn what matters.</h1>
+      </div>
+      <div class="research-hero__statement">
+        <p>We co-design how scientific systems represent states, organise interactions, learn from evidence, and choose what evidence to acquire next.</p>
+        <p>The objective is not prediction alone. It is to turn complex molecular and material data into testable mechanisms, decisive experiments, and useful designs.</p>
+        <nav class="research-jump" aria-label="Research page sections">
+          <a href="#research-map">System map</a>
+          <a href="#pillars">Three Pillars</a>
+          <a href="#horizons">Research horizon</a>
+          <a href="#principles">Shared principles</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  {{ with site.Data.research_system.overview_visual }}
+  <section class="lab-section research-concept-section" aria-label="Three connected research contributions">
+    <div class="lab-shell">
+      {{ partial "research/conceptual-figure.html" (dict "asset_id" . "placement" "research-overview") }}
+      <dl class="research-concept-guide">
+        <div><dt>Scientific learner</dt><dd>Design representations, interactions, and guiding signals.</dd></div>
+        <div><dt>Evidence environment</dt><dd>Design what to measure, test, and learn from next.</dd></div>
+        <div><dt>Mathematical lens</dt><dd>Reveal structure, uncertainty, and new scientific questions.</dd></div>
+      </dl>
+    </div>
+  </section>
+  {{ end }}
+
+  <section id="research-map" class="lab-section research-map-section" aria-label="Integrated research system">
+    <div class="lab-shell">
+      {{ partial "research/system-map.html" . }}
+    </div>
+  </section>
+
+  <section id="pillars" class="research-pillars" aria-labelledby="pillars-title">
+    <div class="lab-shell">
+      <header class="research-pillars__heading">
+        <p class="lab-section-number">Three connected contributions</p>
+        <h2 id="pillars-title">Different scientific responsibilities. Shared discovery logic.</h2>
+        <p>The Pillars separate responsibilities without separating the research programme. Each one changes what the others can accomplish.</p>
+      </header>
+      {{ range site.Data.research_system.pillars }}
+        {{ partial "research/pillar-module.html" (dict "pillar" .) }}
+      {{ end }}
+    </div>
+  </section>
+
+  <section id="horizons" class="lab-section research-horizons" aria-labelledby="horizons-title">
+    <div class="lab-shell">
+      <header class="lab-section-heading">
+        <div>
+          <p class="lab-section-number">Research horizon</p>
+          <h2 id="horizons-title">Build now. Connect next. Generalise carefully.</h2>
+        </div>
+        <p>Current work, medium-term system building, and long-horizon theory are shown separately so aspiration is never presented as completed evidence.</p>
+      </header>
+      <ol class="horizon-rail">
+        {{ range site.Data.research_system.horizons }}
+          <li>
+            <span>{{ .label }}</span>
+            <h3>{{ .title }}</h3>
+            <p>{{ .text }}</p>
+          </li>
+        {{ end }}
+      </ol>
+    </div>
+  </section>
+
+  <section id="principles" class="lab-section research-principles" aria-labelledby="principles-title">
+    <div class="lab-shell">
+      <header class="lab-section-heading lab-section-heading--light">
+        <div>
+          <p class="lab-section-number">Shared scientific principles</p>
+          <h2 id="principles-title">The standard is not a persuasive adjective. It is an inspectable practice.</h2>
+        </div>
+        <p>These principles guide representation, evidence design, evaluation, interpretation, and the decision to release a result.</p>
+      </header>
+      <div class="principle-grid">
+        {{ range $index, $principle := site.Data.research_system.principles }}
+          <article>
+            <span>{{ printf "%02d" (add $index 1) }}</span>
+            <h3>{{ $principle.title }}</h3>
+            <p>{{ $principle.text }}</p>
+          </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section class="lab-section research-routes" aria-labelledby="research-routes-title">
+    <div class="lab-shell">
+      <header class="research-routes__heading">
+        <p class="lab-section-number">Continue through the evidence</p>
+        <h2 id="research-routes-title">Follow the programme through outputs, people, and collaboration.</h2>
+      </header>
+      <p><a class="lab-text-link" href="{{ "/about/" | relURL }}">Read about our approach</a></p>
+      <div class="research-route-grid">
+        <a href="{{ "/publication/" | relURL }}"><span>Outputs</span><strong>Inspect publications</strong><small>See the lab’s existing scientific record.</small></a>
+        <a href="{{ "/people/" | relURL }}"><span>People</span><strong>Meet the researchers</strong><small>Find the people developing each part of the programme.</small></a>
+        <a href="{{ "/contact/" | relURL }}"><span>Collaborate</span><strong>Bring a testable question</strong><small>Start a scientific, experimental, or recruitment conversation.</small></a>
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }}

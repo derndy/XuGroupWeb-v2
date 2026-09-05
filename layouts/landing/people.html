@@ -1,46 +1,136 @@
 {{ define "main" }}
-<style>
-    /* 统一标题样式 */
-    .page-title {
-        text-align: center;
-        font-size: 1.875rem; /* 对应 text-3xl */
-        font-weight: 700; /* 对应 font-bold */
-        margin-top: 1.5rem; /* 对应 my-6 */
-        margin-bottom: 1.5rem; /* 对应 my-6 */
-    }
-    .group-photo {
-        text-align: center;
-        margin: 20px 0;
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .group-photo img {
-        width: 100%;
-        object-fit: contain;
-        border-radius: 8px;
-    }
-    hr.section-divider {
-        border: none;
-        border-top: 2px solid #333;
-        margin: 30px auto; /* 居中 */
-        max-width: 1200px; /* 与内容宽度一致 */
-    }
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+{{ $peoplePage := site.Data.people_page }}
+<main class="people-redesign">
+  <header class="people-hero" aria-labelledby="people-title">
+    <div class="lab-shell people-hero__grid">
+      <div class="people-hero__copy">
+        <p class="lab-eyebrow">{{ $peoplePage.hero.eyebrow }}</p>
+        <h1 id="people-title">{{ $peoplePage.hero.title }}</h1>
+        <p class="people-hero__lead">{{ $peoplePage.hero.lead }}</p>
+        <nav class="people-jump" aria-label="People page sections">
+          {{ range $peoplePage.hero.links }}
+            <a href="{{ .target }}">{{ .label }}</a>
+          {{ end }}
+        </nav>
+      </div>
+      {{ with $peoplePage.photos.featured }}
+        <figure class="people-hero__figure">
+          <img src="{{ .src | relURL }}" alt="{{ .alt }}" width="1200" height="900" decoding="async" fetchpriority="high">
+          <figcaption>{{ .caption }}</figcaption>
+        </figure>
+      {{ end }}
+    </div>
+  </header>
 
-<h1 class="page-title">{{ .Title }}</h1>
+  <section id="current-team" class="lab-section people-current" aria-labelledby="current-team-title">
+    <div class="lab-shell">
+      <header class="people-section-heading">
+        <div>
+          <p class="lab-section-number">{{ $peoplePage.sections.current_team.eyebrow }}</p>
+          <h2 id="current-team-title">{{ $peoplePage.sections.current_team.title }}</h2>
+        </div>
+        <p>{{ $peoplePage.sections.current_team.text }}</p>
+      </header>
+      {{ partial "people-custom.html" . }}
+    </div>
+  </section>
 
-<div class="group-photo">
-    <img src="/images/people/东盛楼_20250910.png?fm=webp" alt="Group Photo 2">
-</div>
-<hr class="section-divider">
-{{ partial "people-custom.html" . }}
-<hr class="section-divider">
-<div class="group-photo">
-    <img src="/images/people/红林花海_2024.9.18.jpg?fm=webp" alt="Group Photo 1">
-</div>
-<div class="group-photo">
-    <img src="/images/people/课题组合照_2024(1200).jpg?fm=webp" alt="Group Photo 1">
-</div>
+  <section id="undergraduate-students" class="lab-section people-register people-register--undergraduate" aria-labelledby="undergraduate-title">
+    <div class="lab-shell">
+      <header class="people-section-heading">
+        <div>
+          <p class="lab-section-number">{{ $peoplePage.sections.undergraduate_students.eyebrow }}</p>
+          <h2 id="undergraduate-title">{{ $peoplePage.sections.undergraduate_students.title }}</h2>
+        </div>
+        <p>{{ $peoplePage.sections.undergraduate_students.text }}</p>
+      </header>
+      <div class="people-table-wrap" role="region" aria-labelledby="undergraduate-title" tabindex="0">
+        <table class="people-table">
+          <caption class="lab-visually-hidden">Current undergraduate students and programmes</caption>
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Programme</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ range .Site.Data.US_Alumni.undergraduate_students }}
+              <tr>
+                <th scope="row">{{ .name }}</th>
+                <td>{{ .role }}</td>
+              </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="alumni" class="lab-section people-register people-register--alumni" aria-labelledby="alumni-title">
+    <div class="lab-shell">
+      <header class="people-section-heading people-section-heading--light">
+        <div>
+          <p class="lab-section-number">{{ $peoplePage.sections.alumni.eyebrow }}</p>
+          <h2 id="alumni-title">{{ $peoplePage.sections.alumni.title }}</h2>
+        </div>
+        <p>{{ $peoplePage.sections.alumni.text }}</p>
+      </header>
+      <div class="people-table-wrap people-table-wrap--dark" role="region" aria-labelledby="alumni-title" tabindex="0">
+        <table class="people-table people-table--dark">
+          <caption class="lab-visually-hidden">Alumni, former programmes, and recorded next positions</caption>
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Previous programme</th>
+              <th scope="col">Recorded next position</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ range .Site.Data.US_Alumni.alumni }}
+              <tr>
+                <th scope="row">{{ .name }}</th>
+                <td>{{ .role }}</td>
+                <td>{{ .current }}</td>
+              </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="group-moments" class="lab-section people-moments" aria-labelledby="group-moments-title">
+    <div class="lab-shell">
+      <header class="people-section-heading">
+        <div>
+          <p class="lab-section-number">{{ $peoplePage.sections.group_moments.eyebrow }}</p>
+          <h2 id="group-moments-title">{{ $peoplePage.sections.group_moments.title }}</h2>
+        </div>
+        <p>{{ $peoplePage.sections.group_moments.text }}</p>
+      </header>
+      <div class="people-moments__grid">
+        {{ range $peoplePage.photos.archive }}
+          <figure>
+            <img src="{{ .src | relURL }}" alt="{{ .alt }}" width="1200" height="800" loading="lazy" decoding="async">
+            <figcaption>{{ .caption }}</figcaption>
+          </figure>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section class="lab-section people-routes" aria-labelledby="people-routes-title">
+    <div class="lab-shell">
+      <header class="people-routes__heading">
+        <p class="lab-section-number">Continue through the system</p>
+        <h2 id="people-routes-title">Connect the team to its research and shared record.</h2>
+      </header>
+      <div class="people-route-grid">
+        {{ range $peoplePage.routes }}
+          <a href="{{ .url | relURL }}"><span>{{ .label }}</span><strong>{{ .title }}</strong><small>{{ .text }}</small></a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+</main>
 {{ end }}
