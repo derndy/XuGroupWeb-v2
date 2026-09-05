@@ -1,0 +1,11 @@
+{{- $result := dict -}}
+{{- if and (eq .Params.publication_status "accepted") (not .Params.acceptance) -}}
+  {{- errorf "Accepted paper needs acceptance metadata in %s" .File.Path -}}
+{{- end -}}
+{{- with .Params.acceptance -}}
+  {{- if or (not .year) (not .venue) -}}
+    {{- errorf "Acceptance needs a verified year and venue in %s" $.File.Path -}}
+  {{- end -}}
+  {{- $result = dict "year" .year "venue" .venue "title" (.title | default $.Title) "preprint" (ne $.Params.publication_status "accepted") -}}
+{{- end -}}
+{{- return $result -}}

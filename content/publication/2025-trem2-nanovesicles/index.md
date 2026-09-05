@@ -16,6 +16,17 @@ authors:
   - "Wing-Tak Wong"
   - "Shiying Li"
   - "Haiyu Zhou"
+# Author-role evidence and version limits: docs/publication-authorship-accepted-2026-09-05.md
+author_roles:
+  corresponding:
+  - Yanjuan Gu
+  - Wing-Tak Wong
+  - Shiying Li
+  - Haiyu Zhou
+  equal_first:
+  - Bin Xu
+  - Hongrui Qiu
+  - Huili Wang
 # Metadata sources and date decisions: docs/publications-update-2026-09-05.md
 date: "2025-08-29T00:00:00Z"
 doi: "10.1021/acsnano.5c10375"

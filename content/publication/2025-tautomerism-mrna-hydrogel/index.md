@@ -11,6 +11,12 @@ authors:
   - "Shidang Xu"
   - "Kunyu Zhang"
   - "Liming Bian"
+# Author-role evidence and version limits: docs/publication-authorship-accepted-2026-09-05.md
+author_roles:
+  corresponding:
+  - Shidang Xu
+  - Kunyu Zhang
+  - Liming Bian
 # Metadata sources and date decisions: docs/publications-update-2026-09-05.md
 date: "2025-06-20T00:00:00Z"
 doi: "10.1016/j.celbio.2025.100124"

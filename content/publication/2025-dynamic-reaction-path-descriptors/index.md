@@ -13,6 +13,12 @@ authors:
   - "Zhenguo Chi"
   - "Shidang Xu"
   - "Bin Liu"
+# Author-role evidence and version limits: docs/publication-authorship-accepted-2026-09-05.md
+author_roles:
+  corresponding:
+  - Shipu Xu
+  - Haiyang Huang
+  - Shidang Xu
 # Metadata sources and date decisions: docs/publications-update-2026-09-05.md
 date: "2025-11-06T00:00:00Z"
 doi: "10.26434/chemrxiv-2025-w2h8c"

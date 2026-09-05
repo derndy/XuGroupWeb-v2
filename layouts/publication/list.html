@@ -24,7 +24,10 @@
       <a class="publications-research-link" href="{{ "/research/" | relURL }}">Explore our research <span aria-hidden="true">↗</span></a>
     </div>
     {{- with .Content }}<div class="article-style">{{ . }}</div>{{ end }}
+    {{- partial "publications/author-legend.html" . -}}
   </header>
+
+  {{- partial "publications/accepted-list.html" . -}}
 
   <section class="publications-library lab-shell" aria-labelledby="publications-library-title">
     <div class="publications-library__heading">

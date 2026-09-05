@@ -8,19 +8,37 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | --- | --- |
 | Repository | Public `derndy/XuGroupWeb-v2` |
 | Working checkout | `/workspace/sites/xugroup-publications-2025-2026` (isolated worktree) |
-| Current review branch | `content/publications-2025-2026` |
-| Branch point | `main` at `83a9fcdf11ee5a3295ba495b140177330086dd93`, after PR #9 merged |
-| Previous merged work | PRs #1–9, including Gallery repair and the shared homepage text file |
+| Current review branch | `fix/publication-authorship-accepted` |
+| Branch point | `main` at `99698f19834baf7b7aa3da2a358650c78e2535ed`, after PR #10 merged |
+| Previous merged work | PRs #1–10, including the 2025–2026 bibliography, Gallery repair and shared homepage text file |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | [Draft PR #10](https://github.com/derndy/XuGroupWeb-v2/pull/10), open and draft |
+| Current PR | [Draft PR #13](https://github.com/derndy/XuGroupWeb-v2/pull/13), open and draft |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
-The user now prioritizes missing 2025–2026 Publications, referencing their SCUT and Google Scholar profiles. This batch adds ten individually verified public records in a review branch and draft PR. It does not merge, modify the original repository, or change hosting or production settings.
+The PI now requests corresponding-author stars, co-first-author hashes, and 2026 conference papers already accepted but not yet online. Use the current SCUT profile as the preferred authority; its supplied URL was not readable this session. The source audit distinguishes the older indexed profile, primary paper records, supplied publication lists, and pending final-author checks. Public review branch and draft PR are authorized; do not merge or change production/hosting settings.
 
-The bibliography was first verified against PR #8 at `bd762ef…`. During delivery, GitHub showed PR #9 merged at `83a9fcd…`. The publication commit was rebased onto this newer main; README/state conflicts were resolved by retaining the homepage text migration and its full maintenance/delivery history. Product files did not conflict. Both builds and the preservation audit passed again on the combined source. The usual approved-images checkout and its separate workflow were left untouched.
+## Latest batch — author roles and accepted conference work
 
-## Latest batch — Publications for 2025 and 2026
+- Unified publication author display: `*` means corresponding; `#` means co-first/equal contribution. Existing author taxonomy identities and links are retained, including legacy marked names. A visible legend appears on the index and details; superscripts have accessible labels.
+- Added verified author-role metadata to ten recent records. The 75 legacy correspondence assignments and 14 legacy co-first assignments are preserved. This is not a complete new audit of all historical contributions.
+- Added three 2026 accepted conference bundles with citations: AnyAvatar (ACM MM), MPFusion-MIL (ACM MM), and PyraE2E (ECCV). No unassigned DOI, page range, online date or acceptance day is invented. The Hugo sorting anchor is displayed only as a year and is omitted from accepted-work publication metadata.
+- Added a distinct accepted-work overview linking all five 2026 conference works. CDSR and MoGaFace now disclose PRCV 2026 acceptance while retaining clearly identified 2025 preprint citations. Their final conference author metadata needs the current profile or final manuscript; the older preprint author lists are not presented as final conference citations.
+- Canonical inventory: 91 records across 15 years and seven types. The accepted overview is five links to these records, not five additional records. Year/type filters retain canonical publication/preprint dates.
+- Source evidence, role assignments, discrepancies and version limits are in [the authorship/Accepted audit](docs/publication-authorship-accepted-2026-09-05.md); schema/update instructions are in [Publications maintenance](docs/publications-maintenance.md).
+
+### Validation
+
+- Production and preview-equivalent builds pass, 885 pages each. Both pass the 91-record publication audit and six-approved-image / 24-variant audit.
+- Nine existing Node tests and three DOI tests pass. Three isolated invalid-content builds correctly reject an unknown role, a role naming a missing author, and an accepted record without acceptance metadata.
+- All 13 new/updated role mappings match the generated index and detail authors. All 88 previous author identities, order, record URLs and attachment actions are preserved. Original 78 source bundles and assets remain byte-identical; 86 previous citations are unchanged, and the other two change only their PRCV acceptance/version notes.
+- Three new accepted records show year-only dates, correct conference types, explicit Accepted citations, and no invented DOI/pages/dates in their HTML, BibTeX or JSON-LD. Both PRCV preprints retain their original date, authors and DOI.
+- All 1,245 internal links/anchors across eleven main pages resolve. Nine other main-content trees are identical; homepage text and author links are preserved with only shared symbol markup changing. Production/preview main content matches and preview noindex is retained.
+- No browser visual or interaction QA was performed for this bibliography batch. Current SCUT reconciliation and the noted final-author discrepancies remain content follow-ups.
+
+Temporary outputs: `/workspace/scratch/7457cd2d5ea9/build-authorship-accepted` and `build-authorship-accepted-preview`. The one-off preservation verifier is `/workspace/scratch/7457cd2d5ea9/verify-authorship-accepted.py`. The public source audit is the durable evidence record; private source documents are not committed.
+
+## Previous completed batch — Publications for 2025 and 2026
 
 - Added ten canonical bundles and matching BibTeX files: eight records for 2025 and two for 2026. Six are journal articles, one is the official IJCAI conference paper, and three are explicitly labeled preprints using the existing Working paper type. The index now contains 88 records across 15 years and seven display types.
 - Full author order, titles, venues, years and DOI identifiers are checked against primary publisher/organizer/repository records and publisher-deposited Crossref metadata. The [source audit](docs/publications-update-2026-09-05.md) records every source, date conflict and duplicate/version decision.
@@ -291,7 +309,7 @@ For presentation-only changes, add `--before /absolute/preceding-build` to the p
 
 ## Continue in small batches
 
-1. Recheck main and `content/publications-2025-2026`. PRs #8 and #9 are merged and included in this branch’s base; preserve any newer user changes.
+1. Recheck main and `fix/publication-authorship-accepted`. PR #10 is merged and included in the base. Preserve newer user changes and the separate homepage wording workflow.
 2. Review and merge only after an explicit release instruction. This batch makes no merge or hosting change.
 3. Finish the bibliography completeness check against a readable current SCUT/Scholar list or export, and check for verified final venues for the three preprints. Next text-management batch: move About's remaining page-level copy into `website_text.yml`, preserving output and the already connected shared definitions. Then extend the same approach to Contact, Research and the other pages.
 4. Keep individual publication, news and member records separate. Use `docs/website-text-maintenance.md` as the current editing map.
@@ -362,10 +380,18 @@ Published to `refactor/homepage-text-file` in product commit `2ec0194313b49d0bcd
 
 No PR merge, original-repository edit, production switch or hosting/workflow change was performed by this batch. Next text-management batch: About's remaining page copy, with the same output-preservation check.
 
-## GitHub delivery — Publications update
+## Historical GitHub delivery — Publications update
 
 Published to `content/publications-2025-2026` in product commit `fbe2a439f4519c4aff33f821eac997e24b7b5893`. Its GitHub tree `7c03fb51cd97bb1dc03ddffa702967d11b5947a8` exactly matches the locally verified source after rebasing onto merged PR #9. The local source commit is retained at `checkpoint/publications-2026-local-source`; the isolated worktree is aligned with the public branch. This following update changes documentation only.
 
 [Draft PR #10](https://github.com/derndy/XuGroupWeb-v2/pull/10) targets `main`. Netlify reports **success** for the product commit, with [the matching Publications preview](https://deploy-preview-10--xushidang-lab.netlify.app/publication/). An HTTP 200 read of that preview confirms 88 server-rendered records, eight in 2025, two in 2026, and preview noindex. This is an HTML check, not browser visual/interaction QA. Documentation commits can trigger another preview; check the final PR head before release.
 
 No PR merge, production switch, original-repository edit or hosting/workflow change was performed by this batch. Next bibliography step is completeness against a readable SCUT/Scholar list or export and verified final-version reconciliation for the three preprints.
+
+## GitHub delivery — authorship and Accepted update
+
+Published to `fix/publication-authorship-accepted` in product commit `316ee331e26a79ae2186aeb93c5e3ed928cb63c1`. Its GitHub tree `8131aab17f4bb192d276a9c4aa6a2c2c6c7651db` exactly matches the tested local source. The isolated worktree is aligned with the public branch; its local source commit remains at `checkpoint/authorship-accepted-local-source`.
+
+[Draft PR #13](https://github.com/derndy/XuGroupWeb-v2/pull/13) targets `main` and remains unmerged. Netlify reports **success** for the product commit at [the Publications preview](https://deploy-preview-13--xushidang-lab.netlify.app/publication/). This following state-record commit changes documentation only and may trigger another preview; check the current PR head before release. No browser visual/interaction QA is claimed.
+
+The current main used by this batch is merged PR #10 at `99698f19834baf7b7aa3da2a358650c78e2535ed`. No merge, production switch, original-repository edit or hosting change was performed. Continue by reconciling the current SCUT profile and final PRCV author metadata; do not silently combine preprint authors with a final conference citation.

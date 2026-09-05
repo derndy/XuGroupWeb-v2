@@ -17,6 +17,7 @@
   {{ partial "page_header.html" . }}
 
   <div class="article-container">
+    {{ partial "publications/author-legend.html" . }}
     {{ if .Params.abstract }}
     <h2>{{ i18n "abstract" }}</h2>
     <p class="pub-abstract">{{ .Params.abstract | markdownify }}</p>
