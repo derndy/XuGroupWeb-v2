@@ -63,9 +63,13 @@ Project-specific scientific claims must remain off the public site until their s
 
 ## Current redesign
 
-The redesign is maintained on `design/site-foundation-v1`. The current draft establishes the visual system, accessible global shell, semantic homepage, integrated Research landing page, governed three-Pillar data model, the complete reusable Pillar detail-page set, scientific-visual release gates, evidence loop, research horizons, testbed framing, recruitment pathway, a genuine 404 recovery page, a semantic People directory, a server-rendered documentary Gallery with accessible progressive enhancement, and a source-backed News ledger. Existing member records, portraits, Gallery photographs, News titles, dates, summaries, featured images, and public URLs are preserved. Publication records remain unchanged.
+Start with [`project-state.md`](project-state.md) for the active branch, reconciled handoff, latest validation and delivery status.
+
+This separate redesign repository is `derndy/XuGroupWeb-v2`. The original `derndy/XuGroupWeb` remains the fallback. Approved-image integration is developed on `design/approved-scientific-images`. The current draft establishes the visual system, accessible global shell, semantic homepage, integrated Research landing page, governed three-Pillar data model, the complete reusable Pillar detail-page set, scientific-visual release gates, evidence loop, research horizons, testbed framing, recruitment pathway, a genuine 404 recovery page, a semantic People directory, a server-rendered documentary Gallery with accessible progressive enhancement, and a source-backed News ledger. Existing member records, portraits, Gallery photographs, News titles, dates, summaries, featured images, and public URLs are preserved. Publication improvements from the source redesign are retained. Six PI-approved conceptual illustrations now have exact source records, captions, and permitted placements.
 
 See [`docs/redesign-foundation.md`](docs/redesign-foundation.md) for the baseline audit and implementation boundaries.
 See [`docs/people-directory-maintenance.md`](docs/people-directory-maintenance.md) before changing member records, portraits, group photographs, or People-page copy.
 See [`docs/gallery-maintenance.md`](docs/gallery-maintenance.md) before changing Gallery records, captions, thumbnails, categories, or public image files.
 See [`docs/news-maintenance.md`](docs/news-maintenance.md) before adding or changing News records, dates, summaries, images, drafts, or public routes.
+
+See [`docs/scientific-visual-approval-2026-09-05.md`](docs/scientific-visual-approval-2026-09-05.md) for all six approved originals and their placements.
