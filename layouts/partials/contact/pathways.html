@@ -1,0 +1,50 @@
+{{ $contact := .contact }}
+{{ $pathways := .pathways }}
+<section class="lab-section contact-pathways" aria-labelledby="contact-pathways-title">
+  <div class="lab-shell">
+    <header class="lab-section-heading">
+      <div>
+        <p class="lab-section-number">{{ $pathways.eyebrow }}</p>
+        <h2 id="contact-pathways-title">{{ $pathways.title }}</h2>
+      </div>
+      <p>{{ $pathways.lead }}</p>
+    </header>
+    <div class="contact-pathways__grid">
+      {{ range $index, $route := $pathways.routes }}
+      <article class="contact-pathway" id="{{ .id }}" aria-labelledby="{{ .id }}-title" tabindex="-1">
+        <header>
+          <p class="contact-pathway__eyebrow"><span aria-hidden="true">{{ printf "%02d" (add $index 1) }} · </span>{{ .navigation_label }}</p>
+          <h3 id="{{ .id }}-title">{{ .title }}</h3>
+          <p>{{ .introduction }}</p>
+        </header>
+        <dl class="contact-pathway__guidance">
+          <div>
+            <dt>{{ $pathways.contribution_label }}</dt>
+            <dd>{{ .contribution }}</dd>
+          </div>
+          <div>
+            <dt>{{ $pathways.materials_label }}</dt>
+            <dd><ul>{{ range .materials }}<li>{{ . }}</li>{{ end }}</ul></dd>
+          </div>
+          {{ with .availability }}
+          <div class="contact-pathway__availability">
+            <dt>{{ $route.availability_label }}</dt>
+            <dd>{{ . }}</dd>
+          </div>
+          {{ end }}
+          <div>
+            <dt>{{ $pathways.next_step_label }}</dt>
+            <dd>{{ .next_step }}</dd>
+          </div>
+        </dl>
+        <div class="contact-pathway__actions">
+          <p class="contact-pathway__subject"><strong>{{ $pathways.subject_label }}</strong><span>{{ .email_subject }}</span></p>
+          {{ $subject := replace (urlquery .email_subject) "+" "%20" }}
+          <a class="lab-button lab-button--primary" href="{{ printf "mailto:%s?subject=%s" $contact.email $subject }}">{{ .email_label }}</a>
+          <a class="lab-text-link" href="{{ .related_url | relURL }}">{{ .related_label }} <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>

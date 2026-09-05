@@ -8,18 +8,18 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | --- | --- |
 | Repository | Public `derndy/XuGroupWeb-v2` |
 | Working checkout | `/workspace/sites/xugroup-approved-images` |
-| Current review branch | `design/homepage-publications-people-news` |
-| Base | `main` at `13d699772ec8e76d59fe219511fa370ea8496945` |
-| Previous PR | [PR #3](https://github.com/derndy/XuGroupWeb-v2/pull/3), now merged; PRs #1 and #2 are also merged |
-| Current PR | [Draft PR #4](https://github.com/derndy/XuGroupWeb-v2/pull/4), open and draft |
+| Current review branch | `design/contact-pathways` |
+| Base | `main` at `b9ad9189828d76da1fb0cc634169528026bdc78c` |
+| Previous PR | [PR #4](https://github.com/derndy/XuGroupWeb-v2/pull/4), now merged; PRs #1–3 are also merged |
+| Current PR | [Draft PR #5](https://github.com/derndy/XuGroupWeb-v2/pull/5), open and draft |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
-The earlier status file described PR #1 as open and draft. GitHub now confirms it was merged; its former `design/approved-scientific-images` remote branch was deleted. The grammar and evidence-loop batches have also merged as PRs #2 and #3. This continuation starts from `13d6997…` main, whose website tree matches the tested evidence-loop checkpoint. Do not recreate the deleted branch or repeat the completed six-image integration.
+GitHub confirms PRs #1–4 merged before this continuation. This batch starts from `b9ad918…` main, whose source tree matches the preceding homepage-records checkpoint. No open PR was returned at the initial check. Preserve newer work if the branch moves again; do not recreate deleted historical branches or repeat completed image/homepage integration.
 
-The recorded production URL, `https://xushidang-lab.netlify.app/`, was read on 5 September: HTTP 200, older carousel HTML, three empty Hero headings, and no approved homepage H1. It is not serving the latest v2 homepage observed in source. This checks returned HTML only; Netlify linkage, branch settings and deployment history have not been inspected. Do not infer production state merely from a GitHub merge or the configured `baseURL`.
+Earlier on 5 September, `https://xushidang-lab.netlify.app/` returned older carousel HTML without the approved homepage H1. That was a historical HTML observation, not a statement about current production after subsequent user merges. Production has not been rechecked in this batch. The PR #4 Netlify preview succeeded, but production branch settings and deployment history have not been inspected. Do not infer current production state from a GitHub merge or configured baseURL alone.
 
-At the start of this continuation, v2 `main` was `13d699772ec8e76d59fe219511fa370ea8496945`. The original repository and production were not modified. This continuation publishes a review branch only; it does not change either main branch or hosting configuration.
+At the start of this continuation, v2 `main` was `b9ad9189828d76da1fb0cc634169528026bdc78c`. This batch publishes a review branch only; it does not merge either main branch or change hosting configuration. The original repository is untouched.
 
 ## Design decisions to retain
 
@@ -33,6 +33,32 @@ At the start of this continuation, v2 `main` was `13d699772ec8e76d59fe219511fa37
 8. Keep existing `/publication/`, `/post/`, `/contact/` and `/research/learning-system-design/` routes. The design's alternative route labels do not authorize breaking existing URLs.
 9. `noindex` is not access control. Public branches and previews must contain only material suitable for public access. Image approval is not authorization to merge or switch production.
 
+## Latest batch — four Contact pathways
+
+- Added four stable sections on `/contact/`: scientific collaboration, experimental partnership, joining the lab and research-asset use. A top navigation links to these sections and the existing contact details.
+- Each route explains suitable questions, a useful contribution, three items for a first email, a conditional next step, a suggested email subject and a related public page.
+- All new text/labels are in `data/contact_page.yml` under `pathways`. `layouts/partials/contact/pathways.html` renders the cards; the existing contact template adds the navigation and section.
+- Email links derive their recipient from the existing displayed contact email and prefill only a correctly encoded suggested subject. The page sends no email and adds no form, visitor-input field, JavaScript or dependency.
+- The applicant route asks about openings, funding and application timing; it makes no funded-vacancy, admission or response-time promise. The resource route refers to specific published work and its access/reuse terms without inventing releases.
+- Scoped Contact styles use two desktop columns, one column below 62rem, native fragment links, focusable route targets, visible focus and wrapping text/buttons.
+- The existing contact facts, appointment URL, library photograph, closing illustration/caption/download and all other main-page content remain intact. No hosting file or source image changes.
+
+See [Contact maintenance](docs/contact-maintenance.md) for the four stable anchors, content locations, suggested subjects and factual boundaries.
+
+### Validation of the Contact-pathways batch
+
+- Production and preview-equivalent Hugo builds passed, 736 pages each.
+- All six approved original images/placements/captions and 24 uncropped WebP variants passed both audits.
+- All 78 publication records, routes, attachment actions and citation bytes match the preceding homepage-records build in both contexts.
+- All 1,062 internal links/anchors resolve across eleven main pages; IDs are unique and each page has one H1/main.
+- Four complete route cards, five jump destinations and four related-page links verified. Each mailto recipient equals the displayed email, and each distinct decoded subject equals the suggested subject. No body parameter or form fields were added.
+- Contact's previous hero content, contact-information section and closing section match the baseline HTML. Existing contact data and image bytes are preserved; all ten other main-content trees match exactly.
+- Production/preview Contact main-content trees match. All eleven preview pages have noindex; their production equivalents do not. New text colour pairs meet at least 4.56:1 contrast. Whitespace checks passed.
+
+Real browser layout, keyboard/touch, zoom, mail-client launch and live appointment availability remain untested. A hosted preview build is not browser QA. No unsupported browser-preview workaround was introduced.
+
+Build outputs: `/workspace/scratch/7457cd2d5ea9/build-contact-pathways` and `build-contact-pathways-preview`; preservation baselines: `build-home-records` and `build-home-records-preview`. The one-off generated-HTML audit is `/workspace/scratch/7457cd2d5ea9/verify-contact-pathways.py`; build outputs and the audit runner are temporary, reproducible files outside Git.
+
 ## Previous completed batch — homepage scientific explanation
 
 - Replaced the static, absolutely positioned Hero diagram with six native `details`/`summary` concepts: Evidence, Space, Interaction, Learning, Mechanism and Design. Definitions and real research links are usable without JavaScript. Learner dimensions use neutral styling; outcomes are explicitly proposals/aims to test.
@@ -45,7 +71,7 @@ At the start of this continuation, v2 `main` was `13d699772ec8e76d59fe219511fa37
 
 The new grammar follows the meaning of the original Drive `space-interaction-learning-map.svg`, which was retrieved and read. It does not publish the original source sheet. The archive manifest lists 91 materials; the six existing repository images already match their approval hashes and were not regenerated or reimported.
 
-## Latest batch — homepage publications, people and news
+## Previous completed batch — homepage publications, people and news
 
 - Added H08 with two selected existing research papers, canonical title/author/venue/year data, publisher DOI links and the two actual BibTeX downloads. Selected does not mean newest. No public dataset/code/protocol release is implied.
 - Added H09 with the existing People introduction, a short research-programme statement, the complete 2025 welcome-dinner photograph and its exact alt/caption, plus People/Gallery links. Natural 1200 × 900 aspect ratio, lazy loading and original image bytes are retained.
@@ -103,7 +129,7 @@ Build outputs: `/workspace/scratch/7457cd2d5ea9/build-evidence-loop` and `build-
 | Home | Exact identity copy, scientific grammar, three pillars, evidence loop, testbeds with image 05, selected papers/citations, documentary team photo, three dated news entries and closing invitation |
 | Research and three pillars | Overview, interconnected research map, detailed scope/methods/testbeds/principles/horizons and images 01–03 |
 | About | Introductory research identity, image 04 and onward links; fuller vision/culture chapters still pending |
-| Contact / Join / Collaborate | Shared layout, central facts, mailto/tel links, appointment link, authentic library photograph and image 06; four audience pathways still pending |
+| Contact / Join / Collaborate | Four audience pathways, preparation guidance, suggested email subjects, shared contact facts/links, appointment link, authentic library photograph and image 06 |
 | People | 16 current-member profiles, 7 undergraduate records, 9 alumni records and authentic photographs |
 | Gallery | 19 documentary records, year grouping, server-rendered content and progressively enhanced dialog |
 | News | 18 published records; incomplete record excluded as draft |
@@ -147,10 +173,10 @@ git diff --check
 ## Continue in small batches
 
 1. Check local changes, remote `main`, review branch and actual PR/check status before editing. Preserve newer user work; compare any moved branch with this record.
-2. Review the changed homepage at 320 px, tablet, desktop and 200% text/zoom when a supported browser preview is available. Open every concept by mouse/touch and keyboard; verify focus, links and reading order.
-3. H05 is merged, and H08–H10 are implemented in this review branch. Verify browser presentation before release; do not repeat the source implementation.
-4. Next bounded batch: Contact's four audience pathways, using existing verified contact facts and approved public positioning.
-5. Then complete About's middle Space–Interaction–Learning chapter/culture/horizons and expand shell navigation with real destinations.
+2. Review Contact and the preceding homepage work at 320 px, tablet, desktop and 200% text/zoom in the hosted preview. Verify keyboard focus, jump targets, reading order and email-client behaviour; this source batch does not complete browser QA.
+3. Homepage H05 and H08–H10 are merged; Contact's four pathways are implemented in this review branch. Do not repeat completed source work.
+4. Next bounded batch: About's Space–Interaction–Learning explanation, with the approved image 04 in the middle chapter.
+5. Then complete the remaining About culture/horizon content and improve shell navigation with real destinations.
 6. Continue the publication identity/external-download review and approved project/resource connections in separate, evidence-backed batches.
 7. Merge or change Netlify only after an explicit release instruction.
 
@@ -170,10 +196,18 @@ Published to `design/homepage-evidence-loop` in commit `a4b6167f6434c4bd5a392573
 
 [PR #3](https://github.com/derndy/XuGroupWeb-v2/pull/3) was delivered as a draft targeting `main` and has since merged before this continuation. No merge or production switch was performed by that delivery. GitHub reported zero commit statuses at the prepared head; no corresponding hosted preview is confirmed. Inspect actual PR/branch/deployment state before the next continuation.
 
-## GitHub delivery — homepage records batch
+## Historical GitHub delivery — homepage records batch
 
 Published to `design/homepage-publications-people-news` in commit `f9044c8d40353e44b573c48fe760e1fcbfe145f3`. The published tree `c09c8b969071ab8851eeed38d74fa056759c49f5` exactly matches the locally tested source. The original local commit is retained under `checkpoint/home-records-local-source`; the checkout is aligned with the GitHub branch. This subsequent state-record update changes documentation only.
 
-[Draft PR #4](https://github.com/derndy/XuGroupWeb-v2/pull/4) targets `main`. GitHub reports `netlify/xushidang-lab/deploy-preview` **success** for the product commit, with [the matching preview](https://deploy-preview-4--xushidang-lab.netlify.app). This is the first confirmed hosted preview for this batch. It has not received real browser/interaction review. Future documentation commits may trigger another preview build; inspect the actual PR head and check status before release.
+[PR #4](https://github.com/derndy/XuGroupWeb-v2/pull/4) was delivered as a draft targeting `main` and has since merged before this continuation. At delivery GitHub reported `netlify/xushidang-lab/deploy-preview` **success** for the product commit, with [the matching preview](https://deploy-preview-4--xushidang-lab.netlify.app). This is the first confirmed hosted preview for this batch. It has not received real browser/interaction review. Future documentation commits may trigger another preview build; inspect the actual PR head and check status before release.
 
-The source delivery did not merge the PR, modify either main branch, or change hosting settings/production. Do not infer production state from preview success. The next bounded source batch is Contact's four audience pathways.
+The source delivery did not merge the PR, modify either main branch, or change hosting settings/production. Do not infer production state from preview success. The following continuation implements Contact's four audience pathways.
+
+## GitHub delivery — Contact pathways batch
+
+Published to `design/contact-pathways` in commit `3a70b70f8d6d2ed492030bd9fb3749352a8e11f7`. Its tree `4bd9933a8571678dd0c0fd9d9a5e9fcc1b037b5b` exactly matches the tested local source. The original local source commit is retained under `checkpoint/contact-pathways-local-source`; the checkout is aligned with GitHub. This subsequent project-state update changes documentation only.
+
+[Draft PR #5](https://github.com/derndy/XuGroupWeb-v2/pull/5) targets `main`. GitHub reports `netlify/xushidang-lab/deploy-preview` **success** for the product commit, with [the matching Contact preview](https://deploy-preview-5--xushidang-lab.netlify.app/contact/). Real browser, keyboard/touch, zoom and installed mail-client behaviour remain unreviewed. Documentation commits can trigger a further preview build; check the actual final PR head before release.
+
+This delivery did not merge the PR, modify either main branch, send email, or change hosting settings/production. Next bounded source batch: About's Space–Interaction–Learning explanation with approved image 04 in the middle chapter.

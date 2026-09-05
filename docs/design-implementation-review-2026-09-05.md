@@ -8,7 +8,8 @@ Read with [the design brief](website-design-and-asset-placement.md) and [current
 - Baseline: `main` at `6f19566096c95560cd58b1a11fbcea4f259d04e7`, the merge of PR #1. Its website tree matches the previous prepared checkpoint.
 - First batch: `design/homepage-research-grammar`, reviewed in PR #2 and since merged.
 - Second batch: `design/homepage-evidence-loop`, merged as PR #3.
-- Current batch: `design/homepage-publications-people-news`, based on v2 `main` at `13d699772ec8e76d59fe219511fa370ea8496945`, for draft review only.
+- Third batch: `design/homepage-publications-people-news`, merged as PR #4.
+- Current batch: `design/contact-pathways`, based on v2 `main` at `b9ad9189828d76da1fb0cc634169528026bdc78c`, for draft review only.
 - On this date the recorded production URL, `https://xushidang-lab.netlify.app/`, returned HTTP 200 with the older carousel markup, three empty Hero headings, and no approved homepage title. This is an HTML observation, not a browser screenshot or proof of its Netlify repository settings.
 - The new homepage work is evaluated against the latest v2 source, not that older hosted page. Neither `main` nor hosting configuration is changed by this batch.
 
@@ -30,7 +31,7 @@ Read with [the design brief](website-design-and-asset-placement.md) and [current
 | Research / pillars | Three distinct pillars, overview map, conceptual figures, scope/methods/testbeds/horizons and review principles exist | Expand responsive named relationships and reuse the grammar on Pillar I when improving that page; do not change the current route to match an aspirational URL |
 | Six approved artwork placements | All six exact source files integrated with approved captions, originals and 24 WebP derivatives | No artwork or approval change in this batch; all six pass the existing source/placement audit |
 | About / Vision | Brief introduction, image 04 and navigation onward | Still needs the fuller Space–Interaction–Learning chapter, principles, culture and NOW/NEXT/HORIZON sequence |
-| Join / Collaborate | `/contact/` has verified contact fields, library photograph, invitation and image 06 | Still needs four audience-specific pathways and current, verified opportunity information. Keep `/contact/` working |
+| Join / Collaborate | `/contact/` has verified contact fields, library photograph, invitation and image 06 | Four audience pathways implemented with preparation guidance, conditional next steps, suggested subject email links and real related routes. Confirmed vacancies remain source-dependent; the page asks visitors to enquire about current availability |
 | People, Gallery, News, Publications | Redesigned independent pages, authentic records and existing functionality | Preserved. Whole-site browser/keyboard checks and external publication/download verification remain pending |
 | Header / footer / languages | Navigation uses current pages; About is linked from content but absent from main menu; grouped menus and supporting policies incomplete | Improve site shell after usable destination pages exist; remove glass styling; never expose missing-language links or invent privacy statements |
 | Projects / Resources | Full public record collections not implemented | Requires public records, useful actions and explicit source support before adding cards, filters or menu destinations |
@@ -72,7 +73,7 @@ Keep map labels neutral within the learner; pillar category colours belong to pi
 
 Validation results for the final source are recorded in `project-state.md`. The internal browser preview could not start because this Hugo project has no compatible preview server/package entrypoint. No framework migration or preview-only dependency was added. Real browser layout, keyboard and touch verification are still pending; static HTML checks do not substitute for those checks.
 
-H08–H10 are implemented in the current batch. Next bounded batch: the four Contact pathways; then the remaining About chapters. Keep project/resource records dependent on approved public source material.
+H08–H10 are merged, and the four Contact pathways are implemented in the current batch. Next bounded batch: About's Space–Interaction–Learning explanation with image 04 in its middle chapter; then the remaining About content. Keep project/resource records dependent on approved public source material.
 
 
 ## Second batch — explicit evidence feedback
@@ -95,3 +96,12 @@ H09 reuses the existing People photo record at full aspect ratio, including its 
 H10 uses the latest three published News bundles. Dates are visible and unchanged; the latest is 22 November 2025. Drafts and future event/publication dates are excluded even when previews enable them. No extra news facts, summary copies, photo payloads, scripts or dependencies are introduced.
 
 The new sections follow testbeds and precede the closing invitation, now numbered 09. Validation passes both builds, the six-image audit, preservation of all 78 publications/citation files, 1,053 internal links/anchors, unchanged ten other main-content trees and previous homepage sections except numbering. Temporary permissive-preview fixtures confirm that draft and future news stay off the homepage. Browser layout, keyboard/touch, zoom and image-loading checks remain pending.
+
+
+## Fourth batch — four ways to contact the lab
+
+The existing `/contact/` page now has stable sections for scientific collaboration, experimental partnership, joining the lab and research-asset use. Each includes the suitable question, a visitor contribution, preparation guidance, a possible next step and an email action. Five introductory links reach the four sections and existing contact details. Related links lead to Research, Evidence Engineering, People and Publications.
+
+All new text and suggested subjects live in `data/contact_page.yml`. Email actions use the existing contact address and correctly encoded subject text; there is no form, message-sending action or new script. Suggested subjects are draft conventions, not a pre-existing mandatory application policy. Openings/funding are matters to enquire about, and resource access depends on specific public work and its terms.
+
+Cards use two desktop columns and one column below 62rem, natural text height, wrapping buttons and visible focus. The old hero text, contact details, appointment link, photo and approved closing artwork are preserved, as are all ten other main-content trees. Both builds passed, with six approved image placements, all 78 publications/citation bytes and 1,062 internal links/anchors verified. Real browser, keyboard/touch, zoom and email-client checks remain pending. See [Contact maintenance](contact-maintenance.md) for source contracts.
