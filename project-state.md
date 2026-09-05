@@ -12,13 +12,13 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | Branch point | `main` at `83a9fcdf11ee5a3295ba495b140177330086dd93`, after PR #9 merged |
 | Previous merged work | PRs #1–9, including Gallery repair and the shared homepage text file |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | Prepared locally; draft PR publication follows validation |
+| Current PR | [Draft PR #10](https://github.com/derndy/XuGroupWeb-v2/pull/10), open and draft |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
 The user now prioritizes missing 2025–2026 Publications, referencing their SCUT and Google Scholar profiles. This batch adds ten individually verified public records in a review branch and draft PR. It does not merge, modify the original repository, or change hosting or production settings.
 
-The bibliography was first verified against PR #8 at `bd762ef…`. During delivery, GitHub showed PR #9 merged at `83a9fcd…`. The publication commit was rebased onto this newer main; README/state conflicts were resolved by retaining the homepage text migration and its full maintenance/delivery history. Product files did not conflict. Both builds and the preservation audit are repeated on the combined source. The usual approved-images checkout and its separate workflow were left untouched.
+The bibliography was first verified against PR #8 at `bd762ef…`. During delivery, GitHub showed PR #9 merged at `83a9fcd…`. The publication commit was rebased onto this newer main; README/state conflicts were resolved by retaining the homepage text migration and its full maintenance/delivery history. Product files did not conflict. Both builds and the preservation audit passed again on the combined source. The usual approved-images checkout and its separate workflow were left untouched.
 
 ## Latest batch — Publications for 2025 and 2026
 
@@ -364,4 +364,8 @@ No PR merge, original-repository edit, production switch or hosting/workflow cha
 
 ## GitHub delivery — Publications update
 
-The verified source is prepared on `content/publications-2025-2026`. Public branch, draft PR, tested tree and actual Netlify status will be recorded after the authorized GitHub write. No production release is requested.
+Published to `content/publications-2025-2026` in product commit `fbe2a439f4519c4aff33f821eac997e24b7b5893`. Its GitHub tree `7c03fb51cd97bb1dc03ddffa702967d11b5947a8` exactly matches the locally verified source after rebasing onto merged PR #9. The local source commit is retained at `checkpoint/publications-2026-local-source`; the isolated worktree is aligned with the public branch. This following update changes documentation only.
+
+[Draft PR #10](https://github.com/derndy/XuGroupWeb-v2/pull/10) targets `main`. Netlify reports **success** for the product commit, with [the matching Publications preview](https://deploy-preview-10--xushidang-lab.netlify.app/publication/). An HTTP 200 read of that preview confirms 88 server-rendered records, eight in 2025, two in 2026, and preview noindex. This is an HTML check, not browser visual/interaction QA. Documentation commits can trigger another preview; check the final PR head before release.
+
+No PR merge, production switch, original-repository edit or hosting/workflow change was performed by this batch. Next bibliography step is completeness against a readable SCUT/Scholar list or export and verified final-version reconciliation for the three preprints.
