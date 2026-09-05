@@ -9,7 +9,11 @@
 <li class="publication-record" data-publication-record data-year="{{ .Date.Format "2006" }}" data-types="{{ delimit $types " " }}"{{ with $classification.kind }} data-publication-kind="{{ . }}"{{ end }} data-search="{{ $search }}">
   <article aria-labelledby="publication-{{ .File.UniqueID }}">
     <div class="publication-record__meta">
+      {{- if eq .Params.date_precision "month" }}
+      <time datetime="{{ .Date.Format "2006-01" }}">{{ .Date.Format "Jan 2006" }}</time>
+      {{- else }}
       <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>
+      {{- end }}
       {{- with $labels }}<span class="publication-record__type{{ if $classification.kind }} publication-record__type--artwork{{ end }}" data-publication-type-label>{{ delimit . " · " }}</span>{{ end }}
     </div>
     <h3 id="publication-{{ .File.UniqueID }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>

@@ -24,6 +24,7 @@ The author taxonomy and BibTeX import workflow are unchanged. Slice 09 preserved
 ## Display and interaction contract
 
 - All visible records are server-rendered, ordered by the existing `date` field in reverse chronological order. Do not substitute `publishDate`, folder-name years, or inferred acceptance dates.
+- When a primary citation gives only a month, use `date_precision: month` and document the month-start Hugo sorting anchor. The index displays only month/year and a month-precision `datetime`; the existing detail header also uses month/year. Do not invent a visible publication day.
 - Within each record, show date/type, linked title, full existing author list, existing abbreviated venue (full venue fallback), and available attachment controls.
 - Reuse the theme's author and attachment partials to retain author links, author notes, PDF destinations, citation modal, DOI links, and any future supported attachments.
 - Offer a direct BibTeX file link as well as the JavaScript citation modal. The direct file and record links work without the filter script.
@@ -95,6 +96,8 @@ The script checks generated HTML, local record/citation destinations, filter lab
 `--before` is a strict presentation-preservation check: it must fail if intentional metadata or citation corrections are compared with their older versions. For metadata work, document and review each expected difference; do not weaken the baseline check to make the change pass. Use the corrected build as the baseline for the next presentation-only slice.
 
 ## Inventory and source-review status
+
+The 5 September 2026 bibliography update adds ten source-verified records (eight in 2025, two in 2026), bringing the inventory to 88 records and 88 citation files. Six are journal articles, one is a conference paper, and three are explicitly labeled preprints under the existing `Working paper` type. Featured images remain at 74. See [the update source audit](publications-update-2026-09-05.md) for all primary records, date/version decisions, and the remaining Scholar completeness check. The historical counts below describe earlier checkpoints.
 
 At the baseline, 78 records span 2011–2024: 74 CSL `article-journal` records (including the two verified artwork entries) and one each of working paper, conference paper, thesis, and patent. There are 78 citation files and 74 featured images. These are an inventory of existing records, not a newly verified claim about completeness or scientific status.
 

@@ -7,20 +7,40 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | Item | Current value |
 | --- | --- |
 | Repository | Public `derndy/XuGroupWeb-v2` |
-| Working checkout | `/workspace/sites/xugroup-approved-images` |
-| Current review branch | `refactor/homepage-text-file` |
-| Branch point | Updated to `main` at `bd762efc8d96995ae7a8d3819dcab44252d6ea88` after PR #8 merged |
-| Previous merged work | PRs #1–8, including About principles/horizons and Gallery overlap repair |
+| Working checkout | `/workspace/sites/xugroup-publications-2025-2026` (isolated worktree) |
+| Current review branch | `content/publications-2025-2026` |
+| Branch point | `main` at `83a9fcdf11ee5a3295ba495b140177330086dd93`, after PR #9 merged |
+| Previous merged work | PRs #1–9, including Gallery repair and the shared homepage text file |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | [Draft PR #9](https://github.com/derndy/XuGroupWeb-v2/pull/9), open and draft |
+| Current PR | Prepared locally; draft PR publication follows validation |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
-The user accepted one main text-editing file, with individual publication, news and member records remaining separate. The authorized first step is to move homepage wording, connect it to the templates and verify unchanged output. This takes priority over the previously planned About testbed chapter.
+The user now prioritizes missing 2025–2026 Publications, referencing their SCUT and Google Scholar profiles. This batch adds ten individually verified public records in a review branch and draft PR. It does not merge, modify the original repository, or change hosting or production settings.
 
-This batch began at `5c6c216…` while PR #8 was open. During delivery, GitHub showed PR #8 merged into main at `bd762ef…`. The local text change was rebased onto that newer main; README/state conflicts were resolved while retaining the Gallery repair and its verification history. The final build is compared with the existing Gallery baseline. The workflow deletion remains preserved. This batch does not merge a PR or change hosting settings.
+The bibliography was first verified against PR #8 at `bd762ef…`. During delivery, GitHub showed PR #9 merged at `83a9fcd…`. The publication commit was rebased onto this newer main; README/state conflicts were resolved by retaining the homepage text migration and its full maintenance/delivery history. Product files did not conflict. Both builds and the preservation audit are repeated on the combined source. The usual approved-images checkout and its separate workflow were left untouched.
 
-## Latest batch — homepage text in one editable file
+## Latest batch — Publications for 2025 and 2026
+
+- Added ten canonical bundles and matching BibTeX files: eight records for 2025 and two for 2026. Six are journal articles, one is the official IJCAI conference paper, and three are explicitly labeled preprints using the existing Working paper type. The index now contains 88 records across 15 years and seven display types.
+- Full author order, titles, venues, years and DOI identifiers are checked against primary publisher/organizer/repository records and publisher-deposited Crossref metadata. The [source audit](docs/publications-update-2026-09-05.md) records every source, date conflict and duplicate/version decision.
+- Includes all six 2025 entries from the indexed official SCUT supervisor profile. The supplied SCUT URL could not be read directly, and Scholar returned HTTP 403. This is an individually verified addition, not a claim of complete Scholar reconciliation. A current export remains useful for the completeness check.
+- Journal dates use verified first publication; citations retain final issue metadata where assigned. SyncAnimation has only a verified month in its organizer citation: `date_precision: month` displays August 2025, with day 01 only a Hugo sorting anchor. The preprint version of SyncAnimation is not duplicated.
+- No abstracts, PDFs, scientific figures or new author biography claims were imported. Existing homepage paper selections and all previous content remain intact.
+
+### Validation of the Publications update
+
+- Production and preview-equivalent Hugo builds passed: 864 pages each (including expanded author/taxonomy archives).
+- Both builds pass the 88-record / 15-year / seven-type publication audit and the six-approved-image / 24-variant audit.
+- Nine existing Node filter/state tests and three DOI tests passed; whitespace checks pass.
+- All ten new records have the expected date/year/type, full source-matched authors, exact DOI links and downloadable BibTeX bytes. Three preprint notices and the month-only conference display are verified in generated HTML.
+- All 78 original source bundles and citations are byte-identical to main; their rendered record and detail content remains identical to the Gallery baseline. The ten other main-page content trees are unchanged.
+- All 1,202 internal links/anchors across eleven main pages resolve. Production/preview main content matches; preview-only noindex is retained.
+- Browser layout, Scholar completeness and interactive citation-modal testing remain separate checks. No browser QA was performed for this bibliography batch.
+
+Temporary build outputs: `/workspace/scratch/7457cd2d5ea9/build-publications-2026` and `build-publications-2026-preview`; preservation baseline: `build-gallery-overlap`. The reproducible one-off audit is `/workspace/scratch/7457cd2d5ea9/verify-publications-2026.py`. Source metadata snapshots and the preparation script are temporary retrieval/verification aids outside Git; the public source audit is the durable provenance record.
+
+## Previous completed batch — homepage text in one editable file
 
 - Created `data/website_text.yml`: `home` holds homepage headings, explanations, labels, four testbed cards and calls to action; `shared` holds its scientific definitions, evidence-loop steps, five pillar display fields and the shared team introduction.
 - Moved the existing shared copy out of `data/research_system.yml` / `data/people_page.yml` and connected every existing consumer. The new `research/pillars.html` helper combines editable display fields with stable IDs/routes and detailed research records. Missing required pillar copy fails the build.
@@ -230,7 +250,7 @@ Build outputs: `/workspace/scratch/7457cd2d5ea9/build-evidence-loop` and `build-
 | People | 16 current-member profiles, 7 undergraduate records, 9 alumni records and authentic photographs |
 | Gallery | 19 documentary records, year grouping, server-rendered content and progressively enhanced dialog |
 | News | 18 published records; incomplete record excluded as draft |
-| Publications | 78 records, 13 years, seven types, filters/search, citations and previous verified identity corrections |
+| Publications | 88 records, 15 years, seven types, filters/search, citations, ten 2025–2026 additions and previous verified identity corrections |
 
 Approved image source paths, captions, hashes and destinations are in `data/research_assets.yml` and `docs/scientific-visual-approval-2026-09-05.md`. All six original PNGs and all 24 uncropped WebP derivatives are retained. Image 05 remains the only principal conceptual illustration on Home, alongside the authentic group photograph; image 06 stays on Contact.
 
@@ -259,19 +279,21 @@ Run from the checkout, with Hugo Extended 0.139.4 and Go available. Use output d
 ```bash
 HUGO_ENV=production hugo --gc --minify -b https://xushidang-lab.netlify.app/ -d /absolute/production-build
 python -B scripts/audit-research-visuals.py /absolute/production-build
-python -B scripts/audit-publications.py /absolute/production-build --before /absolute/preceding-build
+python -B scripts/audit-publications.py /absolute/production-build
 HUGO_ENV=production HUGO_DEPLOY_CONTEXT=preview hugo --gc --minify --buildFuture -b https://example.invalid/ -d /absolute/preview-build
 python -B scripts/audit-research-visuals.py /absolute/preview-build
 git diff --check
 ```
 
+For presentation-only changes, add `--before /absolute/preceding-build` to the publication audit. Its strict count/order check intentionally does not pass against a pre-addition 78-record baseline; this batch separately verified preservation of all original records.
+
 `https://example.invalid/` is an offline validation origin, not a hosted preview. On this workspace the binaries are `/workspace/tools/hugo-0.139.4/hugo` and `/workspace/tools/go-1.23.4/go/bin/go`.
 
 ## Continue in small batches
 
-1. Recheck main and the homepage-text review branch. PR #8 is merged and included in this branch’s base; preserve any newer user changes.
+1. Recheck main and `content/publications-2025-2026`. PRs #8 and #9 are merged and included in this branch’s base; preserve any newer user changes.
 2. Review and merge only after an explicit release instruction. This batch makes no merge or hosting change.
-3. Next text-management batch: move About's remaining page-level copy into `website_text.yml`, preserving output and the already connected shared definitions. Then extend the same approach to Contact, Research and the other pages.
+3. Finish the bibliography completeness check against a readable current SCUT/Scholar list or export, and check for verified final venues for the three preprints. Next text-management batch: move About's remaining page-level copy into `website_text.yml`, preserving output and the already connected shared definitions. Then extend the same approach to Contact, Research and the other pages.
 4. Keep individual publication, news and member records separate. Use `docs/website-text-maintenance.md` as the current editing map.
 5. Resume the About testbed explanation, public research-culture content, navigation and publication-resource improvements in later batches. Do not publish unfinished operating-handbook or private management material.
 6. Earlier mobile/tablet, 200% text/zoom and whole-site browser-review items remain separate; the Gallery repair's own coverage is recorded on PR #8.
@@ -316,11 +338,11 @@ Published to `design/about-learning-system` in commit `8fe262b3f8d250b0bfb6300f2
 
 This delivery did not merge the PR, modify either main branch or change production/hosting settings. The following continuation implements About's shared research principles and NOW/NEXT/HORIZON sequence.
 
-## GitHub delivery — About principles and directions
+## Historical GitHub delivery — About principles and directions
 
 Published to `design/about-principles-horizons` in commit `e41f614cf84f7a3b76e375f78edb075c09b91a7e`. Its tree `93c29084a2431a176e4d3e818d41d800561e78ea` exactly matches the tested local source. The original local commit is retained under `checkpoint/about-principles-local-source`; the checkout is aligned with GitHub. This subsequent project-state update changes documentation only.
 
-[Draft PR #7](https://github.com/derndy/XuGroupWeb-v2/pull/7) targets `main`. GitHub reports `netlify/xushidang-lab/deploy-preview` **success** for the product commit, with [the matching About preview](https://deploy-preview-7--xushidang-lab.netlify.app/about/). Real browser layout, keyboard/touch, zoom and image loading remain unreviewed. Documentation commits can trigger a further preview build; check the actual final PR head before release.
+[PR #7](https://github.com/derndy/XuGroupWeb-v2/pull/7) was delivered as a draft and has since merged. GitHub reports `netlify/xushidang-lab/deploy-preview` **success** for the product commit, with [the matching About preview](https://deploy-preview-7--xushidang-lab.netlify.app/about/). Real browser layout, keyboard/touch, zoom and image loading remain unreviewed. Documentation commits can trigger a further preview build; check the actual final PR head before release.
 
 This delivery did not merge the PR, modify either main branch or change production/hosting settings. Next bounded source batch: why molecular/material testbeds matter, using existing public research questions and actual destinations.
 
@@ -328,14 +350,18 @@ This delivery did not merge the PR, modify either main branch or change producti
 
 Published to `fix/gallery-overlap` in commit `a5a7d360a9091c876035d25fbca3e0f54195710e`; tree `f60a55f8c8beba01c5d21d40f9edec3569124688` exactly matches the locally tested source. The original local commit is retained under `checkpoint/gallery-overlap-local-source`; the checkout is aligned with the remote review branch. This following update records verification and delivery only.
 
-[Draft PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8) targets `main`. Netlify reports a successful Deploy Preview for the product commit, and the [actual Gallery preview](https://deploy-preview-8--xushidang-lab.netlify.app/gallery/) received the desktop checks listed above. Documentation updates may trigger another build; inspect the final PR head before release.
+[PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8) was delivered as a draft and has since merged. Netlify reports a successful Deploy Preview for the product commit, and the [actual Gallery preview](https://deploy-preview-8--xushidang-lab.netlify.app/gallery/) received the desktop checks listed above. Documentation updates may trigger another build; inspect the final PR head before release.
 
 No PR merge, original-repository edit, production switch or hosting/workflow change was performed by this repair. The separate workflow deletion on main is preserved. Next content batch remains About's explanation of why molecular/material testbeds matter, after reconciling the current PR/main state.
 
-## GitHub delivery — homepage text file
+## Historical GitHub delivery — homepage text file
 
 Published to `refactor/homepage-text-file` in product commit `2ec0194313b49d0bcd854c5687fb6fb11d90591a`. GitHub tree `fd5f97342f2a49622a17d915f8d69039efc4efcd` exactly matches the checked local source. The original local commit is retained at `checkpoint/home-text-local-source`; the working checkout was aligned with the published branch. This following update records delivery only.
 
-[Draft PR #9](https://github.com/derndy/XuGroupWeb-v2/pull/9) targets main. Netlify reports **success** for the product commit: [homepage preview](https://deploy-preview-9--xushidang-lab.netlify.app/). This confirms the hosted build, not browser interaction coverage. Documentation updates may trigger another build; inspect the final PR head before release.
+[PR #9](https://github.com/derndy/XuGroupWeb-v2/pull/9) was delivered as a draft and merged during this Publications update. Netlify reports **success** for the product commit: [homepage preview](https://deploy-preview-9--xushidang-lab.netlify.app/). This confirms the hosted build, not browser interaction coverage. Documentation updates may trigger another build; inspect the final PR head before release.
 
 No PR merge, original-repository edit, production switch or hosting/workflow change was performed by this batch. Next text-management batch: About's remaining page copy, with the same output-preservation check.
+
+## GitHub delivery — Publications update
+
+The verified source is prepared on `content/publications-2025-2026`. Public branch, draft PR, tested tree and actual Netlify status will be recorded after the authorized GitHub write. No production release is requested.
