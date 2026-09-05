@@ -9,7 +9,8 @@ Read with [the design brief](website-design-and-asset-placement.md) and [current
 - First batch: `design/homepage-research-grammar`, reviewed in PR #2 and since merged.
 - Second batch: `design/homepage-evidence-loop`, merged as PR #3.
 - Third batch: `design/homepage-publications-people-news`, merged as PR #4.
-- Current batch: `design/contact-pathways`, based on v2 `main` at `b9ad9189828d76da1fb0cc634169528026bdc78c`, for draft review only.
+- Fourth batch: `design/contact-pathways`, merged as PR #5.
+- Current batch: `design/about-learning-system`, based on v2 `main` at `98aeaba4b9bbf89a8e1e016f80886404cbcddad2`, for draft review only.
 - On this date the recorded production URL, `https://xushidang-lab.netlify.app/`, returned HTTP 200 with the older carousel markup, three empty Hero headings, and no approved homepage title. This is an HTML observation, not a browser screenshot or proof of its Netlify repository settings.
 - The new homepage work is evaluated against the latest v2 source, not that older hosted page. Neither `main` nor hosting configuration is changed by this batch.
 
@@ -30,7 +31,7 @@ Read with [the design brief](website-design-and-asset-placement.md) and [current
 | H11 closing invitation | Navy invitation with Contact and People links; no second conceptual image | Preserve the single-artwork rule; four audience routes can follow the dedicated Contact improvement |
 | Research / pillars | Three distinct pillars, overview map, conceptual figures, scope/methods/testbeds/horizons and review principles exist | Expand responsive named relationships and reuse the grammar on Pillar I when improving that page; do not change the current route to match an aspirational URL |
 | Six approved artwork placements | All six exact source files integrated with approved captions, originals and 24 WebP derivatives | No artwork or approval change in this batch; all six pass the existing source/placement audit |
-| About / Vision | Brief introduction, image 04 and navigation onward | Still needs the fuller Space–Interaction–Learning chapter, principles, culture and NOW/NEXT/HORIZON sequence |
+| About / Vision | Brief introduction, image 04 and navigation onward | Space–Interaction–Learning chapter implemented with canonical definitions, mutual-shaping metaphor, full-width image 04, evidence feedback and a qualified long-term programme. Fuller principles/culture/NOW–NEXT–HORIZON sequence remain |
 | Join / Collaborate | `/contact/` has verified contact fields, library photograph, invitation and image 06 | Four audience pathways implemented with preparation guidance, conditional next steps, suggested subject email links and real related routes. Confirmed vacancies remain source-dependent; the page asks visitors to enquire about current availability |
 | People, Gallery, News, Publications | Redesigned independent pages, authentic records and existing functionality | Preserved. Whole-site browser/keyboard checks and external publication/download verification remain pending |
 | Header / footer / languages | Navigation uses current pages; About is linked from content but absent from main menu; grouped menus and supporting policies incomplete | Improve site shell after usable destination pages exist; remove glass styling; never expose missing-language links or invent privacy statements |
@@ -53,7 +54,7 @@ The supplied folder was read and its archive manifest inspected. It contains 91 
 | 01 | `assets/media/research/three-pillars-discovery-core.png` | `/research/` — below introduction |
 | 02 | `assets/media/research/evidence-spiral.png` | `/research/evidence-engineering/` — opening explanation |
 | 03 | `assets/media/research/mathematics-frontiers.png` | `/research/mathematical-frontiers/` — below opening statement |
-| 04 | `assets/media/research/mobius-cycle.png` | `/about/` — vision illustration; fuller surrounding chapter pending |
+| 04 | `assets/media/research/mobius-cycle.png` | `/about/` — Space–Interaction–Learning middle chapter, after the live-text explanation |
 | 05 | `assets/media/research/testbeds-horizons.png` | `/` — scientific testbeds |
 | 06 | `assets/media/research/signals-discovery.png` | `/contact/` — closing invitation |
 
@@ -73,7 +74,7 @@ Keep map labels neutral within the learner; pillar category colours belong to pi
 
 Validation results for the final source are recorded in `project-state.md`. The internal browser preview could not start because this Hugo project has no compatible preview server/package entrypoint. No framework migration or preview-only dependency was added. Real browser layout, keyboard and touch verification are still pending; static HTML checks do not substitute for those checks.
 
-H08–H10 are merged, and the four Contact pathways are implemented in the current batch. Next bounded batch: About's Space–Interaction–Learning explanation with image 04 in its middle chapter; then the remaining About content. Keep project/resource records dependent on approved public source material.
+H08–H10 and the four Contact pathways are merged; About's Space–Interaction–Learning chapter is implemented in the current batch. Next bounded batch: its research principles and NOW/NEXT/HORIZON sequence, reusing existing public pillar material. Keep project/resource records dependent on approved public source material.
 
 
 ## Second batch — explicit evidence feedback
@@ -105,3 +106,14 @@ The existing `/contact/` page now has stable sections for scientific collaborati
 All new text and suggested subjects live in `data/contact_page.yml`. Email actions use the existing contact address and correctly encoded subject text; there is no form, message-sending action or new script. Suggested subjects are draft conventions, not a pre-existing mandatory application policy. Openings/funding are matters to enquire about, and resource access depends on specific public work and its terms.
 
 Cards use two desktop columns and one column below 62rem, natural text height, wrapping buttons and visible focus. The old hero text, contact details, appointment link, photo and approved closing artwork are preserved, as are all ten other main-content trees. Both builds passed, with six approved image placements, all 78 publications/citation bytes and 1,062 internal links/anchors verified. Real browser, keyboard/touch, zoom and email-client checks remain pending. See [Contact maintenance](contact-maintenance.md) for source contracts.
+
+
+## Fifth batch — About's connected learning system
+
+The About middle chapter now explains Space, Interaction and Learning using the same canonical questions and definitions as Home. New surrounding copy describes their mutual influence within the learner and keeps these design choices distinct from the three research pillars. The existing introduction, hero and onward routes are preserved.
+
+Image 04 stays at its approved placement and full content width, following the explanation. This uses the brief's full-width option to keep the detailed loop readable. The original image/caption/alt/attribution/download and derivatives are unchanged; a separate text paragraph identifies the loop as a metaphor. Evidence feedback and a Research horizon block follow, with Scientific Learning Grammar framed as a long-term aim/open question.
+
+About-specific copy, including the former hard-coded hero and onward-link labels, now lives in `content/about/index.md`. Shared scientific definitions and approved captions retain their canonical data sources. Scoped styles reflow the text columns without reordering the explanation, image or caption.
+
+Both builds passed; the six-image audit, all 78 publication/citation records and 1,065 internal links/anchors are verified. Existing About hero/routes/figure HTML and the other ten main-content trees match baseline. Real browser layout, keyboard/touch, zoom and image loading remain unreviewed. See [About maintenance](about-maintenance.md).

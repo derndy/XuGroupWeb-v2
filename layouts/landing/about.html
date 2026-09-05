@@ -1,31 +1,68 @@
 {{ define "main" }}
+{{ $copy := .Params.about }}
+{{ $grammar := site.Data.research_system.grammar }}
 <main class="about-redesign">
   <header class="research-hero" aria-labelledby="about-title">
     <div class="lab-shell research-hero__grid">
       <div>
-        <p class="lab-eyebrow">Xu Lab · Scientific Learning &amp; Discovery Systems</p>
-        <h1 id="about-title">Learning, evidence, and discovery belong together.</h1>
+        <p class="lab-eyebrow">{{ $copy.hero.eyebrow }}</p>
+        <h1 id="about-title">{{ $copy.hero.title }}</h1>
       </div>
       <div class="research-hero__statement">{{ .Content }}</div>
     </div>
   </header>
-  <section class="lab-section about-vision" aria-label="Space, interaction, and learning">
+  <section class="lab-section about-vision" aria-labelledby="about-vision-title">
     <div class="lab-shell">
+      <header class="lab-section-heading">
+        <div>
+          <p class="lab-section-number">{{ $copy.vision.eyebrow }}</p>
+          <h2 id="about-vision-title">{{ $copy.vision.title }}</h2>
+        </div>
+        <p>{{ $copy.vision.lead }}</p>
+      </header>
+      <div class="about-dimensions">
+        {{ range $grammar.dimensions }}
+        <article id="about-dimension-{{ .id }}" aria-labelledby="about-dimension-{{ .id }}-title">
+          <h3 id="about-dimension-{{ .id }}-title">{{ .label }}</h3>
+          <p class="about-dimensions__question">{{ .question }}</p>
+          <p>{{ .definition }}</p>
+        </article>
+        {{ end }}
+      </div>
+      <div class="about-vision__context">
+        <p>{{ $copy.vision.metaphor }}</p>
+        <a class="lab-text-link" href="{{ $copy.vision.related_url | relURL }}">{{ $copy.vision.related_label }} <span aria-hidden="true">→</span></a>
+      </div>
       {{ with site.Data.site_visuals.about_vision }}
         {{ partial "research/conceptual-figure.html" (dict "asset_id" . "placement" "about-vision") }}
       {{ end }}
+      <div class="about-vision__connections">
+        <section class="about-feedback" aria-labelledby="about-feedback-title">
+          <h3 id="about-feedback-title">{{ $copy.feedback.title }}</h3>
+          <p>{{ $grammar.evidence.definition }}</p>
+          <p>{{ $grammar.feedback }}</p>
+          <a class="lab-text-link" href="{{ $grammar.evidence.url | relURL }}">{{ $grammar.evidence.link_text }} <span aria-hidden="true">→</span></a>
+        </section>
+        <section class="about-programme" aria-labelledby="about-programme-title">
+          <p class="lab-eyebrow">{{ $copy.programme.eyebrow }}</p>
+          <h3 id="about-programme-title">{{ $copy.programme.title }}</h3>
+          <p>{{ $copy.programme.text }}</p>
+          <p class="about-programme__question">{{ $copy.programme.question }}</p>
+          <a class="lab-text-link" href="{{ $copy.programme.related_url | relURL }}">{{ $copy.programme.related_label }} <span aria-hidden="true">→</span></a>
+        </section>
+      </div>
     </div>
   </section>
   <section class="lab-section research-routes" aria-labelledby="about-routes-title">
     <div class="lab-shell">
       <header class="research-routes__heading">
-        <p class="lab-section-number">Explore Xu Lab</p>
-        <h2 id="about-routes-title">Follow the questions, the people, and the work.</h2>
+        <p class="lab-section-number">{{ $copy.routes.eyebrow }}</p>
+        <h2 id="about-routes-title">{{ $copy.routes.title }}</h2>
       </header>
       <div class="research-route-grid">
-        <a href="{{ "/research/" | relURL }}"><span>Research</span><strong>Explore the three Pillars</strong><small>See how our scientific questions connect.</small></a>
-        <a href="{{ "/people/" | relURL }}"><span>People</span><strong>Meet the researchers</strong><small>Get to know the people behind the work.</small></a>
-        <a href="{{ "/contact/" | relURL }}"><span>Collaborate</span><strong>Start a conversation</strong><small>Bring a scientific question to the group.</small></a>
+        {{ range $copy.routes.items }}
+        <a href="{{ .url | relURL }}"><span>{{ .label }}</span><strong>{{ .title }}</strong><small>{{ .text }}</small></a>
+        {{ end }}
       </div>
     </div>
   </section>
