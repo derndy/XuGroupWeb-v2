@@ -1,0 +1,44 @@
+{{- $grammar := site.Data.research_system.grammar -}}
+{{- if eq .variant "compact" -}}
+<figure class="learning-map" aria-labelledby="home-map-title" aria-describedby="home-map-caption">
+  <figcaption id="home-map-title" class="learning-map__title">One connected scientific system</figcaption>
+  <p class="learning-map__hint">Open a concept to explore its role.</p>
+  {{ with $grammar.evidence }}
+    {{ partial "research/learning-concept.html" (dict "concept" . "class" "learning-map__evidence") }}
+  {{ end }}
+  <p class="learning-map__relation">Evidence informs the learner; the learner helps choose new evidence.</p>
+  <div class="learning-map__learner">
+    <p class="learning-map__group-label">Design the learner together</p>
+    {{ range $grammar.dimensions }}
+      {{ partial "research/learning-concept.html" (dict "concept" . "class" "") }}
+    {{ end }}
+    <p class="learning-map__co-design">Each choice changes what the others can express, combine and learn.</p>
+  </div>
+  <p class="learning-map__relation">Research aims to test against evidence</p>
+  <div class="learning-map__aims">
+    {{ range $grammar.aims }}
+      {{ partial "research/learning-concept.html" (dict "concept" . "class" "") }}
+    {{ end }}
+  </div>
+  <p id="home-map-caption" class="learning-map__feedback">{{ $grammar.feedback }}</p>
+</figure>
+{{- else -}}
+<div class="learning-grammar">
+  <div class="learning-grammar__dimensions">
+    {{ range $grammar.dimensions }}
+      <article id="grammar-{{ .id }}">
+        <h3>{{ .label }}</h3>
+        <p class="learning-grammar__question">{{ .question }}</p>
+        <p>{{ .definition }}</p>
+        <p class="learning-grammar__relation"><strong>Connected choice:</strong> {{ .relationship }}</p>
+        <a class="lab-text-link" href="{{ .url | relURL }}">{{ .link_text }} <span aria-hidden="true">→</span></a>
+      </article>
+    {{ end }}
+  </div>
+  <div class="learning-grammar__feedback">
+    <h3>Evidence keeps the system open to revision.</h3>
+    <p>{{ $grammar.feedback }} {{ $grammar.evidence.definition }}</p>
+    <a class="lab-text-link" href="{{ $grammar.evidence.url | relURL }}">{{ $grammar.evidence.link_text }} <span aria-hidden="true">→</span></a>
+  </div>
+</div>
+{{- end -}}

@@ -1,0 +1,8 @@
+{{- $concept := .concept -}}
+<details class="learning-concept {{ .class }}">
+  <summary><strong>{{ $concept.label }}</strong><span>{{ $concept.cue }}</span></summary>
+  <div class="learning-concept__body">
+    <p>{{ $concept.definition }}</p>
+    <a href="{{ $concept.url | relURL }}">{{ $concept.link_text }}</a>
+  </div>
+</details>

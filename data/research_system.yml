@@ -1,9 +1,61 @@
 overview_visual: CONCEPT-RES-001
 
+# Shared semantic source for the compact Hero and expanded homepage explanation.
+# These dimensions are co-designed; their positions are not the three Pillars.
+grammar:
+  dimensions:
+    - id: space
+      label: Space
+      cue: Represent what matters
+      question: What distinctions should the representation preserve?
+      definition: Organise scientific states, coordinates and scales so that relevant structure, symmetries and uncertainty can be represented.
+      relationship: The chosen space shapes which interactions can be expressed; learning can reveal distinctions that require a different space.
+      url: /research/learning-system-design/
+      link_text: Explore representation design
+    - id: interaction
+      label: Interaction
+      cue: Expose meaningful relations
+      question: Which relationships should the system expose?
+      definition: Design how information is exchanged, transformed and combined, from local relationships to collective and cross-scale effects.
+      relationship: Interactions depend on the representation and determine what information the learning process can combine.
+      url: /research/learning-system-design/
+      link_text: Explore interaction design
+    - id: learning
+      label: Learning
+      cue: Update from evidence
+      question: What update process turns evidence into reusable knowledge?
+      definition: Co-design objectives, guiding signals, constraints and update rules to study how the system changes as evidence arrives.
+      relationship: Learning revises representations and interactions; their structure also changes which updates are possible.
+      url: /research/learning-system-design/
+      link_text: Explore learning dynamics
+  evidence:
+    id: evidence
+    label: Evidence
+    cue: Create and acquire what matters
+    definition: Choose observations, perturbations and experiments that can distinguish competing explanations and change the next learning step.
+    url: /research/evidence-engineering/
+    link_text: Explore evidence engineering
+  aims:
+    - id: mechanism
+      label: Mechanism
+      cue: An explanation to challenge
+      definition: Seek explanations with consequences that can be tested against alternatives. A model pattern alone does not establish a mechanism.
+      url: /research/mathematical-frontiers/
+      link_text: Explore what is identifiable
+    - id: design
+      label: Design
+      cue: A proposal to test
+      definition: Propose candidates or interventions under scientific constraints, then use new evidence to test whether they achieve the intended effect.
+      url: /research/evidence-engineering/
+      link_text: Explore discovery and design
+  feedback: Tests of proposed mechanisms and designs return new evidence, revised questions and constraints to the learner.
+
 pillars:
   - id: pillar-i
     class: one
     numeral: I
+    home_invitation: Learn the right scientific structure
+    home_terms: [Representation, Interaction, Learning dynamics]
     role: The scientific learner
     title: Foundational Scientific Learning-System Design
     public_title: Design how scientific systems learn
@@ -103,6 +155,8 @@ pillars:
   - id: pillar-ii
     class: two
     numeral: II
+    home_invitation: Create evidence that changes what can be learned
+    home_terms: [Active acquisition, Perturbation, Closed loops]
     role: The evidence environment
     title: Evidence Engineering and Closed-Loop Discovery & Design
     public_title: Design what evidence systems acquire
@@ -203,6 +257,8 @@ pillars:
   - id: pillar-iii
     class: three
     numeral: III
+    home_invitation: Turn patterns into principles and possibilities
+    home_terms: [Identifiability, Uncertainty, Inverse design]
     role: The mathematical lens
     title: Mathematical Data Science and Frontier Exploration
     public_title: Open what becomes identifiable and designable
