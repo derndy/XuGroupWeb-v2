@@ -15,6 +15,12 @@ authors:
   - "Wei Wu"
   - "Xiqun Jiang"
   - "Xu Zhen"
+# Author-role evidence and version limits: docs/publication-authorship-accepted-2026-09-05.md
+author_roles:
+  corresponding:
+  - Shidang Xu
+  - Xiqun Jiang
+  - Xu Zhen
 # Metadata sources and date decisions: docs/publications-update-2026-09-05.md
 date: "2025-05-07T00:00:00Z"
 doi: "10.1021/jacs.5c03763"

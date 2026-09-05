@@ -23,10 +23,13 @@ The author taxonomy and BibTeX import workflow are unchanged. Slice 09 preserved
 
 ## Display and interaction contract
 
+- Add verified author roles through `author_roles.corresponding` / `author_roles.equal_first`, using exact author names without symbols. These render as `*` / `#`; preserve existing `authors` taxonomy strings and URLs. The shared renderer supports old trailing symbols and retains author notes. The index and detail pages show the symbol legend. See [the authorship source audit](publication-authorship-accepted-2026-09-05.md) for source priority and unresolved discrepancies.
+- Include accepted work before proceedings publication. Use `acceptance: {year: 2026, venue: "ACM MM"}` and `publication_status: accepted` for a verified conference record. Set `date_precision: year`, a documented year-start sorting anchor, and `show_date: false`; omit unassigned DOI/pages. The index displays the verified year and Accepted status; SEO omits the artificial publication day. Citation `note` must say `Accepted; to appear`.
+- If only the earlier preprint's author list is verified, keep that preprint's author/date/DOI identity and add `acceptance` (with optional final `title`) without `publication_status: accepted`. Explain which version its citation represents. The accepted-work overview links both forms, separately from the year/type-filtered canonical index. Remove/update acceptance metadata when a final proceedings record becomes available.
 - All visible records are server-rendered, ordered by the existing `date` field in reverse chronological order. Do not substitute `publishDate`, folder-name years, or inferred acceptance dates.
 - When a primary citation gives only a month, use `date_precision: month` and document the month-start Hugo sorting anchor. The index displays only month/year and a month-precision `datetime`; the existing detail header also uses month/year. Do not invent a visible publication day.
 - Within each record, show date/type, linked title, full existing author list, existing abbreviated venue (full venue fallback), and available attachment controls.
-- Reuse the theme's author and attachment partials to retain author links, author notes, PDF destinations, citation modal, DOI links, and any future supported attachments.
+- Keep the shared publication author renderer and theme attachment partials to retain author links, author notes, PDF destinations, citation modal, DOI links, and future supported attachments.
 - Offer a direct BibTeX file link as well as the JavaScript citation modal. The direct file and record links work without the filter script.
 - Keep the complete index and year navigation available without JavaScript. Hide filter controls until initialization succeeds; do not replace the records with client-only data fetching.
 - Search treats words literally, case-insensitively, across titles, authors, both venue forms, and DOI values. It is not a regular-expression interface. Search, type, and year are combined with AND.
@@ -96,6 +99,8 @@ The script checks generated HTML, local record/citation destinations, filter lab
 `--before` is a strict presentation-preservation check: it must fail if intentional metadata or citation corrections are compared with their older versions. For metadata work, document and review each expected difference; do not weaken the baseline check to make the change pass. Use the corrected build as the baseline for the next presentation-only slice.
 
 ## Inventory and source-review status
+
+The authorship/Accepted batch adds three conference records, bringing the total to 91. Ten recent records gain sourced author-role metadata. A separate accepted-work overview links five 2026 works; two links resolve to clearly identified 2025 PRCV preprints while final conference author metadata is pending. See [the authorship/Accepted audit](publication-authorship-accepted-2026-09-05.md). This overview does not alter canonical-record counts or historical year filters.
 
 The 5 September 2026 bibliography update adds ten source-verified records (eight in 2025, two in 2026), bringing the inventory to 88 records and 88 citation files. Six are journal articles, one is a conference paper, and three are explicitly labeled preprints under the existing `Working paper` type. Featured images remain at 74. See [the update source audit](publications-update-2026-09-05.md) for all primary records, date/version decisions, and the remaining Scholar completeness check. The historical counts below describe earlier checkpoints.
 

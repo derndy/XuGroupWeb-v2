@@ -7,6 +7,11 @@ authors:
   - "Bin Xu"
   - "Shidang Xu"
   - "Bin Liu"
+# Author-role evidence and version limits: docs/publication-authorship-accepted-2026-09-05.md
+author_roles:
+  corresponding:
+  - Shidang Xu
+  - Bin Liu
 # Metadata sources and date decisions: docs/publications-update-2026-09-05.md
 date: "2025-06-19T00:00:00Z"
 doi: "10.1002/advs.202503138"

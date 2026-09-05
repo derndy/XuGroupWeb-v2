@@ -1,4 +1,37 @@
 // A text-first bibliography. Paper figures remain on their canonical records.
+.publication-author__mark {
+  font-size: 0.75em;
+  line-height: 0;
+  margin-left: 0.08em;
+}
+
+.publication-author-legend {
+  margin-block: 1rem;
+  color: var(--lab-muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.publications-accepted {
+  margin-top: 2.5rem;
+
+  h2 { font-size: 1.25rem; }
+  > p { color: var(--lab-muted); font-size: 0.9rem; }
+  ul { padding: 0; list-style: none; }
+  li { padding-block: 0.85rem; border-top: 1px solid var(--lab-line); }
+  strong, a, span { display: block; }
+  strong, span { font-size: 0.8rem; }
+  strong { color: var(--lab-navy); margin-bottom: 0.25rem; }
+  span { color: var(--lab-muted); margin-top: 0.25rem; }
+}
+
+.publication-record__acceptance {
+  margin-block: 0.5rem;
+  color: var(--lab-navy);
+  font-size: 0.85rem;
+  font-weight: 650;
+}
+
 .publications-redesign {
   padding-block: clamp(3rem, 6vw, 5rem) 5rem;
   color: var(--lab-ink);

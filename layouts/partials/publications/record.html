@@ -1,15 +1,19 @@
 {{- $classification := partial "publications/classification.html" . -}}
 {{- $types := $classification.keys -}}
 {{- $labels := $classification.labels -}}
+{{- $acceptance := partial "publications/acceptance.html" . -}}
 {{- $authors := slice -}}
 {{- range .GetTerms "authors" -}}
   {{- $authors = $authors | append .LinkTitle -}}
 {{- end -}}
 {{- $search := printf "%s %s %s %s %s" .Title (delimit $authors " ") (.Params.publication | default "" | markdownify | plainify) (.Params.publication_short | default "" | markdownify | plainify) (.Params.doi | default "") -}}
+{{- with $acceptance -}}{{- $search = printf "%s %s %s %v Accepted" $search .title .venue .year -}}{{- end -}}
 <li class="publication-record" data-publication-record data-year="{{ .Date.Format "2006" }}" data-types="{{ delimit $types " " }}"{{ with $classification.kind }} data-publication-kind="{{ . }}"{{ end }} data-search="{{ $search }}">
   <article aria-labelledby="publication-{{ .File.UniqueID }}">
     <div class="publication-record__meta">
-      {{- if eq .Params.date_precision "month" }}
+      {{- if eq .Params.date_precision "year" }}
+      <time datetime="{{ .Date.Format "2006" }}">{{ .Date.Format "2006" }}</time>
+      {{- else if eq .Params.date_precision "month" }}
       <time datetime="{{ .Date.Format "2006-01" }}">{{ .Date.Format "Jan 2006" }}</time>
       {{- else }}
       <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>
@@ -18,6 +22,9 @@
     </div>
     <h3 id="publication-{{ .File.UniqueID }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
     <div class="publication-record__authors">{{ partial "page_metadata_authors" . }}</div>
+    {{- if and $acceptance $acceptance.preprint }}
+    <p class="publication-record__acceptance">Conference version accepted · {{ $acceptance.venue }} {{ $acceptance.year }}</p>
+    {{- end }}
     {{- if .Params.publication_short }}
     <p class="publication-record__venue">{{ .Params.publication_short | markdownify }}</p>
     {{- else if .Params.publication }}

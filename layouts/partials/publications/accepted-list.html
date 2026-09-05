@@ -1,0 +1,19 @@
+{{- $hasAccepted := false -}}
+{{- range .RegularPages.ByTitle -}}
+  {{- with partial "publications/acceptance.html" . -}}{{- $hasAccepted = true -}}{{- end -}}
+{{- end -}}
+{{- /* The bundles remain the only source; this is a quick route to accepted work. */ -}}
+{{- if $hasAccepted -}}
+<section class="publications-accepted lab-shell" aria-labelledby="publications-accepted-title">
+  <h2 id="publications-accepted-title">Accepted conference papers</h2>
+  <p>Accepted work awaiting proceedings publication. Available preprints are linked below.</p>
+  <ul>
+    {{- range .RegularPages.ByTitle -}}
+      {{- $page := . -}}
+      {{- with partial "publications/acceptance.html" . }}
+    <li data-accepted-paper><strong>{{ .venue }} {{ .year }} · Accepted</strong><a href="{{ $page.RelPermalink }}">{{ .title }}</a>{{ if .preprint }}<span>Preprint available; conference citation pending.</span>{{ end }}</li>
+      {{- end -}}
+    {{- end }}
+  </ul>
+</section>
+{{- end -}}

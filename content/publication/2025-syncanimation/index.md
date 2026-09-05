@@ -8,6 +8,13 @@ authors:
   - "Zairan Wang"
   - "Xianfeng Tan"
   - "Xiaoli Liu"
+# Author-role evidence and version limits: docs/publication-authorship-accepted-2026-09-05.md
+author_roles:
+  corresponding:
+  - Xiaoli Liu
+  equal_first:
+  - Yujian Liu
+  - Shidang Xu
 # Metadata sources and date decisions: docs/publications-update-2026-09-05.md
 # Month-only organizer citation; day 01 is a Hugo sorting anchor, not a verified publication day.
 date_precision: month
