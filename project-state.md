@@ -11,7 +11,7 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | Current review branch | `design/homepage-publications-people-news` |
 | Base | `main` at `13d699772ec8e76d59fe219511fa370ea8496945` |
 | Previous PR | [PR #3](https://github.com/derndy/XuGroupWeb-v2/pull/3), now merged; PRs #1 and #2 are also merged |
-| Current PR | Prepared locally; draft PR publication pending |
+| Current PR | [Draft PR #4](https://github.com/derndy/XuGroupWeb-v2/pull/4), open and draft |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
@@ -67,7 +67,7 @@ See [homepage-records-maintenance.md](docs/homepage-records-maintenance.md) for 
 - All ten other main-content trees match the baseline; all previous homepage sections match except the intended closing section number. New text colours pass at least 4.56:1 contrast on their specified backgrounds.
 - All eleven preview pages have noindex; their production equivalents do not. Whitespace checks passed.
 
-Real browser layout, keyboard/touch, text zoom and photo-loading performance remain pending: the existing Hugo checkout has no compatible internal preview entrypoint. Static checks are not browser QA. The reused below-fold PNG is about 1.9 MB; responsive derivatives can be considered during that performance review.
+Real browser layout, keyboard/touch, text zoom and photo-loading performance remain pending. Netlify now reports a successful matching preview, linked in the delivery record below; its build success is not browser QA. The reused below-fold PNG is about 1.9 MB; responsive derivatives can be considered during that performance review.
 
 Build outputs: `/workspace/scratch/7457cd2d5ea9/build-home-records` and `build-home-records-preview`; preservation baseline: `build-evidence-loop` / `build-evidence-loop-preview`. Temporary fixture output: `build-home-records-gates`. Outputs and the one-off audit runner are reproducible scratch files outside Git.
 
@@ -169,3 +169,11 @@ GitHub reported zero commit statuses at the prepared head. No matching hosted Ne
 Published to `design/homepage-evidence-loop` in commit `a4b6167f6434c4bd5a392573eb55ccaefcef2e75`. The published tree `7ffba7e892ada4944ce7e5f9f505808594a7fdc4` exactly matches the locally tested source. The local source commit is retained under `checkpoint/evidence-loop-local-source`, and the working branch is aligned with GitHub. This later state update is documentation only.
 
 [PR #3](https://github.com/derndy/XuGroupWeb-v2/pull/3) was delivered as a draft targeting `main` and has since merged before this continuation. No merge or production switch was performed by that delivery. GitHub reported zero commit statuses at the prepared head; no corresponding hosted preview is confirmed. Inspect actual PR/branch/deployment state before the next continuation.
+
+## GitHub delivery — homepage records batch
+
+Published to `design/homepage-publications-people-news` in commit `f9044c8d40353e44b573c48fe760e1fcbfe145f3`. The published tree `c09c8b969071ab8851eeed38d74fa056759c49f5` exactly matches the locally tested source. The original local commit is retained under `checkpoint/home-records-local-source`; the checkout is aligned with the GitHub branch. This subsequent state-record update changes documentation only.
+
+[Draft PR #4](https://github.com/derndy/XuGroupWeb-v2/pull/4) targets `main`. GitHub reports `netlify/xushidang-lab/deploy-preview` **success** for the product commit, with [the matching preview](https://deploy-preview-4--xushidang-lab.netlify.app). This is the first confirmed hosted preview for this batch. It has not received real browser/interaction review. Future documentation commits may trigger another preview build; inspect the actual PR head and check status before release.
+
+The source delivery did not merge the PR, modify either main branch, or change hosting settings/production. Do not infer production state from preview success. The next bounded source batch is Contact's four audience pathways.
