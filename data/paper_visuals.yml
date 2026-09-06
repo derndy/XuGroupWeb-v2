@@ -29,3 +29,18 @@ figures:
     license_url: https://creativecommons.org/licenses/by-nc/4.0/
     license_source: https://github.com/AISHIWEILAI/AnyAvatar/blob/main/LICENSE
     checked: '2026-09-06'
+  - id: syncanimation-figure-2
+    page: publication/2025-syncanimation/index.md
+    resource: media/papers/syncanimation-figure-2.png
+    sha256: 4330eb6c140100c9ec044662eb5d145d5c842d7e08a400be833fba75e04cc9d9
+    layout: wide
+    caption: "SyncAnimation: audio-conditioned pose, expression and progressive avatar rendering."
+    alt: "The framework uses reference-image parameters and audio to guide pose and expression, with successive stages for upper-body rendering, head rendering and lip refinement."
+    credit: "Figure 2 · Yujian Liu et al., SyncAnimation, arXiv:2501.14646v1 (2025). Full figure reproduced; display size and image format only are adjusted."
+    source_label: Authors’ paper figure
+    source_url: https://arxiv.org/html/2501.14646v1#S2.F2
+    download_url: https://arxiv.org/html/2501.14646v1/figures/pipline.png
+    license: CC BY 4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    license_source: https://arxiv.org/html/2501.14646v1
+    checked: '2026-09-06'

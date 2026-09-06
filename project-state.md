@@ -8,20 +8,28 @@ Updated: 6 September 2026. Read this file first when continuing development. `PR
 | --- | --- |
 | Repository | Public `derndy/XuGroupWeb-v2` |
 | Working checkout | `/workspace/sites/xugroup-pillar-i-visual` |
-| Current review branch | `content/paper-visuals-next` |
-| Branch point | `main` at `8b61479dac705e50e6ffb9bd34dc291ba3272129`, after PR #18 merged |
-| Incorporated main | Includes merged PRs #14–18 |
-| Previous merged work | PRs #1–10, #12–18; preserved in this review branch |
+| Current review branch | `content/syncanimation-visual` |
+| Branch point | `main` at `066ebdeb8c18e0a50cf12bed83780e882182b425`, after PR #19 merged |
+| Incorporated main | Includes merged PRs #14–19 |
+| Previous merged work | PRs #1–10, #12–19; preserved in this review branch |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | [Draft PR #19](https://github.com/derndy/XuGroupWeb-v2/pull/19), open for review; PR #18 has merged |
-| Hosted preview | [Homepage](https://deploy-preview-19--xushidang-lab.netlify.app/#home-publications-title) and [AnyAvatar](https://deploy-preview-19--xushidang-lab.netlify.app/publication/2026-anyavatar/); check matching Netlify status before release |
+| Current PR | New SyncAnimation visual draft PR on `content/syncanimation-visual`; PR #19 has merged |
+| Hosted preview | Check the matching Netlify status on the new review branch before release |
 | Withdrawn rewrite | [PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11), closed without merging at the PI's instruction |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
 The PI rejected PR #11's broad public-marketing rewrite because it made the lab sound generic and displaced the original research identity. It was closed without merging. Merged PR #12 retains the original identity with six wording refinements and places the complete Vision at the end of Join / Collaborate. Do not restore the withdrawn rewrite or the superseded homepage placement. The latest instruction accepts bounded method/testbed and postdoctoral-invitation improvements, requests five selected papers including NC/ECCV, and asks to remove the public research pages' internal management/audit tone.
 
-## Latest batch — AnyAvatar figure and News image descriptions
+## Latest batch — SyncAnimation and paper-image loading
+
+Added Figure 2 directly from the CC BY 4.0 arXiv v1 paper to the SyncAnimation homepage selection and detail page. Its credit explicitly names that source version; the IJCAI record and author symbols are unchanged. Three of five homepage selections now have authentic method figures. The complete original is retained, with full-size viewing and a wide homepage placement.
+
+Added a 1600-pixel intermediate WebP size for all three paper figures, closing the jump between 1200 pixels and full resolution. There are now 15 paper-image derivatives across six placements. All 250 populated local image references resolve in 536 index pages. Both builds and all existing image/publication audits pass; ten other main pages remain unchanged. Browser viewport testing remains pending.
+
+Source and checks: [SyncAnimation visual record](docs/syncanimation-visual-2026-09-06.md). PR #19 has merged; this batch has a new draft PR. Next remaining selected-paper figures: PyraE2E and the selected JACS paper.
+
+## Previous batch — AnyAvatar figure and News image descriptions
 
 Added the authors' original AnyAvatar pipeline to its homepage selection and accepted-paper detail. The full-width homepage composition suits the wide figure; the original remains uncropped and available for full-size viewing. Source/license checks are recorded in [the batch note](docs/anyavatar-news-visuals-2026-09-06.md). Reuse is under CC BY-NC 4.0 for this noncommercial academic website, distinct from E-CloudBind's CC BY 4.0.
 

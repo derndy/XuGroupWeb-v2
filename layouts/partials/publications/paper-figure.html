@@ -7,7 +7,7 @@
 {{- end -}}
 {{- $id := printf "%s-%s" .placement $record.id -}}
 {{- $sources := slice -}}
-{{- range slice 480 800 1200 -}}
+{{- range slice 480 800 1200 1600 -}}
   {{- if lt . $image.Width -}}
     {{- $variant := $image.Resize (printf "%dx webp q90" .) -}}
     {{- $sources = $sources | append (printf "%s %dw" $variant.RelPermalink $variant.Width) -}}
