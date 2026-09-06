@@ -1,29 +1,30 @@
 {{ define "main" }}
-<div class="person-profile">
-  <!-- 左侧固定返回键 -->
-  <div class="fixed-back-button">
-    <button onclick="window.history.back();" class="fixed-back-btn">
-      <i class="fas fa-arrow-left"></i>
-    </button>
-  </div>
+<main class="person-profile" aria-labelledby="person-name">
+  {{ $returnSection := "current-team" }}
+  {{ if eq .Params.category "graduate_alumni" }}{{ $returnSection = "graduate-alumni" }}{{ end }}
+  <nav class="person-profile__navigation" aria-label="Profile navigation">
+    <a class="person-profile__back" href="{{ "/people/" | relURL }}#{{ $returnSection }}">
+      <span aria-hidden="true">←</span> Back to People
+    </a>
+  </nav>
 
   <div class="person-card">
     <!-- 头像 -->
     {{ if .Params.avatar }}
     <div class="person-avatar">
-      <img src="{{ .Params.avatar | absURL }}" alt="{{ .Title }}" class="avatar-img">
+      <img src="{{ .Params.avatar | relURL }}" alt="Portrait of {{ .Title }}" class="avatar-img" width="200" height="200" decoding="async">
     </div>
     {{ end }}
 
     <!-- 个人信息 -->
     <div class="person-info">
-      <h1 class="person-name">{{ .Title }}</h1>
+      <h1 id="person-name" class="person-name">{{ .Title }}</h1>
       {{ if .Params.role }}
       <p class="role">{{ .Params.role }}</p>
       {{ end }}
       {{ if and .Params.organizations (gt (len .Params.organizations) 0) }}
       <p class="organization">
-        <a href="{{ index .Params.organizations 0 "url" }}" target="_blank" class="org-link">
+        <a href="{{ index .Params.organizations 0 "url" }}" target="_blank" rel="noopener noreferrer" class="org-link">
           {{ index .Params.organizations 0 "name" }}
         </a>
       </p>
@@ -81,7 +82,7 @@
         {{ if eq .type "email" }}
         <li>
           <a href="mailto:{{ .link }}" class="social-link">
-            <i class="{{ .icon_pack }} fa-{{ .icon }}"></i> {{ .link }}
+            <i class="{{ .icon_pack }} fa-{{ .icon }}" aria-hidden="true"></i> {{ .link }}
           </a>
         </li>
         {{ end }}
@@ -103,7 +104,7 @@
         {{ if or (eq .type "scholar") (eq .type "researchgate") }}
         <li>
           <a href="{{ .link }}" class="social-link">
-            <i class="{{ .icon_pack }} fa-{{ .icon }}"></i>
+            <i class="{{ .icon_pack }} fa-{{ .icon }}" aria-hidden="true"></i>
             {{ if eq .type "scholar" }}Google Scholar{{ else if eq .type "researchgate" }}ResearchGate{{ end }}
           </a>
         </li>
@@ -121,204 +122,5 @@
     <p>{{ .Params.bio_detail }}</p>
   </div>
   {{ end }}
-</div>
-
-<!-- Add some custom CSS -->
-<style>
-  .person-profile {
-    font-family: 'Arial', sans-serif;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 1000px;
-    position: relative;
-  }
-
-  .person-card {
-    display: flex;
-    align-items: center;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-    transition: box-shadow 0.3s ease;
-  }
-
-  .person-card:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
-
-  .person-avatar {
-    margin-right: 20px;
-  }
-
-  .avatar-img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid #ddd;
-  }
-
-  .person-info {
-    flex: 1;
-  }
-
-  .person-name {
-    font-size: 32px;
-    font-weight: bold;
-    color: #333;
-  }
-
-  .role {
-    font-size: 20px;
-    color: #666;
-    margin: 5px 0;
-  }
-
-  .organization a {
-    font-size: 18px;
-    color: #0073e6;
-    text-decoration: none;
-  }
-
-  .organization a:hover {
-    text-decoration: underline;
-  }
-
-  .bio {
-    font-size: 16px;
-    color: #555;
-    margin-top: 10px;
-  }
-
-  h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: 20px;
-    color: #333;
-  }
-
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
-
-  li {
-    font-size: 16px;
-    color: #555;
-    margin: 10px 0;
-  }
-
-  .education-list li, .experience-list li {
-    margin: 15px 0;
-  }
-
-  .entry-row {
-    display: flex;
-    align-items: center;
-  }
-
-  .entry-row .entry-title {
-    flex: 0 0 30%;
-    margin-right: 20px;
-    color: #333;
-  }
-
-  .entry-row .institution {
-    flex: 0 0 40%;
-    margin-right: 20px;
-    color: #555;
-  }
-
-  .entry-row .year {
-    flex: 0 0 20%;
-    color: #666;
-  }
-
-  .social-link {
-    font-size: 16px;
-    color: #0073e6;
-    text-decoration: none;
-  }
-
-  .social-link:hover {
-    text-decoration: underline;
-  }
-
-  .card {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-  }
-
-  /* 左侧固定返回键样式 */
-  .fixed-back-button {
-    position: fixed;
-    top: 50%;
-    left: calc(10% - 60px); /* 距离卡片左侧 20px，卡片占 80% 宽度居中 */
-    transform: translateY(-50%);
-    z-index: 1000;
-  }
-
-  .fixed-back-btn {
-    background-color: #0073e6;
-    color: white;
-    font-size: 16px;
-    padding: 15px 20px; /* 增加高度，宽度不变 */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 50px; /* 固定宽度，与之前一致 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .fixed-back-btn:hover {
-    background-color: #005bb5;
-  }
-
-  @media (max-width: 768px) {
-    .person-card {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .person-avatar {
-      margin-right: 0;
-      margin-bottom: 20px;
-    }
-
-    .person-info {
-      text-align: center;
-    }
-
-    .card {
-      margin-bottom: 20px;
-    }
-
-    .entry-row {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .entry-row .entry-title,
-    .entry-row .institution,
-    .entry-row .year {
-      flex: none;
-      width: 100%;
-      margin-right: 0;
-      margin-bottom: 5px;
-    }
-
-    .fixed-back-button {
-      left: 10px; /* 小屏幕时恢复靠近左侧 */
-    }
-  }
-</style>
+</main>
 {{ end }}

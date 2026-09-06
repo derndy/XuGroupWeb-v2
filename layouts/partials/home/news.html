@@ -19,7 +19,7 @@
       {{ range . }}
       <li>
         <article aria-labelledby="home-news-{{ .File.UniqueID }}">
-          <p class="home-record-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time> · {{ with .Params.categories }}{{ delimit . " · " }}{{ else }}{{ $text.news.category_fallback }}{{ end }}</p>
+          <p class="home-record-meta">{{ partial "news-date.html" (dict "page" .) }} · {{ with .Params.categories }}{{ delimit . " · " }}{{ else }}{{ $text.news.category_fallback }}{{ end }}</p>
           <h3 id="home-news-{{ .File.UniqueID }}"><a href="{{ .RelPermalink }}">{{ .Title }} <span aria-hidden="true">→</span></a></h3>
         </article>
       </li>

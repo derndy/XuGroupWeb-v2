@@ -1,17 +1,17 @@
 # Xu Lab website — current project state
 
-Updated: 5 September 2026. Read this file first when continuing development. `PROJECT_STATE.md` is a compatibility pointer to this canonical lowercase file.
+Updated: 6 September 2026. Read this file first when continuing development. `PROJECT_STATE.md` is a compatibility pointer to this canonical lowercase file.
 
 ## Current source and delivery boundary
 
 | Item | Current value |
 | --- | --- |
 | Repository | Public `derndy/XuGroupWeb-v2` |
-| Working checkout | `/workspace/sites/xugroup-approved-images` |
+| Working checkout | `/workspace/sites/xugroup-pr15-conflict` |
 | Current review branch | `content/research-invitations-selected-work` |
 | Branch point | `main` at `c9afdcf43cb59d679c1cc199f95a81814f07e615`, after PR #12 merged |
-| Incorporated main | Same as branch point; includes PR #13's author roles and accepted conference work |
-| Previous merged work | PRs #1–10, #12 and #13; all are preserved in this review branch |
+| Incorporated main | `d980fbb9a03d99dcf9fd0397d8905cec5fcd6d5f`, including merged PR #14 |
+| Previous merged work | PRs #1–10, #12, #13 and #14; all are preserved in this review branch |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
 | Current PR | [Draft PR #15](https://github.com/derndy/XuGroupWeb-v2/pull/15), open and draft; PR #12 has merged |
 | Hosted preview | [Homepage](https://deploy-preview-15--xushidang-lab.netlify.app/), [Research](https://deploy-preview-15--xushidang-lab.netlify.app/research/) and [Join / Collaborate](https://deploy-preview-15--xushidang-lab.netlify.app/contact/#join-the-lab); product commit preview passed, inspect the final PR-head status before release |
@@ -21,7 +21,41 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 
 The PI rejected PR #11's broad public-marketing rewrite because it made the lab sound generic and displaced the original research identity. It was closed without merging. Merged PR #12 retains the original identity with six wording refinements and places the complete Vision at the end of Join / Collaborate. Do not restore the withdrawn rewrite or the superseded homepage placement. The latest instruction accepts bounded method/testbed and postdoctoral-invitation improvements, requests five selected papers including NC/ECCV, and asks to remove the public research pages' internal management/audit tone.
 
-## Latest follow-up — Join / Collaborate text in one editing file
+## Latest repair — resolve PR #15 conflicts with main
+
+Main merged PR #14 after PR #15 branched. The merge conflicts were confined to `README.md` and this state file; both development histories are retained. The stylesheet merged automatically, keeping both the member-profile styles and the five-paper layout changes.
+
+- Incorporated main at `d980fbb9a03d99dcf9fd0397d8905cec5fcd6d5f` into the PR branch with both histories retained.
+- Preserved PR #14 News, Gallery, member records, portraits, profile fixes and the visual-expansion plan.
+- Preserved PR #15's five selected papers, research invitations, public-facing wording and central Contact text source. No new editorial or image decisions are made.
+- Production and preview-equivalent builds pass (895 pages each), along with both publication/image audits, nine JavaScript tests, three DOI tests and 1,440 internal links across the eleven main pages. Exact source comparisons preserve all 46 main-side changed files and all 14 PR-side changed files outside the two documentation resolutions and shared stylesheet. The stylesheet retains both branches' changes. Five selected papers are present.
+- The repair updates the existing PR #15 with a two-parent merge commit, without rewriting its history. Check its matching Netlify status before release. No merge into main or production-setting change is performed; browser review and the previously noted author-archive collision remain separate follow-ups.
+
+## Incorporated PR #14 — member-detail repair and visual priority
+
+- On the existing draft PR #14, repaired the 18 member detail pages without editing member facts or images. Added a visible category-aware Back to People link, a semantic main/H1 and portrait dimensions. Replaced inline global CSS and history-only navigation with scoped styles and ordinary links; long contact strings wrap and education/experience rows stack on narrow screens.
+- Production/preview builds pass (895 pages). Profile content/links, the eleven main-page content trees, all 91 publications and six approved scientific illustrations are preserved. Browser layout testing remains pending.
+- The PI then requested more images and diagrams. The next priority is explained in [the visual expansion plan](docs/visual-expansion-plan-2026-09-05.md): first a Pillar I candidate, then source-backed selected-paper visuals, then targeted research scenarios. One conceptual candidate is shown in conversation for approval; no new research image has been published or marked approved.
+- Historical delivery was on PR #14, subsequently merged into main. Its content is now incorporated into PR #15 to resolve conflicts; the original v1 PR remains untouched. PR #15 remains a draft, with no production-setting changes.
+
+## Previous batch — migrate v1 News, Gallery and People
+
+- Migrated six News entries and four Gallery photographs from v1 PR #2 into the current v2 design. Added the two new profiles/portraits and graduate alumni section, updated member roles, and reconciled the two undergraduate graduates named in the source news.
+- **PI correction: Yuting Qin and Shidao Wang joined in 2026.** Their News record displays only that year; no month/day is invented. Their profiles also say 2026.
+- Preserved all existing News/publication sources and 19 Gallery records. Current totals: 24 published News, 23 Gallery images, 16 current profile cards, two graduate-alumni cards, five undergraduate rows and eleven undergraduate alumni rows.
+- [Migration audit](docs/v1-content-migration-2026-09-05.md) accounts for all 32 source PR paths and records the profile/date corrections. New image bytes are exact copies of the source PR; Gallery layout and viewer are unchanged.
+- Both Hugo builds pass: 895 pages each. All 91 publication records/citations, six approved illustrations/24 variants and 1,400 internal links/anchors pass checks. Seven other main-content trees match main; Home only refreshes its canonical latest news. Browser review remains pending.
+- Working outputs: `/workspace/scratch/7457cd2d5ea9/build-v1-migration` and `build-v1-migration-preview`. The one-off verifier is `verify-v1-migration.py` in the same scratch directory.
+- Remaining factual details: exact incoming-member joining day, Meitang Peng's MSc completion/transfer history, and the two new undergraduate alumni's next positions. No unresolved fact is invented.
+- Publish this branch and a draft PR only. Do not merge or change production. Do not modify, merge or close the source v1 PR.
+
+### Migration delivery
+
+Published product commit `3f21125ebad68c6218a66ff0eeb44ae2aee1d846` has tree `c356549b3fd7e4ecbcd27e830055ddb8fe524217`, exactly matching the verified local source. All 13 unique new image blobs were copied to v2 with matching source Git hashes. Netlify reports success for the product commit at the preview links above. The local source checkpoint is retained at `checkpoint/v1-migration-local-source`.
+
+This following documentation-only commit records the delivery. Inspect the final PR-head Netlify check before release. No v1 modification, PR merge, production switch or hosting/workflow change was performed. The new joining-year correction is 2026; exact day, the noted MSc history and undergraduate alumni destinations remain the only factual follow-ups from this migration.
+
+## Previous follow-up — Join / Collaborate text in one editing file
 
 PR #15 remains open and draft; this source-only follow-up continues its existing branch from `4754daf11392323de49f24067c13a812ff1ba162`. No new copy, visual design or research claims are introduced.
 

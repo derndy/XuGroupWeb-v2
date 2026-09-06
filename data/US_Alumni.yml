@@ -5,10 +5,6 @@ undergraduate_students:
     role: "Biomedical Engineering at SCUT (2021)"
   - name: "Xinjie Shen"
     role: "Artificial Intelligence at SCUT (2021)"
-  - name: "Qingquan Wang"
-    role: "Biomedical Engineering at SCUT (2022)"
-  - name: "Yutong Wang"
-    role: "Biomedical Engineering at SCUT (2022)"
   - name: "Yuechuan Lin"
     role: "Biomedical Engineering at SCUT (2023)"
   - name: "Yizhi Li"
@@ -16,7 +12,7 @@ undergraduate_students:
   - name: "Zikang Wang"
     role: "Biomedical Engineering at SCUT (2024)"
 
-alumni:
+undergraduate_alumni:
   - name: "Lu Qiu"
     role: "Biomedical Engineering at SCUT (2019-2023)"
     current: "Master of Biostatistics, Columbia University (2023)"
@@ -44,3 +40,7 @@ alumni:
   - name: "Mingyu Lin"
     role: "Biomedical Engineering at SCUT (2020-2024)"
     current: "Master in Biomedical Engineering, National University of Singapore (2024)"
+  - name: "Qingquan Wang"
+    role: "Biomedical Engineering at SCUT (2022-2026)"
+  - name: "Yutong Wang"
+    role: "Biomedical Engineering at SCUT (2022-2026)"

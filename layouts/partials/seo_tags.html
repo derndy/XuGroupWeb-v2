@@ -119,7 +119,7 @@
   <meta property="og:image" content="{{ . }}" />
 {{- end -}}
 <meta property="og:locale" content="{{ site.LanguageCode | default "en-us" }}" />
-{{ if and .IsPage (ne .Params.publication_status "accepted") }}
+{{ if and .IsPage (ne .Params.publication_status "accepted") (ne .Params.date_precision "year") }}
   {{ if not .PublishDate.IsZero }}
     <meta
       property="article:published_time"
