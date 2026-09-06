@@ -1,5 +1,6 @@
 ---
 title: Shimen Camping
+featured_alt: "Group members posing among trees during the Shimen camping trip."
 date: 2024-01-07
 ---
 

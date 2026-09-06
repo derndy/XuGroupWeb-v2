@@ -1,5 +1,6 @@
 ---
 title: Winter Solstice Dinner Event
+featured_alt: "Group members preparing dumplings together around a table."
 date: 2023-12-22
 ---
 

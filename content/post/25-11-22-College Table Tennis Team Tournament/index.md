@@ -1,5 +1,6 @@
 ---
 title: College Table Tennis Team Tournament
+featured_alt: "Tournament participants posing with certificates beside indoor table tennis tables."
 date: 2025-11-22
 ---
 

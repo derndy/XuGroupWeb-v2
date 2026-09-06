@@ -1,5 +1,6 @@
 ---
 title: Qingyuan rafting
+featured_alt: "Six group members posing on a glass walkway surrounded by greenery during the Qingyuan outing."
 date: 2023-07-25
 ---
 
