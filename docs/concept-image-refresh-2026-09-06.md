@@ -45,6 +45,6 @@ Each changed record contains its complete prior record under `previous_version`,
 
 ## Validation
 
-Validation results are recorded in the current section at the top of `project-state.md`. The existing conceptual-visual check now enforces clean captions with conceptual context and the absence of the removed badge/download controls, while retaining all hash, dimension, placement, responsive-image and legacy-exclusion checks. No publication facts, member profiles, research definitions or production configuration are changed.
+Validation results are recorded in the current section at the top of `project-state.md`. The existing conceptual-visual check now enforces clean captions with conceptual context and the absence of the removed badge/download controls, while retaining all hash, dimension, placement, responsive-image and legacy-exclusion checks. Desktop browser review of Home, Research and Pillar II confirmed the new artwork and clean caption text. It also revealed inherited theme margins on `figcaption`, which exposed the dark figure background above and below the caption. The component now explicitly sets `margin: 0`; the production build passes with that correction. Mobile browser layout was not separately tested. No publication facts, member profiles, research definitions or production configuration are changed.
 
 Delivery follows the existing review-branch → draft PR → user review workflow. A successful build or preview does not itself mean the production site has changed.
