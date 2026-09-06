@@ -19,55 +19,123 @@ publication_policy:
     APPROVED evidence. Approval applies to the recorded source version and placements.
 assets:
 - asset_id: CONCEPT-RES-001
-  title: Three pillars, one discovery core
-  source_path: assets/media/research/three-pillars-discovery-core.png
-  source_sha256: 735a2c053ef15d2d265a301d5de684dc783cb7474e36e0cbf33d428e6da4ae6a
-  public_url: /media/research/three-pillars-discovery-core.png
+  title: Three complementary lenses for scientific discovery
+  source_path: assets/media/research/research-system-design.png
+  source_sha256: abc150c581fdd3776c1d8dc70c46353e297667f8ee788ed3a9aee60ce46dab59
+  public_url: /media/research/research-system-design.png
   width: 1672
   height: 941
   scientific_role: conceptual-illustration
-  caption: 'A conceptual view of three connected research pillars: learning-system design, evidence engineering, and mathematical exploration.'
-  alt: Blue networks, an amber spiral, and violet mathematical surfaces connect around a shared luminous centre.
-  provenance: ChatGPT-generated conceptual artwork, created 2026-08-06; original reviewed and approved as shown by the PI on 2026-09-05.
-  source_archive: https://drive.google.com/file/d/1Vfy8ZFdOS-JrTwrRROOj7nKX0EEWxj6X/view?usp=drivesdk
+  caption: A conceptual view of learning-system design, evidence engineering, and mathematical exploration as three connected
+    contributions to scientific discovery.
+  alt: Three connected groups show a blue network across representation planes, observation tiles beside a revisable model,
+    and a curved mathematical surface intersected by constraint planes.
+  provenance: Generated with the built-in ChatGPT image tool on 2026-09-06 under the PI's instruction to review and regenerate
+    more suitable concept images. Assistant inspected the new image and its scientific framing; no separate PI review of the
+    exact pixels is claimed.
   rights_status: APPROVED
   evidence_status: CONCEPT_REVIEWED
   publication_state: APPROVED
   owner: Shidang Xu (PI)
-  last_reviewed: '2026-09-05'
+  last_reviewed: '2026-09-06'
   approval:
     by: Shidang Xu (PI)
-    date: '2026-09-05'
-    user_message: 1-3 approve
-    review_number: '01'
+    date: '2026-09-06'
+    user_message: 这些概念图有一些可能还可以重新生成一下。可以再好好检查一下，看看可不可以重新生成更好、更合适的概念图？
+    review_number: 01-v2
+    basis: Explicit instruction to review and regenerate improved concept images for draft PR review. Publication state records
+      this instruction-based use; it is not a separate approval of exact generated pixels. Merge remains subject to the established
+      user review workflow.
     placements:
     - research-overview
-    record: docs/scientific-visual-approval-2026-09-05.md
+    record: docs/concept-image-refresh-2026-09-06.md
+  previous_version:
+    asset_id: CONCEPT-RES-001
+    title: Three pillars, one discovery core
+    source_path: assets/media/research/three-pillars-discovery-core.png
+    source_sha256: 735a2c053ef15d2d265a301d5de684dc783cb7474e36e0cbf33d428e6da4ae6a
+    public_url: /media/research/three-pillars-discovery-core.png
+    width: 1672
+    height: 941
+    scientific_role: conceptual-illustration
+    caption: 'A conceptual view of three connected research pillars: learning-system design, evidence engineering, and mathematical
+      exploration.'
+    alt: Blue networks, an amber spiral, and violet mathematical surfaces connect around a shared luminous centre.
+    provenance: ChatGPT-generated conceptual artwork, created 2026-08-06; original reviewed and approved as shown by the PI
+      on 2026-09-05.
+    source_archive: https://drive.google.com/file/d/1Vfy8ZFdOS-JrTwrRROOj7nKX0EEWxj6X/view?usp=drivesdk
+    rights_status: APPROVED
+    evidence_status: CONCEPT_REVIEWED
+    publication_state: APPROVED
+    owner: Shidang Xu (PI)
+    last_reviewed: '2026-09-05'
+    approval:
+      by: Shidang Xu (PI)
+      date: '2026-09-05'
+      user_message: 1-3 approve
+      review_number: '01'
+      placements:
+      - research-overview
+      record: docs/scientific-visual-approval-2026-09-05.md
 - asset_id: CONCEPT-RES-002
-  title: Evidence Spiral of Discovery
-  source_path: assets/media/research/evidence-spiral.png
-  source_sha256: c55e7fd1dac7e954746f5556a9286fdb5be4d7ff6e36bccd462a80c851ff8ff9
-  public_url: /media/research/evidence-spiral.png
+  title: Choose evidence, revise the learner
+  source_path: assets/media/research/evidence-discovery-cycle.png
+  source_sha256: 23b1d6338dbdb44408cd19cb29b05f8eb29f71502e681b586d587737d1961b41
+  public_url: /media/research/evidence-discovery-cycle.png
   width: 1672
   height: 941
   scientific_role: conceptual-illustration
-  caption: A conceptual illustration of repeated cycles linking candidate design, evidence generation, evaluation, and model revision.
-  alt: A transparent spiral connects molecular forms, imagined experiments, and flowing signals across successive levels.
-  provenance: ChatGPT-generated conceptual artwork, created 2026-08-06; original reviewed and approved as shown by the PI on 2026-09-05.
-  source_archive: https://drive.google.com/file/d/18QqgwpHMlntsqxgWz_Eet05mrDxD9IWi/view?usp=drivesdk
+  caption: A conceptual illustration of choosing an informative candidate, gathering an observation, and revising a model
+    to guide the next question. Alternatives remain open as the cycle continues.
+  alt: An amber candidate is selected from translucent forms for an illustrative measurement. An observation tile connects
+    to a blue relational model; a return path leads toward the candidates, with a faint alternative model still visible.
+  provenance: Generated with the built-in ChatGPT image tool on 2026-09-06 under the PI's instruction to review and regenerate
+    more suitable concept images. Assistant inspected the new image and its scientific framing; no separate PI review of the
+    exact pixels is claimed.
   rights_status: APPROVED
   evidence_status: CONCEPT_REVIEWED
   publication_state: APPROVED
   owner: Shidang Xu (PI)
-  last_reviewed: '2026-09-05'
+  last_reviewed: '2026-09-06'
   approval:
     by: Shidang Xu (PI)
-    date: '2026-09-05'
-    user_message: 1-3 approve
-    review_number: '02'
+    date: '2026-09-06'
+    user_message: 这些概念图有一些可能还可以重新生成一下。可以再好好检查一下，看看可不可以重新生成更好、更合适的概念图？
+    review_number: 02-v2
+    basis: Explicit instruction to review and regenerate improved concept images for draft PR review. Publication state records
+      this instruction-based use; it is not a separate approval of exact generated pixels. Merge remains subject to the established
+      user review workflow.
     placements:
     - pillar-ii-intro
-    record: docs/scientific-visual-approval-2026-09-05.md
+    record: docs/concept-image-refresh-2026-09-06.md
+  previous_version:
+    asset_id: CONCEPT-RES-002
+    title: Evidence Spiral of Discovery
+    source_path: assets/media/research/evidence-spiral.png
+    source_sha256: c55e7fd1dac7e954746f5556a9286fdb5be4d7ff6e36bccd462a80c851ff8ff9
+    public_url: /media/research/evidence-spiral.png
+    width: 1672
+    height: 941
+    scientific_role: conceptual-illustration
+    caption: A conceptual illustration of repeated cycles linking candidate design, evidence generation, evaluation, and model
+      revision.
+    alt: A transparent spiral connects molecular forms, imagined experiments, and flowing signals across successive levels.
+    provenance: ChatGPT-generated conceptual artwork, created 2026-08-06; original reviewed and approved as shown by the PI
+      on 2026-09-05.
+    source_archive: https://drive.google.com/file/d/18QqgwpHMlntsqxgWz_Eet05mrDxD9IWi/view?usp=drivesdk
+    rights_status: APPROVED
+    evidence_status: CONCEPT_REVIEWED
+    publication_state: APPROVED
+    owner: Shidang Xu (PI)
+    last_reviewed: '2026-09-05'
+    approval:
+      by: Shidang Xu (PI)
+      date: '2026-09-05'
+      user_message: 1-3 approve
+      review_number: '02'
+      placements:
+      - pillar-ii-intro
+      record: docs/scientific-visual-approval-2026-09-05.md
 - asset_id: CONCEPT-RES-003
   title: Mathematics to Frontiers, and Back
   source_path: assets/media/research/mathematics-frontiers.png
@@ -120,30 +188,65 @@ assets:
     - about-vision
     record: docs/scientific-visual-approval-2026-09-05.md
 - asset_id: CONCEPT-RES-005
-  title: From Testbeds to Discovery Horizons
-  source_path: assets/media/research/testbeds-horizons.png
-  source_sha256: 3b48ea0f1403fd38c3981574534e40b6c4bc75c9fd14772edb6640af9fe95a8e
-  public_url: /media/research/testbeds-horizons.png
+  title: Scientific settings that challenge our methods
+  source_path: assets/media/research/scientific-testbeds.png
+  source_sha256: 73138d719fec4e47d21e815d4c941a03a9894ac048da4924f03a91afcae6a275
+  public_url: /media/research/scientific-testbeds.png
   width: 1672
   height: 941
   scientific_role: conceptual-illustration
-  caption: A conceptual illustration of scientific testbeds connecting materials and biomedical questions with future discovery directions.
-  alt: Molecular and material forms, data-like patterns, and experimental motifs connect through flowing paths toward a bright horizon.
-  provenance: ChatGPT-generated conceptual artwork, created 2026-08-06; original reviewed and approved as shown by the PI on 2026-09-05.
-  source_archive: https://drive.google.com/file/d/1msYeId_zaA8SD0Yp8Hw4PCe8HLyrxmeX/view?usp=drivesdk
+  caption: A conceptual illustration of materials and delivery systems, proteins and sequences, and multimodal scientific
+    data as settings for developing and testing learning methods.
+  alt: A porous material and vesicle, an abstract folded protein ribbon, and layered image, signal, and relational patterns
+    share a blue framework. The forms and patterns are illustrative.
+  provenance: Generated with the built-in ChatGPT image tool on 2026-09-06 under the PI's instruction to review and regenerate
+    more suitable concept images. Assistant inspected the new image and its scientific framing; no separate PI review of the
+    exact pixels is claimed.
   rights_status: APPROVED
   evidence_status: CONCEPT_REVIEWED
   publication_state: APPROVED
   owner: Shidang Xu (PI)
-  last_reviewed: '2026-09-05'
+  last_reviewed: '2026-09-06'
   approval:
     by: Shidang Xu (PI)
-    date: '2026-09-05'
-    user_message: 4-6 approve
-    review_number: '05'
+    date: '2026-09-06'
+    user_message: 这些概念图有一些可能还可以重新生成一下。可以再好好检查一下，看看可不可以重新生成更好、更合适的概念图？
+    review_number: 05-v2
+    basis: Explicit instruction to review and regenerate improved concept images for draft PR review. Publication state records
+      this instruction-based use; it is not a separate approval of exact generated pixels. Merge remains subject to the established
+      user review workflow.
     placements:
     - home-testbeds
-    record: docs/scientific-visual-approval-2026-09-05.md
+    record: docs/concept-image-refresh-2026-09-06.md
+  previous_version:
+    asset_id: CONCEPT-RES-005
+    title: From Testbeds to Discovery Horizons
+    source_path: assets/media/research/testbeds-horizons.png
+    source_sha256: 3b48ea0f1403fd38c3981574534e40b6c4bc75c9fd14772edb6640af9fe95a8e
+    public_url: /media/research/testbeds-horizons.png
+    width: 1672
+    height: 941
+    scientific_role: conceptual-illustration
+    caption: A conceptual illustration of scientific testbeds connecting materials and biomedical questions with future discovery
+      directions.
+    alt: Molecular and material forms, data-like patterns, and experimental motifs connect through flowing paths toward a
+      bright horizon.
+    provenance: ChatGPT-generated conceptual artwork, created 2026-08-06; original reviewed and approved as shown by the PI
+      on 2026-09-05.
+    source_archive: https://drive.google.com/file/d/1msYeId_zaA8SD0Yp8Hw4PCe8HLyrxmeX/view?usp=drivesdk
+    rights_status: APPROVED
+    evidence_status: CONCEPT_REVIEWED
+    publication_state: APPROVED
+    owner: Shidang Xu (PI)
+    last_reviewed: '2026-09-05'
+    approval:
+      by: Shidang Xu (PI)
+      date: '2026-09-05'
+      user_message: 4-6 approve
+      review_number: '05'
+      placements:
+      - home-testbeds
+      record: docs/scientific-visual-approval-2026-09-05.md
 - asset_id: CONCEPT-RES-006
   title: Signals into scientific discovery
   source_path: assets/media/research/signals-discovery.png

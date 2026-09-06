@@ -19,11 +19,7 @@
     <img src="{{ $original.RelPermalink }}" width="{{ $original.Width }}" height="{{ $original.Height }}" alt="{{ $record.alt }}" loading="{{ if .hero }}eager{{ else }}lazy{{ end }}"{{ if .hero }} fetchpriority="high"{{ end }} decoding="async">
   </picture>
   <figcaption class="conceptual-figure__caption" id="{{ $captionID }}">
-    <div>
-      <span class="conceptual-figure__label">Conceptual illustration · AI-generated</span>
-      <p>{{ $record.caption }}</p>
-    </div>
-    <a href="{{ $original.RelPermalink }}" download data-original-image>Download original PNG<span class="sr-only"> — {{ $record.title }}</span></a>
+    <p>{{ $record.caption }}</p>
   </figcaption>
 </figure>
 {{- end -}}

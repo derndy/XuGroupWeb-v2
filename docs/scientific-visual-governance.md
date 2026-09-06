@@ -23,7 +23,9 @@ For approved AI-generated conceptual illustrations, use `scientific_role: concep
 
 Conceptual diagrams must state that they are conceptual and must not use styling or captions that imply measured results. Generic AI imagery is not a substitute for a scientific figure.
 
-All six conceptual illustrations were approved as shown on 5 September 2026. See [the approval record](scientific-visual-approval-2026-09-05.md) for their exact sources, captions and permitted placements. Images 01–03 cover Research and Pillars II/III; 04–06 cover About/Vision, homepage testbeds and Join/Collaborate. Their public label identifies the conceptual/AI-generated role; internal approval history stays in the repository.
+All six initial conceptual illustrations were approved as shown on 5 September 2026. See [the approval record](scientific-visual-approval-2026-09-05.md) for their exact sources, captions and permitted placements. Images 01–03 cover Research and Pillars II/III; 04–06 cover About/Vision, homepage testbeds and Join/Collaborate. Later replacements record their own version and instruction basis in `data/research_assets.yml`.
+
+On 6 September 2026 the PI explicitly requested removal of the visible “AI generated” and “download origin.png” labels. Conceptual figures now display only their explanatory caption. Do not reintroduce AI badges, download buttons or hidden copies of those interface labels. The caption still identifies the image as conceptual; generation provenance and version/approval history remain in the repository. Published paper figure credits and source links are unaffected.
 
 ## Legacy Research images
 
@@ -40,4 +42,4 @@ The files now stored as `audit/legacy-research-assets/2.png` and `audit/legacy-r
 7. Run the production Hugo build and inspect the resulting figure, caption, link, crop, and mobile behaviour.
 8. Review the Netlify Deploy Preview before merge.
 
-For conceptual illustrations, place the original under `assets/media/research/` and connect its ID through `overview_visual` or `detail.intro_visual` in `data/research_system.yml`, or the named placements in `data/site_visuals.yml`. Use `conceptual-figure.html` for the caption, original download, and responsive variants. Keep these images out of the result-evidence `detail.visuals` list. Hugo publishes only referenced image resources; do not move unapproved files into `static/`.
+For conceptual illustrations, place the original under `assets/media/research/` and connect its ID through `overview_visual` or `detail.intro_visual` in `data/research_system.yml`, or the named placements in `data/site_visuals.yml`. Use `conceptual-figure.html` for the caption, PNG fallback, and responsive variants. Keep these images out of the result-evidence `detail.visuals` list. Hugo publishes only referenced image resources; do not move unapproved files into `static/`.

@@ -1,4 +1,20 @@
-# Latest continuation — legacy News photo descriptions
+# Latest continuation — concept image cleanup and three replacements
+
+6 September 2026. Base: main `3fda4dcc2a0c06546a59b3905ffb07a7b0e737c9`, after PR #28 merged. Branch: `design/concept-images-cleanup`. Earlier current-branch/PR claims below are historical.
+
+The PI requested removal of “AI generated” and “download origin.png” labels and a review of concept images. The shared component now renders only the image and explanatory caption across all seven placements. AI badges and download controls are absent from HTML, and their styles are removed. The new instruction supersedes the earlier visible-badge requirement; generation provenance remains in the source records.
+
+Reviewed all seven originals and replaced three: Research overview (`research-system-design.png`), Pillar II (`evidence-discovery-cycle.png`), and homepage testbeds (`scientific-testbeds.png`). The new art uses larger, distinct forms on a light ground. The other four illustrations are retained. Existing exact SVG diagrams and published figures retain their original content and credits. The actual third Pillar remains mathematical and data-science exploration.
+
+Each replacement has its own recorded hash, caption, alternative text, source and instruction basis. Complete prior records are preserved under `previous_version`; old PNGs remain recoverable and are not referenced for rendering. No separate PI approval of exact new pixels is claimed. Full review and prompts: [image review](docs/concept-image-refresh-2026-09-06.md) and [prompt record](docs/concept-image-prompts-2026-09-06.md).
+
+Validation: Hugo Extended 0.139.4 production build passes (895 pages); the existing conceptual audit passes for 7 placements and 28 uncropped WebP variants; site image audit checks 538 HTML files and 458 local references with zero missing files. All built page text is free of the removed labels. Publication comparison preserves all 91 records, author text/links, routes and citation bytes. Previous asset records are preserved exactly, and other asset records are unchanged. Original generated artwork and the three replacement placements were inspected in the desktop browser. That inspection caught inherited theme margins leaving dark gaps around captions; an explicit zero-margin rule fixes the cause and the production build passes again. Mobile browser layout was not separately tested; image dimensions and responsive variants were checked in the build.
+
+Delivery: [Draft PR #29](https://github.com/derndy/XuGroupWeb-v2/pull/29) is open and mergeable. Product commit `e54dde793391b875def48ff5d92752278bf58bba` has successful Netlify preview status; its uploaded tree `41f6c7cf374e4a6b779cc7f03ccce909e7a2a3d8` exactly matches the checked local tree. Preview pages were opened successfully: [Home testbeds](https://deploy-preview-29--xushidang-lab.netlify.app/#testbeds-title), [Research](https://deploy-preview-29--xushidang-lab.netlify.app/research/), and [Pillar II](https://deploy-preview-29--xushidang-lab.netlify.app/research/evidence-engineering/). This state record accompanies a later caption-spacing fix; check the final PR head and preview status before merge. Production settings are unchanged; the user decides whether to merge.
+
+---
+
+# Previous continuation — legacy News photo descriptions
 
 6 September 2026. Based on main `af42c2e2e97079da3d25bef58ac93119dfb4f300`, after PR #25 merged. Current branch: `fix/legacy-news-image-descriptions`. This batch adds visually checked `featured_alt` descriptions to the six remaining older News photos (2023–2025). Existing components show these below the photos and use them as image alternatives. All original images, titles, dates and body text are preserved.
 

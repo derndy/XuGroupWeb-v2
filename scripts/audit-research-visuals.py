@@ -74,7 +74,9 @@ def main():
         require(not by_class(doc, "governed-figure"), f"Concept must not be presented as result evidence: {route}")
         captions = figure.find(lambda node: node.tag == "figcaption")
         require(len(captions) == 1 and captions[0].attrs["id"] == figure.attrs.get("aria-describedby"), f"Caption association: {route}")
-        require("Conceptual illustration · AI-generated" in captions[0].text(), f"Missing conceptual label: {route}")
+        require("conceptual" in captions[0].text().lower(), f"Missing conceptual context: {route}")
+        require("ai-generated" not in figure.text().lower(), f"Unwanted AI badge: {route}")
+        require(not by_class(figure, "conceptual-figure__label"), f"Unwanted illustration badge: {route}")
         for node in figure.walk():
             require("style" not in node.attrs and not any(key.startswith("on") for key in node.attrs), f"Inline style/handler: {route}")
         pictures = figure.find(lambda node: node.tag == "picture")
@@ -90,8 +92,7 @@ def main():
         require((int(image.attrs["width"]), int(image.attrs["height"])) == (width, height), f"Intrinsic dimensions: {route}")
         require(hashlib.sha256(data).hexdigest() == figure.attrs["data-approved-sha256"], f"Original differs from approval: {route}")
         downloads = figure.find(lambda node: "data-original-image" in node.attrs)
-        require(len(downloads) == 1 and "download" in downloads[0].attrs, f"Direct download missing: {route}")
-        require(html.local_file(args.build, downloads[0].attrs["href"]) == original, f"Download target mismatch: {route}")
+        require(not downloads and not figure.find(lambda node: "download" in node.attrs), f"Unwanted download control: {route}")
         sources = pictures[0].find(lambda node: node.tag == "source")
         require(len(sources) == 1 and sources[0].attrs.get("type") == "image/webp" and sources[0].attrs.get("sizes"), f"Responsive source: {route}")
         widths = []
@@ -105,7 +106,7 @@ def main():
             require(abs(vh - height * vw / width) <= 1, f"Cropped/stretched derivative: {route}")
             require(len(variant) < len(data), f"Derivative is larger than original: {route}")
             variant_count += 1
-        require(widths == [640, 960, 1440, width], f"Missing responsive widths: {route}")
+        require(widths == [size for size in (640, 960, 1440) if size < width] + [width], f"Missing responsive widths: {route}")
 
         if args.before and (args.before / route / "index.html").exists():
             old = html.Document(args.before / route / "index.html").root
@@ -122,7 +123,7 @@ def main():
 
     for name in ("research/2.png", "research/4.png", "audit/legacy-research-assets/2.png", "audit/legacy-research-assets/4.png"):
         require(not (args.build / name).exists(), f"Blocked legacy image published: {name}")
-    print(f"PASS: {len(BATCH)} approved placements, exact PNG downloads, {variant_count} uncropped WebP variants, labels, landmarks, and legacy exclusion")
+    print(f"PASS: {len(BATCH)} recorded placements, exact PNG sources, {variant_count} uncropped WebP variants, clean captions, landmarks, and legacy exclusion")
     if args.before:
         print("PASS: baseline headings, section content, Pillar introductions/briefs, and semantic architecture maps preserved")
 
