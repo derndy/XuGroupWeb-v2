@@ -17,6 +17,7 @@ pillars:
       - Primitives, operators, and mechanism dictionaries
     outcome: A learner whose internal organisation can support scientific interpretation, testing, and design.
     detail:
+      intro_visual: CONCEPT-RES-007
       sections:
         scope_title: Four design decisions form one learner.
         scope_text: Each decision is evaluated in relation to the others. A representation is useful only when its interactions, signals, and learning behaviour remain scientifically meaningful.

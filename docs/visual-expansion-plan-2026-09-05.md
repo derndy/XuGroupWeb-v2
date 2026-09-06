@@ -13,3 +13,7 @@ Six approved conceptual originals currently appear once each: Research overview,
 3. **Research scenarios:** add small, explanatory visuals only where a specific scientific question is hard to understand from text. Keep materials/biomedical examples alongside broader learning-system methods; avoid repeating the six macro illustrations.
 
 The first candidate was generated for conversation review only. It is not committed as a public asset, not marked APPROVED, and not rendered on the website. Existing six-image placement approvals remain unchanged. After approval, record the exact source version, approved placement, caption and alt text, then integrate responsive derivatives without cropping away information. Review one addition at a time.
+
+## 6 September update — replacement authorised
+
+PRs #14 and #15 have merged. The first candidate original was unrecoverable. The PI then explicitly requested regeneration and upload. A new CONCEPT-RES-007 is integrated on `content/pillar-i-visual` for draft PR review, with bidirectional links and learning feedback. See [the exact source and authorization record](pillar-i-visual-2026-09-06.md). The authorization is the regeneration/upload instruction, not a claim of separate PI pixel review. Seven conceptual images now have placements; selected-work source figures remain the next bounded batch.

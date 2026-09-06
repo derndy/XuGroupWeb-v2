@@ -25,6 +25,7 @@ BATCH = (
     ("about/", "CONCEPT-RES-004", "about-vision"),
     ("", "CONCEPT-RES-005", "home-testbeds"),
     ("contact/", "CONCEPT-RES-006", "join-collaborate"),
+    ("research/learning-system-design/", "CONCEPT-RES-007", "pillar-i-intro"),
 )
 
 
@@ -119,14 +120,6 @@ def main():
                 require([html.normalized(node) for node in by_class(old, name)]
                         == [html.normalized(node) for node in by_class(doc, name)], f"Original {name} changed: {route}")
 
-    for route in (
-        "research/learning-system-design/",
-    ):
-        pillar = html.Document(args.build / route / "index.html").root
-        require(
-            not pillar.find(lambda node: "data-scientific-visual" in node.attrs),
-            f"Unapproved conceptual visual on {route}",
-        )
     for name in ("research/2.png", "research/4.png", "audit/legacy-research-assets/2.png", "audit/legacy-research-assets/4.png"):
         require(not (args.build / name).exists(), f"Blocked legacy image published: {name}")
     print(f"PASS: {len(BATCH)} approved placements, exact PNG downloads, {variant_count} uncropped WebP variants, labels, landmarks, and legacy exclusion")

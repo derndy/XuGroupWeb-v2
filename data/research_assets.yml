@@ -1,5 +1,5 @@
 schema_version: 2
-updated: 2026-09-05
+updated: 2026-09-06
 publication_policy:
   allowed_state: APPROVED
   required_fields:
@@ -169,6 +169,31 @@ assets:
     placements:
     - join-collaborate
     record: docs/scientific-visual-approval-2026-09-05.md
+- asset_id: CONCEPT-RES-007
+  title: Representation, interaction and learning
+  source_path: assets/media/research/representation-interaction-learning.png
+  source_sha256: 8d1fd93bdb973e7829fc0b5adfa23be0ed8a06aa4b68a21af3825bd38f44b7fe
+  public_url: /media/research/representation-interaction-learning.png
+  width: 1672
+  height: 941
+  scientific_role: conceptual-illustration
+  caption: Representations organise scientific states; interactions connect them; learning revises them using evidence and guiding signals. These choices are designed together. This conceptual illustration does not depict a specific model architecture or experimental result.
+  alt: Geometric entities recur across spatial representations, an interaction network, and layered learning structures. Bidirectional links and feedback arrows connect the three design dimensions.
+  provenance: Newly generated with ChatGPT on 2026-09-06 under the PI's explicit regeneration-and-upload instruction, replacing an unrecoverable candidate. Assistant reviewed conceptual consistency; exact pixels have not received separate PI review.
+  rights_status: APPROVED
+  evidence_status: CONCEPT_REVIEWED
+  publication_state: APPROVED
+  owner: Shidang Xu (PI)
+  last_reviewed: '2026-09-06'
+  approval:
+    by: Shidang Xu (PI)
+    date: '2026-09-06'
+    user_message: 原文件找不到，重新制作并上传
+    review_number: '07'
+    basis: Explicit instruction to regenerate and upload for draft PR review; not separate approval of exact pixels.
+    placements:
+    - pillar-i-intro
+    record: docs/pillar-i-visual-2026-09-06.md
 - asset_id: LEGACY-RES-001
   source_path: audit/legacy-research-assets/2.png
   public_url: ''
