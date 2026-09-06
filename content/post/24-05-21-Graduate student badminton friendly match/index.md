@@ -1,5 +1,6 @@
 ---
 title: Graduate student badminton friendly match
+featured_alt: "Badminton participants holding rackets on an indoor court beneath the event banner."
 date: 2024-05-21
 ---
 

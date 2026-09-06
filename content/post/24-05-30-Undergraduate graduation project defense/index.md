@@ -1,5 +1,6 @@
 ---
 title: Undergraduate graduation project defense
+featured_alt: "Five people in academic gowns posing together in front of a display."
 date: 2024-05-30
 ---
 
