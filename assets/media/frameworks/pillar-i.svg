@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="460" viewBox="0 0 900 460" role="img" aria-labelledby="title desc">
+<title id="title">From a scientific question to a testable mechanism</title>
+<desc id="desc">Representation, interactions and learning are co-designed. Conceptual framework, not an experimental result.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#165db5"/></marker></defs>
+<rect width="900" height="460" rx="20" fill="#f4f8fc"/>
+<rect x="36" y="162" width="828" height="146" rx="18" fill="#e8f0fc"/>
+<path d="M 450 124 V 144 H 170 V 180" fill="none" stroke="#165db5" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M 170 286 V 328 H 450 V 348" fill="none" stroke="#165db5" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M 450 124 V 144 H 450 V 180" fill="none" stroke="#165db5" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M 450 286 V 328 H 450 V 348" fill="none" stroke="#165db5" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M 450 124 V 144 H 730 V 180" fill="none" stroke="#165db5" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M 730 286 V 328 H 450 V 348" fill="none" stroke="#165db5" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M 289 238 H 331" fill="none" stroke="#165db5" stroke-width="2.5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<path d="M 569 238 H 611" fill="none" stroke="#165db5" stroke-width="2.5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<rect x="340" y="28" width="220" height="96" rx="12" fill="white" stroke="#165db5" stroke-width="1.5"/>
+<circle cx="362" cy="50" r="12" fill="#165db5"/>
+<text x="362" y="55" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="700">
+<tspan x="362" dy="0">1</tspan>
+</text>
+<text x="450.0" y="77" text-anchor="middle" fill="#132d4c" font-family="Arial, sans-serif" font-size="20" font-weight="600">
+<tspan x="450.0" dy="0">Scientific</tspan>
+<tspan x="450.0" dy="25">question</tspan>
+</text>
+<rect x="60" y="190" width="220" height="96" rx="12" fill="white" stroke="#165db5" stroke-width="1.5"/>
+<circle cx="82" cy="212" r="12" fill="#165db5"/>
+<text x="82" y="217" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="700">
+<tspan x="82" dy="0">2</tspan>
+</text>
+<text x="170.0" y="239" text-anchor="middle" fill="#132d4c" font-family="Arial, sans-serif" font-size="20" font-weight="600">
+<tspan x="170.0" dy="0">Representation</tspan>
+<tspan x="170.0" dy="25">space</tspan>
+</text>
+<rect x="340" y="190" width="220" height="96" rx="12" fill="white" stroke="#165db5" stroke-width="1.5"/>
+<circle cx="362" cy="212" r="12" fill="#165db5"/>
+<text x="362" y="217" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="700">
+<tspan x="362" dy="0">3</tspan>
+</text>
+<text x="450.0" y="239" text-anchor="middle" fill="#132d4c" font-family="Arial, sans-serif" font-size="20" font-weight="600">
+<tspan x="450.0" dy="0">Interaction</tspan>
+<tspan x="450.0" dy="25">structure</tspan>
+</text>
+<rect x="620" y="190" width="220" height="96" rx="12" fill="white" stroke="#165db5" stroke-width="1.5"/>
+<circle cx="642" cy="212" r="12" fill="#165db5"/>
+<text x="642" y="217" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="700">
+<tspan x="642" dy="0">4</tspan>
+</text>
+<text x="730.0" y="239" text-anchor="middle" fill="#132d4c" font-family="Arial, sans-serif" font-size="20" font-weight="600">
+<tspan x="730.0" dy="0">Learning</tspan>
+<tspan x="730.0" dy="25">dynamics</tspan>
+</text>
+<rect x="340" y="356" width="220" height="96" rx="12" fill="white" stroke="#165db5" stroke-width="1.5"/>
+<circle cx="362" cy="378" r="12" fill="#165db5"/>
+<text x="362" y="383" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="700">
+<tspan x="362" dy="0">5</tspan>
+</text>
+<text x="450.0" y="405" text-anchor="middle" fill="#132d4c" font-family="Arial, sans-serif" font-size="20" font-weight="600">
+<tspan x="450.0" dy="0">Testable</tspan>
+<tspan x="450.0" dy="25">mechanism</tspan>
+</text>
+<text x="735" y="69" text-anchor="middle" fill="#165db5" font-family="Arial, sans-serif" font-size="23" font-weight="600">
+<tspan x="735" dy="0">Joint design</tspan>
+</text>
+</svg>

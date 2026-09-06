@@ -1,0 +1,76 @@
+// Structural diagrams use separate mobile compositions so labels never shrink
+// into an unreadable desktop thumbnail. All explanatory text stays in HTML.
+.framework-diagram {
+  display: block;
+  width: 100%;
+  margin: 0 0 1.25rem;
+}
+
+.framework-diagram img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 900 / 460;
+}
+
+.framework-explanation {
+  border-top: 1px solid var(--lab-line);
+}
+
+.framework-explanation summary {
+  padding: 1rem 0;
+  color: var(--pillar-text);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.6;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.framework-explanation summary:focus-visible {
+  outline: 3px solid var(--pillar-color);
+  outline-offset: 4px;
+}
+
+.framework-explanation .pillar-architecture__flow {
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.framework-explanation .pillar-architecture__flow li {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: 0.6rem;
+  min-height: 0;
+}
+
+.framework-explanation .pillar-architecture__flow li::after {
+  display: none;
+}
+
+.framework-explanation .pillar-architecture__flow li > span {
+  font-size: 0.875rem;
+}
+
+.framework-explanation .pillar-architecture__flow h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+}
+
+.framework-explanation .pillar-architecture__flow p {
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 47.99rem) {
+  .framework-diagram {
+    max-width: 25rem;
+    margin-inline: auto;
+  }
+
+  .framework-diagram img { aspect-ratio: 400 / 900; }
+}
+
+@media print {
+  .framework-explanation > .pillar-architecture__flow { display: grid; }
+}

@@ -4,6 +4,19 @@
     <p class="lab-section-number">{{ $architecture.label }}</p>
     <h2 id="pillar-architecture-title">{{ $architecture.title }}</h2>
   </header>
+  {{ $desktop := resources.Get (printf "media/frameworks/%s.svg" .pillar_id) }}
+  {{ $mobile := resources.Get (printf "media/frameworks/%s-mobile.svg" .pillar_id) }}
+  {{ $descriptions := dict
+    "pillar-i" "A scientific question frames the joint design of representation space, interaction structure and learning dynamics, leading to a testable mechanism. The middle dimensions influence one another."
+    "pillar-ii" "Decision context leads to evidence quality, competing hypotheses, acquisition and measurement. Results feed back into the next decision, closing the evidence loop."
+    "pillar-iii" "A scientific bottleneck leads through assumptions and method development to stress testing and a new constraint or possibility. A feedback path returns stress tests to the assumptions."
+  }}
+  <picture class="framework-diagram">
+    <source media="(max-width: 47.99rem)" srcset="{{ $mobile.RelPermalink }}" width="400" height="900" type="image/svg+xml">
+    <img src="{{ $desktop.RelPermalink }}" width="900" height="460" loading="lazy" decoding="async" alt="{{ index $descriptions .pillar_id }}">
+  </picture>
+  <details class="framework-explanation">
+    <summary>Read the framework step by step</summary>
   <ol class="pillar-architecture__flow">
     {{ range $index, $node := $architecture.nodes }}
       <li>
@@ -15,5 +28,6 @@
       </li>
     {{ end }}
   </ol>
+  </details>
   <figcaption id="pillar-architecture-caption">{{ $architecture.caption }}</figcaption>
 </figure>
