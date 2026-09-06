@@ -13,8 +13,8 @@ Updated: 6 September 2026. Read this file first when continuing development. `PR
 | Incorporated main | Includes merged PRs #14–23 |
 | Previous merged work | PRs #1–10, #12–23; preserved in this review branch |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | New draft PR pending creation; PR #23 is merged |
-| Hosted preview | Pending the new draft PR; check matching Netlify status before release |
+| Current PR | [Draft PR #24](https://github.com/derndy/XuGroupWeb-v2/pull/24), open for review; PR #23 is merged |
+| Hosted preview | [Pillar I example](https://deploy-preview-24--xushidang-lab.netlify.app/research/learning-system-design/#interaction-structure-title); check matching Netlify status before release |
 | Withdrawn rewrite | [PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11), closed without merging at the PI's instruction |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
