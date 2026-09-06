@@ -1,0 +1,16 @@
+# Published figures are distinct from generated conceptual illustrations.
+# Source and reuse checks: docs/selected-paper-visuals-2026-09-06.md.
+figures:
+  - id: e-cloudbind-figure-2
+    page: publication/2026-e-cloudbind/index.md
+    resource: media/papers/e-cloudbind-figure-2.png
+    sha256: 0589bd3138924eb44fb99f83056f76856db2bf2aaec55e8bfaca350acd34155d
+    caption: "E-CloudBind: from electron-density representations to binding-affinity prediction."
+    alt: "Four panels show ligand electron-density construction, a protein-pocket density proxy, covalent and point-cloud feature extraction, and heterogeneous graph fusion for binding-affinity prediction."
+    credit: "Figure 2 · Yujian Liu et al., Nature Communications 17, 7424 (2026). © The Author(s) 2026. Full figure reproduced; display size and image format only are adjusted."
+    source_url: https://www.nature.com/articles/s41467-026-74196-5/figures/2
+    article_url: https://www.nature.com/articles/s41467-026-74196-5
+    download_url: https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-026-74196-5/MediaObjects/41467_2026_74196_Fig2_HTML.png
+    license: CC BY 4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    checked: '2026-09-06'
