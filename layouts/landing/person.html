@@ -1,126 +1,249 @@
 {{ define "main" }}
+{{- $profile := . -}}
+{{- $returnSection := "current-team" -}}
+{{- $profileLabel := "Researcher profile" -}}
+{{- if eq .Params.category "graduate_alumni" -}}
+  {{- $returnSection = "graduate-alumni" -}}
+  {{- $profileLabel = "Alumni profile" -}}
+{{- else if eq .Params.category "principle_investigator" -}}
+  {{- $profileLabel = "Principal Investigator profile" -}}
+{{- end -}}
+{{- $hasMainContent := or .Params.bio_detail .Params.research_questions .Params.current_work .Params.contribution_profile .Params.working_principles .Params.selected_work .Params.beyond_research .Params.collaboration -}}
+
 <main class="person-profile" aria-labelledby="person-name">
-  {{ $returnSection := "current-team" }}
-  {{ if eq .Params.category "graduate_alumni" }}{{ $returnSection = "graduate-alumni" }}{{ end }}
   <nav class="person-profile__navigation" aria-label="Profile navigation">
     <a class="person-profile__back" href="{{ "/people/" | relURL }}#{{ $returnSection }}">
       <span aria-hidden="true">←</span> Back to People
     </a>
   </nav>
 
-  <div class="person-card">
-    <!-- 头像 -->
-    {{ if .Params.avatar }}
-    <div class="person-avatar">
-      <img src="{{ .Params.avatar | relURL }}" alt="Portrait of {{ .Title }}" class="avatar-img" width="200" height="200" decoding="async">
+  <header class="person-profile__hero">
+    <div class="person-profile__hero-grid">
+      {{- $portrait := .Resources.GetMatch "avatar.*" -}}
+      {{- if not $portrait }}{{ errorf "Missing portrait resource for %s" .File.Path }}{{ end -}}
+      <figure class="person-profile__portrait">
+        {{ partial "people/photo.html" (dict "resource" $portrait "src" .Params.avatar "alt" (printf "Portrait of %s" .Title) "widths" (slice 480 720 960) "sizes" "(max-width: 47.99rem) calc(100vw - 3rem), (max-width: 79.99rem) 34vw, 25rem" "priority" true) }}
+      </figure>
+
+      <div class="person-profile__identity">
+        <p class="person-profile__eyebrow">{{ $profileLabel }}</p>
+        <h1 id="person-name">{{ .Title }}</h1>
+        {{ with .Params.role }}<p class="person-profile__role">{{ . }}</p>{{ end }}
+        {{ with .Params.organizations }}
+          {{ with index . 0 }}
+          <p class="person-profile__organization">
+            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
+          </p>
+          {{ end }}
+        {{ end }}
+        {{ with (.Params.headline | default .Params.bio) }}
+          <p class="person-profile__headline">{{ . }}</p>
+        {{ end }}
+        {{ with .Params.focus_areas }}
+          <ul class="person-profile__focus" aria-label="Research focus areas">
+            {{ range . }}<li>{{ . }}</li>{{ end }}
+          </ul>
+        {{ end }}
+        <div class="person-profile__hero-actions">
+          {{ range .Params.social }}
+            {{ if eq .type "email" }}
+              <a class="person-profile__primary-action" href="mailto:{{ .link }}">Email {{ $profile.Title }}</a>
+            {{ end }}
+          {{ end }}
+          {{ with .Params.collaboration }}
+            <a class="person-profile__secondary-action" href="#collaboration">Collaboration interests <span aria-hidden="true">↓</span></a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="person-profile__body{{ if not $hasMainContent }} person-profile__body--sidebar-only{{ end }}">
+    <aside class="person-profile__sidebar" aria-label="Profile details">
+      {{ if and .Params.education .Params.education.courses (gt (len .Params.education.courses) 0) }}
+      <section class="person-profile__fact-group" aria-labelledby="person-education">
+        <h2 id="person-education">Education</h2>
+        <ol class="person-profile__timeline">
+          {{ range .Params.education.courses }}
+          <li>
+            <strong>{{ .course }}</strong>
+            <span>{{ .institution }}</span>
+            <time>{{ .year }}</time>
+          </li>
+          {{ end }}
+        </ol>
+      </section>
+      {{ end }}
+
+      {{ if and .Params.experience .Params.experience.positions (gt (len .Params.experience.positions) 0) }}
+      <section class="person-profile__fact-group" aria-labelledby="person-experience">
+        <h2 id="person-experience">Experience</h2>
+        <ol class="person-profile__timeline">
+          {{ range .Params.experience.positions }}
+          <li>
+            <strong>{{ .title }}</strong>
+            <span>{{ .institution }}</span>
+            <time>{{ .year }}</time>
+          </li>
+          {{ end }}
+        </ol>
+      </section>
+      {{ end }}
+
+      {{ with .Params.social }}
+      <section class="person-profile__fact-group" aria-labelledby="person-links">
+        <h2 id="person-links">Connect</h2>
+        <ul class="person-profile__links">
+          {{ range . }}
+            {{- $label := .type | humanize | title -}}
+            {{- if eq .type "scholar" }}{{ $label = "Google Scholar" }}{{ end -}}
+            {{- if eq .type "researchgate" }}{{ $label = "ResearchGate" }}{{ end -}}
+            {{- if eq .type "orcid" }}{{ $label = "ORCID" }}{{ end -}}
+            {{- if eq .type "github" }}{{ $label = "GitHub" }}{{ end -}}
+            {{- $href := .link -}}
+            {{- if eq .type "email" }}{{ $href = printf "mailto:%s" .link }}{{ end -}}
+          <li>
+            <a href="{{ $href }}"{{ if ne .type "email" }} target="_blank" rel="noopener noreferrer"{{ end }}>
+              <span>{{ $label }}</span><span aria-hidden="true">↗</span>
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </section>
+      {{ end }}
+    </aside>
+
+    {{ if $hasMainContent }}
+    <div class="person-profile__main">
+      {{ with .Params.bio_detail }}
+      <section class="person-profile__section person-profile__about" aria-labelledby="person-about">
+        <p class="person-profile__section-label">About</p>
+        <h2 id="person-about">About {{ $profile.Title }}</h2>
+        <div class="person-profile__prose">{{ . | markdownify }}</div>
+      </section>
+      {{ end }}
+
+      {{ with .Params.research_questions }}
+      <section class="person-profile__section" aria-labelledby="person-questions">
+        <p class="person-profile__section-label">Research questions</p>
+        <h2 id="person-questions">Questions I care about</h2>
+        <ol class="person-profile__questions">
+          {{ range . }}
+          <li>
+            <h3>{{ .question }}</h3>
+            {{ with .context }}<p>{{ . }}</p>{{ end }}
+          </li>
+          {{ end }}
+        </ol>
+      </section>
+      {{ end }}
+
+      {{ with .Params.current_work }}
+      <section class="person-profile__section" aria-labelledby="person-current-work">
+        <p class="person-profile__section-label">Current work</p>
+        <h2 id="person-current-work">What I am working on</h2>
+        <div class="person-profile__work-grid">
+          {{ range . }}
+          <article class="person-profile__work-item">
+            {{ with .status }}<p class="person-profile__work-status">{{ . }}</p>{{ end }}
+            <h3>{{ .title }}</h3>
+            <p>{{ .summary }}</p>
+            {{ with .role }}<p class="person-profile__work-role"><strong>My role:</strong> {{ . }}</p>{{ end }}
+          </article>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+
+      {{ with .Params.contribution_profile }}
+      <section class="person-profile__section" aria-labelledby="person-contribution">
+        <p class="person-profile__section-label">Contribution profile</p>
+        <h2 id="person-contribution">What I bring to a project</h2>
+        <div class="person-profile__capability-grid">
+          {{ with .methods }}
+          <div><h3>Methods</h3><ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul></div>
+          {{ end }}
+          {{ with .domains }}
+          <div><h3>Scientific domains</h3><ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul></div>
+          {{ end }}
+          {{ with .can_contribute }}
+          <div><h3>I can contribute</h3><ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul></div>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+
+      {{ with .Params.working_principles }}
+      <section class="person-profile__section" aria-labelledby="person-principles">
+        <p class="person-profile__section-label">Working philosophy</p>
+        <h2 id="person-principles">Principles I work by</h2>
+        <div class="person-profile__principles">
+          {{ range . }}
+          <article><h3>{{ .title }}</h3>{{ with .detail }}<p>{{ . }}</p>{{ end }}</article>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+
+      {{ with .Params.selected_work }}
+      <section class="person-profile__section" aria-labelledby="person-selected-work">
+        <p class="person-profile__section-label">Selected work</p>
+        <h2 id="person-selected-work">Selected research outputs</h2>
+        <ol class="person-profile__selected-work">
+          {{ range . }}
+            {{- $ref := .page -}}
+            {{ with site.GetPage $ref }}
+              {{- if ne .Section "publication" }}{{ errorf "Selected member work %q is not a publication page" $ref }}{{ end -}}
+              {{- $authorName := $profile.Params.publication_name -}}
+              {{- if and $authorName (not (in .Params.authors $authorName)) }}{{ errorf "%s does not list profile author %q" $ref $authorName }}{{ end -}}
+          <li>
+            <p class="person-profile__selected-year">{{ .Date.Format "2006" }}</p>
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            {{ with .Params.publication_short }}<p>{{ . | markdownify }}</p>{{ end }}
+          </li>
+            {{ else }}
+              {{ errorf "Selected member work %q does not resolve" $ref }}
+            {{ end }}
+          {{ end }}
+        </ol>
+      </section>
+      {{ end }}
+
+      {{ with .Params.beyond_research }}
+      <section class="person-profile__section" aria-labelledby="person-beyond-research">
+        <p class="person-profile__section-label">Beyond research</p>
+        <h2 id="person-beyond-research">Beyond research</h2>
+        <div class="person-profile__prose">{{ . | markdownify }}</div>
+      </section>
+      {{ end }}
+
+      {{ with .Params.collaboration }}
+      <section id="collaboration" class="person-profile__collaboration" aria-labelledby="person-collaboration">
+        <p class="person-profile__section-label">Open to conversation</p>
+        <h2 id="person-collaboration">Where we might work together</h2>
+        {{ with .statement }}<p class="person-profile__collaboration-lead">{{ . }}</p>{{ end }}
+        <div class="person-profile__collaboration-grid">
+          {{ with .can_contribute }}
+          <div><h3>I can contribute</h3><ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul></div>
+          {{ end }}
+          {{ with .looking_for }}
+          <div><h3>I am looking for</h3><ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul></div>
+          {{ end }}
+          {{ with .formats }}
+          <div><h3>Possible formats</h3><ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul></div>
+          {{ end }}
+        </div>
+        {{ range $profile.Params.social }}
+          {{ if eq .type "email" }}<a class="person-profile__collaboration-action" href="mailto:{{ .link }}">Start a conversation <span aria-hidden="true">→</span></a>{{ end }}
+        {{ end }}
+      </section>
+      {{ end }}
     </div>
     {{ end }}
-
-    <!-- 个人信息 -->
-    <div class="person-info">
-      <h1 id="person-name" class="person-name">{{ .Title }}</h1>
-      {{ if .Params.role }}
-      <p class="role">{{ .Params.role }}</p>
-      {{ end }}
-      {{ if and .Params.organizations (gt (len .Params.organizations) 0) }}
-      <p class="organization">
-        <a href="{{ index .Params.organizations 0 "url" }}" target="_blank" rel="noopener noreferrer" class="org-link">
-          {{ index .Params.organizations 0 "name" }}
-        </a>
-      </p>
-      {{ end }}
-      {{ if .Params.bio }}
-      <p class="bio">{{ .Params.bio }}</p>
-      {{ end }}
-    </div>
   </div>
 
-  <!-- 教育背景和工作经验 合并卡片 -->
-  {{ if or (and .Params.education .Params.education.courses (gt (len .Params.education.courses) 0)) (and .Params.experience .Params.experience.positions (gt (len .Params.experience.positions) 0)) }}
-  <div class="education-experience-section card">
-    {{ if and .Params.education .Params.education.courses (gt (len .Params.education.courses) 0) }}
-    <h2>Education</h2>
-    <ul class="education-list">
-      {{ range .Params.education.courses }}
-      <li class="entry-row">
-        <span class="entry-title"><strong>{{ .course }}</strong></span>
-        <span class="institution">{{ .institution }}</span>
-        <span class="year">{{ .year }}</span>
-      </li>
-      {{ end }}
-    </ul>
-    {{ end }}
-    {{ if and .Params.experience .Params.experience.positions (gt (len .Params.experience.positions) 0) }}
-    <h2>Experience</h2>
-    <ul class="experience-list">
-      {{ range .Params.experience.positions }}
-      <li class="entry-row">
-        <span class="entry-title"><strong>{{ .title }}</strong></span>
-        <span class="institution">{{ .institution }}</span>
-        <span class="year">{{ .year }}</span>
-      </li>
-      {{ end }}
-    </ul>
-    {{ end }}
-  </div>
-  {{ end }}
-
-  <!-- 社交联系方式和学术资源 合并卡片 -->
-  {{ if and .Params.social (gt (len .Params.social) 0) }}
-  <div class="contact-academic-section card">
-    <!-- Contact 部分 -->
-    {{ $hasEmail := false }}
-    {{ range .Params.social }}
-      {{ if eq .type "email" }}
-        {{ $hasEmail = true }}
-      {{ end }}
-    {{ end }}
-    {{ if $hasEmail }}
-      <h2>Contact</h2>
-      <ul class="social-list">
-        {{ range .Params.social }}
-        {{ if eq .type "email" }}
-        <li>
-          <a href="mailto:{{ .link }}" class="social-link">
-            <i class="{{ .icon_pack }} fa-{{ .icon }}" aria-hidden="true"></i> {{ .link }}
-          </a>
-        </li>
-        {{ end }}
-        {{ end }}
-      </ul>
-    {{ end }}
-
-    <!-- Academic Profile 部分 -->
-    {{ $hasAcademic := false }}
-    {{ range .Params.social }}
-      {{ if or (eq .type "scholar") (eq .type "researchgate") }}
-        {{ $hasAcademic = true }}
-      {{ end }}
-    {{ end }}
-    {{ if $hasAcademic }}
-      <h2>Academic Profile</h2>
-      <ul class="social-list">
-        {{ range .Params.social }}
-        {{ if or (eq .type "scholar") (eq .type "researchgate") }}
-        <li>
-          <a href="{{ .link }}" class="social-link">
-            <i class="{{ .icon_pack }} fa-{{ .icon }}" aria-hidden="true"></i>
-            {{ if eq .type "scholar" }}Google Scholar{{ else if eq .type "researchgate" }}ResearchGate{{ end }}
-          </a>
-        </li>
-        {{ end }}
-        {{ end }}
-      </ul>
-    {{ end }}
-  </div>
-  {{ end }}
-
-  <!-- 个人介绍 -->
-  {{ if .Params.bio_detail }}
-  <div class="bio-detail-section card">
-    <h2>About {{ .Title }}</h2>
-    <p>{{ .Params.bio_detail }}</p>
-  </div>
-  {{ end }}
+  <nav class="person-profile__footer-navigation" aria-label="Return to the team directory">
+    <a href="{{ "/people/" | relURL }}#{{ $returnSection }}"><span aria-hidden="true">←</span> Meet the rest of the team</a>
+  </nav>
 </main>
 {{ end }}
