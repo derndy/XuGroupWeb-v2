@@ -1,4 +1,20 @@
-# Latest continuation — legacy News photo descriptions
+# Latest continuation — concept image cleanup and three replacements
+
+6 September 2026. Base: main `3fda4dcc2a0c06546a59b3905ffb07a7b0e737c9`, after PR #28 merged. Branch: `design/concept-images-cleanup`. Earlier current-branch/PR claims below are historical.
+
+The PI requested removal of “AI generated” and “download origin.png” labels and a review of concept images. The shared component now renders only the image and explanatory caption across all seven placements. AI badges and download controls are absent from HTML, and their styles are removed. The new instruction supersedes the earlier visible-badge requirement; generation provenance remains in the source records.
+
+Reviewed all seven originals and replaced three: Research overview (`research-system-design.png`), Pillar II (`evidence-discovery-cycle.png`), and homepage testbeds (`scientific-testbeds.png`). The new art uses larger, distinct forms on a light ground. The other four illustrations are retained. Existing exact SVG diagrams and published figures retain their original content and credits. The actual third Pillar remains mathematical and data-science exploration.
+
+Each replacement has its own recorded hash, caption, alternative text, source and instruction basis. Complete prior records are preserved under `previous_version`; old PNGs remain recoverable and are not referenced for rendering. No separate PI approval of exact new pixels is claimed. Full review and prompts: [image review](docs/concept-image-refresh-2026-09-06.md) and [prompt record](docs/concept-image-prompts-2026-09-06.md).
+
+Validation: Hugo Extended 0.139.4 production build passes (895 pages); the existing conceptual audit passes for 7 placements and 28 uncropped WebP variants; site image audit checks 538 HTML files and 458 local references with zero missing files. All built page text is free of the removed labels. Publication comparison preserves all 91 records, author text/links, routes and citation bytes. Previous asset records are preserved exactly, and other asset records are unchanged. Original generated artwork was inspected directly; browser layout testing is not yet claimed.
+
+Delivery: save a draft PR on the existing GitHub + Netlify path. Verify its final commit and Netlify preview status. Do not merge or change production settings as part of this review batch. The user decides whether to merge.
+
+---
+
+# Previous continuation — legacy News photo descriptions
 
 6 September 2026. Based on main `af42c2e2e97079da3d25bef58ac93119dfb4f300`, after PR #25 merged. Current branch: `fix/legacy-news-image-descriptions`. This batch adds visually checked `featured_alt` descriptions to the six remaining older News photos (2023–2025). Existing components show these below the photos and use them as image alternatives. All original images, titles, dates and body text are preserved.
 
