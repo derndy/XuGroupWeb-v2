@@ -44,3 +44,18 @@ figures:
     license_url: https://creativecommons.org/licenses/by/4.0/
     license_source: https://arxiv.org/html/2501.14646v1
     checked: '2026-09-06'
+  - id: photosensitizer-discovery-diagram
+    page: publication/9-2021-xu-et-al-self-improving-photosensitizer-discovery-system-via-bayesian-search-with-first-principle-simulations/index.md
+    resource_scope: page
+    resource: featured.jpeg
+    sha256: 33091716685e42651e71a28027a7b646064a00cdfc98b6367a2248cb2f1f3073
+    caption: "Self-improving photosensitizer discovery: Bayesian search connects uncertainty, predicted properties and active learning."
+    alt: "A schematic search space separates labelled and uncertain regions. Blue squares select structures using uncertainty and low singlet–triplet energy gaps, while an arrow marks repeated active-learning cycles that improve the model."
+    credit: "Discovery-system diagram · Shidang Xu et al., J. Am. Chem. Soc. 143 (2021), 19769–19777. Existing author-website image; only display size and format are adjusted."
+    source_label: Published article
+    source_url: https://doi.org/10.1021/jacs.1c08211
+    license: ACS author reuse policy
+    license_url: https://pubs.acs.org/pages/authors_sharing
+    reuse_scope: Author’s noncommercial academic website; not a Creative Commons license or permission for unrestricted third-party reuse.
+    source_note: Existing publication-bundle image retained byte-for-byte; see docs/jacs-visual-and-site-status-2026-09-06.md.
+    checked: '2026-09-06'

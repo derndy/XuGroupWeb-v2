@@ -1,5 +1,13 @@
 {{- $record := .record -}}
-{{- $image := resources.Get $record.resource -}}
+{{- $image := false -}}
+{{- if eq ($record.resource_scope | default "global") "page" -}}
+  {{- $owner := site.GetPage $record.page -}}
+  {{- if not $owner -}}{{ errorf "Missing figure page: %s" $record.page }}{{- else -}}
+    {{- $image = $owner.Resources.GetMatch $record.resource -}}
+  {{- end -}}
+{{- else -}}
+  {{- $image = resources.Get $record.resource -}}
+{{- end -}}
 {{- if not $image -}}{{ errorf "Missing published figure: %s" $record.resource }}{{- end -}}
 {{- if ne (sha256 $image.Content) $record.sha256 -}}{{ errorf "Published figure hash mismatch: %s" $record.resource }}{{- end -}}
 {{- range slice "caption" "alt" "credit" "source_url" "license" "license_url" -}}
@@ -16,7 +24,7 @@
 {{- $full := $image.Resize (printf "%dx webp q90" $image.Width) -}}
 {{- $sources = $sources | append (printf "%s %dw" $full.RelPermalink $full.Width) -}}
 <figure class="paper-figure" aria-describedby="{{ $id }}" data-paper-figure="{{ $record.id }}">
-  <a class="paper-figure__image-link" href="{{ $image.RelPermalink }}" aria-label="View full-size {{ $record.caption }}">
+  <a class="paper-figure__image-link" href="{{ $image.RelPermalink }}" style="max-width: {{ $image.Width }}px; margin-inline: auto" aria-label="View full-size {{ $record.caption }}">
     <picture>
       <source type="image/webp" srcset="{{ delimit $sources ", " }}" sizes="{{ if and (eq .placement "home") (eq $record.layout "wide") }}(max-width: 83rem) calc(100vw - 3rem), 80rem{{ else }}(max-width: 63.99rem) calc(100vw - 3rem), 42rem{{ end }}">
       <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $record.alt }}" loading="lazy" decoding="async">

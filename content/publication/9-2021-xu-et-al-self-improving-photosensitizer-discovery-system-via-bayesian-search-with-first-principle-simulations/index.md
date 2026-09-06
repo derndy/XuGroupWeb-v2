@@ -61,6 +61,9 @@ url_source: ''
 url_video: ''
 
 # Featured image
+# The original is shown once by the credited paper-figure component below.
+image:
+  preview_only: true
 # To use, add an image named `featured.jpg/png` to your page's folder.
 # image:
 #   caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)'
