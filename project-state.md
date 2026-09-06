@@ -13,8 +13,8 @@ Updated: 6 September 2026. Read this file first when continuing development. `PR
 | Incorporated main | Includes merged PRs #14 and #15 |
 | Previous merged work | PRs #1–10, #12–15; preserved in this review branch |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | New Pillar I visual draft PR; see branch pull requests on GitHub |
-| Hosted preview | Await matching Netlify PR-head status; production is not changed by this batch |
+| Current PR | [Draft PR #16](https://github.com/derndy/XuGroupWeb-v2/pull/16), open for review |
+| Hosted preview | [Pillar I preview](https://deploy-preview-16--xushidang-lab.netlify.app/research/learning-system-design/); inspect matching Netlify PR-head status before release |
 | Withdrawn rewrite | [PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11), closed without merging at the PI's instruction |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
