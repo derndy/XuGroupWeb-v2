@@ -13,8 +13,8 @@ Updated: 6 September 2026. Read this file first when continuing development. `PR
 | Incorporated main | Includes merged PRs #14–19 |
 | Previous merged work | PRs #1–10, #12–19; preserved in this review branch |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | New SyncAnimation visual draft PR on `content/syncanimation-visual`; PR #19 has merged |
-| Hosted preview | Check the matching Netlify status on the new review branch before release |
+| Current PR | [Draft PR #20](https://github.com/derndy/XuGroupWeb-v2/pull/20), open for review; PR #19 has merged |
+| Hosted preview | [Homepage](https://deploy-preview-20--xushidang-lab.netlify.app/#home-publications-title) and [SyncAnimation](https://deploy-preview-20--xushidang-lab.netlify.app/publication/2025-syncanimation/); check matching Netlify status before release |
 | Withdrawn rewrite | [PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11), closed without merging at the PI's instruction |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
