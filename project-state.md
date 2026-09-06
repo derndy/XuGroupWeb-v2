@@ -8,20 +8,28 @@ Updated: 6 September 2026. Read this file first when continuing development. `PR
 | --- | --- |
 | Repository | Public `derndy/XuGroupWeb-v2` |
 | Working checkout | `/workspace/sites/xugroup-pillar-i-visual` |
-| Current review branch | `content/selected-paper-figure` |
-| Branch point | `main` at `48727b2050e19947b96655f4bfeb32e6ddd3f090`, after PR #17 merged |
-| Incorporated main | Includes merged PRs #14–17 |
-| Previous merged work | PRs #1–10, #12–17; preserved in this review branch |
+| Current review branch | `content/paper-visuals-next` |
+| Branch point | `main` at `8b61479dac705e50e6ffb9bd34dc291ba3272129`, after PR #18 merged |
+| Incorporated main | Includes merged PRs #14–18 |
+| Previous merged work | PRs #1–10, #12–18; preserved in this review branch |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | [Draft PR #18](https://github.com/derndy/XuGroupWeb-v2/pull/18), open for review; PR #17 has merged |
-| Hosted preview | [Homepage selected work](https://deploy-preview-18--xushidang-lab.netlify.app/#home-publications-title) and [E-CloudBind detail](https://deploy-preview-18--xushidang-lab.netlify.app/publication/2026-e-cloudbind/); inspect matching Netlify status before release |
+| Current PR | New AnyAvatar / News-image draft PR on `content/paper-visuals-next`; PR #18 has merged |
+| Hosted preview | Check matching Netlify status on the new draft PR before release |
 | Withdrawn rewrite | [PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11), closed without merging at the PI's instruction |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
 The PI rejected PR #11's broad public-marketing rewrite because it made the lab sound generic and displaced the original research identity. It was closed without merging. Merged PR #12 retains the original identity with six wording refinements and places the complete Vision at the end of Join / Collaborate. Do not restore the withdrawn rewrite or the superseded homepage placement. The latest instruction accepts bounded method/testbed and postdoctoral-invitation improvements, requests five selected papers including NC/ECCV, and asks to remove the public research pages' internal management/audit tone.
 
-## Latest batch — first source-backed selected-paper figure
+## Latest batch — AnyAvatar figure and News image descriptions
+
+Added the authors' original AnyAvatar pipeline to its homepage selection and accepted-paper detail. The full-width homepage composition suits the wide figure; the original remains uncropped and available for full-size viewing. Source/license checks are recorded in [the batch note](docs/anyavatar-news-visuals-2026-09-06.md). Reuse is under CC BY-NC 4.0 for this noncommercial academic website, distinct from E-CloudBind's CC BY 4.0.
+
+Four 2026 News records already contained `featured_alt`, but the detail header only read `image.alt_text`. A pinned header override now uses the existing description as fallback and displays it below the image when no caption exists. It does not duplicate or invent event facts. Both builds, all 91 publications and seven conceptual-image audits pass. Ten other main pages are unchanged; 248 populated image references resolve in 536 index pages. Browser viewport review remains pending.
+
+PR #18 is merged; this batch has its own draft review branch. Next paper visuals: PyraE2E, SyncAnimation and the selected JACS paper.
+
+## Previous batch — first source-backed selected-paper figure
 
 Added the official E-CloudBind Figure 2 to its homepage selection and publication detail page. The original 2005 × 1791 PNG is retained byte-for-byte, with proportional WebP variants, full-size viewing, author attribution and the article's CC BY 4.0 license. The figure is published research artwork, distinct from the site's seven generated conceptual illustrations. No experimental figure is recreated or cropped.
 

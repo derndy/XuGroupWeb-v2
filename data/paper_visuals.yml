@@ -14,3 +14,18 @@ figures:
     license: CC BY 4.0
     license_url: https://creativecommons.org/licenses/by/4.0/
     checked: '2026-09-06'
+  - id: anyavatar-pipeline
+    page: publication/2026-anyavatar/index.md
+    resource: media/papers/anyavatar-pipeline.png
+    sha256: 16006bb94de96e7dd2cb55cae7024121051be0eca2f07336a19d918095e4e6fb
+    layout: wide
+    caption: "AnyAvatar: camera-pose refinement, Gaussian head representation and novel-view rendering."
+    alt: "The authors' pipeline connects ray-based localization and multi-view FLAME fitting to Gaussian binding, camera-pose optimization, structured triplane appearance and head rendering from new viewpoints."
+    credit: "Yujian Liu et al., AnyAvatar authors' project figure. Full figure reproduced; display size and image format only are adjusted. Noncommercial reuse."
+    source_label: Authors’ project figure
+    source_url: https://github.com/AISHIWEILAI/AnyAvatar
+    download_url: https://raw.githubusercontent.com/AISHIWEILAI/AnyAvatar/main/static/images/pipeline.png
+    license: CC BY-NC 4.0
+    license_url: https://creativecommons.org/licenses/by-nc/4.0/
+    license_source: https://github.com/AISHIWEILAI/AnyAvatar/blob/main/LICENSE
+    checked: '2026-09-06'

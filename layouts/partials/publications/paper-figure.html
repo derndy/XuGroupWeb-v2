@@ -18,13 +18,13 @@
 <figure class="paper-figure" aria-describedby="{{ $id }}" data-paper-figure="{{ $record.id }}">
   <a class="paper-figure__image-link" href="{{ $image.RelPermalink }}" aria-label="View full-size {{ $record.caption }}">
     <picture>
-      <source type="image/webp" srcset="{{ delimit $sources ", " }}" sizes="(max-width: 63.99rem) calc(100vw - 3rem), 42rem">
+      <source type="image/webp" srcset="{{ delimit $sources ", " }}" sizes="{{ if and (eq .placement "home") (eq $record.layout "wide") }}(max-width: 83rem) calc(100vw - 3rem), 80rem{{ else }}(max-width: 63.99rem) calc(100vw - 3rem), 42rem{{ end }}">
       <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $record.alt }}" loading="lazy" decoding="async">
     </picture>
   </a>
   <figcaption id="{{ $id }}">
     <p class="paper-figure__caption">{{ $record.caption }}</p>
-    <p>{{ $record.credit }} · <a href="{{ $record.source_url }}">Published figure</a> · <a href="{{ $record.license_url }}">{{ $record.license }}</a></p>
+    <p>{{ $record.credit }} · <a href="{{ $record.source_url }}">{{ $record.source_label | default "Published figure" }}</a> · <a href="{{ $record.license_url }}">{{ $record.license }}</a></p>
     <a class="paper-figure__full" href="{{ $image.RelPermalink }}">View full-size figure <span aria-hidden="true">↗</span></a>
   </figcaption>
 </figure>
