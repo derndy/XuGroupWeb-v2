@@ -96,6 +96,45 @@
   background: #fff;
   color: #132d4c;
 }
+
+.interaction-structure {
+  max-width: 60rem;
+  margin: 2.5rem auto 0;
+  padding: clamp(1rem, 3vw, 2rem);
+  border: 1px solid var(--lab-line);
+  border-radius: 1rem;
+  background: #fff;
+  color: #132d4c;
+}
+.interaction-structure h3 { font-size: 1.5rem; line-height: 1.3; }
+.interaction-structure p,
+.interaction-structure li,
+.interaction-structure figcaption { font-size: 1rem; line-height: 1.7; overflow-wrap: anywhere; }
+.interaction-structure picture { display: block; margin-block: 1.5rem; }
+.interaction-structure img { display: block; width: 100%; height: auto; aspect-ratio: 960 / 700; }
+.interaction-structure figcaption { color: #40576e; }
+.interaction-structure__explanation { margin-top: 1.25rem; border-top: 1px solid var(--lab-line); }
+.interaction-structure__explanation summary {
+  padding-block: 1rem;
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.6;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.interaction-structure__explanation summary:focus-visible {
+  outline: 3px solid var(--pillar-color);
+  outline-offset: 4px;
+}
+.interaction-structure .framework-downloads { margin: 1rem 0 0; }
+@media (max-width: 47.99rem) {
+  .interaction-structure { padding: 0.5rem; }
+  .interaction-structure picture { max-width: 27.5rem; margin-inline: auto; }
+  .interaction-structure img { aspect-ratio: 440 / 1120; }
+}
+@media print {
+  .interaction-structure__explanation > * { display: block; }
+}
 .evidence-choice h3 { font-size: 1.5rem; line-height: 1.3; }
 .evidence-choice > p,
 .evidence-choice figcaption { font-size: 1rem; line-height: 1.7; overflow-wrap: anywhere; }

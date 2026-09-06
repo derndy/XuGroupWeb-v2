@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="1120" viewBox="0 0 440 1120" role="img" aria-labelledby="title desc">
+<title id="title">Same units. Different relationships.</title>
+<desc id="desc">Two graphs have the same scalar features, 1, 2, 3 and 4, and the same feature mean, 2.5. Graph A connects 1 to 2 and 3 to 4. Graph B connects 1 to 3 and 2 to 4. The sum of connected-pair products is 14 for A and 11 for B. Illustrative calculation, not measured data.</desc>
+<rect x="0" y="0" width="440" height="1120" rx="18" fill="#f4f8fc" stroke="#f4f8fc" stroke-width="1.5"/>
+<rect x="16" y="16" width="408" height="144" rx="14" fill="#eaf0f9" stroke="#cbd8e8" stroke-width="1.5"/>
+<text x="220" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#132d4c">Same feature values</text>
+<text x="220" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="400" fill="#132d4c">1, 2, 3, 4</text>
+<text x="220" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="400" fill="#40576e">Mean in both graphs: 2.5</text>
+<rect x="16" y="184" width="408" height="412" rx="14" fill="white" stroke="#cbd8e8" stroke-width="1.5"/>
+<text x="220.0" y="226" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#245ca8">Graph A</text>
+<line x1="134.0" y1="282" x2="306.0" y2="282" stroke="#245ca8" stroke-width="5"/>
+<line x1="134.0" y1="388" x2="306.0" y2="388" stroke="#245ca8" stroke-width="5"/>
+<circle cx="134.0" cy="282" r="29" fill="white" stroke="#245ca8" stroke-width="3"/>
+<text x="134.0" y="292" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#245ca8">1</text>
+<circle cx="306.0" cy="282" r="29" fill="white" stroke="#245ca8" stroke-width="3"/>
+<text x="306.0" y="292" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#245ca8">2</text>
+<circle cx="134.0" cy="388" r="29" fill="white" stroke="#245ca8" stroke-width="3"/>
+<text x="134.0" y="398" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#245ca8">3</text>
+<circle cx="306.0" cy="388" r="29" fill="white" stroke="#245ca8" stroke-width="3"/>
+<text x="306.0" y="398" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#245ca8">4</text>
+<text x="220.0" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#40576e">Add connected-pair products</text>
+<text x="220.0" y="493" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" font-weight="600" fill="#132d4c">(1 × 2) + (3 × 4)</text>
+<rect x="133.0" y="512" width="174" height="52" rx="26" fill="#edf4fc" stroke="#245ca8" stroke-width="1.5"/>
+<text x="220.0" y="548" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#245ca8">Result: 14</text>
+<rect x="16" y="620" width="408" height="412" rx="14" fill="white" stroke="#cbd8e8" stroke-width="1.5"/>
+<text x="220.0" y="662" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#08736c">Graph B</text>
+<line x1="134.0" y1="718" x2="134.0" y2="824" stroke="#08736c" stroke-width="5"/>
+<line x1="306.0" y1="718" x2="306.0" y2="824" stroke="#08736c" stroke-width="5"/>
+<circle cx="134.0" cy="718" r="29" fill="white" stroke="#08736c" stroke-width="3"/>
+<text x="134.0" y="728" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#08736c">1</text>
+<circle cx="306.0" cy="718" r="29" fill="white" stroke="#08736c" stroke-width="3"/>
+<text x="306.0" y="728" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#08736c">2</text>
+<circle cx="134.0" cy="824" r="29" fill="white" stroke="#08736c" stroke-width="3"/>
+<text x="134.0" y="834" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#08736c">3</text>
+<circle cx="306.0" cy="824" r="29" fill="white" stroke="#08736c" stroke-width="3"/>
+<text x="306.0" y="834" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#08736c">4</text>
+<text x="220.0" y="891" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#40576e">Add connected-pair products</text>
+<text x="220.0" y="929" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" font-weight="600" fill="#132d4c">(1 × 3) + (2 × 4)</text>
+<rect x="133.0" y="948" width="174" height="52" rx="26" fill="#e9f6f3" stroke="#08736c" stroke-width="1.5"/>
+<text x="220.0" y="984" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#08736c">Result: 11</text>
+<text x="220" y="1080" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" font-weight="400" fill="#40576e">Toy calculation · No measured data</text>
+</svg>

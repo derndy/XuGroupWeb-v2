@@ -7,21 +7,29 @@ Updated: 6 September 2026. Read this file first when continuing development. `PR
 | Item | Current value |
 | --- | --- |
 | Repository | Public `derndy/XuGroupWeb-v2` |
-| Working checkout | `/workspace/sites/xugroup-pillar-i-visual` |
-| Current review branch | `content/evidence-choice-diagram` |
-| Branch point | `main` at `36cfe4636bfc09a79efa8dc9c6b4feaef2e6fbe4`, after PR #22 merged |
-| Incorporated main | Includes merged PRs #14–22 |
-| Previous merged work | PRs #1–10, #12–22; preserved in this review branch |
+| Working checkout | `/workspace/scratch/04b018b9a160/XuGroupWeb-v2` |
+| Current review branch | `content/interaction-structure-diagram` |
+| Branch point | `main` at `2fccbc673fa984810caf6d7f8bbec99fbfda731d`, after PR #23 merged |
+| Incorporated main | Includes merged PRs #14–23 |
+| Previous merged work | PRs #1–10, #12–23; preserved in this review branch |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | [Draft PR #23](https://github.com/derndy/XuGroupWeb-v2/pull/23), open for review; PR #22 is merged |
-| Hosted preview | [Pillar II diagram](https://deploy-preview-23--xushidang-lab.netlify.app/research/evidence-engineering/#evidence-choice-title); check matching Netlify status before release |
+| Current PR | New draft PR pending creation; PR #23 is merged |
+| Hosted preview | Pending the new draft PR; check matching Netlify status before release |
 | Withdrawn rewrite | [PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11), closed without merging at the PI's instruction |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
 The PI rejected PR #11's broad public-marketing rewrite because it made the lab sound generic and displaced the original research identity. It was closed without merging. Merged PR #12 retains the original identity with six wording refinements and places the complete Vision at the end of Join / Collaborate. Do not restore the withdrawn rewrite or the superseded homepage placement. The latest instruction accepts bounded method/testbed and postdoctoral-invitation improvements, requests five selected papers including NC/ECCV, and asks to remove the public research pages' internal management/audit tone.
 
-## Latest batch — Evidence-choice diagram
+## Latest batch — concrete interaction-structure example
+
+Added a precise worked example to Pillar I: the same raw feature values have mean 2.5 in both graphs, while summing connected-pair products gives 14 versus 11. Wide/mobile SVGs, caption, full-size links and an expandable HTML explanation make the distinction inspectable. This is an illustrative calculation, not measured evidence or a new model claim. New prose is editable through `website_text.research_figures.interaction_structure`.
+
+Both builds pass (895 pages). All 428 image/picture/srcset references resolve across 536 index pages. Existing text on all eleven main routes, 91 publication records and seven conceptual images / 28 WebP versions are preserved. Both SVGs were visually inspected, including a 360-pixel-wide mobile rendering. Browser testing was attempted but cannot run through the available preview with this Hugo setup; actual page layout, keyboard behavior and 200% text enlargement remain untested.
+
+See [the full review and calculation record](docs/interaction-structure-diagram-2026-09-06.md) for all-page coverage, scientific limits, maintenance and remaining priorities. PR #23 has merged. This batch uses a separate draft PR; do not merge or change production settings.
+
+## Previous batch — Evidence-choice diagram
 
 Added one focused conceptual diagram after Pillar II's scope cards: competing explanations, a feasible perturbation, differing predictions, and measurement against controls and uncertainty. It preserves both informative and ambiguous outcomes. Two SVG compositions support wide and narrow viewing, with HTML description and full-size links. No numerical results or paper artwork were invented.
 

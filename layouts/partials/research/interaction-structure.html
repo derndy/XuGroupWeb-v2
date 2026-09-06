@@ -1,0 +1,22 @@
+{{ $copy := site.Data.website_text.research_figures.interaction_structure }}
+{{ $wide := resources.Get "media/frameworks/interaction-structure.svg" }}
+{{ $vertical := resources.Get "media/frameworks/interaction-structure-mobile.svg" }}
+{{ if or (not $wide) (not $vertical) }}{{ errorf "Both interaction-structure diagrams must exist" }}{{ end }}
+<figure class="interaction-structure" aria-labelledby="interaction-structure-title" aria-describedby="interaction-structure-caption">
+  <h3 id="interaction-structure-title">{{ $copy.title }}</h3>
+  <p>{{ $copy.introduction }}</p>
+  <picture>
+    <source media="(max-width: 47.99rem)" srcset="{{ $vertical.RelPermalink }}" width="440" height="1120" type="image/svg+xml">
+    <img src="{{ $wide.RelPermalink }}" width="960" height="700" loading="lazy" decoding="async" alt="{{ $copy.alt }}">
+  </picture>
+  <figcaption id="interaction-structure-caption">{{ $copy.caption }}</figcaption>
+  <details class="interaction-structure__explanation">
+    <summary>{{ $copy.explanation_label }}</summary>
+    <p>{{ $copy.units }}</p>
+    <ul>
+      {{ range $copy.calculations }}<li><strong>{{ .label }}</strong> {{ .expression }}</li>{{ end }}
+    </ul>
+    <p>{{ $copy.limits }}</p>
+  </details>
+  <p class="framework-downloads">{{ $copy.download_label }} <a href="{{ $wide.RelPermalink }}">{{ $copy.wide_label }}</a> <span aria-hidden="true"> · </span> <a href="{{ $vertical.RelPermalink }}">{{ $copy.vertical_label }}</a></p>
+</figure>
