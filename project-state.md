@@ -13,8 +13,8 @@ Updated: 6 September 2026. Read this file first when continuing development. `PR
 | Incorporated main | Includes merged PRs #14–18 |
 | Previous merged work | PRs #1–10, #12–18; preserved in this review branch |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | New AnyAvatar / News-image draft PR on `content/paper-visuals-next`; PR #18 has merged |
-| Hosted preview | Check matching Netlify status on the new draft PR before release |
+| Current PR | [Draft PR #19](https://github.com/derndy/XuGroupWeb-v2/pull/19), open for review; PR #18 has merged |
+| Hosted preview | [Homepage](https://deploy-preview-19--xushidang-lab.netlify.app/#home-publications-title) and [AnyAvatar](https://deploy-preview-19--xushidang-lab.netlify.app/publication/2026-anyavatar/); check matching Netlify status before release |
 | Withdrawn rewrite | [PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11), closed without merging at the PI's instruction |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
