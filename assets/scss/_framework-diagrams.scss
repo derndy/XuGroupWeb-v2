@@ -74,3 +74,15 @@
 @media print {
   .framework-explanation > .pillar-architecture__flow { display: grid; }
 }
+
+.framework-downloads {
+  margin: 0 0 1.25rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.framework-downloads a { text-decoration: underline; }
+.framework-downloads a:focus-visible {
+  outline: 3px solid var(--pillar-color);
+  outline-offset: 4px;
+}

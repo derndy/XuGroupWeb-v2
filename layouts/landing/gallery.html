@@ -45,6 +45,14 @@
           {{- range $imageIndex, $image := $yearImages }}
           {{- $thumbnailSrc := printf "%s%s" $thumbnailBase $image.thumbnailName -}}
           {{- $imageSrc := printf "%s%s" $imageBase $image.fileName -}}
+          {{- $original := resources.FromString (printf "gallery-responsive/%s%s" $image.id (path.Ext $image.fileName)) (readFile (printf "static%s" $imageSrc)) -}}
+          {{- $sources := slice -}}
+          {{- range slice 480 800 1200 -}}
+            {{- if le . $original.Width -}}
+              {{- $variant := $original.Resize (printf "%dx webp q85" .) -}}
+              {{- $sources = $sources | append (printf "%s %dw" $variant.RelPermalink $variant.Width) -}}
+            {{- end -}}
+          {{- end -}}
           {{- $isFirst := and (eq $yearIndex 0) (eq $imageIndex 0) -}}
           <a
             class="gallery-card"
@@ -61,6 +69,8 @@
           >
             <figure>
               <div class="gallery-card__media gallery-card__media--{{ $image.ratio }}">
+                <picture>
+                  <source type="image/webp" srcset="{{ delimit $sources ", " }}" sizes="(max-width: 39.99rem) calc(100vw - 2rem), (max-width: 61.99rem) calc((100vw - 3rem) / 2), {{ if eq (len $yearImages) 2 }}(max-width: 83rem) calc((100vw - 3rem) / 2), 40rem{{ else }}(max-width: 83rem) calc((100vw - 3rem) / 3), 26.67rem{{ end }}">
                 <img
                   src="{{ $thumbnailSrc }}"
                   width="{{ $image.thumbnailWidth }}"
@@ -69,6 +79,7 @@
                   {{ if $isFirst }}fetchpriority="high"{{ else }}loading="lazy"{{ end }}
                   decoding="async"
                 >
+                </picture>
                 <span class="gallery-card__open" aria-hidden="true">View</span>
               </div>
               <figcaption>

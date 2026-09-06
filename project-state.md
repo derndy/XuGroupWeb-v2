@@ -8,20 +8,26 @@ Updated: 6 September 2026. Read this file first when continuing development. `PR
 | --- | --- |
 | Repository | Public `derndy/XuGroupWeb-v2` |
 | Working checkout | `/workspace/sites/xugroup-pillar-i-visual` |
-| Current review branch | `content/syncanimation-visual` |
-| Branch point | `main` at `066ebdeb8c18e0a50cf12bed83780e882182b425`, after PR #19 merged |
-| Incorporated main | Includes merged PRs #14–19 |
-| Previous merged work | PRs #1–10, #12–19; preserved in this review branch |
+| Current review branch | `content/gallery-responsive-images` |
+| Branch point | `main` at `302eac67b1695434f67243aff4b62fd89f26f30a`, after PR #20 merged |
+| Incorporated main | Includes merged PRs #14–20 |
+| Previous merged work | PRs #1–10, #12–20; preserved in this review branch |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | [Draft PR #20](https://github.com/derndy/XuGroupWeb-v2/pull/20), open for review; PR #19 has merged |
-| Hosted preview | [Homepage](https://deploy-preview-20--xushidang-lab.netlify.app/#home-publications-title) and [SyncAnimation](https://deploy-preview-20--xushidang-lab.netlify.app/publication/2025-syncanimation/); check matching Netlify status before release |
+| Current PR | [Draft PR #21](https://github.com/derndy/XuGroupWeb-v2/pull/21), open for review; PR #20 is merged |
+| Hosted preview | [Gallery](https://deploy-preview-21--xushidang-lab.netlify.app/gallery/); check matching Netlify status before release |
 | Withdrawn rewrite | [PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11), closed without merging at the PI's instruction |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
 The PI rejected PR #11's broad public-marketing rewrite because it made the lab sound generic and displaced the original research identity. It was closed without merging. Merged PR #12 retains the original identity with six wording refinements and places the complete Vision at the end of Join / Collaborate. Do not restore the withdrawn rewrite or the superseded homepage placement. The latest instruction accepts bounded method/testbed and postdoctoral-invitation improvements, requests five selected papers including NC/ECCV, and asks to remove the public research pages' internal management/audit tone.
 
-## Latest batch — SyncAnimation and paper-image loading
+## Latest batch — Gallery image sizes and framework viewing
+
+Added 68 proportional WebP variants for the 23 existing Gallery photographs, selected according to the established grid widths. JPEG fallback thumbnails, original-photo viewing, captions and viewer metadata are preserved. All three framework diagrams now have direct wide/vertical SVG links. No new photographic facts or research results are introduced.
+
+Both builds pass; all 250 populated local image references resolve in 536 index pages. Gallery text/viewer attributes and framework explanations match the baseline. The seven conceptual-image audit and 91-publication audit pass. Browser viewport testing remains pending. See [batch record](docs/gallery-responsive-images-2026-09-06.md).
+
+## Previous batch — SyncAnimation and paper-image loading
 
 Added Figure 2 directly from the CC BY 4.0 arXiv v1 paper to the SyncAnimation homepage selection and detail page. Its credit explicitly names that source version; the IJCAI record and author symbols are unchanged. Three of five homepage selections now have authentic method figures. The complete original is retained, with full-size viewing and a wide homepage placement.
 
