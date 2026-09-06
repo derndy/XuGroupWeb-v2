@@ -35,7 +35,7 @@
       </div>
       <dl class="pillar-detail-brief">
         <div><dt>Core question</dt><dd>{{ $pillar.question }}</dd></div>
-        <div><dt>Responsibility</dt><dd>{{ $detail.responsibility }}</dd></div>
+        <div><dt>Research focus</dt><dd>{{ $detail.responsibility }}</dd></div>
         <div><dt>Intended contribution</dt><dd>{{ $detail.contribution }}</dd></div>
       </dl>
     </div>
@@ -75,7 +75,7 @@
   <section class="lab-section pillar-contribution" aria-labelledby="pillar-contribution-title">
     <div class="lab-shell pillar-contribution__grid">
       <header>
-        <p class="lab-section-number">Contribution contract</p>
+        <p class="lab-section-number">Research contributions</p>
         <h2 id="pillar-contribution-title">{{ $detail.sections.contribution_title }}</h2>
         <p>{{ $detail.sections.contribution_text }}</p>
       </header>
@@ -84,7 +84,7 @@
         <ul>{{ range $detail.methods }}<li>{{ . }}</li>{{ end }}</ul>
       </div>
       <div class="pillar-outputs">
-        <h3>Intended artifacts</h3>
+        <h3>What we aim to develop</h3>
         <dl>
           {{ range $detail.outputs }}
             <div><dt>{{ .title }}</dt><dd>{{ .text }}</dd></div>
@@ -126,7 +126,7 @@
   <section class="lab-section pillar-review" aria-labelledby="pillar-review-title">
     <div class="lab-shell pillar-review__grid">
       <header>
-        <p class="lab-section-number">Evidence discipline</p>
+        <p class="lab-section-number">Scientific principles</p>
         <h2 id="pillar-review-title">{{ $detail.sections.review_title }}</h2>
       </header>
       <div class="pillar-review__principles">
@@ -155,7 +155,7 @@
       <header><p class="lab-section-number">Continue through the system</p><h2 id="pillar-detail-routes-title">{{ $detail.sections.routes_title }}</h2></header>
       <div class="research-route-grid">
         <a href="{{ "/research/" | relURL }}"><span>Research</span><strong>Return to the system map</strong><small>See how all three Pillars work together.</small></a>
-        <a href="{{ "/publication/" | relURL }}"><span>Outputs</span><strong>Inspect publications</strong><small>Follow the existing scientific record.</small></a>
+        <a href="{{ "/publication/" | relURL }}"><span>Outputs</span><strong>Explore publications</strong><small>Discover the work behind our research.</small></a>
         <a href="{{ "/contact/" | relURL }}"><span>Collaborate</span><strong>Bring a testable question</strong><small>Start a scientific or experimental conversation.</small></a>
       </div>
     </div>

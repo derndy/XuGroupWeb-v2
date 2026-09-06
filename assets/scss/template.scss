@@ -449,19 +449,13 @@ a {
 .home-publications,
 .home-news { background: var(--lab-surface); }
 
-.home-publications__grid,
 .home-people__grid {
   display: grid;
   gap: clamp(2rem, 5vw, 5rem);
   align-items: start;
 }
 
-.home-publications__grid--with-citations {
-  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
-}
-
 .home-papers,
-.home-citations ul,
 .home-news__list {
   margin: 0;
   padding: 0;
@@ -482,7 +476,6 @@ a {
 }
 
 .home-papers h3,
-.home-citations h3,
 .home-news h3 {
   margin: 0 0 1rem;
   color: var(--lab-navy);
@@ -504,27 +497,17 @@ a {
   overflow-wrap: anywhere;
 }
 
-.home-citations {
-  padding: clamp(1.25rem, 2.5vw, 2rem);
-  border: 1px solid var(--lab-line);
-  background: var(--lab-white);
-  color: #455b70;
+.home-paper__focus {
+  margin: 0 0 0.75rem;
+  color: var(--lab-navy);
+  font-size: 0.95rem;
+  font-weight: 650;
 }
 
-.home-citations li {
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--lab-line);
-}
-
-.home-citations li + li { margin-top: 1.25rem; }
-.home-citations a { display: block; color: var(--lab-navy); }
-.home-citations a span { overflow-wrap: anywhere; }
-.home-citations a strong {
-  display: block;
-  margin-top: 0.65rem;
-  font-size: 0.85rem;
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
+.home-paper__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
 }
 
 .home-people__grid {
@@ -569,7 +552,6 @@ a {
 }
 
 @media (max-width: 61.99rem) {
-  .home-publications__grid--with-citations,
   .home-people__grid,
   .home-news__list { grid-template-columns: minmax(0, 1fr); }
 }

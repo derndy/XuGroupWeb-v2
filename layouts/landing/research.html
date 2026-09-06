@@ -8,7 +8,7 @@
       </div>
       <div class="research-hero__statement">
         <p>We co-design how scientific systems represent states, organise interactions, learn from evidence, and choose what evidence to acquire next.</p>
-        <p>The objective is not prediction alone. It is to turn complex molecular and material data into testable mechanisms, decisive experiments, and useful designs.</p>
+        <p>Our contributions include model architectures, learning algorithms and strategies for acquiring informative evidence. Molecular, biological and material systems provide key settings for developing and testing these methods.</p>
         <nav class="research-jump" aria-label="Research page sections">
           <a href="#research-map">System map</a>
           <a href="#pillars">Three Pillars</a>
@@ -42,8 +42,8 @@
     <div class="lab-shell">
       <header class="research-pillars__heading">
         <p class="lab-section-number">Three connected contributions</p>
-        <h2 id="pillars-title">Different scientific responsibilities. Shared discovery logic.</h2>
-        <p>The Pillars separate responsibilities without separating the research programme. Each one changes what the others can accomplish.</p>
+        <h2 id="pillars-title">Distinct scientific questions. Shared discovery logic.</h2>
+        <p>Each Pillar addresses a different part of scientific discovery. Together, they connect how systems learn, what evidence they need and which mathematical ideas can take them further.</p>
       </header>
       {{ range (partialCached "research/pillars.html" "shared-pillar-copy") }}
         {{ partial "research/pillar-module.html" (dict "pillar" .) }}
@@ -58,7 +58,7 @@
           <p class="lab-section-number">Research horizon</p>
           <h2 id="horizons-title">Build now. Connect next. Generalise carefully.</h2>
         </div>
-        <p>Current work, medium-term system building, and long-horizon theory are shown separately so aspiration is never presented as completed evidence.</p>
+        <p>Current projects build learning methods and evidence strategies; longer-term work explores how these components can connect into broader scientific learning systems.</p>
       </header>
       <ol class="horizon-rail">
         {{ range site.Data.research_system.horizons }}
@@ -77,9 +77,9 @@
       <header class="lab-section-heading lab-section-heading--light">
         <div>
           <p class="lab-section-number">Shared scientific principles</p>
-          <h2 id="principles-title">The standard is not a persuasive adjective. It is an inspectable practice.</h2>
+          <h2 id="principles-title">Principles for reliable discovery.</h2>
         </div>
-        <p>These principles guide representation, evidence design, evaluation, interpretation, and the decision to release a result.</p>
+        <p>These principles connect the questions we ask, the methods we develop and the evidence that shapes our understanding.</p>
       </header>
       <div class="principle-grid">
         {{ range $index, $principle := site.Data.research_system.principles }}
@@ -101,7 +101,7 @@
       </header>
       <p><a class="lab-text-link" href="{{ "/about/" | relURL }}">Read about our approach</a></p>
       <div class="research-route-grid">
-        <a href="{{ "/publication/" | relURL }}"><span>Outputs</span><strong>Inspect publications</strong><small>See the lab’s existing scientific record.</small></a>
+        <a href="{{ "/publication/" | relURL }}"><span>Outputs</span><strong>Explore publications</strong><small>Discover the work behind our research.</small></a>
         <a href="{{ "/people/" | relURL }}"><span>People</span><strong>Meet the researchers</strong><small>Find the people developing each part of the programme.</small></a>
         <a href="{{ "/contact/" | relURL }}"><span>Collaborate</span><strong>Bring a testable question</strong><small>Start a scientific, experimental, or recruitment conversation.</small></a>
       </div>

@@ -1,21 +1,22 @@
-{{ $text := site.Data.website_text.home }}
-{{/* A reviewed selection, with all bibliographic facts resolved from page bundles. */}}
+{{ $text := site.Data.website_text.home.publications }}
+{{/* Editorial focus comes from website_text; bibliographic facts stay in page bundles. */}}
 {{ $papers := slice }}
-{{ $citations := slice }}
 {{ $seen := slice }}
 {{ range site.Data.homepage.publications }}
-  {{ $ref := . }}
+  {{ $ref := .page }}
+  {{ $focus := index $text.focus .focus }}
+  {{ if not $focus }}{{ errorf "Homepage publication %q needs a focus label in website_text" $ref }}{{ end }}
   {{ with site.GetPage $ref }}
     {{ $classification := partial "publications/classification.html" . }}
-    {{ if or (ne .Section "publication") (not (in $classification.keys "article-journal")) $classification.kind (in $seen .RelPermalink) }}
-      {{ errorf "Homepage publication %q must be a unique research article" $ref }}
+    {{ $acceptance := partial "publications/acceptance.html" . }}
+    {{ $conference := in $classification.keys "paper-conference" }}
+    {{ if or (ne .Section "publication") (not (or (in $classification.keys "article-journal") $conference)) $classification.kind (in $seen .RelPermalink) }}
+      {{ errorf "Homepage publication %q must be a unique journal article or conference paper" $ref }}
     {{ else if or .Draft (gt .Date now) (gt .PublishDate now) }}
-      {{ errorf "Homepage publication %q must already be published" $ref }}
+      {{ errorf "Homepage publication %q must be public and not future-dated" $ref }}
     {{ else }}
-      {{ $papers = $papers | append . }}
+      {{ $papers = $papers | append (dict "page" . "focus" $focus "conference" $conference "accepted" (eq .Params.publication_status "accepted")) }}
       {{ $seen = $seen | append .RelPermalink }}
-      {{ $paper := . }}
-      {{ with .Resources.GetMatch "cite.bib" }}{{ $citations = $citations | append $paper }}{{ end }}
     {{ end }}
   {{ else }}
     {{ errorf "Homepage publication %q does not resolve to a page" $ref }}
@@ -26,45 +27,37 @@
   <div class="lab-shell">
     <header class="lab-section-heading">
       <div>
-        <p class="lab-section-number">{{ $text.publications.eyebrow }}</p>
-        <h2 id="home-publications-title">{{ $text.publications.title }}</h2>
+        <p class="lab-section-number">{{ $text.eyebrow }}</p>
+        <h2 id="home-publications-title">{{ $text.title }}</h2>
       </div>
-      <p>{{ $text.publications.introduction }}</p>
+      <p>{{ $text.introduction }}</p>
     </header>
-    <div class="home-publications__grid{{ if $citations }} home-publications__grid--with-citations{{ end }}">
-      <div>
-        <ul class="home-papers" aria-label="{{ $text.publications.list_label }}">
-          {{ range . }}
-          {{ $paper := . }}
-          <li>
-            <article aria-labelledby="home-paper-{{ .File.UniqueID }}">
-              <p class="home-record-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006" }}</time> · {{ $text.publications.kind_label }}</p>
-              <h3 id="home-paper-{{ .File.UniqueID }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-              <div class="home-paper__authors">{{ partial "page_metadata_authors" . }}</div>
-              {{ with .Params.publication }}<p class="home-paper__venue">{{ . | markdownify }}</p>{{ end }}
-              {{ with .Params.doi }}<a class="lab-text-link" href="https://doi.org/{{ . }}">{{ $text.publications.publisher_link }} <span class="sr-only">{{ $text.publications.for_label }} {{ $paper.Title }}</span><span aria-hidden="true"> ↗</span></a>{{ end }}
-            </article>
-          </li>
-          {{ end }}
-        </ul>
-        <div class="lab-section-action"><a class="lab-text-link" href="{{ "/publication/" | relURL }}">{{ $text.publications.all_link }} <span aria-hidden="true">→</span></a></div>
-      </div>
-      {{ with $citations }}
-      <aside class="home-citations" aria-labelledby="home-citations-title">
-        <p class="lab-eyebrow">{{ $text.publications.citations.eyebrow }}</p>
-        <h3 id="home-citations-title">{{ $text.publications.citations.title }}</h3>
-        <p>{{ $text.publications.citations.introduction }}</p>
-        <ul>
-          {{ range . }}
-            {{ $paper := . }}
-            {{ with .Resources.GetMatch "cite.bib" }}
-            <li><a href="{{ .RelPermalink }}" download><span>{{ $paper.Title }}</span><strong>{{ $text.publications.citations.download_label }} <span aria-hidden="true">↓</span></strong></a></li>
-            {{ end }}
-          {{ end }}
-        </ul>
-      </aside>
+    <ul class="home-papers" aria-label="{{ $text.list_label }}">
+      {{ range . }}
+      {{ $entry := . }}
+      {{ with .page }}
+      {{ $paper := . }}
+      {{ $datetime := .Date.Format "2006-01-02" }}
+      {{ if eq .Params.date_precision "year" }}{{ $datetime = .Date.Format "2006" }}{{ else if eq .Params.date_precision "month" }}{{ $datetime = .Date.Format "2006-01" }}{{ end }}
+      <li>
+        <article aria-labelledby="home-paper-{{ .File.UniqueID }}">
+          <p class="home-record-meta"><time datetime="{{ $datetime }}">{{ .Date.Format "2006" }}</time> · {{ if $entry.conference }}{{ $text.conference_label }}{{ else }}{{ $text.kind_label }}{{ end }}{{ if $entry.accepted }} · <strong>{{ $text.accepted_label }}</strong>{{ end }}</p>
+          <h3 id="home-paper-{{ .File.UniqueID }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p class="home-paper__focus">{{ $entry.focus }}</p>
+          <div class="home-paper__authors">{{ partial "page_metadata_authors" . }}</div>
+          {{ with .Params.publication }}<p class="home-paper__venue">{{ . | markdownify }}</p>{{ end }}
+          <div class="home-paper__actions">
+            <a class="lab-text-link" href="{{ .RelPermalink }}">{{ $text.details_link }} <span class="sr-only">{{ $text.for_label }} {{ $paper.Title }}</span><span aria-hidden="true"> →</span></a>
+            {{ with .Params.doi }}<a class="lab-text-link" href="https://doi.org/{{ . }}">{{ $text.publisher_link }} <span class="sr-only">{{ $text.for_label }} {{ $paper.Title }}</span><span aria-hidden="true"> ↗</span></a>{{ end }}
+            {{ with .Resources.GetMatch "cite.bib" }}<a class="lab-text-link" href="{{ .RelPermalink }}" download>{{ $text.citations.download_label }} <span class="sr-only">{{ $text.for_label }} {{ $paper.Title }}</span><span aria-hidden="true"> ↓</span></a>{{ end }}
+          </div>
+        </article>
+      </li>
       {{ end }}
-    </div>
+      {{ end }}
+    </ul>
+    {{ partial "publications/author-legend.html" . }}
+    <div class="lab-section-action"><a class="lab-text-link" href="{{ "/publication/" | relURL }}">{{ $text.all_link }} <span aria-hidden="true">→</span></a></div>
   </div>
 </section>
 {{ end }}
