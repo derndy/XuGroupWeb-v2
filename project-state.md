@@ -8,20 +8,28 @@ Updated: 6 September 2026. Read this file first when continuing development. `PR
 | --- | --- |
 | Repository | Public `derndy/XuGroupWeb-v2` |
 | Working checkout | `/workspace/sites/xugroup-pillar-i-visual` |
-| Current review branch | `content/research-framework-diagrams` |
-| Branch point | `main` at `e1ac1c22aa4590e6afb50eb902334f532e8fb470`, after PR #16 merged |
-| Incorporated main | Includes merged PRs #14–16 |
-| Previous merged work | PRs #1–10, #12–16; preserved in this review branch |
+| Current review branch | `content/selected-paper-figure` |
+| Branch point | `main` at `48727b2050e19947b96655f4bfeb32e6ddd3f090`, after PR #17 merged |
+| Incorporated main | Includes merged PRs #14–17 |
+| Previous merged work | PRs #1–10, #12–17; preserved in this review branch |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | [Draft PR #17](https://github.com/derndy/XuGroupWeb-v2/pull/17), open for review; PR #16 has merged |
-| Hosted preview | [Pillar I](https://deploy-preview-17--xushidang-lab.netlify.app/research/learning-system-design/), [Pillar II](https://deploy-preview-17--xushidang-lab.netlify.app/research/evidence-engineering/), [Pillar III](https://deploy-preview-17--xushidang-lab.netlify.app/research/mathematical-frontiers/); inspect matching Netlify status before release |
+| Current PR | [Draft PR #18](https://github.com/derndy/XuGroupWeb-v2/pull/18), open for review; PR #17 has merged |
+| Hosted preview | [Homepage selected work](https://deploy-preview-18--xushidang-lab.netlify.app/#home-publications-title) and [E-CloudBind detail](https://deploy-preview-18--xushidang-lab.netlify.app/publication/2026-e-cloudbind/); inspect matching Netlify status before release |
 | Withdrawn rewrite | [PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11), closed without merging at the PI's instruction |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
 The PI rejected PR #11's broad public-marketing rewrite because it made the lab sound generic and displaced the original research identity. It was closed without merging. Merged PR #12 retains the original identity with six wording refinements and places the complete Vision at the end of Join / Collaborate. Do not restore the withdrawn rewrite or the superseded homepage placement. The latest instruction accepts bounded method/testbed and postdoctoral-invitation improvements, requests five selected papers including NC/ECCV, and asks to remove the public research pages' internal management/audit tone.
 
-## Latest batch — whole-site image review and three framework diagrams
+## Latest batch — first source-backed selected-paper figure
+
+Added the official E-CloudBind Figure 2 to its homepage selection and publication detail page. The original 2005 × 1791 PNG is retained byte-for-byte, with proportional WebP variants, full-size viewing, author attribution and the article's CC BY 4.0 license. The figure is published research artwork, distinct from the site's seven generated conceptual illustrations. No experimental figure is recreated or cropped.
+
+Source and validation: [selected-paper visual record](docs/selected-paper-visuals-2026-09-06.md). Both builds and existing image/publication audits pass; ten other main-page content trees are unchanged, and 246 populated local image references resolve across 536 generated index pages. The Gallery viewer's one initially empty image is intentional. Browser layout review is still pending. Next: source-backed visuals for the remaining four homepage selections; review legacy image alt text in bounded batches.
+
+PR #17 has merged. This batch uses a new draft PR and does not merge or change production configuration.
+
+## Previous batch — whole-site image review and three framework diagrams
 
 Continued at the PI's instruction to inspect the whole site and increase or improve imagery. Added three precise, editable SVG frameworks, each with a desktop and a mobile composition. Pillar I shows joint design, Pillar II shows the evidence feedback loop, and Pillar III shows stress-test feedback to assumptions. Existing node labels and explanations remain canonical in `data/research_system.yml`; the full HTML explanation is available below each diagram. The seven raster illustrations and all publication content are unchanged.
 

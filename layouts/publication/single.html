@@ -58,6 +58,9 @@
 
     <div class="space-below"></div>
     <div class="article-style">{{ .Content }}</div>
+    {{ with partial "publications/visual-record.html" . }}
+      {{ partial "publications/paper-figure.html" (dict "record" . "placement" "publication") }}
+    {{ end }}
     {{ partial "page_footer" . }}
   </div>
 </main>

@@ -37,10 +37,12 @@
       {{ $entry := . }}
       {{ with .page }}
       {{ $paper := . }}
+      {{ $visual := partial "publications/visual-record.html" . }}
       {{ $datetime := .Date.Format "2006-01-02" }}
       {{ if eq .Params.date_precision "year" }}{{ $datetime = .Date.Format "2006" }}{{ else if eq .Params.date_precision "month" }}{{ $datetime = .Date.Format "2006-01" }}{{ end }}
       <li>
-        <article aria-labelledby="home-paper-{{ .File.UniqueID }}">
+        <article{{ if $visual }} class="home-paper--illustrated"{{ end }} aria-labelledby="home-paper-{{ .File.UniqueID }}">
+          {{ if $visual }}<div class="home-paper__copy">{{ end }}
           <p class="home-record-meta"><time datetime="{{ $datetime }}">{{ .Date.Format "2006" }}</time> · {{ if $entry.conference }}{{ $text.conference_label }}{{ else }}{{ $text.kind_label }}{{ end }}{{ if $entry.accepted }} · <strong>{{ $text.accepted_label }}</strong>{{ end }}</p>
           <h3 id="home-paper-{{ .File.UniqueID }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
           <p class="home-paper__focus">{{ $entry.focus }}</p>
@@ -51,6 +53,10 @@
             {{ with .Params.doi }}<a class="lab-text-link" href="https://doi.org/{{ . }}">{{ $text.publisher_link }} <span class="sr-only">{{ $text.for_label }} {{ $paper.Title }}</span><span aria-hidden="true"> ↗</span></a>{{ end }}
             {{ with .Resources.GetMatch "cite.bib" }}<a class="lab-text-link" href="{{ .RelPermalink }}" download>{{ $text.citations.download_label }} <span class="sr-only">{{ $text.for_label }} {{ $paper.Title }}</span><span aria-hidden="true"> ↓</span></a>{{ end }}
           </div>
+          {{ if $visual }}
+          </div>
+          {{ partial "publications/paper-figure.html" (dict "record" $visual "placement" "home") }}
+          {{ end }}
         </article>
       </li>
       {{ end }}

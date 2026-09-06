@@ -1,0 +1,5 @@
+{{- $matches := where site.Data.paper_visuals.figures "page" .File.Path -}}
+{{- if gt (len $matches) 1 -}}{{ errorf "Duplicate paper visual for %s" .File.Path }}{{- end -}}
+{{- $record := false -}}
+{{- if eq (len $matches) 1 -}}{{ $record = index $matches 0 }}{{- end -}}
+{{- return $record -}}

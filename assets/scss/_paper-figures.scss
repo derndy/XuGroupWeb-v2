@@ -1,0 +1,29 @@
+.paper-figure {
+  min-width: 0;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid var(--lab-line, #d7e2ec);
+  border-radius: 0.75rem;
+  background: #fff;
+}
+.paper-figure__image-link,
+.paper-figure picture,
+.paper-figure img { display: block; }
+.paper-figure img { width: 100%; height: auto; }
+.paper-figure figcaption {
+  margin-top: 1rem;
+  color: #40576e;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+.paper-figure figcaption p { margin: 0 0 0.5rem; }
+.paper-figure__caption { color: #132d4c; font-weight: 650; }
+.paper-figure figcaption a { color: #165db5; text-decoration: underline; }
+.paper-figure a:focus-visible { outline: 3px solid #165db5; outline-offset: 4px; }
+.home-paper--illustrated { display: grid; gap: 1.5rem; align-items: start; }
+.home-paper--illustrated .paper-figure { margin: 0; }
+.home-paper__copy { min-width: 0; }
+@media (min-width: 64rem) {
+  .home-paper--illustrated { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 2rem; }
+}
