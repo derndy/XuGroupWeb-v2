@@ -13,8 +13,8 @@ Updated: 6 September 2026. Read this file first when continuing development. `PR
 | Incorporated main | Includes merged PRs #14–21 |
 | Previous merged work | PRs #1–10, #12–21; preserved in this review branch |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | Draft PR pending creation for `content/people-responsive-photos`; PR #21 is merged |
-| Hosted preview | Pending new draft preview |
+| Current PR | [Draft PR #22](https://github.com/derndy/XuGroupWeb-v2/pull/22), open for review; PR #21 is merged |
+| Hosted preview | [People](https://deploy-preview-22--xushidang-lab.netlify.app/people/); check matching Netlify status before release |
 | Withdrawn rewrite | [PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11), closed without merging at the PI's instruction |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
