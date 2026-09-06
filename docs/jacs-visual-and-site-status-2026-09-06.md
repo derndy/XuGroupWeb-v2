@@ -40,3 +40,7 @@ The prior 80,855-byte text is preserved verbatim after a historical banner in `p
 The current backlog explicitly preserves the PyraE2E figure gap, legacy image-description queue, browser-testing limitation, author-archive collision, SCUT/Scholar and final PRCV reconciliation, incomplete member dates/destinations, and separate text-maintenance work.
 
 Delivery is a new draft PR only. The user merged PR #24; this batch does not merge itself or change production settings. Record the product commit and matching preview result in the current state before handoff.
+
+## Confirmed delivery
+
+Saved to [draft PR #25](https://github.com/derndy/XuGroupWeb-v2/pull/25) in product commit `b2f7e35094ac2455de35d3e769fbe7bbcdfb12a3`. GitHub tree `a0ddcb3f30278cf60d84af80966b988c0060f6b9` exactly matches the locally verified source. The matching Netlify Deploy Preview check returned success. [Homepage preview](https://deploy-preview-25--xushidang-lab.netlify.app/#home-publications-title). This following documentation-only update records delivery and triggers a later head check; it does not change the website output. No PR merge or production-setting change was performed.

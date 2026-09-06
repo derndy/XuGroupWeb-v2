@@ -16,12 +16,12 @@ The previous 80,855-byte state record is preserved in full in [project-history-t
 | Base tree | `a0a577453e7a4cf6f4fb827f403a84774569ee29` |
 | Previous PR | [PR #24](https://github.com/derndy/XuGroupWeb-v2/pull/24) **merged**, confirmed through GitHub after the user's correction |
 | Current branch | `content/jacs-visual-site-status`, based on that merge |
-| Current PR | New draft PR pending creation; this batch does not update merged PR #24 |
-| Current preview | Pending the new draft PR and its matching Netlify check |
+| Current PR | [Draft PR #25](https://github.com/derndy/XuGroupWeb-v2/pull/25), open for review; PR #24 is merged |
+| Current preview | [Homepage selected papers](https://deploy-preview-25--xushidang-lab.netlify.app/#home-publications-title); product-commit Netlify check **success** |
 | Delivery boundary | Publish the review branch and draft PR; the user decides whether to merge. No production-setting changes in this batch. |
 | Withdrawn direction | [PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11) was rejected and closed without merging; preserve the original research identity |
 
-The last confirmed successful preview before this batch belongs to PR #24 at commit `6028651a0e65d3b58ed7881a5835d9a454f69896`. It is evidence about that version only. A successful preview is not proof that production or browser interactions have been checked. Always reread GitHub main, the active PR and its exact-head status when continuing.
+Current product commit: `b2f7e35094ac2455de35d3e769fbe7bbcdfb12a3`; verified source tree: `a0ddcb3f30278cf60d84af80966b988c0060f6b9`. The GitHub tree exactly matches the locally checked source, and its Netlify Deploy Preview check returned **success** on 6 September 2026. This state update is documentation-only and creates a later head; verify the matching final PR-head check before merging. A successful preview does not establish production or browser-interaction verification. Always reread main, the active PR and its exact-head status when continuing.
 
 ## 2. User intent and established choices
 
@@ -98,7 +98,7 @@ The seven conceptual images retain the recorded approval/regeneration history. T
 | JACS placement | Four figures on Home; exactly one JACS detail image; meaningful alt text, correct 693 × 469 dimensions and both original-size links |
 | Asset integrity | Both placements serve the exact existing JPEG hash; no image edits, cropping or enlargement; 480-pixel WebP visually inspected |
 | Historical record | Previous 80,855-byte state text preserved without edits after the history banner |
-| GitHub delivery | Pending current product commit and new draft PR; update this row after saving |
+| GitHub delivery | Product commit `b2f7e35094ac2455de35d3e769fbe7bbcdfb12a3` saved to draft PR #25; exact source-tree match and successful matching Netlify preview confirmed. Check the later documentation head before merging. |
 
 Temporary build outputs in this session are `/workspace/scratch/7457cd2d5ea9/build-jacs` and `build-jacs-preview`. The preceding `build-interaction` and `build-interaction-preview` outputs are comparison baselines. These outputs are reproducible and not committed; source, scripts and review notes are saved to GitHub.
 
