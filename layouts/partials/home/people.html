@@ -12,9 +12,8 @@
       </div>
     </div>
     {{ with site.Data.people_page.photos.featured }}
-      {{ $dimensions := imageConfig (printf "static%s" .src) }}
       <figure class="home-people__figure">
-        <img src="{{ .src | relURL }}" alt="{{ .alt }}" width="{{ $dimensions.Width }}" height="{{ $dimensions.Height }}" loading="lazy" decoding="async">
+        {{ partial "people/photo.html" (dict "src" .src "alt" .alt "sizes" "(max-width: 39.99rem) calc(100vw - 2rem), (max-width: 61.99rem) calc(100vw - 3rem), 42rem") }}
         <figcaption>{{ .caption }}</figcaption>
       </figure>
     {{ end }}

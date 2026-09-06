@@ -2,14 +2,11 @@
 {{- $principal := .principal | default false -}}
 <article class="people-card{{ if $principal }} people-card--principal{{ end }}">
   <a class="people-card__portrait" href="{{ $person.RelPermalink }}" aria-label="View the profile of {{ $person.Title }}">
-    <img
-      src="{{ $person.Params.avatar | relURL }}"
-      alt="Portrait of {{ $person.Title }}"
-      width="320"
-      height="320"
-      loading="lazy"
-      decoding="async"
-    >
+    {{ $portrait := $person.Resources.GetMatch "avatar.*" }}
+    {{ if not $portrait }}{{ errorf "Missing portrait resource for %s" $person.File.Path }}{{ end }}
+    {{ $sizes := "(max-width: 39.99rem) calc(100vw - 2rem), (max-width: 61.99rem) calc((100vw - 4.25rem) / 2), (max-width: 74rem) calc((100vw - 5.5rem) / 3), (max-width: 83rem) calc((100vw - 6.75rem) / 4), 19.0625rem" }}
+    {{ if $principal }}{{ $sizes = "(max-width: 39.99rem) calc(100vw - 2rem), 17rem" }}{{ end }}
+    {{ partial "people/photo.html" (dict "resource" $portrait "src" $person.Params.avatar "alt" (printf "Portrait of %s" $person.Title) "widths" (slice 270 480 800) "sizes" $sizes) }}
   </a>
   <div class="people-card__body">
     {{ if .alumni }}

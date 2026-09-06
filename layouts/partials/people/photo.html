@@ -1,0 +1,18 @@
+{{- $image := .resource -}}
+{{- if not $image -}}
+  {{- $image = resources.FromString (printf "people-responsive/%s" (path.Base .src)) (readFile (printf "static%s" .src)) -}}
+{{- end -}}
+{{- $widths := .widths | default (slice 480 800) -}}
+{{- $sources := slice -}}
+{{- range $widths -}}
+  {{- if lt . $image.Width -}}
+    {{- $variant := $image.Resize (printf "%dx webp q85" .) -}}
+    {{- $sources = $sources | append (printf "%s %dw" $variant.RelPermalink $variant.Width) -}}
+  {{- end -}}
+{{- end -}}
+{{- $full := $image.Resize (printf "%dx webp q85" $image.Width) -}}
+{{- $sources = $sources | append (printf "%s %dw" $full.RelPermalink $full.Width) -}}
+<picture class="people-photo">
+  <source type="image/webp" srcset="{{ delimit $sources ", " }}" sizes="{{ .sizes }}">
+  <img src="{{ .src | relURL }}" alt="{{ .alt }}" width="{{ $image.Width }}" height="{{ $image.Height }}" decoding="async" {{ if .priority }}fetchpriority="high"{{ else }}loading="lazy"{{ end }}>
+</picture>

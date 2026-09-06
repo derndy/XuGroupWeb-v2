@@ -8,20 +8,26 @@ Updated: 6 September 2026. Read this file first when continuing development. `PR
 | --- | --- |
 | Repository | Public `derndy/XuGroupWeb-v2` |
 | Working checkout | `/workspace/sites/xugroup-pillar-i-visual` |
-| Current review branch | `content/gallery-responsive-images` |
-| Branch point | `main` at `302eac67b1695434f67243aff4b62fd89f26f30a`, after PR #20 merged |
-| Incorporated main | Includes merged PRs #14–20 |
-| Previous merged work | PRs #1–10, #12–20; preserved in this review branch |
+| Current review branch | `content/people-responsive-photos` |
+| Branch point | `main` at `80f49e4295639d90216583a234d11b89912e4708`, after PR #21 merged |
+| Incorporated main | Includes merged PRs #14–21 |
+| Previous merged work | PRs #1–10, #12–21; preserved in this review branch |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | [Draft PR #21](https://github.com/derndy/XuGroupWeb-v2/pull/21), open for review; PR #20 is merged |
-| Hosted preview | [Gallery](https://deploy-preview-21--xushidang-lab.netlify.app/gallery/); check matching Netlify status before release |
+| Current PR | Draft PR pending creation for `content/people-responsive-photos`; PR #21 is merged |
+| Hosted preview | Pending new draft preview |
 | Withdrawn rewrite | [PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11), closed without merging at the PI's instruction |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
 The PI rejected PR #11's broad public-marketing rewrite because it made the lab sound generic and displaced the original research identity. It was closed without merging. Merged PR #12 retains the original identity with six wording refinements and places the complete Vision at the end of Join / Collaborate. Do not restore the withdrawn rewrite or the superseded homepage placement. The latest instruction accepts bounded method/testbed and postdoctoral-invitation improvements, requests five selected papers including NC/ECCV, and asks to remove the public research pages' internal management/audit tone.
 
-## Latest batch — Gallery image sizes and framework viewing
+## Latest batch — People photographs
+
+Added 36 proportional WebP versions across 22 placements: three existing group photographs (one reused on Home) and 18 member portraits. Actual intrinsic image dimensions replace hard-coded portrait dimensions. All originals, captions, member identities and profile routes remain unchanged. The welcome photograph's 800-pixel version is 89,752 bytes versus the 1,914,729-byte PNG original.
+
+Production build and baseline audits pass. All 250 local image references resolve, all new variants have valid dimensions, and visible main-element text throughout the generated site is preserved. Browser viewport testing remains pending. See [batch record](docs/people-responsive-photos-2026-09-06.md). Paper sourcing priorities remain PyraE2E and the selected JACS paper.
+
+## Previous batch — Gallery image sizes and framework viewing
 
 Added 68 proportional WebP variants for the 23 existing Gallery photographs, selected according to the established grid widths. JPEG fallback thumbnails, original-photo viewing, captions and viewer metadata are preserved. All three framework diagrams now have direct wide/vertical SVG links. No new photographic facts or research results are introduced.
 
