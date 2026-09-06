@@ -94,17 +94,18 @@ collaboration:
 - Selected publications must resolve to canonical website records and list `publication_name` as an author. The build fails on an invalid reference or author mismatch.
 - Members must not add HTML, CSS, scripts, third-party embeds or a separate visual theme.
 
-## Prototype scope
+## Prototype and first rollout scope
 
-The first prototype uses Meitang Peng's existing verified role, education, contact and publication records. New question, current-work, contribution and collaboration copy is provisional and requires Meitang's and the PI's review before merge. Personal beliefs, hobbies and unverified project results are deliberately not inferred.
+The first prototype used Meitang Peng's existing role, education, contact and publication records to establish the shared template. The first small rollout adds Bin Xu and Chenchen Li because their existing public biographies and exact canonical publication authorship provide a comparatively strong source boundary.
+
+New question, current-work, contribution and collaboration copy remains provisional until the named member and the PI confirm it. Personal beliefs, hobbies and unverified project results are deliberately not inferred. Jinda Yan and other members without a matching canonical publication record remain on the compact profile until their source material is sufficient.
 
 ## Drive and watcher rollout
 
-The current Google Drive portal remains unchanged while the prototype is under review. After the schema and rendered page are approved:
+The current Google Drive portal remains unchanged during the first small rollout. After the schema and first rollout pages are approved:
 
 1. update the shared Drive `MEMBER_PROFILE_TEMPLATE.md`;
 2. replace the approved member's Drive `profile.md` with the accepted canonical version;
 3. extend Watcher validation to the optional fields and canonical publication references;
 4. make the Watcher detect any open PR already changing the same member paths before creating a new one;
 5. roll the schema out member by member, preserving one draft PR review boundary.
-

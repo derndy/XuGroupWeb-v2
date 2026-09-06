@@ -152,7 +152,7 @@ def validate_profile(build, profile_path):
     return profile
 
 
-def validate_prototype(profile):
+def validate_extended_profile(profile, slug, selected_count):
     expected = {
         "person-profile__headline": 1,
         "person-profile__focus": 1,
@@ -164,17 +164,17 @@ def validate_prototype(profile):
     }
     for name, count in expected.items():
         require(len(class_nodes(profile, name)) == count,
-                f"Prototype expected {count} {name} module(s)")
+                f"{slug} expected {count} {name} module(s)")
     require(len(class_nodes(profile, "person-profile__focus")[0].find(lambda node: node.tag == "li")) == 4,
-            "Prototype expected four research focus tags")
+            f"{slug} expected four research focus tags")
     require(len(class_nodes(profile, "person-profile__questions")[0].find(lambda node: node.tag == "li")) == 3,
-            "Prototype expected three research questions")
-    require(len(class_nodes(profile, "person-profile__selected-work")[0].find(lambda node: node.tag == "li")) == 3,
-            "Prototype expected three selected outputs")
+            f"{slug} expected three research questions")
+    require(len(class_nodes(profile, "person-profile__selected-work")[0].find(lambda node: node.tag == "li")) == selected_count,
+            f"{slug} expected {selected_count} selected outputs")
     require(not class_nodes(profile, "person-profile__principles"),
-            "Unconfirmed working principles must remain absent")
+            f"Unconfirmed working principles must remain absent in {slug}")
     require(not profile.find(lambda node: node.attrs.get("id") == "person-beyond-research"),
-            "Unconfirmed beyond-research copy must remain absent")
+            f"Unconfirmed beyond-research copy must remain absent in {slug}")
 
 
 def validate_sparse_profile(profile):
@@ -220,12 +220,15 @@ def main():
     require(profiles, "No generated member profiles found")
 
     audited = {path.parent.name: validate_profile(build, path) for path in profiles}
-    require("pmt" in audited, "Missing Meitang Peng prototype")
+    for slug in ("pmt", "bin", "cc"):
+        require(slug in audited, f"Missing extended profile {slug}")
     require("gf" in audited, "Missing sparse-profile regression fixture")
-    validate_prototype(audited["pmt"])
+    validate_extended_profile(audited["pmt"], "pmt", 3)
+    validate_extended_profile(audited["bin"], "bin", 2)
+    validate_extended_profile(audited["cc"], "cc", 2)
     validate_sparse_profile(audited["gf"])
     validate_directory(build, len(profiles))
-    print(f"PASS: {len(profiles)} member profiles and the People directory; prototype modules, sparse-profile fallback, landmarks, references, portraits, and local links")
+    print(f"PASS: {len(profiles)} member profiles and the People directory; extended modules, sparse-profile fallback, landmarks, references, portraits, and local links")
 
 
 if __name__ == "__main__":
