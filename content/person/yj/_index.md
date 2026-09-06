@@ -3,8 +3,8 @@ title: "Yujian Liu 刘宇健"
 type: landing
 layout: person
 avatar: "/person/yj/avatar.jpg"
-role: "23 Master's Student in Biomedical Engineering"
-category: "graduate_student"
+role: "26 Master's Graduate in Biomedical Engineering"
+category: "graduate_alumni"
 organizations:
   - name: "South China University of Technology"
     url: "https://www.scut.edu.cn/new/"
@@ -23,5 +23,5 @@ social:
     icon: "envelope"
     icon_pack: "fas"
 bio_detail: |
-  Yujian is a Master’s student in Biomedical Engineering at the Xu Group, having joined in 2023. He is particularly interested in designing algorithms for AIGC, including VAE and diffusion models, and in representation learning techniques such as CNN, GNN, and Transformer architectures. His current research involves applying these methods to image recognition, property molecule generation, and modeling protein-drug interactions. His broader goal is to contribute to the development of intelligent systems in scientific discovery.
+  Yujian completed his Master's degree in Biomedical Engineering in the Xu Group from 2023 to 2026. He is particularly interested in designing algorithms for AIGC, including VAE and diffusion models, and in representation learning techniques such as CNN, GNN, and Transformer architectures. His current research involves applying these methods to image recognition, property molecule generation, and modeling protein-drug interactions. His broader goal is to contribute to the development of intelligent systems in scientific discovery.
 ---

@@ -8,7 +8,7 @@ The People page separates verified member facts from page presentation. Keep tha
 | --- | --- | --- |
 | Current member name, role, biography, education, links, and avatar path | `content/person/<slug>/_index.md` | One record per public profile. Do not duplicate these facts in a layout or data file. |
 | Current member portrait | `content/person/<slug>/avatar.jpg` | The path is declared in the member record and used by both the directory and profile page. |
-| Undergraduate and alumni rows | `data/US_Alumni.yml` | Preserve the existing order unless the lab approves a different ordering rule. |
+| Undergraduate and undergraduate alumni rows | `data/US_Alumni.yml` | Preserve the existing order unless the lab approves a different ordering rule. |
 | Shared team introduction | `data/website_text.yml` → `shared.people_introduction` | Used by People and Home; edit once. |
 | Other section copy, group-photo captions, and onward routes | `data/people_page.yml` | Presentation copy only; it must not become a second member register. |
 | Group photographs | `static/images/people/` | Every published photograph needs confirmed rights/consent, factual alt text, and a dated caption. |
@@ -26,7 +26,8 @@ Do not edit generated files in `public/`.
 3. Verify the current role, programme year, education, biography, and every contact or research-profile URL.
 4. Set `category` to an already supported public group:
    - `principle_investigator` for the Principal Investigator;
-   - `graduate_student` for a current graduate researcher.
+   - `graduate_student` for a current graduate researcher;
+   - `graduate_alumni` for a completed graduate programme (the profile remains accessible).
 5. Place the approved square portrait beside the record and keep the record’s `avatar` path accurate.
 6. Confirm that the face remains meaningful in a square crop at 320 px. Do not use appearance judgments in alt text.
 7. Build the site and open both `/people/` and `/person/<slug>/` in the Deploy Preview.
@@ -35,7 +36,7 @@ The current legacy category value `principle_investigator` is intentionally reta
 
 ## Update an undergraduate or alumni record
 
-1. Edit only `data/US_Alumni.yml`.
+1. Edit `undergraduate_students` or `undergraduate_alumni` in `data/US_Alumni.yml`; graduate alumni retain their canonical profile records.
 2. For an undergraduate, verify `name` and `role`.
 3. For an alumnus, verify `name`, the former `role`, and the recorded next position in `current`.
 4. Omit an unresolved fact rather than inserting a placeholder or guessed destination.
@@ -55,6 +56,12 @@ The People page uses one current group photograph beside the introduction and ke
 
 ## Release checks
 
+### Member detail pages
+
+`layouts/landing/person.html` renders the same canonical member facts as the directory. Keep all detail-page styles inside `.person-profile` in `assets/scss/_person-profile.scss`, imported by the shared stylesheet. Never restore global inline `h2`, `ul`, `li` or `.card` rules: they also affect the shared navigation and footer.
+
+The visible Back to People link points to `#current-team` or `#graduate-alumni` based on the member category. It works for direct visits and without JavaScript; do not substitute browser-history navigation. Retain one main/H1, meaningful portrait alt text and intrinsic dimensions, a visible keyboard focus indicator, wrapping contact links and a single-column education/experience layout on narrow screens. Keep names, biographies, dates, contacts and source images unchanged when repairing presentation.
+
 Before requesting review, confirm all of the following:
 
 - The production-equivalent Hugo build succeeds with Extended `0.139.4`.
@@ -70,3 +77,8 @@ Before requesting review, confirm all of the following:
 - The Netlify Deploy Preview succeeds before merge.
 
 Keep the pull request in draft until member facts, portrait use, photograph rights, and the rendered page have been reviewed by the lab owner.
+
+
+## Migrated 2026 cohort and alumni
+
+See `docs/v1-content-migration-2026-09-05.md` for provenance and reconciled inconsistencies. People currently renders 16 current-member cards, two graduate-alumni cards, five current undergraduate rows and eleven undergraduate-alumni rows. Unknown next positions are omitted in data and displayed as an em dash. New-member joining year is 2026, confirmed by the PI; no specific day is asserted.

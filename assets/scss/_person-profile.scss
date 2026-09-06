@@ -1,0 +1,72 @@
+// Member-detail styles must not affect the shared navigation, footer or directory.
+.person-profile {
+  width: calc(100% - 2rem);
+  max-width: 62.5rem;
+  margin: 1.25rem auto;
+  overflow-wrap: anywhere;
+
+  .person-profile__navigation { margin-bottom: 1rem; }
+  .person-profile__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    color: var(--lab-blue);
+    font-weight: 650;
+  }
+  a:focus-visible {
+    outline: 3px solid var(--lab-blue);
+    outline-offset: 4px;
+    border-radius: 0.15rem;
+  }
+  .person-card,
+  .card {
+    background: #f9f9f9;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.875rem;
+  }
+  .person-card { display: flex; align-items: center; gap: 1.25rem; }
+  .person-avatar { flex: 0 0 auto; max-width: 100%; }
+  .avatar-img {
+    display: block;
+    width: 12.5rem;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+  }
+  .person-info { flex: 1; min-width: 0; }
+  .person-name { font-size: 2rem; font-weight: 700; color: #333; line-height: 1.25; }
+  .role { font-size: 1.25rem; color: #666; margin: 0.3rem 0; }
+  .organization a { font-size: 1.125rem; }
+  .bio { font-size: 1rem; color: #555; margin-top: 0.625rem; }
+  h2 { font-size: 1.5rem; font-weight: 700; margin: 0 0 1.25rem; color: #333; }
+  ul { list-style: none; padding-left: 0; }
+  li { font-size: 1rem; color: #555; margin: 0.625rem 0; }
+  .entry-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) minmax(0, 0.8fr);
+    align-items: start;
+    gap: 0.5rem 1.25rem;
+    margin: 0.9375rem 0;
+  }
+  .entry-title { color: #333; }
+  .institution { color: #555; }
+  .year { color: #666; }
+  .social-link { font-size: 1rem; }
+  .organization a,
+  .social-link { color: var(--lab-blue); text-decoration: none; }
+  .organization a:hover,
+  .social-link:hover { text-decoration: underline; }
+
+  @media (max-width: 48rem) {
+    .person-card { flex-direction: column; text-align: center; }
+    .person-info { width: 100%; }
+    .person-card, .card { margin-bottom: 1.25rem; }
+    .entry-row { grid-template-columns: minmax(0, 1fr); gap: 0.25rem; }
+  }
+}

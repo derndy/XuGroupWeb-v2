@@ -76,4 +76,9 @@ Before a News change is approved, verify:
 
 ## Current archive status
 
-The refactored landing page contains 18 published source-backed records across 2022–2025 and six existing featured images. The Mengting Guan record is retained as an explicit draft because its earlier file was entirely commented out; it is not listed, built, indexed, or treated as approved content.
+The landing page contains 24 published source-backed records across 2022–2026 and ten featured images. Six records were migrated from v1 PR #2; see `docs/v1-content-migration-2026-09-05.md`. The Mengting Guan record is retained as an explicit draft because its earlier file was entirely commented out; it is not listed, built, indexed, or treated as approved content.
+
+
+## Year-only event dates
+
+If the PI confirms only the year, use a January 1 sorting anchor with `date_precision: year` and `show_date: false`, plus a factual year subtitle. `news-date.html` displays only the year in News and Home; article SEO omits inferred timestamps. The sorting anchor is not the event day. Replace it only when the actual date is confirmed. The 2026 incoming-cohort record follows this rule.

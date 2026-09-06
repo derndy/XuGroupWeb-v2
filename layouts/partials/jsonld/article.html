@@ -30,7 +30,7 @@
   {{end}}
   {{ if eq $page.Params.publication_status "accepted" }}
   "creativeWorkStatus": "Accepted",
-  {{ else }}
+  {{ else if ne $page.Params.date_precision "year" }}
   "datePublished": {{ $page.PublishDate.Format "2006-01-02T15:04:05Z07:00" }},
   "dateModified": {{ $page.Lastmod.Format "2006-01-02T15:04:05Z07:00" }},
   {{ end }}

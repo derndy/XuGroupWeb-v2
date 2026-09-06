@@ -1,0 +1,13 @@
+{{- $page := .page -}}
+{{- $format := .format | default "02 Jan 2006" -}}
+{{- if eq $page.Params.date_precision "year" -}}
+  <time datetime="{{ $page.Date.Format "2006" }}">{{ $page.Date.Format "2006" }}</time>
+{{- else if .archive -}}
+  <time datetime="{{ $page.Date.Format "2006-01-02" }}">
+    <span>{{ $page.Date.Format "02" }}</span>
+    {{ $page.Date.Format "Jan" }}
+    <small>{{ $page.Date.Format "2006" }}</small>
+  </time>
+{{- else -}}
+  <time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format $format }}</time>
+{{- end -}}

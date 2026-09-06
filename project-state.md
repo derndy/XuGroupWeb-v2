@@ -7,21 +7,46 @@ Updated: 5 September 2026. Read this file first when continuing development. `PR
 | Item | Current value |
 | --- | --- |
 | Repository | Public `derndy/XuGroupWeb-v2` |
-| Working checkout | `/workspace/sites/xugroup-approved-images` |
-| Current review branch | `content/homepage-vision-refinement` |
-| Branch point | `main` at `99698f19834baf7b7aa3da2a358650c78e2535ed`, after PR #10 merged |
-| Incorporated main | `ddd34615da16f6e2fe3b085c66972bc10c8fe13a`, including merged PR #13's author roles and accepted conference work |
-| Previous merged work | PRs #1–10 and #13; all are preserved in this review branch |
-| Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | [Draft PR #12](https://github.com/derndy/XuGroupWeb-v2/pull/12), open and draft at delivery |
-| Hosted preview | [Shorter homepage](https://deploy-preview-12--xushidang-lab.netlify.app/) and [Vision at the end of Join / Collaborate](https://deploy-preview-12--xushidang-lab.netlify.app/contact/#contact-vision-title); inspect the current PR-head build status before release |
-| Withdrawn rewrite | [PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11), closed without merging at the PI's instruction |
+| Working checkout | `/workspace/sites/xugroup-news-gallery-migration` |
+| Current review branch | `content/migrate-v1-updates` |
+| Branch point | `main` at `c9afdcf43cb59d679c1cc199f95a81814f07e615`, including merged PRs #12 and #13 |
+| Previous merged work | PRs #1–10, #12 and #13; all preserved |
+| Source content PR | [v1 PR #2](https://github.com/derndy/XuGroupWeb/pull/2), head `36135be707ce1d68218d4bdf01d790780fa5d851` |
+| Current PR | [Draft PR #14](https://github.com/derndy/XuGroupWeb-v2/pull/14), open and draft at delivery |
+| Hosted preview | [News](https://deploy-preview-14--xushidang-lab.netlify.app/post/), [Gallery](https://deploy-preview-14--xushidang-lab.netlify.app/gallery/), [People](https://deploy-preview-14--xushidang-lab.netlify.app/people/); Netlify success on the product commit |
+| Withdrawn rewrite | v2 PR #11 closed without merging at the PI's instruction |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
 The PI rejected PR #11's broad public-marketing rewrite because it made the lab sound generic and displaced the original research identity. It was closed without merging. PR #12 retains the original identity with six wording refinements. The latest instruction moves the entire Vision chapter off the homepage and to the end of Join / Collaborate to shorten the homepage. Do not restore the withdrawn rewrite or the superseded homepage placement.
 
-## Latest batch — move Vision to the end of Join / Collaborate
+## Latest continuation — member-detail repair and visual priority
+
+- On the existing draft PR #14, repaired the 18 member detail pages without editing member facts or images. Added a visible category-aware Back to People link, a semantic main/H1 and portrait dimensions. Replaced inline global CSS and history-only navigation with scoped styles and ordinary links; long contact strings wrap and education/experience rows stack on narrow screens.
+- Production/preview builds pass (895 pages). Profile content/links, the eleven main-page content trees, all 91 publications and six approved scientific illustrations are preserved. Browser layout testing remains pending.
+- The PI then requested more images and diagrams. The next priority is explained in [the visual expansion plan](docs/visual-expansion-plan-2026-09-05.md): first a Pillar I candidate, then source-backed selected-paper visuals, then targeted research scenarios. One conceptual candidate is shown in conversation for approval; no new research image has been published or marked approved.
+- PR #15 is a separate open proposal for five selected papers and research wording. Do not mix, overwrite or merge it automatically. The original v1 PR remains untouched. Continue using draft reviews only; no production or hosting changes.
+
+## Previous batch — migrate v1 News, Gallery and People
+
+- Migrated six News entries and four Gallery photographs from v1 PR #2 into the current v2 design. Added the two new profiles/portraits and graduate alumni section, updated member roles, and reconciled the two undergraduate graduates named in the source news.
+- **PI correction: Yuting Qin and Shidao Wang joined in 2026.** Their News record displays only that year; no month/day is invented. Their profiles also say 2026.
+- Preserved all existing News/publication sources and 19 Gallery records. Current totals: 24 published News, 23 Gallery images, 16 current profile cards, two graduate-alumni cards, five undergraduate rows and eleven undergraduate alumni rows.
+- [Migration audit](docs/v1-content-migration-2026-09-05.md) accounts for all 32 source PR paths and records the profile/date corrections. New image bytes are exact copies of the source PR; Gallery layout and viewer are unchanged.
+- Both Hugo builds pass: 895 pages each. All 91 publication records/citations, six approved illustrations/24 variants and 1,400 internal links/anchors pass checks. Seven other main-content trees match main; Home only refreshes its canonical latest news. Browser review remains pending.
+- Working outputs: `/workspace/scratch/7457cd2d5ea9/build-v1-migration` and `build-v1-migration-preview`. The one-off verifier is `verify-v1-migration.py` in the same scratch directory.
+- Remaining factual details: exact incoming-member joining day, Meitang Peng's MSc completion/transfer history, and the two new undergraduate alumni's next positions. No unresolved fact is invented.
+- Publish this branch and a draft PR only. Do not merge or change production. Do not modify, merge or close the source v1 PR.
+
+### Migration delivery
+
+Published product commit `3f21125ebad68c6218a66ff0eeb44ae2aee1d846` has tree `c356549b3fd7e4ecbcd27e830055ddb8fe524217`, exactly matching the verified local source. All 13 unique new image blobs were copied to v2 with matching source Git hashes. Netlify reports success for the product commit at the preview links above. The local source checkpoint is retained at `checkpoint/v1-migration-local-source`.
+
+This following documentation-only commit records the delivery. Inspect the final PR-head Netlify check before release. No v1 modification, PR merge, production switch or hosting/workflow change was performed. The new joining-year correction is 2026; exact day, the noted MSc history and undergraduate alumni destinations remain the only factual follow-ups from this migration.
+
+## Previous completed batch — move Vision to the end of Join / Collaborate
+
+PR #12 has merged and is included in this migration's main-branch base. The following is its historical delivery record.
 
 - Removed the full Vision chapter from Home and appended it after the approved closing illustration on `/contact/`, the page labeled Join / Collaborate in navigation. It is the final section before the site footer.
 - Moved the single text source from `home.vision` to `contact.vision` in `data/website_text.yml`. Every text value is preserved exactly. The earlier six wording refinements are untouched; this relocation makes no further editorial choices.
