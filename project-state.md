@@ -1,3 +1,17 @@
+# Latest continuation — one focused Pillar III diagram
+
+6 September 2026. Base main: `713fc0f9ec5f5304f95097d948100c791923029f` (PR #29 merged). Review branch: `content/identifiability-small-step`. Earlier current-branch claims below are historical. Check the matching GitHub PR before continuing.
+
+The user requested small, complete updates across multiple conversations. This batch adds only the previously prepared identifiability example to Pillar III. An exact sum observation a + b = 4 leaves multiple possible pairs; adding the independent difference observation a − b = 2 selects (3,1). The assumed linear model, uncertainty and limits of physical interpretation are explained in accessible HTML. Wide and vertical SVGs reuse existing figure styles. Blue solid and green dashed lines remain distinguishable without relying only on colour. The point label sits clear of the lines.
+
+The previous larger concept-image update never reached a GitHub branch. Workspace maintenance removed its local files, and Library recovery did not locate the two replacement PNGs. This batch reconstructs the exact diagram from the visible conversation record; it does not claim to recover or upload those images. All seven concept images and the clean captions from merged PR #29 are retained. A later round can regenerate one concept image at a time, beginning with Pillar III or About. Do not repeat the previous large binary upload blindly.
+
+Validation for this batch: Hugo Extended 0.139.4 builds 895 pages. The site-image audit checks 538 HTML files and 460 local image/picture/srcset references with no missing files. The seven-image/28-WebP baseline audit and all 91 publication records/citations pass. Wide and 360-pixel vertical SVG renderings were visually inspected. No browser page-layout, keyboard/touch or enlarged-text testing is claimed. No main merge or production-setting change is authorized by this batch; delivery follows the existing draft-PR review workflow.
+
+Implementation: scripts/render-identifiability.py, two assets/media/frameworks/identifiability SVGs, layouts/partials/research/identifiability.html, its Pillar III placement, and data/website_text.yml. This state record is the only other edited file. Small future batches: one regenerated concept; authentic PyraE2E figure if a source is available; a few legacy publication image descriptions.
+
+---
+
 # Latest continuation — concept image cleanup and three replacements
 
 6 September 2026. Base: main `3fda4dcc2a0c06546a59b3905ffb07a7b0e737c9`, after PR #28 merged. Branch: `design/concept-images-cleanup`. Earlier current-branch/PR claims below are historical.

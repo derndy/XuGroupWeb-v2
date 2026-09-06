@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="1120" viewBox="0 0 440 1120" role="img" aria-labelledby="title desc">
+<title id="title">A good fit need not identify a unique explanation.</title>
+<desc id="desc">For a and b between zero and four, the exact measurement a plus b equals four leaves a line of possible pairs. Adding the independent exact measurement a minus b equals two leaves the unique intersection (3,1). Illustrative linear model with exact measurements, not experimental evidence.</desc>
+<rect width="440" height="1120" rx="18" fill="#f4f8fc"/>
+<text x="220" y="36" font-family="Arial, sans-serif" font-size="25" font-weight="700" text-anchor="middle" fill="#132d4c">What can the data identify?</text>
+<rect x="16" y="58" width="408" height="470" rx="14" fill="white" stroke="#cbd8e8"/>
+<text x="220.0" y="96" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" fill="#132d4c">One measurement</text>
+<text x="220.0" y="130" font-family="Arial, sans-serif" font-size="24" font-weight="600" text-anchor="middle" fill="#245ca8">a + b = 4</text>
+<line x1="82" y1="418" x2="82" y2="170" stroke="#e0e7f0" stroke-width="1" stroke-dasharray=""/>
+<line x1="82" y1="418" x2="330" y2="418" stroke="#e0e7f0" stroke-width="1" stroke-dasharray=""/>
+<text x="82" y="444" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#132d4c">0</text>
+<text x="64" y="424" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#132d4c">0</text>
+<line x1="144" y1="418" x2="144" y2="170" stroke="#e0e7f0" stroke-width="1" stroke-dasharray=""/>
+<line x1="82" y1="356" x2="330" y2="356" stroke="#e0e7f0" stroke-width="1" stroke-dasharray=""/>
+<text x="144" y="444" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#132d4c">1</text>
+<text x="64" y="362" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#132d4c">1</text>
+<line x1="206" y1="418" x2="206" y2="170" stroke="#e0e7f0" stroke-width="1" stroke-dasharray=""/>
+<line x1="82" y1="294" x2="330" y2="294" stroke="#e0e7f0" stroke-width="1" stroke-dasharray=""/>
+<text x="206" y="444" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#132d4c">2</text>
+<text x="64" y="300" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#132d4c">2</text>
+<line x1="268" y1="418" x2="268" y2="170" stroke="#e0e7f0" stroke-width="1" stroke-dasharray=""/>
+<line x1="82" y1="232" x2="330" y2="232" stroke="#e0e7f0" stroke-width="1" stroke-dasharray=""/>
+<text x="268" y="444" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#132d4c">3</text>
+<text x="64" y="238" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#132d4c">3</text>
+<line x1="330" y1="418" x2="330" y2="170" stroke="#e0e7f0" stroke-width="1" stroke-dasharray=""/>
+<line x1="82" y1="170" x2="330" y2="170" stroke="#e0e7f0" stroke-width="1" stroke-dasharray=""/>
+<text x="330" y="444" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#132d4c">4</text>
+<text x="64" y="176" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#132d4c">4</text>
+<line x1="82" y1="418" x2="345.5" y2="418" stroke="#132d4c" stroke-width="2" stroke-dasharray=""/>
+<line x1="82" y1="418" x2="82" y2="154.5" stroke="#132d4c" stroke-width="2" stroke-dasharray=""/>
+<text x="361.0" y="425" font-family="Arial, sans-serif" font-size="24" font-weight="400" text-anchor="middle" fill="#132d4c">a</text>
+<text x="60" y="156.36" font-family="Arial, sans-serif" font-size="24" font-weight="400" text-anchor="middle" fill="#132d4c">b</text>
+<line x1="82" y1="170" x2="330" y2="418" stroke="#245ca8" stroke-width="4" stroke-dasharray=""/>
+<circle cx="144" cy="232" r="7" fill="white" stroke="#245ca8" stroke-width="3"/>
+<circle cx="206" cy="294" r="7" fill="white" stroke="#245ca8" stroke-width="3"/>
+<circle cx="268" cy="356" r="7" fill="white" stroke="#245ca8" stroke-width="3"/>
+<text x="220.0" y="476" font-family="Arial, sans-serif" font-size="21" font-weight="600" text-anchor="middle" fill="#132d4c">Every point on the blue line fits.</text>
+<text x="220.0" y="509" font-family="Arial, sans-serif" font-size="20" font-weight="400" text-anchor="middle" fill="#132d4c">Three example pairs are marked.</text>
+<rect x="16" y="548" width="408" height="470" rx="14" fill="white" stroke="#cbd8e8"/>
+<text x="220.0" y="586" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" fill="#132d4c">Two measurements</text>
+<text x="220.0" y="620" font-family="Arial, sans-serif" font-size="24" font-weight="600" text-anchor="middle" fill="#245ca8">a + b = 4; a − b = 2</text>
+<line x1="82" y1="908" x2="82" y2="660" stroke="#e0e7f0" stroke-width="1" stroke-dasharray=""/>
+<line x1="82" y1="908" x2="330" y2="908" stroke="#e0e7f0" stroke-width="1" stroke-dasharray=""/>
+<text x="82" y="934" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#132d4c">0</text>
+<text x="64" y="914" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#132d4c">0</text>
+<line x1="144" y1="908" x2="144" y2="660" stroke="#e0e7f0" stroke-width="1" stroke-dasharray=""/>
+<line x1="82" y1="846" x2="330" y2="846" stroke="#e0e7f0" stroke-width="1" stroke-dasharray=""/>
+<text x="144" y="934" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#132d4c">1</text>
+<text x="64" y="852" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#132d4c">1</text>
+<line x1="206" y1="908" x2="206" y2="660" stroke="#e0e7f0" stroke-width="1" stroke-dasharray=""/>
+<line x1="82" y1="784" x2="330" y2="784" stroke="#e0e7f0" stroke-width="1" stroke-dasharray=""/>
+<text x="206" y="934" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#132d4c">2</text>
+<text x="64" y="790" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#132d4c">2</text>
+<line x1="268" y1="908" x2="268" y2="660" stroke="#e0e7f0" stroke-width="1" stroke-dasharray=""/>
+<line x1="82" y1="722" x2="330" y2="722" stroke="#e0e7f0" stroke-width="1" stroke-dasharray=""/>
+<text x="268" y="934" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#132d4c">3</text>
+<text x="64" y="728" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#132d4c">3</text>
+<line x1="330" y1="908" x2="330" y2="660" stroke="#e0e7f0" stroke-width="1" stroke-dasharray=""/>
+<line x1="82" y1="660" x2="330" y2="660" stroke="#e0e7f0" stroke-width="1" stroke-dasharray=""/>
+<text x="330" y="934" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#132d4c">4</text>
+<text x="64" y="666" font-family="Arial, sans-serif" font-size="19" font-weight="400" text-anchor="middle" fill="#132d4c">4</text>
+<line x1="82" y1="908" x2="345.5" y2="908" stroke="#132d4c" stroke-width="2" stroke-dasharray=""/>
+<line x1="82" y1="908" x2="82" y2="644.5" stroke="#132d4c" stroke-width="2" stroke-dasharray=""/>
+<text x="361.0" y="915" font-family="Arial, sans-serif" font-size="24" font-weight="400" text-anchor="middle" fill="#132d4c">a</text>
+<text x="60" y="646.36" font-family="Arial, sans-serif" font-size="24" font-weight="400" text-anchor="middle" fill="#132d4c">b</text>
+<line x1="82" y1="660" x2="330" y2="908" stroke="#245ca8" stroke-width="4" stroke-dasharray=""/>
+<line x1="206" y1="908" x2="330" y2="784" stroke="#08736c" stroke-width="4" stroke-dasharray="9 6"/>
+<circle cx="268" cy="846" r="8" fill="#132d4c" stroke="white" stroke-width="2"/>
+<text x="326" y="853" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#132d4c">(3, 1)</text>
+<text x="220.0" y="975" font-family="Arial, sans-serif" font-size="23" font-weight="700" text-anchor="middle" fill="#08736c">One intersection: (3, 1)</text>
+<text x="220" y="1060" font-family="Arial, sans-serif" font-size="22" font-weight="400" text-anchor="middle" fill="#132d4c">Exact linear example</text>
+<text x="220" y="1094" font-family="Arial, sans-serif" font-size="21" font-weight="400" text-anchor="middle" fill="#132d4c">Not measured data</text>
+</svg>
