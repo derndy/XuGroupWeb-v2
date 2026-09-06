@@ -2359,6 +2359,12 @@ a {
   aspect-ratio: 4 / 3;
 }
 
+.gallery-card__media picture {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
 .gallery-card__media img {
   display: block;
   width: 100%;

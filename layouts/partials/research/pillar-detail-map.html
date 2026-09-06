@@ -15,6 +15,12 @@
     <source media="(max-width: 47.99rem)" srcset="{{ $mobile.RelPermalink }}" width="400" height="900" type="image/svg+xml">
     <img src="{{ $desktop.RelPermalink }}" width="900" height="460" loading="lazy" decoding="async" alt="{{ index $descriptions .pillar_id }}">
   </picture>
+  <p class="framework-downloads">
+    View full-size framework:
+    <a href="{{ $desktop.RelPermalink }}">Wide layout</a>
+    <span aria-hidden="true"> · </span>
+    <a href="{{ $mobile.RelPermalink }}">Vertical layout</a>
+  </p>
   <details class="framework-explanation">
     <summary>Read the framework step by step</summary>
   <ol class="pillar-architecture__flow">
