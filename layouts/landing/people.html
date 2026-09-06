@@ -15,7 +15,7 @@
       </div>
       {{ with $peoplePage.photos.featured }}
         <figure class="people-hero__figure">
-          <img src="{{ .src | relURL }}" alt="{{ .alt }}" width="1200" height="900" decoding="async" fetchpriority="high">
+          {{ partial "people/photo.html" (dict "src" .src "alt" .alt "priority" true "sizes" "(max-width: 39.99rem) calc(100vw - 3.5rem), (max-width: 61.99rem) calc(100vw - 4.5rem), 44rem") }}
           <figcaption>{{ .caption }}</figcaption>
         </figure>
       {{ end }}
@@ -131,7 +131,7 @@
       <div class="people-moments__grid">
         {{ range $peoplePage.photos.archive }}
           <figure>
-            <img src="{{ .src | relURL }}" alt="{{ .alt }}" width="1200" height="800" loading="lazy" decoding="async">
+            {{ partial "people/photo.html" (dict "src" .src "alt" .alt "sizes" "(max-width: 39.99rem) calc(100vw - 3.5rem), (max-width: 83rem) calc((100vw - 7.5rem) / 2), 37.75rem") }}
             <figcaption>{{ .caption }}</figcaption>
           </figure>
         {{ end }}

@@ -4262,3 +4262,7 @@ a {
 @import "about";
 @import "framework-diagrams";
 @import "paper-figures";
+
+// Responsive photo wrappers preserve the existing portrait and group-photo frames.
+.people-photo { display: block; }
+.people-card__portrait .people-photo { width: 100%; height: 100%; }
