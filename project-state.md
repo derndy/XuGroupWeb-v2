@@ -8,20 +8,26 @@ Updated: 6 September 2026. Read this file first when continuing development. `PR
 | --- | --- |
 | Repository | Public `derndy/XuGroupWeb-v2` |
 | Working checkout | `/workspace/sites/xugroup-pillar-i-visual` |
-| Current review branch | `content/pillar-i-visual` |
-| Branch point | `main` at `05647b147c9b12fef904776815c8230a009ec3d3`, after PR #15 merged |
-| Incorporated main | Includes merged PRs #14 and #15 |
-| Previous merged work | PRs #1–10, #12–15; preserved in this review branch |
+| Current review branch | `content/research-framework-diagrams` |
+| Branch point | `main` at `e1ac1c22aa4590e6afb50eb902334f532e8fb470`, after PR #16 merged |
+| Incorporated main | Includes merged PRs #14–16 |
+| Previous merged work | PRs #1–10, #12–16; preserved in this review branch |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | [Draft PR #16](https://github.com/derndy/XuGroupWeb-v2/pull/16), open for review |
-| Hosted preview | [Pillar I preview](https://deploy-preview-16--xushidang-lab.netlify.app/research/learning-system-design/); inspect matching Netlify PR-head status before release |
+| Current PR | [Draft PR #17](https://github.com/derndy/XuGroupWeb-v2/pull/17), open for review; PR #16 has merged |
+| Hosted preview | [Pillar I](https://deploy-preview-17--xushidang-lab.netlify.app/research/learning-system-design/), [Pillar II](https://deploy-preview-17--xushidang-lab.netlify.app/research/evidence-engineering/), [Pillar III](https://deploy-preview-17--xushidang-lab.netlify.app/research/mathematical-frontiers/); inspect matching Netlify status before release |
 | Withdrawn rewrite | [PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11), closed without merging at the PI's instruction |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
 The PI rejected PR #11's broad public-marketing rewrite because it made the lab sound generic and displaced the original research identity. It was closed without merging. Merged PR #12 retains the original identity with six wording refinements and places the complete Vision at the end of Join / Collaborate. Do not restore the withdrawn rewrite or the superseded homepage placement. The latest instruction accepts bounded method/testbed and postdoctoral-invitation improvements, requests five selected papers including NC/ECCV, and asks to remove the public research pages' internal management/audit tone.
 
-## Current batch — regenerate and upload Pillar I visual
+## Latest batch — whole-site image review and three framework diagrams
+
+Continued at the PI's instruction to inspect the whole site and increase or improve imagery. Added three precise, editable SVG frameworks, each with a desktop and a mobile composition. Pillar I shows joint design, Pillar II shows the evidence feedback loop, and Pillar III shows stress-test feedback to assumptions. Existing node labels and explanations remain canonical in `data/research_system.yml`; the full HTML explanation is available below each diagram. The seven raster illustrations and all publication content are unchanged.
+
+See [the whole-site image review](docs/website-image-review-2026-09-06.md) for coverage, validation and remaining priorities. PR #16 merged while this batch was being prepared. Deliver these changes on a new draft PR; do not merge or change production. The prior image batch follows below.
+
+## Previous batch — regenerate and upload Pillar I visual
 
 The PI instructed “原文件找不到，重新制作并上传”. Regenerated the unavailable original as a new conceptual illustration, CONCEPT-RES-007, and placed it on Pillar I using the existing responsive component. Source, hash, caption and instruction-based authorization are recorded in [the asset note](docs/pillar-i-visual-2026-09-06.md). This is not an exact recovery or a claim of separate PI pixel review. The seven illustrations produce 28 uncropped responsive WebP variants. Original page text, the architecture map, all 91 publications, News, Gallery and member records are preserved. Browser layout review and the known legacy author-archive slug collision remain separate follow-ups. Next visual priority: source-backed figures for the five selected papers.
 
