@@ -41,7 +41,7 @@
       {{ $datetime := .Date.Format "2006-01-02" }}
       {{ if eq .Params.date_precision "year" }}{{ $datetime = .Date.Format "2006" }}{{ else if eq .Params.date_precision "month" }}{{ $datetime = .Date.Format "2006-01" }}{{ end }}
       <li>
-        <article{{ if $visual }} class="home-paper--illustrated"{{ end }} aria-labelledby="home-paper-{{ .File.UniqueID }}">
+        <article{{ if $visual }} class="home-paper--illustrated{{ if eq $visual.layout "wide" }} home-paper--wide-figure{{ end }}"{{ end }} aria-labelledby="home-paper-{{ .File.UniqueID }}">
           {{ if $visual }}<div class="home-paper__copy">{{ end }}
           <p class="home-record-meta"><time datetime="{{ $datetime }}">{{ .Date.Format "2006" }}</time> · {{ if $entry.conference }}{{ $text.conference_label }}{{ else }}{{ $text.kind_label }}{{ end }}{{ if $entry.accepted }} · <strong>{{ $text.accepted_label }}</strong>{{ end }}</p>
           <h3 id="home-paper-{{ .File.UniqueID }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>

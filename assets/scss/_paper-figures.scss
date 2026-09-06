@@ -26,4 +26,5 @@
 .home-paper__copy { min-width: 0; }
 @media (min-width: 64rem) {
   .home-paper--illustrated { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 2rem; }
+  .home-paper--wide-figure { grid-template-columns: minmax(0, 1fr); }
 }
