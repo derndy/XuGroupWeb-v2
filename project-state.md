@@ -8,20 +8,26 @@ Updated: 6 September 2026. Read this file first when continuing development. `PR
 | --- | --- |
 | Repository | Public `derndy/XuGroupWeb-v2` |
 | Working checkout | `/workspace/sites/xugroup-pillar-i-visual` |
-| Current review branch | `content/people-responsive-photos` |
-| Branch point | `main` at `80f49e4295639d90216583a234d11b89912e4708`, after PR #21 merged |
-| Incorporated main | Includes merged PRs #14–21 |
-| Previous merged work | PRs #1–10, #12–21; preserved in this review branch |
+| Current review branch | `content/evidence-choice-diagram` |
+| Branch point | `main` at `36cfe4636bfc09a79efa8dc9c6b4feaef2e6fbe4`, after PR #22 merged |
+| Incorporated main | Includes merged PRs #14–22 |
+| Previous merged work | PRs #1–10, #12–22; preserved in this review branch |
 | Gallery repair | [PR #8](https://github.com/derndy/XuGroupWeb-v2/pull/8), merged while this batch was being prepared; its changes are included in the base |
-| Current PR | [Draft PR #22](https://github.com/derndy/XuGroupWeb-v2/pull/22), open for review; PR #21 is merged |
-| Hosted preview | [People](https://deploy-preview-22--xushidang-lab.netlify.app/people/); check matching Netlify status before release |
+| Current PR | [Draft PR #23](https://github.com/derndy/XuGroupWeb-v2/pull/23), open for review; PR #22 is merged |
+| Hosted preview | [Pillar II diagram](https://deploy-preview-23--xushidang-lab.netlify.app/research/evidence-engineering/#evidence-choice-title); check matching Netlify status before release |
 | Withdrawn rewrite | [PR #11](https://github.com/derndy/XuGroupWeb-v2/pull/11), closed without merging at the PI's instruction |
 | Stack | Hugo Extended 0.139.4, Hugo Blox/Bootstrap, GitHub + Netlify |
 | Current release instruction | Review branch and draft PR only; no merge or production switch |
 
 The PI rejected PR #11's broad public-marketing rewrite because it made the lab sound generic and displaced the original research identity. It was closed without merging. Merged PR #12 retains the original identity with six wording refinements and places the complete Vision at the end of Join / Collaborate. Do not restore the withdrawn rewrite or the superseded homepage placement. The latest instruction accepts bounded method/testbed and postdoctoral-invitation improvements, requests five selected papers including NC/ECCV, and asks to remove the public research pages' internal management/audit tone.
 
-## Latest batch — People photographs
+## Latest batch — Evidence-choice diagram
+
+Added one focused conceptual diagram after Pillar II's scope cards: competing explanations, a feasible perturbation, differing predictions, and measurement against controls and uncertainty. It preserves both informative and ambiguous outcomes. Two SVG compositions support wide and narrow viewing, with HTML description and full-size links. No numerical results or paper artwork were invented.
+
+Both builds pass; all 251 populated local image references resolve in 536 index pages. Existing main-element text remains unchanged apart from the new figure. The 91-publication and seven-raster-image audits pass. Standalone diagram renders were inspected and labels adjusted; browser layout review remains pending. See [batch record](docs/evidence-choice-diagram-2026-09-06.md).
+
+## Previous batch — People photographs
 
 Added 36 proportional WebP versions across 22 placements: three existing group photographs (one reused on Home) and 18 member portraits. Actual intrinsic image dimensions replace hard-coded portrait dimensions. All originals, captions, member identities and profile routes remain unchanged. The welcome photograph's 800-pixel version is 89,752 bytes versus the 1,914,729-byte PNG original.
 

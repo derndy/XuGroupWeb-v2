@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="850" viewBox="0 0 960 850" role="img" aria-labelledby="title desc">
+<title id="title">Choose evidence that separates explanations</title>
+<desc id="desc">Two explanations fit current observations. Choose a feasible perturbation with differing predictions, measure with controls, and assess the difference against uncertainty. Update the explanations or choose another test if the result remains ambiguous. Conceptual example, not experimental data.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#08736c"/></marker></defs>
+<rect width="960" height="850" rx="18" fill="#f4f8fc"/>
+<rect x="300" y="20" width="360" height="64" rx="12" fill="white" stroke="#08736c" stroke-width="1.6"/>
+<text x="480.0" y="59.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="650" fill="#132d4c">Current observations</text>
+<path d="M480 84 V100 H210 V116" fill="none" stroke="#08736c" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M480 100 H750 V116" fill="none" stroke="#08736c" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="60" y="124" width="300" height="84" rx="12" fill="white" stroke="#08736c" stroke-width="1.6"/>
+<text x="210.0" y="159.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="650" fill="#132d4c">Explanation A</text>
+<text x="210.0" y="187.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#40576e">Fits what we know</text>
+<rect x="600" y="124" width="300" height="84" rx="12" fill="white" stroke="#08736c" stroke-width="1.6"/>
+<text x="750.0" y="159.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="650" fill="#132d4c">Explanation B</text>
+<text x="750.0" y="187.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#40576e">Fits what we know</text>
+<path d="M210 208 V231 H480 V252" fill="none" stroke="#08736c" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M750 208 V231 H480" fill="none" stroke="#08736c" stroke-width="2.5"/>
+<rect x="230" y="260" width="500" height="88" rx="12" fill="white" stroke="#08736c" stroke-width="1.6"/>
+<text x="480.0" y="297.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="650" fill="#132d4c">Choose a feasible perturbation</text>
+<text x="480.0" y="325.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#40576e">Predictions differ between explanations</text>
+<path d="M480 348 V370 H210 V391" fill="none" stroke="#08736c" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M480 370 H750 V391" fill="none" stroke="#08736c" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="60" y="399" width="300" height="84" rx="12" fill="white" stroke="#08736c" stroke-width="1.6"/>
+<text x="210.0" y="434.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="650" fill="#132d4c">Prediction A</text>
+<text x="210.0" y="462.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#40576e">Expected response A</text>
+<rect x="600" y="399" width="300" height="84" rx="12" fill="white" stroke="#08736c" stroke-width="1.6"/>
+<text x="750.0" y="434.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="650" fill="#132d4c">Prediction B</text>
+<text x="750.0" y="462.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#40576e">Expected response B</text>
+<path d="M210 483 V505 H480 V526" fill="none" stroke="#08736c" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M750 483 V505 H480" fill="none" stroke="#08736c" stroke-width="2.5"/>
+<rect x="230" y="534" width="500" height="88" rx="12" fill="white" stroke="#08736c" stroke-width="1.6"/>
+<text x="480.0" y="571.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="650" fill="#132d4c">Measure with controls</text>
+<text x="480.0" y="599.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#40576e">Compare differences against uncertainty</text>
+<path d="M480 622 V645 H210 V666" fill="none" stroke="#08736c" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M480 645 H750 V666" fill="none" stroke="#08736c" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="35" y="674" width="350" height="100" rx="12" fill="white" stroke="#08736c" stroke-width="1.6"/>
+<text x="210.0" y="703.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="650" fill="#132d4c">Informative</text>
+<text x="210.0" y="731.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#40576e">Reweight competing</text>
+<text x="210.0" y="759.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#40576e">explanations</text>
+<rect x="575" y="674" width="350" height="100" rx="12" fill="white" stroke="#7142a5" stroke-width="1.6"/>
+<text x="750.0" y="703.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="650" fill="#132d4c">Still ambiguous</text>
+<text x="750.0" y="731.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#40576e">Revise or choose</text>
+<text x="750.0" y="759.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#40576e">the next test</text>
+<text x="480" y="799" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#40576e">Either outcome informs the next choice.</text>
+<text x="480" y="832" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#40576e">Conceptual example · No measured data</text>
+</svg>

@@ -86,3 +86,25 @@
   outline: 3px solid var(--pillar-color);
   outline-offset: 4px;
 }
+
+.evidence-choice {
+  max-width: 60rem;
+  margin: 2.5rem auto 0;
+  padding: clamp(1rem, 3vw, 2rem);
+  border: 1px solid var(--lab-line);
+  border-radius: 1rem;
+  background: #fff;
+  color: #132d4c;
+}
+.evidence-choice h3 { font-size: 1.5rem; line-height: 1.3; }
+.evidence-choice > p,
+.evidence-choice figcaption { font-size: 1rem; line-height: 1.7; overflow-wrap: anywhere; }
+.evidence-choice picture { display: block; margin-block: 1.5rem; }
+.evidence-choice img { display: block; width: 100%; height: auto; aspect-ratio: 960 / 850; }
+.evidence-choice figcaption { color: #40576e; }
+.evidence-choice .framework-downloads { margin: 1rem 0 0; }
+@media (max-width: 47.99rem) {
+  .evidence-choice { padding: 0.5rem; }
+  .evidence-choice picture { max-width: 27.5rem; margin-inline: auto; }
+  .evidence-choice img { aspect-ratio: 440 / 1130; }
+}

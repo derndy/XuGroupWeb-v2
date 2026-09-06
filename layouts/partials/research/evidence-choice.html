@@ -1,0 +1,12 @@
+{{ $wide := resources.Get "media/frameworks/evidence-choice.svg" }}
+{{ $vertical := resources.Get "media/frameworks/evidence-choice-mobile.svg" }}
+<figure class="evidence-choice" aria-labelledby="evidence-choice-title" aria-describedby="evidence-choice-caption">
+  <h3 id="evidence-choice-title">Choose evidence that separates explanations.</h3>
+  <p>When different explanations fit what we already know, the next useful test is one that could tell them apart.</p>
+  <picture>
+    <source media="(max-width: 47.99rem)" srcset="{{ $vertical.RelPermalink }}" width="440" height="1130" type="image/svg+xml">
+    <img src="{{ $wide.RelPermalink }}" width="960" height="850" loading="lazy" decoding="async" alt="Two explanations fit current observations. A feasible perturbation leads to different predictions. Measurement with controls helps reweight the explanations, or leaves ambiguity that informs the next test.">
+  </picture>
+  <figcaption id="evidence-choice-caption">Conceptual example, not experimental data. A difference between predictions is useful only if the measurement can resolve it under relevant controls and uncertainty. Positive, negative and inconclusive results all inform the next choice.</figcaption>
+  <p class="framework-downloads">View full-size diagram: <a href="{{ $wide.RelPermalink }}">Wide layout</a> <span aria-hidden="true"> · </span> <a href="{{ $vertical.RelPermalink }}">Vertical layout</a></p>
+</figure>
