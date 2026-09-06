@@ -4,7 +4,7 @@
 
 Production and preview builds pass (895 pages each). Image audit: 538 HTML files, 433 local references, no missing files. Six descriptions each appear on exactly one News detail with matching image alt text. Publication baseline audit preserves all 91 records and citations; conceptual-visual baseline audit passes. Empty-alt review queue falls from 80 to 74 (73 publication images and the intentional Gallery viewer slot). Browser layout testing remains unverified. Original image files are not modified. No merge or production settings change.
 
-Next: source an authentic PyraE2E figure; review legacy publication images in bounded batches. Prior status below records PR #25 delivery and remains useful historical context; its current-branch labels are superseded by this section. New draft PR/preview status will be recorded after creation.
+Next: source an authentic PyraE2E figure; review legacy publication images in bounded batches. Prior status below records PR #25 delivery and remains useful historical context; its current-branch labels are superseded by this section. Saved to [draft PR #26](https://github.com/derndy/XuGroupWeb-v2/pull/26), product commit `d0fd20c77b0deaeb158cf6e1318f084a2f78043d`; published tree `4e392d490c70e15360c396f0fa40613ef0bc280c` matches the checked local tree. Netlify preview was pending at this documentation update. Check the final head status before release.
 
 ---
 
