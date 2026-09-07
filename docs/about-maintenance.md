@@ -16,7 +16,7 @@ Route: `/about/`. The Space–Interaction–Learning middle chapter was delivere
 | Page layout and shared-source integration | `layouts/landing/about.html` |
 | Scoped About styling | `assets/scss/_about.scss`, imported by `assets/scss/template.scss` |
 | Approved image selection | `data/site_visuals.yml` → `about_vision` |
-| Image 04 original, caption, alt, hash and approval | `data/research_assets.yml` → `CONCEPT-RES-004` |
+| Image 04 current source, prior original, caption, alt, hash and instruction basis | `data/research_assets.yml` → `CONCEPT-RES-004` |
 
 All About-specific editorial text now lives in the existing About Markdown file: the old hero and onward-link text was moved from the template without changing what it says. Shared scientific definitions and approved captions remain in their canonical data records. This is a page-level editing improvement, not a completed site-wide single-file text migration.
 
@@ -44,14 +44,16 @@ Principles form a two-column semantic list; horizons remain three vertically ord
 
 ## Image 04 and reading order
 
-Image 04 remains `assets/media/research/mobius-cycle.png`, at the approved `about-vision` placement. The source was visually inspected: a detailed luminous loop and surrounding abstract scientific forms. The design brief allows full-width presentation when a side-by-side arrangement would reduce clarity. This chapter keeps the complete image at full content width, so it is not squeezed beside several paragraphs or cropped into a small card.
+Updated 7 September 2026, after merged PR #31. Image 04 now uses `assets/media/research/representation-interaction-revision.png` at the existing `about-vision` placement. Three interlinked bands distinguish spatial arrangements, relationships and revision while suggesting mutual shaping. These are design choices within the learner, not the research programme's three pillars. The artwork is a metaphor, not exact topology, a measured result or an algorithm.
 
-Reading order is: chapter introduction → three live-text definitions → a short explanation of the visual metaphor → full image → exact approved caption → evidence feedback and long-term programme → principles → NOW/NEXT/HORIZON → detailed pillar links → existing onward routes. CSS does not reorder this sequence on smaller screens. Definitions and the two following text blocks become single columns below 62rem.
+This chapter keeps the complete image at full content width. Reading order remains: chapter introduction → three shared live-text definitions → explanation of the visual metaphor → image → descriptive caption → evidence feedback and long-term programme → principles → NOW/NEXT/HORIZON → detailed pillar links → onward routes. CSS does not reorder this sequence on smaller screens.
 
-The loop is identified as a metaphor for mutual shaping; the text makes no claim of exact Möbius topology. The original PNG bytes, alt text, approved caption, visible conceptual/AI-generated label, download action and four uncropped WebP variants are unchanged. No labels are painted onto the artwork and no additional image is introduced.
+The current web source is 1280 × 720 and produces uncropped 640-, 960- and 1280-pixel WebP variants. The caption, alt text, source hash and generation record match this version. The old `mobius-cycle.png` remains unchanged in the repository with its complete original record under `previous_version`. The user authorized regeneration for draft review; no separate approval of the exact new pixels is claimed. The shared component's AI label and original-download control were removed in PR #29 and remain absent. No text is painted onto the artwork.
+
+Prompt, rationale and source transformation: [About concept record](about-concept-2026-09-07.md). Current checks are recorded at the top of `project-state.md`; older batch numbers elsewhere in this document describe their original delivery.
 
 ## Validation and release
 
-Completed build and preservation results are recorded in `project-state.md`. Check both Hugo contexts, all six image placements and all 78 publication/citation records. Verify the six canonical principles, three canonical stages in order, explicit ambition/evidence distinction, unique heading IDs and all four new destinations. Compare the complete previous About hero, vision chapter (including illustration) and onward routes, plus the ten other main-content trees, with the preceding About-learning build. Preserve page metadata, the original Markdown introduction, shared research data and hosting configuration.
+Completed build and preservation results are recorded in `project-state.md`. Check both Hugo contexts, all seven image placements and all 91 publication/citation records. Verify the six canonical principles, three canonical stages in order, explicit ambition/evidence distinction, unique heading IDs and all four new destinations. Compare the previous About page with the baseline build, allowing only the intended image, caption, alternative text and metaphor wording changes. Preserve the other page content and destinations. Preserve page metadata, the original Markdown introduction, shared research data and hosting configuration.
 
 Real browser layout, keyboard/touch, text zoom and image loading remain separate review work. A successful Netlify build is not browser QA. Keep this delivery as a draft PR; no merge or production/hosting change is part of the batch.

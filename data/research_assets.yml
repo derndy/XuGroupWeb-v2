@@ -202,30 +202,70 @@ assets:
       - pillar-iii-intro
       record: docs/scientific-visual-approval-2026-09-05.md
 - asset_id: CONCEPT-RES-004
-  title: Möbius cycle of space–interaction–learning
-  source_path: assets/media/research/mobius-cycle.png
-  source_sha256: 1d72f9a2acede990f979fedce445d18ef62212503a25f217ebea24658c777b9c
-  public_url: /media/research/mobius-cycle.png
-  width: 1672
-  height: 941
+  title: Representation, interaction and revision
+  source_path: assets/media/research/representation-interaction-revision.png
+  source_sha256: 2854a1cefa99d3f4e1c47c45418676e0022a3a1c2ecb41cac21cf5519bdec4a7
+  public_url: /media/research/representation-interaction-revision.png
+  width: 1280
+  height: 720
   scientific_role: conceptual-illustration
-  caption: A conceptual illustration of how scientific representations, interactions, and learning continually shape one another.
-  alt: A luminous twisted loop of networks and flowing signals surrounds a bright centre, with abstract molecular forms nearby.
-  provenance: ChatGPT-generated conceptual artwork, created 2026-08-06; original reviewed and approved as shown by the PI on 2026-09-05.
-  source_archive: https://drive.google.com/file/d/1zyaKpWkmmKO-XRbpfVV6jKLickEciXIL/view?usp=drivesdk
+  caption: A conceptual illustration of how representations, interactions, and learning shape one another. Interlinked
+    bands show spatial arrangements, relationships, and revision; the forms are a visual metaphor.
+  alt: 'Three interlinked teal, navy and blue bands surround geometric forms: an arrangement on a grid, a sparse network,
+    and revised shapes with small amber highlights.'
+  provenance: Generated once with the built-in ChatGPT image tool on 2026-09-07 under the PI's explicit request. Website
+    copy resized proportionally to 1280 pixels and encoded as a 256-colour PNG with dithering; no cropping or content
+    changes. The assistant inspected the original and website copy. No separate PI approval of the new pixels is claimed.
   rights_status: APPROVED
   evidence_status: CONCEPT_REVIEWED
   publication_state: APPROVED
   owner: Shidang Xu (PI)
-  last_reviewed: '2026-09-05'
+  last_reviewed: '2026-09-07'
   approval:
     by: Shidang Xu (PI)
-    date: '2026-09-05'
-    user_message: 4-6 approve
-    review_number: '04'
+    date: '2026-09-07'
+    user_message: 这些概念图有一些可能还可以重新生成一下。可以再好好检查一下，看看可不可以重新生成更好、更合适的概念图？不需要一次性修改完，可以一步一步来，多轮进行。继续。
+    review_number: 04-v2
     placements:
     - about-vision
-    record: docs/scientific-visual-approval-2026-09-05.md
+    record: docs/about-concept-2026-09-07.md
+    basis: Explicit instruction to regenerate and prepare improved concepts for draft review; not separate approval of
+      exact pixels. The user retains the merge decision.
+  generation_original:
+    width: 1672
+    height: 941
+    bytes: 1323564
+    sha256: 8b16f9e768f2ef68e7612283c111b3d84bce3fcf180e0c4381aeaa2c997d059f
+    location: Original generated image returned in this conversation; not a repository file.
+  previous_version:
+    asset_id: CONCEPT-RES-004
+    title: Möbius cycle of space–interaction–learning
+    source_path: assets/media/research/mobius-cycle.png
+    source_sha256: 1d72f9a2acede990f979fedce445d18ef62212503a25f217ebea24658c777b9c
+    public_url: /media/research/mobius-cycle.png
+    width: 1672
+    height: 941
+    scientific_role: conceptual-illustration
+    caption: A conceptual illustration of how scientific representations, interactions, and learning continually shape
+      one another.
+    alt: A luminous twisted loop of networks and flowing signals surrounds a bright centre, with abstract molecular forms
+      nearby.
+    provenance: ChatGPT-generated conceptual artwork, created 2026-08-06; original reviewed and approved as shown by
+      the PI on 2026-09-05.
+    source_archive: https://drive.google.com/file/d/1zyaKpWkmmKO-XRbpfVV6jKLickEciXIL/view?usp=drivesdk
+    rights_status: APPROVED
+    evidence_status: CONCEPT_REVIEWED
+    publication_state: APPROVED
+    owner: Shidang Xu (PI)
+    last_reviewed: '2026-09-05'
+    approval:
+      by: Shidang Xu (PI)
+      date: '2026-09-05'
+      user_message: 4-6 approve
+      review_number: '04'
+      placements:
+      - about-vision
+      record: docs/scientific-visual-approval-2026-09-05.md
 - asset_id: CONCEPT-RES-005
   title: Scientific settings that challenge our methods
   source_path: assets/media/research/scientific-testbeds.png
