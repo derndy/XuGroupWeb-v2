@@ -1,3 +1,19 @@
+# Latest continuation — one Pillar III concept replacement
+
+6 September 2026. Base main: `3126d9f26d77b24b9bc19064345ffaccae3d8618`, after merged PR #30. Review branch: `design/pillar-three-concept`. Check its matching GitHub PR before continuing; older branch/PR claims below are historical.
+
+The user requested small rounds of label removal and concept-image improvement. The labels were already removed in merged PR #29; none remain in visible text across all 538 built HTML files. Live Netlify page verification was unavailable, so do not infer which version the user is seeing.
+
+This round replaces only Pillar III's dark, crowded concept panorama with two large mathematical forms and a teal constraint plane on white. It complements the exact identifiability diagram from PR #30 without representing measured data or precise geometry. The other six concepts, research definitions, exact diagrams and publication records are preserved.
+
+Generated once using the built-in image tool. The original was returned in the conversation; the repository uses an inspected, uncropped 1280 × 720 web copy, 275,975 bytes, with 256-colour PNG compression. Original/source hashes, transformation and the full prior asset record are retained in data/research_assets.yml. This is instruction-authorized draft preparation, not separate PI approval of the exact new pixels. Prompt and rationale: [docs/pillar-three-concept-2026-09-06.md](docs/pillar-three-concept-2026-09-06.md).
+
+Validation: Hugo Extended 0.139.4 builds 895 pages. All 459 local image/picture/srcset references resolve across 538 HTML files. Seven concept placements and 27 uncropped WebP variants pass; the lower variant count reflects the new 1280-pixel source. All 91 publication records/citations and baseline research headings, introductions and framework content are preserved. Other asset records are unchanged and the previous Pillar III record is retained exactly. Original and web-copy images were visually inspected. Browser layout and live-production status were not verified.
+
+Delivery uses one draft PR with only the new image, its asset record, this status entry and the prompt/review document. The user retains the merge decision; no main merge or hosting-setting changes. Next small round: review/regenerate the About concept, if still useful after comparing the actual page.
+
+---
+
 # Latest continuation — one focused Pillar III diagram
 
 6 September 2026. Base main: `713fc0f9ec5f5304f95097d948100c791923029f` (PR #29 merged). Review branch: `content/identifiability-small-step`. Earlier current-branch claims below are historical. Check the matching GitHub PR before continuing.
