@@ -1,3 +1,19 @@
+# Latest continuation — Pillar I concept and readable labels
+
+7 September 2026. Base main: `f236618b27215f512632671604cb7a7c310b488e`, after merged PR #33. Review branch: `design/pillar-one-concept-refresh`. Check its matching GitHub PR before continuing; older current-branch claims below are historical.
+
+This round replaces only CONCEPT-RES-007, whose layered Learning group could suggest aggregation rather than evidence-guided revision. The new artwork shows representation, relationships and an adjusted multi-entity configuration with amber reference tiles. Three readable HTML labels/cues below the image reuse `shared.grammar.dimensions` verbatim and the existing responsive guide styles. The original image, other six concepts and all exact diagrams remain unchanged.
+
+The exact Pillar I interaction example was reviewed alongside the concept: wide and 360-pixel mobile renderings are clear, mean 2.5 and pair-product sums 14/11 are correct, and regeneration reproduces its SVG bytes. It remains in its existing position with its full explanation.
+
+Generated exactly once. The inspected, uncropped 1280 × 720 web copy is 340,566 bytes, encoded as a dithered 256-colour PNG. Original/source hashes, transformation and the complete prior asset record are in `data/research_assets.yml`. This is instruction-authorized draft preparation, not separate approval of the exact pixels. Prompt, rationale and maintenance details: [docs/pillar-one-concept-2026-09-07.md](docs/pillar-one-concept-2026-09-07.md).
+
+Validation: production and deploy-preview-equivalent builds each pass with 895 pages. Both concept/publication audits pass for seven concepts, 24 uncropped WebP variants and 91 preserved publications/citations. All 456 local image references resolve across 538 production HTML files. Main-content trees match the baseline except the intended Pillar I image and guide; the guide appears only on Pillar I and matches the canonical labels/cues. The prior image/record, other asset records and exact interaction SVGs are preserved. No unwanted AI-generation/original-download labels appear in built visible text. Production/preview indexing behavior is correct on checked main pages. Standalone artwork and diagram renderings were inspected; real browser layout and live-production status remain unverified.
+
+Delivery is one draft PR; the user retains the merge decision. All seven primary concept images now have refreshed versions in the recent rounds, including this draft. Do not restart regeneration by default. Next bounded candidate: check remaining selected-paper imagery and, if a gap remains, obtain an authentic paper figure. Preserve the actual third pillar: Mathematical Data Science and Frontier Exploration.
+
+---
+
 # Latest continuation — one Join / Collaborate concept replacement
 
 7 September 2026. Base main: `a5a84f3ea94fb0a2403e7b0f5079cb502ea68609`, after merged PR #32. Review branch: `design/join-concept-refresh`. Check its matching GitHub PR before continuing; previous current-branch claims below are historical.

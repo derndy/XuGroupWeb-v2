@@ -45,6 +45,13 @@
   <section class="lab-section pillar-concept-section" aria-label="Conceptual illustration of this research direction">
     <div class="lab-shell">
       {{ partial "research/conceptual-figure.html" (dict "asset_id" . "placement" (printf "%s-intro" $pillarID)) }}
+      {{ if eq $pillarID "pillar-i" }}
+      <dl class="research-concept-guide" id="pillar-i-concept-guide">
+        {{ range site.Data.website_text.shared.grammar.dimensions }}
+        <div><dt>{{ .label }}</dt><dd>{{ .cue }}</dd></div>
+        {{ end }}
+      </dl>
+      {{ end }}
     </div>
   </section>
   {{ end }}
