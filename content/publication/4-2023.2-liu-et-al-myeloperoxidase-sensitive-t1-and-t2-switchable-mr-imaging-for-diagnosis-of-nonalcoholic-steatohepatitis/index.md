@@ -50,6 +50,11 @@ tags: []
 
 # Display this page in the Featured widget?
 featured: true
+featured_alt: "A mouse liver is enlarged into a tissue schematic with labeled liver cells, neutrophils, extracellular matrix and myeloperoxidase (MPO). Dispersed nanoparticles and clusters appear across the tissue."
+featured_caption: "**An enzyme-responsive route to liver imaging.** The schematic places the nanoprobe design in the liver’s inflammatory microenvironment, where myeloperoxidase (MPO) is the intended trigger for aggregation. Diagram · Jingjing Liu et al., ACS Nano. [Paper and figure context](https://doi.org/10.1021/acsnano.2c06233)."
+image:
+  placement: 2
+  link_to_original: true
 
 # Custom links (uncomment lines below)
 # links:
