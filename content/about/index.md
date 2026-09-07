@@ -14,7 +14,7 @@ about:
     eyebrow: "01 · Connected design choices"
     title: "Space, interaction and learning shape one another."
     lead: "We study these as connected choices within a scientific learner: what it can represent, which relationships it can express and how it changes with evidence. Together, they form part of learning-system design, alongside our work on evidence engineering and mathematical exploration."
-    metaphor: "The loop is a visual metaphor for this mutual shaping: representations make some relations expressible, interactions shape what can be learned, and learning can reveal the need to change both."
+    metaphor: "The interlinked forms are a visual metaphor for this mutual shaping: representations make some relations expressible, interactions shape what can be learned, and learning can reveal the need to change both."
     related_label: "Explore learning-system design"
     related_url: "/research/learning-system-design/"
   feedback:

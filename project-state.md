@@ -1,3 +1,17 @@
+# Latest continuation — one About concept replacement
+
+7 September 2026. Base main: `18b82cd455b3daa925e9f7304955fbb538a94172`, after merged PR #31. Review branch: `design/about-concept-refresh`. Check its matching GitHub PR before continuing; older current-branch claims below are historical.
+
+This round replaces only the About glowing loop with three interlinked bands that distinguish spatial arrangement, relationships and revision. These are connected learner-design choices, not the programme's three research pillars. The caption, alt text and one metaphor phrase now describe the new illustration. Shared definitions, evidence feedback, principles, horizons and the other six concept images remain unchanged.
+
+Generated once with the built-in image tool. The inspected, uncropped web copy is 1280 × 720, 325,782 bytes, encoded as a dithered 256-colour PNG. Original/source hashes, transformation and the complete prior asset record are retained in `data/research_assets.yml`; the old PNG remains unchanged. The user authorized draft preparation, not a separate approval of the exact generated pixels. Prompt and rationale: [docs/about-concept-2026-09-07.md](docs/about-concept-2026-09-07.md). The About maintenance guide now reflects this image and the earlier removal of visible badges and download controls.
+
+Validation: production and preview-base Hugo builds pass with 895 pages each. All 458 local image/picture/srcset references resolve across 538 HTML files; seven concepts and 26 uncropped WebP variants pass. All 91 publication records/citations are preserved. All built main-content trees match the baseline except the intended About illustration and metaphor paragraph; source checks confirm unchanged other asset records and preserved prior About bytes/record. The original and web-copy images were visually inspected. No unwanted AI-generation or original-download labels appear in built visible text. Browser layout and live-production status remain unverified.
+
+Delivery is one draft PR; the user retains the merge decision. Next small round: inspect the Join/Collaborate illustration and its adjacent copy, then regenerate only if useful. Keep future rounds similarly bounded.
+
+---
+
 # Latest continuation — one Pillar III concept replacement
 
 6 September 2026. Base main: `3126d9f26d77b24b9bc19064345ffaccae3d8618`, after merged PR #30. Review branch: `design/pillar-three-concept`. Check its matching GitHub PR before continuing; older branch/PR claims below are historical.
