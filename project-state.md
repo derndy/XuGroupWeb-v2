@@ -1,3 +1,15 @@
+# Latest continuation — two older publication figure displays
+
+7 September 2026. Base main: `080a8d74143f01489067f083a1f0e416248aaa7b`, after merged PR #35. Review branch: `content/legacy-paper-image-descriptions`. Check its matching GitHub PR before continuing; older current-branch claims below are historical.
+
+This round improves two existing 2024 paper figures: SQD-I halogen-bond/crystal transformation (Advanced Science) and Bi₂O₂Se material characterization (Nature Communications). Both now have accurate alt text, a short visible explanation with author/source attribution and an image link to their full-resolution JPEG. The sensor figure uses a wider, uncropped 1200 × 664 WebP; the SQD-I figure retains its 720 × 831 display. Original figure bytes are unchanged. No image generation was needed. The optional header settings and scoped caption/link styles affect only these two records; news descriptions retain their existing behavior.
+
+Production and preview-equivalent Hugo builds pass with 895 pages each. The publication/concept audits preserve 91 records, seven concepts and 24 concept WebP variants; all 466 local image references resolve across 538 HTML files. All 121 main-content trees match except the two intended image presentations. Bibliographic fields, citations, attachments, source images, homepage selection/order and existing selected-paper/concept records are preserved. The empty-alt queue falls from 74 to 72; one is the intentionally empty, closed Gallery viewer, leaving 71 older publication figures for contextual review. Both originals and the larger sensor WebP were inspected; browser interaction/layout and live production remain unverified. Source hashes, rationale and checks: [docs/legacy-paper-images-2026-09-07.md](docs/legacy-paper-images-2026-09-07.md).
+
+Delivery is one draft PR; the user retains the merge decision. All seven primary concepts were already refreshed and all five selected-paper figures are present after PR #35. Do not restart regeneration by default. Continue with a small, evidence-based figure review if useful; do not mistake the Gallery dialog placeholder for a broken image. Preserve the actual third pillar: Mathematical Data Science and Frontier Exploration.
+
+---
+
 # Latest continuation — PyraE2E selected-paper figure
 
 7 September 2026. Base main: `234659a1d82d0684bf1194cd441a8de0429d7785`, after merged PR #34. Review branch: `content/selected-paper-visual-followup`. Check its matching GitHub PR before continuing; older current-branch claims below are historical.

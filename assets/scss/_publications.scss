@@ -1,4 +1,26 @@
 // A text-first bibliography. Paper figures remain on their canonical records.
+.publication-detail .featured-image-link {
+  display: block;
+  cursor: zoom-in;
+
+  img { display: block; }
+
+  &:focus-visible {
+    outline: 3px solid var(--lab-blue);
+    outline-offset: 4px;
+  }
+}
+
+.publication-detail .featured-figure-description {
+  margin-block: 0 1.5rem;
+  color: var(--lab-muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+
+  strong { color: var(--lab-navy); }
+  a { text-decoration: underline; }
+}
+
 .publication-author__mark {
   font-size: 0.75em;
   line-height: 0;

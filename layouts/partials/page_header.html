@@ -1,4 +1,4 @@
-{{/* Pinned Hugo Blox v5.9.8 header; featured_alt supplies accessible text and a below-image caption when no caption exists. */}}
+{{/* Pinned Hugo Blox v5.9.8 header; optional figure links and below-image descriptions. */}}
 {{ $page := . }}
 {{ $featured := partial "blox-core/functions/get_featured_image.html" $page }}
 
@@ -75,11 +75,17 @@
 {{/* Featured image */}}
 <div class="article-header {{$image_container}} featured-image-wrapper mt-4 mb-4" style="max-width: {{$image.Width}}px; max-height: {{$image.Height}}px;">
   <div style="position: relative">
+    {{ if $page.Params.image.link_to_original }}<a class="featured-image-link" href="{{ $featured.RelPermalink }}" aria-label="View full-size figure for {{ $title }}">{{ end }}
     <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $.Params.image.alt_text | default $.Params.featured_alt | default "" }}" class="featured-image">
+    {{ if $page.Params.image.link_to_original }}</a>{{ end }}
     {{ with $.Params.image.caption }}<span class="article-header-caption">{{ . | markdownify | emojify }}</span>{{ end }}
   </div>
 </div>
-{{ if and $page.Params.featured_alt (not $page.Params.image.caption) }}
+{{ if and $page.Params.featured_caption (not $page.Params.image.caption) }}
+<div class="article-container">
+  <p class="featured-figure-description">{{ $page.Params.featured_caption | markdownify }}</p>
+</div>
+{{ else if and $page.Params.featured_alt (not $page.Params.image.caption) }}
 <div class="article-container">
   <p class="news-photo-description">{{ $page.Params.featured_alt }}</p>
 </div>
