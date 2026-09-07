@@ -1,5 +1,7 @@
 # Pillar I conceptual illustration — 6 September 2026
 
+Historical generation record. The 7 September replacement and its current validation are recorded in [the Pillar I concept refresh](pillar-one-concept-2026-09-07.md). The old PNG and full metadata are preserved under `previous_version`. Visible AI badges and original-download controls were removed in merged PR #29; descriptions below reflect the original batch.
+
 The previous preview original could not be recovered. The PI explicitly instructed: “原文件找不到，重新制作并上传”. This batch creates a new replacement and uploads it for draft PR review. It is not an identical recovery, and instruction-based authorization must not be described as separate PI review of the exact generated pixels.
 
 ## Source and placement
