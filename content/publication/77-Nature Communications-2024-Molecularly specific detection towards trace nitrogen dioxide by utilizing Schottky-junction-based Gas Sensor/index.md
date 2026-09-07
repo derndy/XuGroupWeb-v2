@@ -58,6 +58,11 @@ tags: []
 
 # Display this page in the Featured widget?
 featured: true
+featured_alt: "Top: a cross-sectional electron micrograph and maps labeled Bi, Se, O, Ti and Sr. Bottom: atomic-force and scanning-tunneling images show surface terraces, selenium vacancies and oxygen adsorption."
+featured_caption: "**From film structure to adsorption sites.** Microscopy and elemental maps characterize Bi₂O₂Se on SrTiO₃; the lower panels show surface terraces and imaging before and after oxygen adsorption. Figure 1 · Shipu Xu et al., Nature Communications (2024). [Source and full caption](https://www.nature.com/articles/s41467-024-50443-5#Fig1)."
+image:
+  placement: 2
+  link_to_original: true
 
 # Custom links (uncomment lines below)
 # links:

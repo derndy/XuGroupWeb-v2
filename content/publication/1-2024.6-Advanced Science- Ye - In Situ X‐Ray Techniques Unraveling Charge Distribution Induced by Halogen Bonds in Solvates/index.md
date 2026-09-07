@@ -48,6 +48,10 @@ tags: []
 
 # Display this page in the Featured widget?
 featured: true
+featured_alt: "Four panels show SQD-I geometry, a monoclinic-to-triclinic crystal transition on cooling, iodine interactions with solvent and neighboring molecules, and electrostatic-potential surfaces."
+featured_caption: "**From molecular flexibility to crystal transformation.** The SQD-I diagram connects molecular geometry, crystal packing and solvent-assisted charge redistribution through halogen bonding. Figure 1 · Xiaoyu Ye et al., Advanced Science (2024). [Source and full caption](https://pmc.ncbi.nlm.nih.gov/articles/PMC11220701/)."
+image:
+  link_to_original: true
 
 # Custom links (uncomment lines below)
 # links:
