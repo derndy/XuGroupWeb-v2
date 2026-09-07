@@ -60,6 +60,11 @@ tags: []
 
 # Display this page in the Featured widget?
 featured: true
+featured_alt: "QTANHOH and DSPE-PEG form nanoparticles above a mouse-tumor diagram. Insets connect type I/II reactive oxygen pathways with DNA damage, cGAS–STING signaling, macrophages and CD8-positive T cells."
+featured_caption: "**Connecting light activation and immune responses.** The schematic follows QTANHOH nanoparticle assembly and a strategy combining reactive oxygen generation, inhibition of histone deacetylases (HDACs) and immune signaling. Diagram · Lianfeng Fan et al., Advanced Functional Materials. [Paper and figure context](https://doi.org/10.1002/adfm.202313755)."
+image:
+  placement: 2
+  link_to_original: true
 
 # Custom links (uncomment lines below)
 # links:

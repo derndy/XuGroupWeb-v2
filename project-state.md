@@ -1,3 +1,15 @@
+# Latest continuation — three paper figure guides
+
+7 September 2026. Base main: `ea774c3095c08419ac93066b19785b6db2cc3fe1`, after merged PR #36. Review branch: `content/three-paper-figure-guides`. Check its matching GitHub PR before continuing; older current-branch claims below are historical.
+
+Three existing scientific diagrams now have concise reading guides, author/source attribution, accurate alternative text and links through the images to the unchanged original JPEGs: anthracene photosensitizer deactivation, QTANHOH photo-immunotherapy and MPO-sensitive liver imaging. The two more detailed landscape images increase from 720 to their original 1000 pixels wide; the compact anthracene diagram stays at 583 pixels. This reuses PR #36's optional header settings without template/style changes. No generative replacement was needed.
+
+Production and preview-equivalent builds pass with 895 pages each. Publication/concept audits preserve 91 records, seven concepts and 24 concept WebP variants. All 466 local image references resolve across 538 HTML files. All 121 main-content trees match except the three planned figure presentations; original figures, citations/attachments, bibliographic fields, existing figure records and homepage selections are preserved. The empty-alt queue decreases to 69 entries: 68 older publication figures plus the intentional closed Gallery viewer. The originals and both widened WebP copies were inspected; browser interaction/layout and live production remain unverified. Sources, hashes and details: [docs/three-paper-figure-guides-2026-09-07.md](docs/three-paper-figure-guides-2026-09-07.md).
+
+Delivery is one draft PR; the user retains the merge decision. All seven primary concepts have already been refreshed and all five selected papers have images. Future rounds should inspect a small, useful visual gap rather than restart those replacements or treat every empty-alt entry as a defective image. Preserve the actual third pillar: Mathematical Data Science and Frontier Exploration.
+
+---
+
 # Latest continuation — two older publication figure displays
 
 7 September 2026. Base main: `080a8d74143f01489067f083a1f0e416248aaa7b`, after merged PR #35. Review branch: `content/legacy-paper-image-descriptions`. Check its matching GitHub PR before continuing; older current-branch claims below are historical.

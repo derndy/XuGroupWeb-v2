@@ -48,6 +48,10 @@ tags: []
 
 # Display this page in the Featured widget?
 featured: true
+featured_alt: "An anthracene bridge joins donor (D) and acceptor (A) groups in an On molecule. A singlet-oxygen arrow leads to fragmented Off structures."
+featured_caption: "**A photosensitizer designed to deactivate itself.** An anthracene bridge links the donor and acceptor. Singlet oxygen produced during illumination also reacts with the bridge, connecting photosensitization to molecular breakdown. Diagram · Jucai Gao et al., Chemistry of Materials. [Paper and figure context](https://doi.org/10.1021/acs.chemmater.2c03274)."
+image:
+  link_to_original: true
 
 # Custom links (uncomment lines below)
 # links:
