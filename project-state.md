@@ -1,3 +1,17 @@
+# Latest continuation — PyraE2E selected-paper figure
+
+7 September 2026. Base main: `234659a1d82d0684bf1194cd441a8de0429d7785`, after merged PR #34. Review branch: `content/selected-paper-visual-followup`. Check its matching GitHub PR before continuing; older current-branch claims below are historical.
+
+This small round fills the last homepage selected-paper image gap. PyraE2E now uses an authentic excerpt from the authors' official ECCV 2026 poster on Home and its publication detail page. The complete outer overview panel (a), including exploration panel (b), is retained; lower detail panels and poster text/results are omitted. The inspected 1280 × 450 PNG is 302,807 bytes. Mechanical cropping/resizing preserves the diagram's labels, relationships and proportions; no generative editing was used. The caption discloses the excerpt and links the full conference poster.
+
+The source page's exact title and nine ordered authors match the canonical record. No public reuse license was found; the documented basis is the coauthor/site owner's instruction to improve his lab website, with merge review retained. The shared figure partial supports this explicitly scoped, documented author-reuse case while retaining license checks for the four existing figures and source-hash checks for all figures. It does not claim unrestricted third-party reuse or separate approval of the exact pixels. Source URLs/hashes, crop recipe, scope and checks: [docs/pyrae2e-poster-figure-2026-09-07.md](docs/pyrae2e-poster-figure-2026-09-07.md).
+
+Validation: production and deploy-preview-equivalent builds pass with 895 pages each. All 91 publication records/citations, seven concepts and 24 uncropped concept WebP variants pass their audits. All 466 local image references resolve across 538 HTML files. All 121 main-content trees match the baseline except the intended new figure and homepage wrapper. Existing figure records, canonical paper Markdown/BibTeX and homepage selection/order are preserved. Five of five selected papers now have figures. No removed labels appear in visible text; checked production/preview indexing behavior is correct. Original and final images were inspected; real browser layout and live-production status remain unverified.
+
+Delivery is one draft PR; the user retains the merge decision. All seven primary concepts have already been refreshed and the selected-paper figure gap is now filled. Do not regenerate them again by default. A next bounded round can inspect a few older publication images and their descriptions. The inherited image audit review queue (74 empty-alt entries, one empty-source entry) still needs contextual triage; these entries are unchanged by this round and are not automatically defects. Preserve the actual third pillar: Mathematical Data Science and Frontier Exploration.
+
+---
+
 # Latest continuation — Pillar I concept and readable labels
 
 7 September 2026. Base main: `f236618b27215f512632671604cb7a7c310b488e`, after merged PR #33. Review branch: `design/pillar-one-concept-refresh`. Check its matching GitHub PR before continuing; older current-branch claims below are historical.
