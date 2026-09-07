@@ -1,3 +1,17 @@
+# Latest continuation — one Join / Collaborate concept replacement
+
+7 September 2026. Base main: `a5a84f3ea94fb0a2403e7b0f5079cb502ea68609`, after merged PR #32. Review branch: `design/join-concept-refresh`. Check its matching GitHub PR before continuing; previous current-branch claims below are historical.
+
+This round replaces only CONCEPT-RES-006 on Join / Collaborate. The old glowing transformation image becomes an open structure assembled from complementary components, fitting the invitation to bring expertise and a scientific question. The new caption and alternative text describe this metaphor. The four pathways, contact facts, documentary photograph, full Vision and other six concepts are unchanged.
+
+Generated exactly once with the built-in image tool. The inspected, uncropped 1280 × 720 web copy is 340,443 bytes, encoded as a dithered 256-colour PNG. Original/source hashes, transformation and the complete prior asset record are in `data/research_assets.yml`; the old PNG remains unchanged. This is instruction-authorized draft preparation, not separate approval of the exact generated pixels. Prompt and rationale: [docs/join-concept-2026-09-07.md](docs/join-concept-2026-09-07.md). The Contact maintenance guide now describes this image and the prior removal of visible labels/download controls.
+
+Validation: production and deploy-preview-equivalent Hugo builds pass with 895 pages each. All 457 local image/picture/srcset references resolve across 538 HTML files; seven concepts and 25 uncropped WebP variants pass. All 91 publication records/citations are preserved. All main-content trees match the baseline except the intended Join illustration. The baseline resolves 1,322 internal main-page links/fragments; their content/destinations remain unchanged. Production/preview indexing behavior is correct on checked main pages. No unwanted AI-generation or original-download labels appear in built visible text. Both original and web copy were visually inspected; browser layout and live-production state remain unverified.
+
+Delivery is one draft PR; the user retains the merge decision. Next bounded candidate: inspect the Pillar I concept alongside its exact interaction diagram and change it only if that comparison identifies a useful improvement. Preserve the actual third research pillar: Mathematical Data Science and Frontier Exploration.
+
+---
+
 # Latest continuation — one About concept replacement
 
 7 September 2026. Base main: `18b82cd455b3daa925e9f7304955fbb538a94172`, after merged PR #31. Review branch: `design/about-concept-refresh`. Check its matching GitHub PR before continuing; older current-branch claims below are historical.

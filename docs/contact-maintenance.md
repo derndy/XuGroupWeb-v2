@@ -17,7 +17,7 @@ Route: `/contact/`. The navigation label is **Join / Collaborate**; the existing
 | Four route cards and subject-prefilled email links | `layouts/partials/contact/pathways.html` |
 | Contact layout and narrow-screen rules | `assets/scss/_contact.scss` |
 | Approved closing artwork selection | `data/site_visuals.yml` → `join_collaborate` |
-| Scientific-image approval, caption, alt text and source hash | `data/research_assets.yml` → `CONCEPT-RES-006` |
+| Current image source, prior version, caption, alt text, source hash and instruction basis | `data/research_assets.yml` → `CONCEPT-RES-006` |
 
 The primary contact facts were retained from the original page. They are not newly verified by this layout change. Get PI confirmation before changing a factual value. Keep the phone as a quoted string so its displayed form is not altered by YAML parsing. Email and phone links are generated from those same displayed values.
 
@@ -25,7 +25,15 @@ The appointment link retains `https://calendly.com/xushidang` and uses the curre
 
 The existing 420 × 280 library photograph remains at its original public path and preserves its bytes. The template reads its actual dimensions. The stylesheet preserves its full aspect ratio and caps its displayed width at 420 CSS pixels under the default font size. Do not crop it or replace it with conceptual artwork.
 
-The closing illustration retains its approved placement, caption, alternative text, visible conceptual/AI-generated label and original PNG download. Route any scientific-asset changes through the existing approval rules.
+The closing illustration uses the existing `join-collaborate` placement with a descriptive caption and alternative text. The shared AI-generation badge and original-download control were removed in merged PR #29 under the PI's request. Generation provenance and the instruction basis remain in the source record. Do not reintroduce visible badges or download controls when updating the artwork.
+
+## Current closing illustration — 7 September 2026
+
+After merged PR #32, this bounded round replaces CONCEPT-RES-006 with `assets/media/research/complementary-expertise.png`. Distinct navy, teal and blue components form an open structure, representing complementary contributions to a shared scientific question. The image is conceptual artwork, not a physical facility, an exact scientific diagram or three new research pillars. Its caption and alternative text match the actual composition. The adjacent invitation, four contact pathways, contact facts, library photograph and full Vision retain their content and order.
+
+The web source is 1280 × 720, with 640-, 960- and 1280-pixel uncropped WebP variants. The previous `signals-discovery.png` remains unchanged, and its full asset/approval record is retained under `previous_version`. User instruction authorizes regeneration for draft review; no separate approval of the exact generated pixels is claimed. Source hashes, transformation and the exact prompt are recorded in [the Join concept review](join-concept-2026-09-07.md).
+
+Validate against the current baseline: both Hugo contexts, all seven concept placements, publication/citation preservation, and built main-content trees allowing only the intended Join illustration change. Earlier batch counts below are historical. Deliver as a draft PR; the user retains the merge decision.
 
 ## Four contact pathways
 
