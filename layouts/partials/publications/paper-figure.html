@@ -10,8 +10,25 @@
 {{- end -}}
 {{- if not $image -}}{{ errorf "Missing published figure: %s" $record.resource }}{{- end -}}
 {{- if ne (sha256 $image.Content) $record.sha256 -}}{{ errorf "Published figure hash mismatch: %s" $record.resource }}{{- end -}}
-{{- range slice "caption" "alt" "credit" "source_url" "license" "license_url" -}}
+{{- range slice "caption" "alt" "credit" "source_url" -}}
   {{- if not (index $record .) -}}{{ errorf "Published figure %s lacks %s" $record.resource . }}{{- end -}}
+{{- end -}}
+{{- if $record.author_reuse -}}
+  {{- range slice "author" "scope" "basis" "record" -}}
+    {{- if not (index $record.author_reuse .) -}}{{ errorf "Author figure %s lacks reuse %s" $record.resource . }}{{- end -}}
+  {{- end -}}
+  {{- $owner := site.GetPage $record.page -}}
+  {{- if not $owner -}}
+    {{- errorf "Missing author figure page: %s" $record.page -}}
+  {{- else if not (in $owner.Params.authors $record.author_reuse.author) -}}
+    {{- errorf "Figure reuse author is not in the publication: %s" $record.resource -}}
+  {{- end -}}
+  {{- if ne $record.author_reuse.scope "author-lab-website" -}}{{ errorf "Unsupported author figure reuse scope: %s" $record.resource }}{{- end -}}
+  {{- if not (fileExists $record.author_reuse.record) -}}{{ errorf "Missing author figure reuse record: %s" $record.resource }}{{- end -}}
+{{- else -}}
+  {{- range slice "license" "license_url" -}}
+    {{- if not (index $record .) -}}{{ errorf "Published figure %s lacks %s" $record.resource . }}{{- end -}}
+  {{- end -}}
 {{- end -}}
 {{- $id := printf "%s-%s" .placement $record.id -}}
 {{- $sources := slice -}}
@@ -32,7 +49,7 @@
   </a>
   <figcaption id="{{ $id }}">
     <p class="paper-figure__caption">{{ $record.caption }}</p>
-    <p>{{ $record.credit }} · <a href="{{ $record.source_url }}">{{ $record.source_label | default "Published figure" }}</a> · <a href="{{ $record.license_url }}">{{ $record.license }}</a></p>
+    <p>{{ $record.credit }} · <a href="{{ $record.source_url }}">{{ $record.source_label | default "Published figure" }}</a>{{ if not $record.author_reuse }} · <a href="{{ $record.license_url }}">{{ $record.license }}</a>{{ end }}</p>
     <a class="paper-figure__full" href="{{ $image.RelPermalink }}">View full-size figure <span aria-hidden="true">↗</span></a>
   </figcaption>
 </figure>
